@@ -224,7 +224,13 @@ When you engage an inbound opportunity:
 
 **Multiple teams at same company:**
 - Tracker: separate rows, e.g. "D.E. Shaw (DESRES)" and "D.E. Shaw (GenAI)"
-- company-intel: one shared folder with team-specific outreach notes if needed
+- company-intel: separate folders, 1:1 with tracker rows (e.g. `de-shaw-desres/`, `de-shaw-genai/`)
+- Prefer duplicate info over ambiguity — each process is independent
+
+**Folder lifecycle:**
+- `00_pending/` — pre-outreach research
+- `02_ACTIVE/` — companies with active conversations (move here once engaged)
+- `01_disqualified/` — ruled out
 
 **Don't create:**
 - Separate inbound tracker
