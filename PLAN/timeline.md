@@ -12,13 +12,13 @@
 - No sends yet
 
 ## W04-W05 (Jan 20-31) — Send Wave 1
-- Send all 48 (5-10/day)
-- Take all intro calls
-- Intro calls → recruiter screens
-- Identify Tier 1 vs Tier 2
+- Primary focus: Send all applications
+- Take all intro calls and recruiter screens
+- Schedule earliest next steps for start of february interview-wise
 
-## W06-W07 (Feb 3-14) — Calibration Mode
-- 3-4 technical interviews (Tier 2)
+## W06-W07 (Feb 1-14) — Early Interviews, Prep, And Calibration
+- Technical Interviews for Tier 2 companies
+- Behavioral Interviews for All 
 - Shake off rust, find weak spots
 - Adjust prep based on feedback
 - Tier 1 in "delay once" mode

@@ -19,30 +19,38 @@
 | Bucket | Timing | Who | Purpose |
 |--------|--------|-----|---------|
 | 🟢 Intros/Discovery | Now | Everyone | Build relationships, learn scope, enter pipelines |
-| 🟡 Calibration Interviews | Weeks 2-3 | Tier 2, faster movers | Shake off rust, identify weaknesses, practice |
-| 🔴 Peak Interviews | Weeks 3-6 | Tier 1 (top targets) | Perform at peak readiness |
+| 🟡 Calibration Interviews | W06-W07 | Tier 2 | Shake off rust, identify weaknesses, practice |
+| 🔴 Peak Interviews | W08+ | Tier 0 & 1 | Perform at peak readiness |
 
 ### Tier Definitions
 
-**Tier 1 — Protect these. Delay technical screens 7-14 days.**
-- Elite AI labs: DeepMind, Anthropic, OpenAI, FAIR
-- Dream robotics/autonomy roles (your top 5-10 from tracker)
-- Top quant: Jane Street, DESRES (research arm), Citadel
-- Any role where blowing the interview would really hurt
+**Tier 0 — All-stars (10 companies). Maximum protection.**
+Icarus, Viam, Meta FAIR, DeepMind, DESRES, Jane Street, Osmo, OpenAI, Anthropic, Nanotronics
 
-**Tier 2 — Use for calibration. Schedule normally.**
-- Solid companies that are interesting but not top choice
-- Good for practice: real process, useful feedback
-- Where learning from the interview > devastation if rejected
+Technical interviews only after calibration complete (~W07+). These are career-defining opportunities.
+
+**Tier 1 — Protect (9 companies). Delay technical screens 7-14 days.**
+Standard Bots, MS Research, Anduril, Applied Intuition, Two Sigma, Citadel, HRT, K2 Space, Vannevar Labs
+
+Strong targets where you want to perform well but can use flexibility.
+
+**Tier 2 — Calibration (41 companies). Schedule normally.**
+Everyone else NYC-compatible. Use for practice, rust removal, and pipeline building.
+
+**Tier 3 — Last resort (9 companies). Only if NYC underperforms.**
+Honeybee, Aetherflux, NVIDIA, Skild, Physical Intelligence, SpaceX, Blue Origin, etc.
+
+Requires relocation. Don't spend W03-W05 energy here.
 
 ### Scheduling Rules
 
 1. Accept every intro/recruiter call immediately
 2. When asked to schedule a technical screen:
-   - **Tier 2** → schedule normally
+   - **Tier 2** → schedule normally (starting Feb 1)
    - **Tier 1** → ask for 7-14 days delay (once)
+   - **Tier 0** → delay until calibration complete (~W07+)
 3. Never delay the same company twice
-4. Target 2-3 calibration interviews before hitting Tier 1 technical loops
+4. Target 3-4 calibration interviews (Tier 2) before hitting Tier 0/1 technical loops
 
 ### Delay Script
 
@@ -51,6 +59,40 @@ When a Tier 1 company wants to schedule technical:
 > "Sounds great. I'm wrapping up some prior commitments. Can we schedule for [date 7-14 days out]?"
 
 This is normal and expected. Don't overthink it.
+
+### Flexibility Rules (The Plan is a Default, Not a Law)
+
+**Caveat 1:** Some Tier 1 companies won't tolerate deferral. If they say "this week or never," take the shot. Don't lose a top opportunity over scheduling purity.
+
+**Caveat 2:** Tier 2 may move slower than expected. If Tier 2 under-delivers on calibration reps, use a fast-moving Tier 1 for practice if needed.
+
+**Caveat 3:** 5-10 active Tier 1 processes is optimistic for NYC robotics. Realistic: 2-4 Tier 1, 3-5 Tier 2. Lower volume ≠ failure.
+
+### Operational Rules
+
+**Rule 1 — Always accept intro calls immediately.**
+No gating. No delaying. No filtering except obvious spam.
+
+**Rule 2 — Technical scheduling policy.**
+- Tier 2: Schedule normally starting Feb 1
+- Tier 1: Delay once by 7-14 days if possible; if pushed hard, accept earlier
+- Tier 0: Delay until calibration complete (~W07+); if forced earlier, treat as Tier 1
+- Never delay the same company twice
+
+**Rule 3 — Pipeline load cap.**
+- Max 3 active technical pipelines concurrently
+- Max 2 interviews per day
+- If exceeded, delay lower-priority companies
+
+This protects prep quality.
+
+**Rule 4 — Weekly checkpoint (every Friday).**
+Review:
+- Number of active pipelines
+- How many technicals scheduled next week
+- Weeks of runway remaining
+
+Adjust aggressiveness accordingly. Prevents silent drift.
 
 ---
 
@@ -287,7 +329,7 @@ Use these in `outreach.md` and `tracker.csv`:
 
 ---
 
-## This Week's Execution Plan
+## W03 Execution Plan (Prep Week)
 
 ### Day 1-2: Research Blitz
 - Go through each company in `00_pending/`
@@ -302,10 +344,11 @@ Use these in `outreach.md` and `tracker.csv`:
 - Claude can batch-draft if given the inputs
 - Mark reviews and finalizes
 
-### Day 5+: Start Sending
-- Begin with Tier 1 companies
-- 5-10 sends per day
-- Track everything
+### Day 5: Finalize + Tier Classification
+- Review all messages
+- Classify all 48 companies as Tier 1 or Tier 2 in tracker
+- Handle any active inbound
+- Ready to send Monday (W04)
 
 ---
 
