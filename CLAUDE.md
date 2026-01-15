@@ -51,12 +51,14 @@ Three positioning strategies (will have actual resume docs):
 │   ├── inbound_policy.md  # Scoring framework for inbound opportunities
 │   └── outreach_template.md
 └── company-intel/
-    ├── 00_pending/        # Companies not yet contacted
+    ├── 00_pending/        # Not yet researched/prepped
+    ├── 01_disqualified/   # Ruled out
+    ├── 02_qualified/      # Researched, outreach prepped, ready to send or sent
     │   └── {company}/
     │       ├── {company}.md    # Structured research
     │       ├── full_context.md # Raw research dump
     │       └── outreach.md     # Contacts, messages, status
-    └── 01_disqualified/
+    └── 03_ACTIVE/         # They responded, active conversation
 ```
 
 ## Outreach Tracking System
