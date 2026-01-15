@@ -4,6 +4,29 @@ Latest drafts at the top. Edit as needed, then send.
 
 ---
 
+## Zeal FIR - Confirm Time
+**To:** Nate Loofbourrow
+**Platform:** LinkedIn
+**Re:** FIR intro call
+**Date:** 2026-01-15
+
+Wednesday after 1pm works. 2pm ET?
+
+---
+
+## Zeal FIR - Accept Intro Call
+**To:** Nate Loofbourrow (Zeal Talent Ventures)
+**Platform:** LinkedIn
+**Re:** Founder-in-Residence | Physical AI
+**Date:** 2026-01-15
+**Score:** 7/8 — Tier 1, engage
+
+Thanks Nate. NYC and that range both work. Happy to do the 15 minutes.
+
+I'm flexible later next week. Feel free to propose a time that works for you.
+
+---
+
 ## D. E. Shaw GenAI - Engage (Follow-up)
 **To:** Marcus Roberts Rajoo (Vulcan)
 **Platform:** LinkedIn

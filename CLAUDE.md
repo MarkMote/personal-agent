@@ -43,7 +43,8 @@ Three positioning strategies (will have actual resume docs):
 │   ├── action_plan.md     # Outreach strategy and execution plan
 │   └── timeline.md        # Weekly goals and milestones
 ├── data/
-│   └── tracker.csv        # Master company list with status
+│   ├── tracker.csv        # Master company list with status
+│   └── outreach_queue.csv # Action queue: all messages to send/follow-up
 ├── ref/                   # Long-term reference (auto-maintained)
 │   ├── mark_profile.md    # Background, strengths, narrative hooks
 │   ├── strategic_context.md # Decision framework, situational factors
@@ -57,6 +58,33 @@ Three positioning strategies (will have actual resume docs):
     │       └── outreach.md     # Contacts, messages, status
     └── 01_disqualified/
 ```
+
+## Outreach Tracking System
+
+Two-file system for managing all outreach:
+
+**1. `data/outreach_queue.csv`** - Centralized action queue
+- Use for "what's due today?" queries
+- One row per message (initial + follow-ups are separate rows)
+- Status: `Queued` → `Sent` → `Done` (or `Pending` for follow-ups awaiting prior outcome)
+- Filter by `Scheduled` column to find due actions
+
+**2. `company-intel/.../outreach.md`** - Per-company details
+- Full message text (initial + follow-ups)
+- Contact info and channel
+- Strategy notes (tier, delay rules, warm paths)
+- Post-response instructions
+
+**Workflow:**
+1. "What's due today?" → Read queue, filter by scheduled date
+2. "What do I send?" → Pull message text from that company's outreach.md
+3. "I sent it" → Update queue status to `Sent`, add sent date
+4. "They responded" → Update queue to `Done`, update outreach.md notes, update tracker.csv status
+
+**When prepping a new company:**
+1. Mark adds raw research to `full_context.md`
+2. Claude synthesizes into `{company}.md` and drafts `outreach.md`
+3. Claude adds rows to `outreach_queue.csv` with scheduled dates
 
 ## The ref/ Folder
 This is Claude's memory bank. Automatically update `ref/` with new information about Mark as it comes up in conversation—experiences, preferences, stories, wins, lessons. This accumulates context for better assistance over time.
