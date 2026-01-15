@@ -6,7 +6,20 @@ Inbound is a **filtering and option-generation channel**, not a primary search d
 
 ---
 
-## Hard Gates (Check First)
+## Step 1: Quick Research (Before Scoring)
+
+Before scoring, spend 2-3 minutes gathering context:
+
+1. **Who's the actual company/fund?** Recruiters often bury this. If unnamed after multiple messages, that's a yellow flag.
+2. **Quick web search:** Company name + "funding" / "team" / "reviews"
+3. **LinkedIn check:** Company size, team backgrounds, connections
+4. **Already in tracker?** Check if this company is already classified (Tier 0-3)
+
+This prevents wasting time scoring something you'd immediately disqualify with basic research.
+
+---
+
+## Step 2: Hard Gates
 
 Before scoring, kill anything that fails these:
 
@@ -100,9 +113,59 @@ Don't let a 5/8 opportunity in the mushy middle distract from pursuing 7/8 oppor
 
 ---
 
+## Response Strategy: Don't Burn Bridges
+
+**Default stance:** Preserve optionality at low cost. Given runway constraints, an opportunity that doesn't fit now might be a useful backup in 4-6 weeks if the primary pipeline underperforms.
+
+| Response Type | When to Use |
+|---------------|-------------|
+| **Engage** | Scores ≥6/8, clearly on-strategy |
+| **Qualify + Defer** | Uncertain fit, might be useful backup, need more info |
+| **Soft Defer** | Doesn't fit now, but don't want to close the door |
+| **Polite Decline** | Obviously misaligned, no future value |
+
+**Prefer qualify + defer over hard decline.** Cost is one email. Benefit is preserved optionality.
+
+### Qualify + Defer (Recommended for Uncertain Opportunities)
+
+Ask 1-2 qualifying questions *in the same message* as a soft deferral. Gets info without committing time to a call.
+
+Key qualifying questions:
+- **NYC-compatible?** (hard gate)
+- **Comp range?** (is this a real capital option?)
+- **What does the work actually involve?** (skill alignment)
+
+**Template:**
+> Thanks for the additional context. [Topic] is a space I think about.
+>
+> I'm currently focused on a few opportunities through mid-February, but would like to keep this on my radar if there's real alignment. Two quick questions that would help me gauge fit:
+>
+> 1. Is this NYC-based or location-flexible?
+> 2. What's the approximate cash compensation range?
+>
+> Happy to reconnect in a few weeks once I have more clarity on timing.
+
+This:
+- Gets info to classify properly (real backup vs. noise)
+- Doesn't commit to a call
+- Keeps bridge warm
+- Puts ball in your court (you follow up, or don't)
+
+### Soft Defer (When You Don't Need More Info)
+
+> Thanks for thinking of me. I'm currently heads-down on a few things through mid-February. Mind if I circle back in a few weeks if timing opens up?
+
+### Polite Decline (Use Sparingly)
+
+Only for obviously misaligned opportunities with zero future value:
+
+> Thanks for thinking of me. This isn't quite aligned with what I'm focused on right now, but I appreciate you reaching out.
+
+---
+
 ## Response Templates
 
-### Default Response
+### Default Response (Engaging)
 > Thanks for reaching out. I'm currently exploring senior technical roles in robotics / autonomy / AI systems, primarily NYC-based. If you think there's alignment, I'm happy to do a short intro call to understand the opportunity.
 
 ### For Quant Inbound
@@ -111,10 +174,7 @@ Don't let a 5/8 opportunity in the mushy middle distract from pursuing 7/8 oppor
 ### For FIR Inbound
 > I've previously founded and led startups, so I'm selective about FIR programs. Can you share the fund, check size, partner involvement model, and typical path from FIR to company formation?
 
-If they can't answer crisply → disengage.
-
-### Polite Decline
-> Thanks for thinking of me. This isn't quite aligned with what I'm focused on right now, but I appreciate you reaching out.
+If they can't answer crisply → use qualify + defer approach rather than hard disengage.
 
 ---
 
@@ -145,3 +205,28 @@ When inbound arrives, paste it here. I'll:
 5. Draft response if engaging
 
 Fast turnaround. Don't let inbound sit and create mental overhead.
+
+---
+
+## Integration Rules
+
+When you engage an inbound opportunity:
+
+1. **Add to tracker.csv** — one row per distinct opportunity (team/role), not per company
+2. **Company-intel folder** — one folder per company, only if research is needed
+3. **Naming convention** — use "Company (Team)" in tracker when multiple opportunities exist at same org
+
+**Tracker row fields for inbound:**
+- Day: "Inbound"
+- Contact: recruiter or hiring manager name
+- Status: "In Progress" once engaged
+- Notes: "Inbound via [source]. [Brief context]"
+
+**Multiple teams at same company:**
+- Tracker: separate rows, e.g. "D.E. Shaw (DESRES)" and "D.E. Shaw (GenAI)"
+- company-intel: one shared folder with team-specific outreach notes if needed
+
+**Don't create:**
+- Separate inbound tracker
+- Mandatory folders for every inbound
+- Parallel systems
