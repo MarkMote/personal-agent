@@ -7,6 +7,53 @@
 
 ---
 
+## Interview Staging Strategy
+
+**Core insight:** You control when you enter evaluation mode, not when you start conversations.
+
+- **Start intros immediately** — no downside to early conversations
+- **Stage technical interviews intentionally** — don't burn top targets while rusty
+
+### The Three Buckets
+
+| Bucket | Timing | Who | Purpose |
+|--------|--------|-----|---------|
+| 🟢 Intros/Discovery | Now | Everyone | Build relationships, learn scope, enter pipelines |
+| 🟡 Calibration Interviews | Weeks 2-3 | Tier 2, faster movers | Shake off rust, identify weaknesses, practice |
+| 🔴 Peak Interviews | Weeks 3-6 | Tier 1 (top targets) | Perform at peak readiness |
+
+### Tier Definitions
+
+**Tier 1 — Protect these. Delay technical screens 7-14 days.**
+- Elite AI labs: DeepMind, Anthropic, OpenAI, FAIR
+- Dream robotics/autonomy roles (your top 5-10 from tracker)
+- Top quant: Jane Street, DESRES (research arm), Citadel
+- Any role where blowing the interview would really hurt
+
+**Tier 2 — Use for calibration. Schedule normally.**
+- Solid companies that are interesting but not top choice
+- Good for practice: real process, useful feedback
+- Where learning from the interview > devastation if rejected
+
+### Scheduling Rules
+
+1. Accept every intro/recruiter call immediately
+2. When asked to schedule a technical screen:
+   - **Tier 2** → schedule normally
+   - **Tier 1** → ask for 7-14 days delay (once)
+3. Never delay the same company twice
+4. Target 2-3 calibration interviews before hitting Tier 1 technical loops
+
+### Delay Script
+
+When a Tier 1 company wants to schedule technical:
+
+> "Sounds great. I'm wrapping up some prior commitments. Can we schedule for [date 7-14 days out]?"
+
+This is normal and expected. Don't overthink it.
+
+---
+
 ## Phase 1: Research & Contact Finding
 
 ### What to do for each company

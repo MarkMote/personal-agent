@@ -5,9 +5,9 @@ Local CRM and planner for Mark's job search. We manage outreach, research compan
 
 ## Current Status
 - **Date context:** January 2026
-- **Target start:** March-April 2026
+- **Target start:** April 2026
 - **Wave 1:** NYC-only companies (48 targets in tracker.csv)
-- **Personal runway:** ~2-3 months - could be stretched, rather not 
+- **Personal runway:** Through end of April 
 
 ## Key Principles
 
@@ -38,12 +38,16 @@ Three positioning strategies (will have actual resume docs):
 ```
 /search
 ├── CLAUDE.md              # This file
-├── action_plan.md         # Outreach strategy and execution plan
 ├── scratch.md             # Working notes
+├── PLAN/
+│   ├── action_plan.md     # Outreach strategy and execution plan
+│   └── timeline.md        # Weekly goals and milestones
 ├── data/
 │   └── tracker.csv        # Master company list with status
 ├── ref/                   # Long-term reference (auto-maintained)
 │   ├── mark_profile.md    # Background, strengths, narrative hooks
+│   ├── strategic_context.md # Decision framework, situational factors
+│   ├── inbound_policy.md  # Scoring framework for inbound opportunities
 │   └── outreach_template.md
 └── company-intel/
     ├── 00_pending/        # Companies not yet contacted
@@ -66,4 +70,4 @@ This is Claude's memory bank. Automatically update `ref/` with new information a
 - Build tools when genuinely useful
 
 ## Current Phase
-Executing Wave 1 outreach. See `action_plan.md` for full workflow.
+Executing Wave 1 outreach. See `PLAN/action_plan.md` for workflow and `PLAN/timeline.md` for weekly goals.

@@ -1,5 +1,19 @@
 # Mark Mote - Full Profile
 
+## The Short Pitch
+Georgia Tech Aerospace/Robotics PhD (1,400+ citations) turned 2x Bootstrapped Founder. Rare "full stack" position: understands the rigorous math of Control Theory and the chaotic orchestration of LLM Agents. A builder-architect who has proven he can ship profitable systems, not just write papers.
+
+## Resume Variants
+Three positioning strategies depending on audience:
+
+1. **Chief Engineer** — Technical leadership, spacecraft/robotics depth. For: hardware startups, aerospace companies, robotics teams.
+
+2. **Product Founder** — Zero-to-one, product sense, commercial deep tech. For: early-stage startups, companies wanting technical co-founder energy in a senior hire.
+
+3. **Distinguished Academic** — Research pedigree, publications, PhD culture fit. For: research labs, quant finance, academic-adjacent roles (DESRES, DeepMind, FAIR).
+
+---
+
 ## Timeline
 - **2015:** ISAE-ENSMA intern (quadcopter controllers, France)
 - **2016-2021:** Georgia Tech PhD (robotics, spacecraft controls)
@@ -84,3 +98,6 @@
 - "I stepped away from aerospace to collect the missing tools—product, fundraising, leadership. Now I bring something most pure aerospace people don't: the ability to commercialize deep tech."
 - "PhD in spacecraft optimization + startup DNA = rare"
 - "I've taken AI systems from research to production, twice"
+
+## The Thesis (The One That Got Away)
+"Right but early" on the Physical Search Engine (Semantic State Estimation). Realized 5 years ago that robots need a "Google Index" for the physical world. Now that VLMs exist, ready to reclaim this thesis. Wants to build infrastructure (The State Layer, The Safety Kernel, The Sim2Real Bridge), not features (a better gripper).
