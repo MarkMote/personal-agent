@@ -42,7 +42,7 @@
 
 **Initial:**
 
-> Jamie - I'm a spacecraft controls PhD (Georgia Tech) and two-time founder, currently wrapping up my second startup. Spent time at JPL working on rendezvous proximity ops, and my dissertation was on optimization-based control for underactuated systems - exactly the problem space you're in with free-flying bimanual manipulation.
+> Jamie - I'm a spacecraft controls PhD (Georgia Tech) and two-time founder, currently wrapping up my second startup. My dissertation was on optimization-based control for underactuated systems - exactly the problem space you're in with free-flying bimanual manipulation.
 >
 > The JOYRIDE-1 mission and the path from teleoperation to embodied autonomy is the kind of work I want to be doing. Would love to learn more about what you're building and where the team is headed.
 >

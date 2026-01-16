@@ -9,6 +9,12 @@ A rare bridge between three worlds:
 
 Alternative framing: "The Weaponized PhD" — Georgia Tech Aerospace/Robotics PhD turned 2x Bootstrapped Founder. Understands both rigorous math of Control Theory (atoms/physics) and chaotic orchestration of LLM Agents (bits/logic).
 
+## Long term goals 
+- Financial Security
+- Ideally starting another company, or being part of another company that grows large: high impact, high equity building
+- Optionality, in 2 years when he searches for another job, or decides to found his own company. This optionality comes from prestige, and from accumulated wealth, and from specifc knowlege and unique skills. 
+- Passion alignment big. Being involved in robotics or aerospace is huge plus. 
+
 ---
 
 ## Situational Factors (January 2026)
@@ -64,7 +70,7 @@ Alternative framing: "The Weaponized PhD" — Georgia Tech Aerospace/Robotics Ph
 
 ### Low Interest
 - Pure web/product engineering, CRUD/SaaS plumbing
-- Frontend/UI work
+- Frontend/UI work - though he is great at it
 - Narrow ML model tuning divorced from real systems
 - LeetCode-style puzzle optimization
 
@@ -79,6 +85,13 @@ Alternative framing: "The Weaponized PhD" — Georgia Tech Aerospace/Robotics Ph
 - Willing to accept moderate risk if skill compounding is strong
 - Not willing to accept: career dead-ends, purely incremental roles, roles that erode technical edge
 - Finance roles = optional capital accelerators, not core identity
+
+### Gap to Close: Production ML/AI Experience
+- Current strength: controls, optimization, safe autonomy, RL theory, founder experience
+- Current gap: hands-on production ML (training/deploying DL models at scale, PyTorch/TensorFlow/JAX)
+- This gap blocks access to: Waymo ML roles, DeepMind ML research, many frontier AI positions
+- **Roles that provide production ML experience should be weighted higher** - even if not perfect fit today, they're stepping stones to elite ML/AI roles later
+- Note: PhD represents ~20% of current knowledge; 4 years of startup experience is the majority
 
 ---
 

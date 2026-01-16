@@ -43,9 +43,13 @@ Three positioning strategies depending on audience:
 ### Research Areas
 - Control theory & optimization
 - Safe autonomy & runtime assurance
-- Computer vision & ML
 - Spacecraft GNC
 - Multi-robot systems
+- Reinforcement learning + safety (shielded RL, safe RL for docking)
+
+### Unpublished/Adjacent Experience
+- **MIT Lincoln Lab (2 summers):** Formal verification of image classifier neural networks. Research became restricted for security reasons - can mention topic but not details.
+- **Pytheia (1.5 years):** Real-time 3D perception for robotics. Pivoted before publishing, but hands-on experience with perception systems.
 
 ## Startup Experience
 
