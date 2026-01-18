@@ -311,14 +311,42 @@ Current state:
 
 **Revenue Peak:** This phase achieved highest traction ($25k MRR enterprise)
 
-**Why It Ended:**
-[Question for Mark: What happened? Why did the company shut down despite having paying customers?]
+**Why It Ended (March 2024):**
+
+Multiple factors converged:
+
+1. **Location split:** Matt's girlfriend moved to New Jersey, he wanted to follow. Ben and Mark had moved to SF to focus on the startup.
+
+2. **Fatigue:** After so many pivots and such a long journey, even once they got the Lippert contract, hearts weren't in it. Everyone had drifted from the initial vision.
+
+3. **Contract issue:** Lippert CEO discovered the contract was made without his knowledge. Though the users loved what they were getting, Lippert wanted to cancel.
+
+4. **Ben's decision (biggest factor):** Ben had a hard breakup and concluded it was impossible to pursue both startup success and having a relationship/family. He chose stability and family. Mark's reaction: "Yeah of course, that makes total sense. No hard feelings, we had a great journey and now we will move on to something else."
+
+*Irony noted by Mark:* Ben saw family and startups as totally incongruent. Mark still wanted to do startups. He met the woman he would marry a week after that conversation, and they got married a year later.
+
+**Final Revenue:** A little over $300k ARR total, including two small CV contracts (the restaurant pilot and a cardiologist fall detector project).
+
+**Matt's reaction:** Not super happy about shutdown, but accepting.
+
+**Transition to Roostr:**
+- Ben and Mark were in SF when Pytheia ended
+- The Pioneer accelerator (which funded them) was doing another batch, so they went to their office to hang out
+- Mark met Jacky there — also a CEO whose CTO (also named Ben) had quit that same month for stability
+- Jacky had left Flexport with an idea to automate weekly business reviews
+- Mark spent a month evaluating two prospects:
+  1. **Jacky and his startup** (became Roostr)
+  2. **Artifact.engineer** — a friend's startup using agents to automate engineering tasks (kind of a Cursor for engineering). Agreed to 50-50 split as CTO. Friend later got into YC and raised ~$3M, but after Mark left.
+- Mark chose Jacky despite being "much more in love with the Artifact idea" — founder-fit over idea-fit. "The other person did not have a great idea of what they were doing. They weren't a particularly good builder, and didn't understand startups well, but would be very good at raising money. I've always been against that, I believed in bootstrapping."
+- **April 2024:** Officially started Roostr
 
 ---
 
 ## 3) Technical Capabilities Built
 
-### Perception Engine (Phases A-C)
+### Perception Engine: "Argus" (Phases A-C)
+
+Internal codename: **Argus**
 
 **What it did:**
 - Real-time 3D multi-camera perception from any camera
@@ -327,6 +355,59 @@ Current state:
 - Works with any camera (frame rate and resolution agnostic)
 - Natural language interface (SMS-based) for queries
 - Live visualizer showing map with tracked objects
+
+**Architecture (from Argus codebase):**
+
+```
+Image Frame → Detection → Tracking → Transform → Estimation → Fusion
+     ↓           ↓           ↓          ↓            ↓          ↓
+   Camera     YOLO      DeepSORT    2D→3D       Kalman     Multi-cam
+   stream    detects    assigns    project     filter      merge
+             objects   persistent  to world   smooths    measurements
+                          IDs      coords    position
+```
+
+**Pipeline Components:**
+
+1. **Detection Layer (YOLO)**
+   - YOLOv5 as workhorse detector
+   - Fine-tuning for specific object classes
+   - Experimented with keypoint detection methods (never deployed)
+   - Object classes: PEDESTRIAN, BICYCLE, CAR, MOTORCYCLE, PICKUP_TRUCK, SEMI_TRUCK, VAN, BOX_TRUCK, BUS
+
+2. **Tracking Layer (DeepSORT)**
+   - Multi-object tracking across frames
+   - Re-identification using ResNet50 or OSNet
+   - Maintains persistent track IDs through occlusions
+   - Parameters: max_dist, max_iou_distance, max_age, n_init, nn_budget
+
+3. **Transformer Layer (2D → 3D projection)**
+   - Uses camera calibration parameters (intrinsics + extrinsics)
+   - `Box3Inverter`: Projects 2D bounding boxes to 3D world coordinates
+   - Inverse projection to ground plane (z=0)
+   - Handles lens distortion via `distortion_inverse_mapping`
+   - Modes: "center", "fix_l_w", "fix_w_theta"
+
+4. **State Estimation Layer (Kalman Filter)**
+   - Double-integrator model for position/velocity
+   - Tracks state: [x, y, vx, vy]
+   - Per-class filter parameters (different dynamics for pedestrians vs vehicles)
+   - Region of Interest filtering (via Shapely polygons)
+
+5. **Multi-Camera Fusion Layer**
+   - Associates measurements from multiple cameras using IoU matching
+   - Hungarian algorithm (scipy.optimize.linear_sum_assignment)
+   - Fuses matched measurements into single estimate
+   - Handles track splits and merges
+
+**Stack:**
+- Python 3.10
+- PyTorch (deep learning)
+- OpenCV (cv2)
+- NumPy/SciPy
+- Shapely (geometric operations, IoU, ROI)
+- YAML config files
+- Database layer for track persistence
 
 **Key technical achievements:**
 - Combines multiple camera feeds into single 3D spatial representation
@@ -338,6 +419,12 @@ Current state:
 - vs Verkada/SpotAI: They work in 2D image frame, limited analytics
 - vs VergeSense/Density: They require specialized hardware
 - vs Optitrack/Vicon: They require retroreflective markers (lab only)
+
+**What happened to the IP:**
+- Patent would have been easy (Matt's dad was a patent lawyer) but didn't create real value — "we weren't optics driven, we were results driven"
+- Repo was retired; Ben didn't want to open-source due to code quality concerns
+- A lot of the tech caught up within a year
+- Once sold a simplified version of tracking tech to a robotics company for $2k (one-time, not core IP)
 
 **Demo:** https://www.youtube.com/@PytheiaAI
 **Video example:** https://www.youtube.com/watch?v=Wdzhru0Y5f0
@@ -389,7 +476,59 @@ With only $20k investment (Pioneer), reached $300k ARR on the pricing optimizati
 
 ## 5) Lessons Learned
 
-### On Pivoting
+### The Hardest Pivot
+
+Moving out of robotics-adjacent work was ultimately a mistake, at least for Mark:
+
+> "The AV, Robotics, and restaurant pivots were all fundamentally the same tech, geared at the same direction: better 3D perception for robots. A real-time semantic oracle. A shared reality that would make the world safer. It felt like we were building the beginnings of an 'internet for robots.'"
+
+The pivot to pricing/demand was driven by:
+- LLMs coming on the scene, wanted to build with them
+- Sensible startup logic: initial idea failed, we were a solution in search of a problem, best to scrap and start over
+
+But in hindsight:
+- LLMs was short-term thinking — multimodal and CV got huge afterward
+- The pivot worked financially (started making sales) but at the expense of passion
+- "Impossible to really know what you got wrong in hindsight"
+
+### Mistakes Made
+
+1. **Overestimated ability to sell to government:**
+   - DOT had access to cameras, was monitoring with humans
+   - Existing vendor charging a ton for inferior tech
+   - Thought it'd be easy: "If it were a company, it would have been. But these were government workers. Their jobs were secure. They didn't care. Too much red tape. Wasted time."
+
+2. **Overindexed on advice early on:**
+   - "Advice is state-dependent: if they don't know you personally and can't see what side of the tradeoff you're too extreme on, it could be bad advice"
+   - "Don't take advice from anyone you wouldn't trade places with"
+   - "The right advice is either highly simple or highly specific. Experience is the best teacher."
+
+3. **Thought it would be easier:**
+   - Initial idea to finance CV company with a parking app (before they were common)
+   - Underestimated how hard everything would be
+
+4. **Avoided funding on principle:**
+   - "Very principled reasons for wanting to bootstrap, but some of the ideas likely would have worked if we just raised on them"
+
+5. **Didn't set failure conditions:**
+   - "Hire-fast-fire-fast is great advice, not just for hiring. It works for products too. Small quick experiments that are default dead until proven otherwise."
+
+### What Mark Would Do Differently
+
+- **At start:** Should have gotten jobs first, built a nest egg and big company experience. Could have joined once they secured first large robotics contract. "We probably learned more the way we did it, I'm glad it happened but wouldn't do it the same way again."
+- **No results after 1 year:** Stop, go get jobs. Try again in a couple years. "Should have been quicker to know it wasn't working, or be persistent enough to wait for timing to catch up."
+
+### What Mark Did Right
+
+**The "State of the Business" meeting:**
+
+> "I realized things were getting particularly tense. The stress was too high, our relationships were suffering. We were friends before this and would work better as friends. I created a 'state of the business' meeting every 2-3 weeks. On Friday we'd drink coffee, sit inside, have a very open discussion about where we were, what we were happy with, what we didn't like. And very honestly how we felt."
+
+> "It's not always convenient to bring these things up. If you're working with people who are more agreeable, the risk is that things build up and turn to resentment. Having dedicated time where things get said was extremely cathartic."
+
+Made it fun: got Chick-fil-A right afterwards. "I think that's the reason why we are still such good friends today."
+
+### On Pivoting (General)
 - "Make something people want" (YC motto) only covers supply-side economics
 - "You also have to make something you want"
 - Pytheia pivoted to profitable-but-less-fulfilling work
@@ -415,6 +554,10 @@ With only $20k investment (Pioneer), reached $300k ARR on the pricing optimizati
 - "We've lived, studied, and worked together"
 - All technical founders who also do sales
 
+### On Equal Equity Splits (20/20/20)
+
+> "Was the right thing to do, for the right people. We were all peers and the value of knowing we were equal in this sense far exceeded the value of anyone getting extra in total expected value. It's a startup, we were there to win big or not at all. It's not always the right move, but given our backgrounds and history together this clearly was."
+
 ---
 
 ## 6) Accelerator/Application History
@@ -439,10 +582,28 @@ With only $20k investment (Pioneer), reached $300k ARR on the pricing optimizati
 - Coincidentally all ended up in NYC afterwards
 - Ben and Mark particularly close: When Mark flew to the country of Georgia for a small wedding ceremony (summer 2025), Ben was one of two people he brought
 
-**Questions remaining:**
-- What is Matt doing now?
-- What is Ben doing now?
-- How did the company wind-down happen?
+**What Matt and Ben are doing now:**
+- Both went to work for a larger startup in NYC (around Series A, much more stability)
+- Still working at the same company together to this day
+- It's a "text to SQL" company
+- Mark's opinion: "I think it's a huge waste of their talent"
+
+### Mark's Overall Reflection
+
+> "Best take is that it was an amazing learning experience. I learned more in a year there than my entire PhD, but I also don't think I would do it again. I could have learned the lessons in a way less painful way I think."
+
+> "I've also realized that risk is a proxy goal. It's not inherently good. There were paths where we could have taken less risk and succeeded more. I have friends that did it. A friend from JPL just raised $20M for his startup, because he took the path of less risk: go somewhere prestigious and only start once it's more of a guaranteed thing. He will never know what it's like to be as scrappy as we were, to solve all the kinds of messy problems we did under the pressure we did. Maybe we are ultimately better at getting the job done, but that doesn't equal success."
+
+### On YC Rejections
+
+- 3 interviews at Pytheia (correctly predicted government red tape would hurt AV idea — "that was very prescient")
+- 2 interviews with Artifact.engineer (same batch)
+- 3 interviews at Roostr
+
+Mark's take on YC:
+> "For obvious reasons I don't have a lot of respect for YC. They were great back in the day but have really declined in quality. The worst founders I know have gotten in while the ones I've known to actually make a lot of money have either got rejected or not chosen to apply."
+
+But acknowledges: "For the first 2 interviews they were still pretty high quality."
 
 ---
 
