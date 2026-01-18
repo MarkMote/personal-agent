@@ -98,6 +98,9 @@ Three positioning strategies depending on audience:
 - Software development is near-solved with AI
 - Wants to position ahead of the robotics wave
 
+## Direction he most wants to break into 
+- Embodied AI
+
 ## Constraints & Preferences
 - **Location:** NYC strongly preferred, will relocate if best option
 - **Hours:** ~50/week ideal (40-60 acceptable), married, hoping for kids soon
