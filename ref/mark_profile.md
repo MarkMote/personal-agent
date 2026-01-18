@@ -3,6 +3,20 @@
 ## The Short Pitch
 Georgia Tech Aerospace/Robotics PhD (1,400+ citations) turned 2x Bootstrapped Founder. Rare "full stack" position: understands the rigorous math of Control Theory and the chaotic orchestration of LLM Agents. A builder-architect who has proven he can ship profitable systems, not just write papers.
 
+## Driving Philosophy
+
+**The Three Great Changes:** "There will be three great changes in my lifetime: life extension, a human Mars mission, and artificial intelligence. If we're lucky, four—we discover alien life." This has been the compass for a decade. Aerospace was the path that resonated—leaving Earth, making humans fly like gods, answering the big questions.
+
+**The JPL Decision:** Worked toward JPL from undergrad, got the offer during grad school. But took a different path: entrepreneurship. "There were people with this knowledge of how to just do things, and I would never forgive myself if I didn't figure that out too. If I didn't try to do something great, at least once, what kind of life would that be."
+
+**Opportunities at Graduation (2021):** All hosts offered full-time roles. The Stanford professor (now NVIDIA AV director) was building a team. JPL offer in hand. The principal rocket landing engineer at SpaceX reached out personally for a tour. Chose the startup path instead.
+
+**The Tension:** "Make something people want" is YC gospel, but it only covers supply-side economics. You also have to make something *you* want. Pytheia pivoted to profitable-but-less-fulfilling. Roostr was enticing hard problems but pulled by market reality. Looking now for the balance: financial security to start a family, help a retiring dad—but also work that pulls rather than pushes.
+
+**Where He Is Now:** "I know 10x what I did then but feel in a worse position." Needs to recover from risk-taking. But thrilled that his passions (robots, spacecraft, building businesses) happen to be things the world cares about. That's the advantage to leverage.
+
+---
+
 ## Resume Variants
 Three positioning strategies depending on audience:
 
@@ -25,7 +39,7 @@ Three positioning strategies depending on audience:
 - **2020:** AFRL intern (spacecraft docking, control barrier functions, shielded RL)
 - **2021:** PhD complete, all internship hosts offered full-time roles
 - **2021-2024:** Pytheia CEO (CV/robotics startup → LLM SaaS pivot, $20k → $300k ARR)
-- **2024-present:** Roostr CTO (AI freight forwarder, 40% equity, $225k raised)
+- **2024-present:** Roostr CTO (AI freight forwarder, 40% equity, $225k raised, 100k+ run rate)
 
 ## Academic Credentials
 - **Citations:** 1,449 total (1,132 since 2021)
@@ -49,7 +63,7 @@ Three positioning strategies depending on audience:
 
 ### Unpublished/Adjacent Experience
 - **MIT Lincoln Lab (2 summers):** Formal verification of image classifier neural networks. Research became restricted for security reasons - can mention topic but not details.
-- **Pytheia (1.5 years):** Real-time 3D perception for robotics. Pivoted before publishing, but hands-on experience with perception systems.
+- **Pytheia (1.5 years):** Real-time 3D perception for robotics. Hands-on experience with designing, building, marketing, selling and delivering perception systems.
 
 ## Startup Experience
 
@@ -72,12 +86,12 @@ Three positioning strategies depending on audience:
 - **Research:** Publication track record, academic collaboration, peer review
 
 ## What Energizes Him
-- Hard technical problems
-- Meta-engineering: designing what people want, fast iteration, building business not just product
-- Spacecraft and robotics (deepest passion)
-- AI/ML
-- Leading things, working on valuable problems
-- Continuous skill development
+- Spacecraft and robotics — the deepest pull, since undergrad
+- Hard technical problems that matter (safe autonomy, vision, controls)
+- Building businesses, not just products — the "meta-engineering"
+- AI/ML as tooling for the above, not as an end
+- Leading teams, working on things that move the needle
+- Continuous skill collection — never wanting to look back and wonder "what if"
 
 ## Beliefs About the Future
 - Robotics is the next big wave (similar conviction to LLMs 4 years ago)
@@ -86,9 +100,10 @@ Three positioning strategies depending on audience:
 
 ## Constraints & Preferences
 - **Location:** NYC strongly preferred, will relocate if best option
-- **Hours:** ~50/week ideal (40-60 acceptable), married, hoping for kids
+- **Hours:** ~50/week ideal (40-60 acceptable), married, hoping for kids soon
 - **Financial:** No cash reserves, small student debt, ~2-3 month runway
-- **Goals:** Financial security, freedom, working in passionate area, path to founder/CTO success
+- **Personal goals:** Financial security to start a family. Help retiring dad see him succeed. Recover from the risk-taking phase of life.
+- **Career goals:** Work that pulls rather than pushes. Path back to founder/CTO eventually, but on solid footing.
 
 ## Positioning Strengths
 1. Rare combination: PhD rigor + startup operator + technical leadership

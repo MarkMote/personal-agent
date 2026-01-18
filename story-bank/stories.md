@@ -14,6 +14,18 @@
 
 ---
 
+Worst quality
+- best; name something obvious from resume make 
+- But worst quality you might not expect 
+- don’t burn my house to stay warm: I tend to pursue the immediately due so aggressively that I’ll trade long term growth 
+- Startups gave me that. But the correct thing to do is focus on developing long term skills that compound. It’s finish the code vs taking the time to learn how it works or the newest tools to automate
+- Example: jpl: really wanted to make them happy, did this rasier task of improving the simulation, but at the expense of taking a bit of a risk to explore theory more. It may have turned to nothing but it may have also been a great idea that I gave up to pursue the immediately useful thing. Still regret that. 
+- Like many things it’s a balence, some people only focus on the long term and don’t get anything done
+- 
+
+
+
+
 ## Story 1: [Technical Depth - JPL/Lincoln Lab]
 
 **Use for:** Icarus, Honeybee, Viam, Standard Bots, DeepMind, FAIR
