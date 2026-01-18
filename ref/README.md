@@ -7,7 +7,7 @@ Long-term reference material about Mark. Updated as new information surfaces in 
 | Experience | Raw Material | Synthesized | Status |
 |------------|--------------|-------------|--------|
 | `roostr/` | `raw.md`, `roostr_full_tech_documentation.md` | `roostr.md` | ✅ Complete |
-| `pytheia/` | `data/*.md` (8 app files), `raw.md` (questions) | `full_context.md` | ⚠️ Needs Mark's answers to questions |
+| `pytheia/` | `data/*.md` (8 app files), `data/argus/` (codebase), `raw.md` | `full_context.md` | ✅ Complete |
 | `phd/` | `raw.md` (placeholder only) | — | 🔲 Needs context dump |
 
 ## Root Files
@@ -34,10 +34,11 @@ Optional: `*_full_tech_documentation.md` for deep technical reference.
 ## What Still Needs Work
 
 1. **PhD context dump** — Thesis work, research narratives, lab experiences, advisor relationships
-2. **Pytheia questions** — Mark to answer questions in `pytheia/raw.md`, then create polished `pytheia.md`
-3. **Root `full_context.md` cleanup** — Most Pytheia content now in folder; remaining misc can be archived or absorbed
+2. **Root `full_context.md` cleanup** — Most content now in folders; remaining misc can be archived
+3. **Pytheia polish (optional)** — `full_context.md` complete; could create distilled `pytheia.md` for quick reference
 
 ## Recently Absorbed
 
-- ✅ Pytheia story from accelerator apps → `pytheia/full_context.md` (Jan 18)
+- ✅ Pytheia full story + Argus technical architecture + ending/transition → `pytheia/full_context.md` (Jan 18)
+- ✅ Pytheia accelerator apps → `pytheia/full_context.md` (Jan 18)
 - ✅ Passion/identity/driving philosophy → `mark_profile.md` (Jan 18)
