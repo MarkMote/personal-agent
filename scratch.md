@@ -1,3 +1,81 @@
+ok looking great. lets add the following changes to the resume
+
+you may choose a best of both worlds if you see areas of improvement in below.
+
+Roostr
+\item Built and operated an AI-native freight operations platform as sole production engineer, spanning rate ingestion, quoting, billing, and customer-facing workflows
+\item Designed a custom agent framework (Python/FastAPI/Docker) combining deterministic pipelines with LLM planning for reliable long-running workflows
+\item Achieved customer-attributed ~$1M incremental monthly revenue by reducing quote turnaround from hours to minutes
+\item Optimized system for rapid iteration and low unit cost (<$0.10 per complex document) via hybrid parsing, regression test sets, and failure-driven tooling
+
+
+\item Co-founded and scaled a deep-tech startup from $20k seed to ~$300k ARR through multiple product pivots
+\item Architected a real-time multi-camera 3D perception system for robotics and spatial analytics (detection, tracking, sensor fusion, state estimation)
+\item Led system integration across CV pipelines, cloud infrastructure, and customer deployments; shipped multiple production pilots
+\item Applied optimization and control theory to agent-based data platforms for pricing and demand forecasting
+
+
+\item Designed communication and control algorithms for distributed asteroid exploration using satellite swarms
+\item Co-authored publication in AIAA Journal of Guidance, Control, and Dynamics
+
+\item Developed provably safe spacecraft docking using control barrier functions and shielded reinforcement learning
+
+\item Applied formal verification techniques to neural network image classifiers
+
+Publications sectoin: get rid of it and add under education :\item 1,449 citations; h-index 13; i10-index 17
+
+
+also lets add any missing work experience titles/ sections 
+Pytheia Corporation                            	                                                                                                            Atlanta, Georgia
+Founder/ Chief Executive Officer (CEO)                                                                                                         (Sept. 2021 – present)
+    • Running robotics startup dedicated to enabling safe autonomy through perception 
+
+Georgia Institute of Technology                           	                                                                                              Atlanta, Georgia
+Graduate Research Assistant (GRA) – Verus Research                                                                              (Aug. 2020 – July 2021)
+    • Developed algorithms for provably safe spacecraft attitude control under bounded torque perturbations 
+    • Implemented algorithms on ASTROS spacecraft simulation platform (Matlab, Simulink)
+
+Air Force Research Laboratory (AFRL) 			                                                                         Dayton, Ohio          
+Intern – Autonomy Capabilities Team 3 (ACT3)	                                                                                   (May 2020 – Aug. 2020)
+    • Developed algorithms for provably safe guidance and control in the spacecraft docking problem 
+    • Created optimal control program for safety-constrained transfers to natural motion trajectories (Python, Gurobi)  
+    • Applied control barrier functions for shielded reinforcement learning in the spacecraft docking problem (Python)
+
+King Abdullah University of Science and Technology (KAUST) 			                              Thuwal, Saudi Arabia         
+Visiting Student – Computer, Electrical and Mathematical Sciences & Engineering  	                              (Jan. 2020 – May 2020)
+
+Georgia Institute of Technology                           	                                                                                              Atlanta, Georgia
+Graduate Research Assistant (GRA) – Robotarium Project; NSF Award No. 1544332                             (Jan. 2016 – Dec. 2019)
+    • Developed efficient techniques for safety verification 
+    • Created program for efficient simulation-based safety verification in an open access, multi-agent robotics testbed (Matlab)
+    • Engaged in independent research, peer review, and served as a mentor to undergraduate students interested in research
+
+NASA Jet Propulsion Laboratory (NASA-JPL)							     Pasadena, California
+Intern - Maritime and Multi-Agent Autonomy Group (347N)			       	   	 (May 2019 – Aug. 2019)
+    • Integrated communication and control design for asteroid exploration with a swarm of small satellites 
+    • Developed optimization algorithms and simulation software for small body exploration missions (Matlab)
+
+Massachusetts Institute of Technology (MIT): Lincoln Laboratory                                                      Boston, Massachusetts 
+Research Intern - Ballistic Missile Defense System (BMDS) Integration Group                                        (July 2018 - Aug. 2018)
+    • Applied and compared various formal verification methods on neural networks used in classification tasks (Julia)
+
+Research Intern - Ballistic Missile Defense System (BMDS) Integration Group                                       (May 2017 - Aug. 2017)
+    • Studied formal verification of image classification algorithms 
+    • Contributed to software for object classification from convolutional neural networks using the Reluplex SMT solver 
+ 
+Stanford University                                                                                                                                         Stanford, California 
+Visiting Researcher/ Technical Collaboration – Autonomous Systems Laboratory (ASL)                         (June 2018 - July 2018)
+    • Development of algorithm for collision-inclusive trajectory optimization using mixed integer convex programming
+    • Implementation and experimental comparison of algorithms on 3-DOF spacecraft testbed (Python, ROS)
+ 
+École Nationale Supérieure de Mécanique et d'Aérotechnique (ISAE-ENSMA)                                            Poitiers, France
+Research Intern – Laboratoire d'Informatique et d'Automatique pour les Systèmes (LIAS)                       (May 2015 - July 2015)
+    • Constructed and compared PID and Integral Backstepping controllers for a quadcopter (Simulink)
+    • Contributed to a design automation process for credible auto-coding of flight controllers with Simulink and Gene-Auto
+
+
+
+
 Ok i found some new info and would like to make the following changes: 
 
 I found a more relevant anthropic job type. "Anthropic labs"
