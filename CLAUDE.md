@@ -44,22 +44,63 @@ Three positioning strategies (will have actual resume docs):
 │   └── timeline.md        # Weekly goals and milestones
 ├── data/
 │   ├── tracker.csv        # Master company list with status
-│   └── outreach_queue.csv # Action queue: all messages to send/follow-up
-├── ref/                   # Long-term reference (auto-maintained)
-│   ├── mark_profile.md    # Background, strengths, narrative hooks
-│   ├── strategic_context.md # Decision framework, situational factors
+│   ├── outreach_queue.csv # Action queue: all messages to send/follow-up
+│   ├── early.csv          # Seed/Series A target companies
+│   ├── mid.csv            # Series B-D target companies
+│   ├── late.csv           # Big tech / late-stage targets
+│   └── out.csv            # Outside NYC targets
+├── ref/                   # Claude's memory bank (see README.md inside)
+│   ├── mark_profile.md    # Background, timeline, credentials, narrative hooks
+│   ├── strategic_context.md # Decision framework, priorities, situational factors
 │   ├── inbound_policy.md  # Scoring framework for inbound opportunities
-│   └── outreach_template.md
+│   ├── communication_principles.md # Voice, tone, outreach style
+│   ├── outreach_template.md
+│   ├── roostr/            # Roostr deep context
+│   │   ├── roostr.md      # Canonical summary (interview-ready)
+│   │   └── roostr_full_tech_documentation.md # Technical deep dive
+│   ├── pytheia/           # Pytheia deep context
+│   │   ├── pytheia.md     # Canonical summary
+│   │   └── full_context.md # Full story + technical details
+│   └── phd/               # PhD context (needs more content)
+│       └── raw.md
+├── story-bank/            # Interview prep materials
+│   ├── q&a.md             # Common questions + answers (e.g., "why leaving?")
+│   ├── stories.md         # STAR-format behavioral stories
+│   └── Talking points.md  # Key themes and selling points
 └── company-intel/
     ├── 00_pending/        # Not yet researched/prepped
     ├── 01_disqualified/   # Ruled out
-    ├── 02_qualified/      # Researched, outreach prepped, ready to send or sent
+    ├── 02_qualified/      # Researched, ready to send or sent
     │   └── {company}/
     │       ├── {company}.md    # Structured research
     │       ├── full_context.md # Raw research dump
     │       └── outreach.md     # Contacts, messages, status
-    └── 03_ACTIVE/         # They responded, active conversation
+    └── 03_ACTIVE/         # Active conversations
 ```
+
+## What to Read When
+
+**Interview prep / "how do I answer X":**
+1. `story-bank/q&a.md` — Check if already answered
+2. `ref/mark_profile.md` — Background, timeline, narrative hooks
+3. `ref/roostr/roostr.md` — Current company context
+4. `ref/pytheia/pytheia.md` or `full_context.md` — Previous company
+5. `ref/strategic_context.md` — Why this search, what he wants
+
+**Drafting outreach:**
+1. `ref/communication_principles.md` — Voice and tone
+2. `ref/outreach_template.md` — Message structure
+3. `ref/mark_profile.md` — What to emphasize
+4. `company-intel/{company}/` — Company-specific context
+
+**Evaluating an opportunity:**
+1. `ref/strategic_context.md` — Decision framework, priorities
+2. `ref/inbound_policy.md` — Scoring criteria
+3. `ref/mark_profile.md` — Fit with background
+
+**Technical deep dives (system design interviews, etc.):**
+1. `ref/roostr/roostr_full_tech_documentation.md` — LLM systems, agentic architecture
+2. `ref/pytheia/full_context.md` — CV/robotics systems, Argus architecture
 
 ## Outreach Tracking System
 
