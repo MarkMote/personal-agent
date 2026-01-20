@@ -1,0 +1,2020 @@
+% IEEEAerospace2012.cls requires the following packages: times, rawfonts, oldfont, geometry
+\documentclass[twocolumn,letterpaper]{IEEEAerospaceCLS}  % only supports two-column, letterpaper format
+
+% The next line gives some packages you may find useful for your paper--these are not required though.
+%\usepackage[]{graphicx,float,latexsym,amssymb,amsfonts,amsmath,amstext,times,psfig}
+% NOTE: The .cls file is now compatible with amsmath!!!
+
+\newcommand{\ignore}[1]{}  % {} empty inside = %% comment
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{xcolor} % font colors
+\usepackage{longtable,tabularx}
+\setlength\LTleft{0pt} 
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{hyperref} %for url
+
+
+
+% \usepackage{booktabs}
+% \usepackage{tabstackengine}
+
+
+
+\theoremstyle{definition}
+
+
+% %%%% Reviews: 
+% Excellent work. The formulation of the problem is clear if slightly verbose. I would still rather have all the details the authors included than not. Minor: What solver was used for the simulations? Does this optimization happen on the ground or do you see this solved onboard in the future with more powerful processors? I believe the template used here is not that of Aeroconf (perhaps it is IEEEtran). Please update the formatting according to the author toolbox for this conference.
+
+% Very promising guidance algorithm.
+
+% There are no biographies of the authors!
+
+% This paper should be very valuable for future missions.
+
+% Must fix the multiple formatting problems. Please refer to the "Author’s Instructions for the IEEE Aerospace Conference" document. Missing: Table of Content, Copyright Notice, and Biographies.
+
+% With untold and increasing numbers of space junk littering near-earth orbits, this is a most timely paper in efforts to corral them. The proffered algorithms adequately supported by simulated case studies. Only nits are a few typos
+
+
+
+\title{Natural Motion-based Trajectories for Automatic Spacecraft Collision Avoidance During Proximity Operations}
+
+
+\author{%
+Mark L. Mote\\ 
+Georgia Institute of Technology\\
+North Ave NW\\
+Atlanta, GA, 30332\\
+mmote3@gatech.edu
+\and
+Christopher W. Hays\\
+Embry-Riddle Aeronautical University\\
+Daytona Beach, FL USA \\
+1 Aerospace Blvd\\
+haysc3@my.erau.edu
+\and
+Alexander Collins\\
+Air Force Research Laboratory \\
+2210 8th Street \\
+Wright-Patterson Air Force Base, OH, USA \\
+alexander.collins.3@us.af.mil
+\and
+Eric Feron \\
+King Abdullah University of Science and Technology\\
+4700 KAUST \\
+Thuwal, Kingdom of Saudi Arabia \\
+eric.feron@kaust.edu.sa 
+\and
+Kerianne L. Hobbs\\
+Air Force Research Laboratory\\
+2210 8th Street \\
+Wright-Patterson Air Force Base, OH, USA \\
+kerianne.hobbs@us.af.mil
+\thanks{\footnotesize 978-1-7281-7436-5/21/$\$31.00$ \copyright2021 IEEE}              % This creates the copyright info that is the correct 2021 data.
+\thanks{{U.S. Government work not protected by U.S. copyright}}         % Use this copyright notice only if you are employed by the U.S. Government.
+\thanks{{Approved for public release: distribution unlimited. Case Number 88ABW-2020-3189}} 
+}
+%\author{Mark Mote\footnote{Ph.D. Student, Department of Aerospace Engineering, North Ave NW, Atlanta, GA 30332}}
+%\affil{Georgia Institute of Technology, Atlanta, GA, 30332}
+%\author{Christopher W. Hays\footnote{PhD Student, Aerospace Engineering Dept., Mail Stop, and AIAA Student Member}}
+%\affil{Embry-Riddle Aeronautical University, Daytona Beach, FL, 32114}
+%\author{Alexander Collins\footnote{Flight Controls Engineer, Air Force Research Laboratory, 2210 8th St. Wright-Patterson AFB, OH} }
+%\affil{TBD, Nellis AFB, NV, zip}
+%\author{Eric Feron \footnote{Professor of Electrical and Computer Engineering, King Abdullah University of Science and Technology}}
+%\affil{King Abdullah University of Science and Technology, Thuwal, 23955, Kingdom of Saudi Arabia}
+%\author{ Kerianne L. Hobbs\footnote{Research Aerospace Engineer, Autonomy Capability Team, 5000 Springfield Street, Dayton, OH, 45431}}
+%\affil{Air Force Research Laboratory, Wright-Patterson AFB, Ohio, 45433}
+
+
+
+
+\begin{document}
+\maketitle
+
+\thispagestyle{plain}
+\pagestyle{plain}
+
+
+
+\maketitle
+
+\thispagestyle{plain}
+\pagestyle{plain}
+
+\begin{abstract}
+
+Autonomous rendezvous, proximity operations, and docking are key enablers of missions such as satellite servicing, active debris removal, and in-space assembly. However, errors in the control and estimation systems, or failures to account for off-nominal conditions may result in catastrophic collisions between spacecraft. 
+% 
+Safety may potentially be preserved in these cases by switching to a safety-driven backup system. 
+This paper develops 
+such a system, with 
+guidance, control, and estimation schemes designed to safely place an active chaser spacecraft in a parking orbit around a passive target spacecraft. 
+%
+Natural motion trajectories are considered to identify a set of passively safe parking orbits under Clohessy-Wiltshire-Hill dynamics, and a mixed integer programming formulation is developed to find the optimal transfer trajectories to this set. 
+The practicality of the estimation and control schemes is demonstrated though simulated case studies. 
+The guidance algorithm is integrated into a run time assurance framework, which allows real-time enforcement of the safety constraints in a least-intrusive fashion. 
+
+
+\end{abstract}
+\tableofcontents
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+In an increasingly crowded space environment, \textit{autonomous rendezvous, proximity operations, and docking} (ARPOD) are envisioned to be integral to the design of future satellite servicing, active debris removal, and in-space assembly missions. However,
+one of the greatest risks in ARPOD missions is 
+the potential for a collision between the active ``chaser" satellite, and the passive ``target" satellite. The severity of this risk is demonstrated by several historic collisions that occurred during rendezvous, proximity operations, and docking \cite{evans2014dawn,holland20026,oberg1998shuttle,Thomas2007Selected}.
+
+This research proposes an optimal control technique and estimation scheme for safe transfer maneuvers to a safely defined subset of \textit{elliptical natural motion trajectories} (eNMTs),
+% which are 
+referred to as 
+parking orbits. 
+% In all cases, maneuvering the spacecraft to an \textit{elliptical natural motion trajectory} (eNMT) parking orbit allows human operators on the ground to investigate the off-nominal condition while the chaser spacecraft is safely ``parked" close to the inactive target spacecraft. 
+\textit{Closed natural motion trajectories} (cNMTs), which include eNMTs as an instance, are periodic (\emph{i.e.} closed), zero-thrust trajectories that occur
+under linearized relative motion dynamics. 
+% when no thrust is applied by the chaser satellite.  
+They are attractive for collision avoidance because they are \textit{passively invariant}; \emph{i.e.} once a spacecraft enters a cNMT, it will stay on that trajectory, 
+% for some period of time 
+without the need to consume fuel, 
+until disturbances such as drag or solar radiation pressure accumulate.
+% Natual motion trajectories 
+The main contribution of this paper is the 
+development of a \textit{Mixed Integer Programming} (MIP) 
+formulation 
+to plan safety-constrained maneuvers for an active chaser spacecraft 
+to set of safe eNMTs around a passive target spacecraft. 
+In addition, lower-level controllers are constructed to regulate to the planned trajectory, and to stabilize the system to the parking orbit set.  
+% In addition, estimation scheme. 
+
+One important application of this approach is for it to be used as a backup control system in a \textit{run time assurance} (RTA) framework. 
+RTA mechanisms typically feature a monitor that
+evaluates whether the primary control system is commanding unsafe control actions, and a backup control system that steers the system back to safety when unsafe behavior is detected. 
+For example, switching to the backup system may occur when, 
+\begin{enumerate}
+\item a human operator watching the system's performance is uncomfortable with the ARPOD controller output and activates the recovery maneuver, 
+\item the onboard RTA monitor detects the ARPOD controller is commanding an unsafe maneuver and triggers a recovery response, or 
+\item there is a fault in the ARPOD controller that triggers a recovery response. 
+\end{enumerate}
+Maneuvering the spacecraft to an eNMT parking orbit allows human operators on the ground to investigate the off-nominal condition while the chaser spacecraft is safely ``parked" close to the inactive target spacecraft. 
+Alternatively the backup controller may be activated only as necessary to prevent the chaser spacecraft from reaching unsafe states, as shown in the example in Section \ref{sec: experimental case study}. See \cite{bak2009system,seto1998dynamic,ho2017longitudinal,gurriet2020scalable,schierman2020runtime} for a deeper review on RTA theory and applications. 
+
+% considers an RTA implementation where 
+% for the case
+% switching to the backup controller is activated only as necessary to prevent the chaser spacecraft from reaching unsafe states. 
+% That is, it enforces  
+
+The remainder of this paper is organized as follows. First, related work in the area of MIP, optimization, and spacecraft collision avoidance is discussed. Second, the preliminaries section describes the reference frame, linearized spacecraft dynamics, cNMT conditions, MIP control scheme, safety and invariance formulation, and Kalman filter used in the paper. Third, the planning and control scheme used to direct the chaser spacecraft to a set of safe parking orbits is described. Fourth, the estimation scheme for the parking orbits is described. Finally, simulated case studies are presented showing the viability of the approach.
+
+% \newpage 
+
+% describe the motion of a satellite with no thrust input. 
+% , which \textit{conserve fuel}, are \textit{passively safe}, and can accommodate thrust constraints and exclusion zones.
+
+% They are attractive for collision avoidance because they are \textit{invariant}; i.e. once a spacecraft enters a cNMT, it will stay on that trajectory for some period of time until disturbances such as drag or solar radiation pressure accumulate. %In addition, computing candidate NMTs a priori enables them to be \textit{verified} ahead of time and \textit{reduces the computational burden} on board processing-limited, radiation-hardened spacecraft computers. The specific NMTs may be determined in advance based on the \textit{situation and operator-dependent risk tolerance} of the mission, with lower risk tolerance placing the spacecraft on NMTs further from the target satellite. 
+
+% %This research focuses on the development of the NMT backup controller and leaves the development of an intelligent ARPOD controller for future work. 
+% The contribution of this paper is the development of a \textit{Mixed Integer Programming} (MIP) controller to maneuver an active chaser spacecraft to an eNMT around a passive target spacecraft and a complementary estimation scheme. 
+
+% In all cases, maneuvering the spacecraft to an \textit{elliptical natural motion trajectory} (eNMT) parking orbit allows human operators on the ground to investigate the off-nominal condition while the chaser spacecraft is safely ``parked" close to the inactive target spacecraft. 
+
+% One important application of this approach is for a backup control system in a \textit{run time assurance} (RTA) framework. 
+% Run time assurance mechanisms typically feature a monitor that
+% evaluates whether the primary control system is commanding unsafe control actions, and a backup control system that steers the system back to safety when unsafe behavior is detected. 
+% For example, switching to the backup system may occur when, 
+% \begin{enumerate}
+% \item a human operator watching the system's performance is uncomfortable with the ARPOD controller output and activates the recovery maneuver, 
+% \item the onboard RTA monitor detects the ARPOD controller is commanding an unsafe maneuver and triggers a recovery response, or 
+% \item there is a fault in the ARPOD controller that triggers a recovery response. 
+% \end{enumerate}
+% Maneuvering the spacecraft to an eNMT parking orbit allows human operators on the ground to investigate the off-nominal condition while the chaser spacecraft is safely ``parked" close to the inactive target spacecraft. 
+% Alternatively, Section \ref{sec: experimental case study}
+% considers an RTA implementation where 
+% % for the case
+% switching to the backup controller is activated only as necessary to prevent the chaser spacecraft from reaching unsafe states. 
+% % That is, it enforces  
+
+% % an ex 
+% % In this example, the decision two switch is based on
+% % with the switching condition being 
+% % for the case where switching is activated only as necessary to prevent the chaser spacecraft from reaching unsafe states. 
+
+% % An ...autonomous monitor... 
+% % An example RTA is constructed 
+
+% % that commands the chaser spacecraft to a parking orbit around a passive target spacecraft if:
+
+
+% % Traditionally RTAs feature a monitor that evaluates whether the primary control system is commanding unsafe control actions, and a backup control system that steers the system back to safety. 
+% % This paper focuses on the development 
+% % This paper focuses on the development a safe backup control 
+% % The ...
+
+
+% % with a monitor 
+
+% % In this paper, only the backup controller is designed and the monitor is left for future work. 
+
+% In all cases, maneuvering the spacecraft to an \textit{elliptical natural motion trajectory} (eNMT) parking orbit allows human operators on the ground to investigate the off-nominal condition while the chaser spacecraft is safely ``parked" close to the inactive target spacecraft. 
+
+
+
+
+
+
+
+% This research proposes an optimal control technique and estimation scheme for safe transfer maneuvers to parking orbits. One possible application of this approach is a backup controller for a \textit{run time assurance} (RTA) approach that commands the chaser spacecraft to a parking orbit around a passive target spacecraft if:
+% \begin{enumerate}
+% \item a human operator watching the system's performance is uncomfortable with the ARPOD controller output and activates the recovery maneuver, 
+% \item the onboard RTA monitor detects the ARPOD controller is commanding an unsafe maneuver and triggers a recovery response, or 
+% \item there is a fault in the ARPOD controller that triggers a recovery response. 
+% \end{enumerate}
+
+% % Traditionally RTAs feature a monitor that evaluates whether the primary control system is commanding unsafe control actions, and a backup control system that steers the system back to safety. 
+% % This paper focuses on the development 
+% % This paper focuses on the development a safe backup control 
+% The ...
+
+
+% with a monitor 
+
+% In this paper, only the backup controller is designed and the monitor is left for future work. In all cases, maneuvering the spacecraft to an \textit{elliptical natural motion trajectory} (eNMT) parking orbit allows human operators on the ground to investigate the off-nominal condition while the chaser spacecraft is safely ``parked" close to the inactive target spacecraft. 
+
+
+
+% \textit{Closed natural motion trajectories} (cNMTs), one of which is an eNMT, describe the motion of a satellite with no control input, which \textit{conserve fuel}, are \textit{passively safe}, and can accommodate thrust constraints and exclusion zones. They are attractive for collision avoidance because they are \textit{invariant}; i.e. once a spacecraft enters a cNMT, it will stay on that trajectory for some period of time until disturbances such as drag or solar radiation pressure accumulate. %In addition, computing candidate NMTs a priori enables them to be \textit{verified} ahead of time and \textit{reduces the computational burden} on board processing-limited, radiation-hardened spacecraft computers. The specific NMTs may be determined in advance based on the \textit{situation and operator-dependent risk tolerance} of the mission, with lower risk tolerance placing the spacecraft on NMTs further from the target satellite. 
+
+% %This research focuses on the development of the NMT backup controller and leaves the development of an intelligent ARPOD controller for future work. 
+% The contribution of this paper is the development of a \textit{Mixed Integer Programming} (MIP) controller to maneuver an active chaser spacecraft to an eNMT around a passive target spacecraft and a complementary estimation scheme. 
+
+% %An important complement to the development of the maneuvers themselves is that logic be developed to select an appropriate option from the set of maneuver templates. This is guided by heuristic logic, maneuver exclusion zones, and cost functions which weigh safety and performance constraints such as relative velocity limits that decrease as the distance between the target and chaser spacecraft approaches zero.
+
+% %\mm{Include lit review of MIP for spacecraft from recent AIAA paper on collisions; also cite that paper}
+
+
+
+
+
+% %Several early experiments in autonomous rendezvous and docking include the Japanese Aerospace Exploration Agency's (JAXA's) Engineering Test Satellite (ETS-VII) \textcolor{red}{(Kawano, Mokuno, Kasai, & Suzuki, 2001)}, the Demonstration of Autonomous Rendezvous Technology (DART) \textcolor{red}{(Rumford, 2003)}, Orbital Express, the Spacecraft of Universal Modification of Orbits / Front-end Robotics Enabling Near-term Demonstration (SUMO/FREND) \textcolor{red}{(Obermark, Creamer, Kelm, Wagner, & Henshaw, 2007)}, and the XSS-10 \textcolor{red}{(Davis \& Melanson, 2004) and XSS-11 (Tatsch, Fitz-Coy, \& Gladun, 2006)} programs. More recently, this active research area has continued to grow through DARPA’s Robotic Servicing of Geosynchronous Satellites \textcolor{red}{(Roesler, 2018)} program and NASA’s Restore-L program Robotic Servicing Mission \textcolor{red}{(Satellite Servicing Projects Division, 2018)}. Recent experiments in active debris removal programs include the European RemoveDebris experiment \textcolor{red}{(Forshaw, 2018)}, which arrived at the ISS in April 2018 equipped with technologies such as a net, harpoon, and drag sail to capture and deorbit debris, and demonstrated successful capture of a target simulating a piece of space debris on 16 September 2019 \textcolor{red}{(University of Surrey, 2018)}. Now companies like the start up Astroscale developing technology and business cases for spacecraft operators to hire them to responsibly dispose of non-functional satellites after a failure. \textcolor{red}{(Forshaw, Aerospace america March2020)}
+
+% %In the aircraft domain, state of the art collision avoidance methods select from a set of pre-defined collision avoidance trajectories based on the current aircraft state. The Automatic Ground Collision Avoidance System (Auto GCAS) has a single roll to wings level and five-g pull maneuver that it conducts to avoid the ground. The Automatic Air Collision Avoidance System (Auto ACAS) selects from nine predefined maneuvers. The Airborne Collision Avoidance System X (ACAS X) is under development to one day replace the Traffic Collision Advisory System II (TCAS II) \cite{olson2015airborne}. The system avoids near midair collisions (NMAC) \cite{marston2015acas}, defined as separation less than 100 ft vertically and 500 ft horizontally \cite{holland2013optimizing} and includes an active version (ACAS Xa) and an unmanned version (ACAS Xu) that each have a predefined set of collision avoidance maneuvers. A5CAS Xa selects from nine vertical maneuver options \cite{kochenderfer2015decision}, while ACAS Xu is designed to select from five lateral maneuver options \cite{julian2019deep}. 
+
+% %Inspired by aircraft collision avoidance systems, this research seeks to develop a set of pre-defined collision avoidance trajectories based on natural motion. \textcolor{red}{add reasons}
+
+
+% The remainder of this paper is organized as follows. First, related work in the area of MIP, optimization, and spacecraft collision avoidance is discussed. Second, the preliminaries section describes the reference frame, linearized spacecraft dynamics, cNMT conditions, MIP control scheme, safety and invariance formulation, and Kalman filter used in the paper. Third, the planning and control scheme used to direct the chaser spacecraft to a set of safe parking orbits is described. Fourth, the estimation scheme for the parking orbits is described. Finally, a simulated case study is presented showing the viability of the approach.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Related Work %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Related Work}
+
+MIP has been shown to be an effective framework for finding optimal trajectories under various types of operational and safety constraints \cite{richards2005mixed,schouwenaars2006safe,schouwenaars2001mixed,Borrelli:2017:PCL:3164811}.
+In the spacecraft domain, MIP formulations exist for fuel optimal guidance under plume impingement and avoidance constraints \cite{richards2002spacecraft}, complex proximity operations \cite{levalley2019mixed}, constrained attitude guidance \cite{tam2016constrained}, and planning involving low-speed bouncing maneuvers \cite{mote2020collision}.  
+
+The backup control strategy in this paper is an optimization-based collision avoidance algorithm for close proximity spacecraft operations. Several optimization techniques have also been proposed for collision avoidance strategies, both at orbital and relative motion scales. The NLP2 algorithm \cite{kelly2005probability} minimizes delta-V and can be configured to include an optional miss distance constraint with uncertainties in individual or joint covariances. Bombardelli and Henando-Ayuso \cite{bombardelli2015optimal} developed an approach optimized eigenvalue problem that conducts an impulse collision avoidance a few orbits prior to the predicted collision to minimize total $\Delta V$. %Their algorithm is optimized as an eigenvalue problem in the collision ``b-plane'' that minimizes delta-V magnitude to maximize collision miss distance or minimize Gaussian collision probability. 
+Other optimal control techniques have examined the use of drag and solar radiation pressure as control inputs for collision avoidance \cite{mishne2017collision}. %Investigation into collision avoidance strategies for geostationary satellites avoiding inclined geosynchronous satellites found that radial separation between the satellites was the most important factor in the strategy and was best achieved when the avoidance maneuver was conducted twelve hours prior to the time of closest approach \cite{lee2012geo}. 
+
+%In addition to optimization of collision avoidance maneuvers, robust control techniques have been examined for spacecraft collision avoidance. In the orbital dynamics scale, robust online optimization of collision avoidance maneuvers \cite{mueller2009onboard} have been developed, nonlinear orbital dynamics has also been considered in the case of coaxial and coplanar orbits~\cite{johnson2012satellite} where hybridization~\cite{bak2016hscc,henzinger1998algorithmic} was used to prove collision avoidance for the two-satellite case. 
+At the relative motion dynamics scale, robust control approaches have used model predictive control and an extended command governor \cite{Petersen2014}, as well as safe positively invariant sets \cite{weiss2014safe}. %While previous research has investigated the design of automatic avoidance maneuvers using model predictive control, stochastic optimal control, and robust optimal control, these approaches are often not computationally tractable using on-board radiation-hardened spacecraft hardware.
+%
+Stochastic reachability has also been applied to characterize the initial set of states where spacecraft rendezvous and docking maneuvers could be performed safely \cite{lesser2013stochastic}. This work compares particle (Monte Carlo) approximations \cite{nemirovski2006scenario,blackmore2010probabilistic} to a convex, overapproximated, reachable set \cite{blackmore2009convex,vitus2011closed}. 
+%
+While not specifically designed for collision avoidance, recent developments in spacecraft relative motion control and planning \cite{frey2017constrained,frey2018invariance,frey2017incorporating,frey2016time,frey2017parameter,Petersen2014,starek2016real} inspired the eNMT-based collision avoidance trajectories in this paper. 
+%This research relaxes previous works by generating a set of candidate elliptical NMTs that satisfy the distance requirements as pre-defined backup maneuvers. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Preliminaries %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Preliminaries}
+
+\subsection{Hill's Frame}
+The dynamics in this research are based on the rectangular, satellite-centered, relative motion, Hill's reference frame. This was initially developed in the 1870s to describe the relative orbit between two bodies in orbit around a central body \cite{hill1878researches}. Hill's frame is also sometimes referred to as the local-vertical local-horizontal (LVLH) or radial-tangential normal (RTN) frame when centered on the Earth. Hill's frame, as depicted in Fig. \ref{fig:HillsFrame}, is centered on the ``target" (also called ``chief") satellite, with:
+\begin{itemize}
+\item $x$-axis $\hat{x}$ (or $\hat{e}_R$ for ``radial direction") that points outwards from the planet's center ($\hat{x} = \hat{e}_R = \frac{\boldsymbol{r}_e}{r_e}$), 
+\item $y$-axis $\hat{y}$ (or $\hat{e}_T$ for ``tangential direction") points in the direction of the velocity vector ($\hat{y} = \hat{e}_T = \hat{e}_N\times{\hat{e}}_R)$ of the target satellite, and
+\item $z$-axis $\hat{z}$ (or $\hat{e}_N$ for ``normal direction") points orthogonally out of the orbital plane ($\hat{z} = \hat{e}_N = \frac{\boldsymbol{r}_e\times\boldsymbol{v}_e}{||\boldsymbol{r}_e\times\boldsymbol{v}_e||}$, where $\boldsymbol{r}_e$ and $\boldsymbol{v}_e$ are the position and velocity vectors of the target satellite).
+\end{itemize}
+The $x$ and $y$ axes define the orbital plane of the satellite at the center of Hill's frame, while any motion along $z$ is outside the orbital plane. 
+In Fig. \ref{fig:HillsFrame}, $\boldsymbol{v}_e$ is the velocity vector of the target spacecraft orbit,
+$\boldsymbol{R}_e$ is the vector from the planet's center to the chaser spacecraft, and $\boldsymbol{r}_e$ is a vector from the planet's center and to the location of the target satellite.
+The relative position of the chaser spacecraft is $\boldsymbol{r}=r_{\rm x}\hat{x} +r_{\rm y}\hat{y} +r_{\rm x}\hat{z}$, and the relative velocity is $\boldsymbol{v}=v_{\rm x}\hat{x} +v_{\rm y}\hat{y} +v_{\rm z}\hat{z}$. 
+% In Fig. \ref{fig:HillsFrame}, $\boldsymbol{v}_e$ is the velocity vector of the target spacecraft orbit about Earth, $\boldsymbol{v}$ is the velocity vector of the chaser spacecraft relative to the target spacecraft in Hill's frame, $\boldsymbol{R}_e$ is the vector from Earth's center to the chaser spacecraft, $\boldsymbol{r}$ is the relative position vector in Hill's frame from the target to the chaser satellite, and $\boldsymbol{r}_e$ is a vector from Earth's center and to the location of the target satellite.
+%
+\begin{figure}[hbt!]
+\centering
+\includegraphics[width=\columnwidth]{Figures/Hills_Frame.pdf}
+\caption{Hill's reference frame centered on a target spacecraft and used to describe the relative motion of a chaser spacecraft conducting ARPOD.}
+\label{fig:HillsFrame}
+\end{figure}
+%
+% \begin{figure}[] % [hbt!]
+% \centering
+% \includegraphics[width=.3\textwidth]{Figures/HillsFrame2.png}
+% \caption{Hill's reference frame centered on a target spacecraft and used to describe the relative motion of a chaser spacecraft conducting ARPOD.}
+% \label{fig:HillsFrame}
+% \end{figure}
+
+%\mm{If possible, we should modify the Fig. to use "$\vec{r}$" or $\boldsymbol{r}$ to refer to the relative position vector between chaser and target spacecraft (same with velocity) } 
+
+\subsection{Clohessy-Wiltshire Equations}
+The orbital motion of a spacecraft is described by Eq.~\ref{eq:nonlinearcw}, where $\mu$ is the gravitational parameter ((3.986004418 $\pm$ 0.000000008) $\times 10^{14} \frac{\text{m}^3}{\text{s}^2}$ for Earth), $\boldsymbol{R}_e$ is a vector from the planet center to the satellite ($\boldsymbol{R}_e = \boldsymbol{r}_e+\boldsymbol{r}$), $m_c$ is the mass of the satellite, and $\boldsymbol{F}=F_{\rm x}\hat{x} + F_{\rm y}\hat{y} + F_{\rm z}\hat{z}$ is a vector of external forces that may include thrust as well as disturbances. 
+\begin{equation}
+\label{eq:nonlinearcw}
+\ddot{\boldsymbol{R}_e} = -\mu\frac{\boldsymbol{R}_e}{|\boldsymbol{R}_e|^3}+\frac{1}{m_c}\boldsymbol{F}
+\end{equation}
+
+%\mm{what does "j" represent? What is it equal to?}
+
+
+These dynamics can be used to derive and linearize the relative motion dynamics by assuming the satellites are spherical and roughly equivalent in mass, that masses of the planet and the satellites are constant, that the mass of the satellites are significantly smaller than the mass of the planet, that gravity is the only force acting on the satellites and planet, that the spacecraft are in circular orbit, and that the relative distance between the spacecraft is much smaller than the distance from either spacecraft to the center of the planet ($\boldsymbol{r} << \boldsymbol{R}_e$) \cite{clohessy1960terminal}. These linearized dynamics are named after Clohessy and Wiltshire from their 1960 paper \cite{clohessy1960terminal} and are defined in Hill's frame as:
+% \begin{equation} \label{eq: CWH full}
+% \begin{split}
+% \ddot{r}_{\rm x} &=2n\dot{r}_{\rm y} + 3n^2 r_{\rm x} +\frac{ u_{\rm x}}{m_c} \\
+% \ddot{r}_{\rm y} &=-2n\dot{r}_{\rm x} +\frac{ u_{\rm y}}{m_c} \\
+% \ddot{r}_{\rm z} &=-n^2 r_{\rm z} + \frac{u_{\rm z}}{m_c}\\
+% \end{split}
+% \end{equation}
+\begin{equation} \label{eq: CWH full}
+\begin{split}
+\dot{v}_{\rm x} &=2n {v}_{\rm y} + 3n^2 r_{\rm x} +\frac{ F_{\rm x}}{m_c} \\
+\dot{v}_{\rm y} &=-2n {v}_{\rm x} +\frac{ F_{\rm y}}{m_c} \\
+\dot{v}_{\rm z} &=-n^2 r_{\rm z} + \frac{F_{\rm z}}{m_c}\\
+\end{split}
+\end{equation}
+
+\noindent
+where 
+% where $r_{\rm x}$, $r_{\rm y}$, and $r_{\rm z}$ are Cartesian relative positions; $v_{\rm x}$, $v_{\rm y}$, and $v_{\rm z}$ are the Cartesian relative velocities; 
+dotted variables indicate derivatives with respect to time;
+% (in this notation the dotted variables are derivatives with respect to time, i.e. $\dot{x}=\frac{dx}{dt}$ and $\ddot{x}= \frac{d(dx)}{d(dt)}$)
+% $F_{\rm x}$, $F_{\rm y}$, and $F_{\rm z}$ are the applied forces on the chaser spacecraft;
+$a$ is length of the semi-major axis of the target spacecraft's orbit; and $n$ is satellite mean motion ($n=\sqrt{\mu/a^3}$). In this paper, we use $n=0.001027$ rad/s.
+%and $m$ is the mass of chaser spacecraft. %${\rho}$ is a 2-norm of position (${\rho} = \sqrt{x^2 + y^2+z^2}$);
+% 
+% In this paper the forces are the control variables $u_x$, $u_y$, and $u_z$ used by the MIP controller.
+
+%\mm{idea: assign forces to control variables ...} 
+
+The external forces are assumed to be equal to the applied thrust 
+$\boldsymbol{u}=u_{\rm x}\hat{x}+u_{\rm y}\hat{y}+u_{\rm z}\hat{z}$, with $\boldsymbol{u}$
+acting as the \emph{control} variable.
+As evident by inspection of these equations, the in-plane dynamics (involving $r_{\rm x},\, r_{\rm y}$ and their derivatives) are decoupled from the out-of-plane dynamics (involving $r_{\rm z}$ and its derivatives). In addition, the in-plane dynamics are unstable with two eigenvalues at the origin and two at $\pm n j$. The out-of-plane dynamics are stable with two eigenvalues at $\pm n j$. The in-plane dynamics are completely controllable from $u_{\rm y}$ but not controllable from $u_{\rm x}$, and the out-of-plane dynamics are controllable from $u_{\rm z}$. 
+Given that the out-of-plane dynamics are decoupled and completely controllable with $u_{\rm z}$, it is convenient to restrict focus to in-plane relative motion.
+In state space form, {in-plane dynamics} are described as:
+\begin{equation}\label{eq:LinearCWH} 
+\dot{\boldsymbol{x}}(t) = A \boldsymbol{x}(t) + B \boldsymbol{u}(t)
+\end{equation}
+with, $\boldsymbol{x}= [r_{\rm x}, \, r_{\rm y}, \, v_{\rm x}, \, v_{\rm y}]^T \in {\mathcal{X}} \subset {\mathbb R}^4$ being the state vector, $\boldsymbol{u}=[u_{\rm x},\, u_{\rm y}]^T \in U \subset {\mathbb R}^2$ being the control vector, $t\in{\mathbb R}$ being the time, and 
+\begin{equation} \label{eq: state and control}
+ A =
+\begin{bmatrix} 
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+3n^2& 0 & 0 & 2n \\
+0 & 0 & -2n & 0 
+\end{bmatrix} , 
+\quad 
+B = 
+\begin{bmatrix}
+0 & 0 \\
+0 & 0 \\
+1/m_c & 0 \\
+0 &1/m_c \\
+\end{bmatrix} .
+\end{equation}
+The guidance and control formulation in this paper assumes the above dynamics with thrust limitations given by $U=[-u_{\rm max}, u_{\rm max}]^2$. 
+
+% \mm{todo: fix notation } 
+
+% \begin{equation} \label{eq: state and control}
+%  A =
+% \begin{bmatrix} 0 & 0 & 0 & 1 & 0 & 0\\
+% 0 & 0 & 0 & 0 & 1 & 0 \\
+% 0 & 0 & 0 & 0 & 0 & 1 \\
+% 3n^2& 0 & 0 & 0 & 2n & 0 \\
+% 0 & 0 & 0 & -2n & 0 & 0 \\
+% 0 & 0 & -n^2 & 0 & 0 & 0 
+% \end{bmatrix} , 
+% \quad 
+% B = 
+% \begin{bmatrix}
+% 0 & 0 & 0 \\
+% 0 & 0 & 0 \\
+% 0 & 0 & 0 \\
+% 1/m_c & 0 & 0 \\
+% 0 &1/m_c& 0 \\
+% 0 & 0 & 1/m_c \\
+% \end{bmatrix} 
+% \end{equation}
+
+
+
+
+
+% \begin{equation}\label{eq:LinearCWH} \dot{X} =\begin{bmatrix}\dot{x} \\ \dot{y} \\ \dot{z} \\ \ddot{x} \\ \ddot{y} \\ \ddot{z}\end{bmatrix} =
+% \begin{bmatrix} 0 & 0 & 0 & 1 & 0 & 0\\
+% 0 & 0 & 0 & 0 & 1 & 0 \\
+% 0 & 0 & 0 & 0 & 0 & 1 \\
+% 3n^2& 0 & 0 & 0 & 2n & 0 \\
+% 0 & 0 & 0 & -2n & 0 & 0 \\
+% 0 & 0 & -n^2 & 0 & 0 & 0 \end{bmatrix} \begin{bmatrix}x\\ y \\ z \\ \dot{x}\\ \dot{y}\\ \dot{z}\end{bmatrix} + 
+% \begin{bmatrix} 0 & 0 & 0 \\
+% 0 & 0 & 0 \\
+% 0 & 0 & 0 \\
+% 1/m_c & 0 & 0 \\
+% 0 &1/m_c& 0 \\
+% 0 & 0 & 1/m_c \\
+% \end{bmatrix} \begin{bmatrix} u_{\rm x}\\ u_{\rm y} \\ u_{\rm z} \end{bmatrix}
+% \end{equation}
+
+
+% As evident by inspection of these equations, the in-plane dynamics ($x$ and $y$) are decoupled from the out-of-plane dynamics ($z$). In addition, the in-plane dynamics are unstable with two eigenvalues at the origin and two at $\pm n_j$. The out-of-plane dynamics are stable with two eigenvalues at $\pm nj$. The in-plane dynamics are completely controllable from $u_{\rm y}$ but not controllable from $u_{\rm x}$, and the out-of-plane dynamics are controllable from $u_{\rm z}$.
+
+% \mm{TO DO (low priority): use notation to distinguish continuous from discrete state vectors --- I suspect that the reviewers will tell us that we should be using discrete time dynamics. We can make this change in the final version.} 
+
+\subsection{Natural Motion Trajectories}
+Natural Motion Trajectories (NMTs) are solutions to \eqref{eq: CWH full} (or \eqref{eq:LinearCWH}) with all applied forces equal to zero ($\boldsymbol{u}\equiv0$). 
+Open NMTs may be a non-periodic line segment, helix (traveling ellipse), or spiral, while cNMTs may be ellipses (eNMTs), periodic line segments or stationary points. %Examples of closed NMTs with randomly selected initial conditions are shown in Fig.~\ref{fig:NMTexamples}
+% \begin{figure}[hbt!]
+% \centering
+% \includegraphics[width=0.9\textwidth]{Figures/NMTexamples}
+% \caption{Examples of closed NMTs in Hill's relative motion reference frame including %ellipses, periodic line segments, and stationary points (marked with x's).}
+% \label{fig:NMTexamples}
+% \end{figure}
+To create any cNMT, one must choose an initial state 
+% $\boldsymbol{x}_0=x(0)$ 
+such that
+$v_{\rm y}(0) = -2 n r_{\rm x}(0)$ where $n$ is the mean motion of the circular orbital trajectory. In addition to this criteria, each cNMT has specific additional criteria. 
+\begin{itemize}
+  \item For a cNMT to be a \textit{stationary point}, $r_{\rm x}(0)= r_{\rm z}(0) = v_{\rm x}(0) = v_{\rm z}(0) = 0$. 
+  % , and $y(0) = y_0$ may be any arbitrary value. 
+  % reasonably close (where the linearized dynamics are valid, on the order of 10 kilometers or less) to the target spacecraft.
+  \item To create a \textit{periodic line segment},
+  % $y(0) = y_0$ may be any arbitrary value, 
+  $r_{\rm x}(0)= v_{\rm x}(0)= 0$, $r_{\rm z}(0) = c\text{sin}(\psi)$, and $v_{\rm z}(0) = n c \text{cos}(\psi)$, where $c$ is the magnitude of the oscillation (1/2 the length of the line segment) and $n$ is the mean motion as previously defined.
+  \item To create an eNMT, $v_{\rm x}(0) = \frac{n}{2} r_{\rm y}(0)$.
+  % $y(0) = \frac{2}{n}\dot{x}(0)$. 
+  % , for arbitrary but small values of $x(0)$, $z(0)$, $\dot{x}(0)$ and $\dot{z}(0)$. 
+  % Small values on the order of kilometers to tens of kilometers are required to ensure validity of the linearized solution, and depends on the size of the orbit. %\mm{It is unclear what this means. What needs to be close to what? Is sounds like the requirement is $x(0)\approx y(0) \approx \dot{x}(0) \approx \dot{y}(0) $}. 
+\end{itemize} 
+Each of these conditions assumes that the state variables fall within ranges for which the linearized dynamics developed in the previous section are valid. 
+% The variables not specified in the above constraints may take on any value in the accepted range. 
+% ; \emph{e.g.} position values on the order of kilometers to tens of kilometers are required to ensure validity of the linearized solution
+% , and depends on the size of the orbit. %\mm{It is
+
+% The set of all elliptical closed NMTs centered at the origin is, 
+% \begin{equation} \label{eq:ellipticalcnmt}
+%   {\mathcal{M}} = \{ \boldsymbol{x} \in {\mathbb R}^4 \, | \, \dot{x} = 0.5 n y,\, \dot{y} = - 2n x \} .
+% \end{equation}
+% Note that since ${\mathcal{M}}$ is a set comprised of closed trajectories, it is an \emph{invariant} set. 
+
+% \newpage 
+
+\subsection{Mixed Integer Programming for Control}
+\label{sec: MIP_overview}
+This paper employs a MIP formulation for constrained optimal guidance of the chaser spacecraft. MIP denotes an optimization problem that is composed of both real and integer decision variables. This type of problem provides a very general framework for capturing many types of practical control objectives. Specifically, the inclusion of integer variables allows for both the expression of discrete decisions, and the encoding of non-convex constraints.
+It is naturally well suited to optimizing the actions over systems governed by interdependent dynamic modes, logical statements, and operational constraints \cite{bemporad1999control,Borrelli:2017:PCL:3164811}. 
+For the purposes of this paper, integer variables are leveraged to represent a set of non-convex safety constraints. 
+% optimize trajectories for a spacecraft experiencing unique dynamic modes encountered during collision and free flight. By modelling this hybrid behavior, integer variables encode the choice of whether or not to collide. 
+We consider programs where an objective function $J(\boldsymbol{z})$ is optimized over piece-wise affine (PWA) constraints, fitting the standard form below. 
+\begin{equation}
+\begin{array}{rl}
+\underset{\boldsymbol{z}}{\text{min}} & J(\boldsymbol{z}) \\
+\text{s.t.} & {D_{\rm c}} \boldsymbol{z_{\rm c}} + {D_{\rm b}} \boldsymbol{z_{\rm b}} \leq \boldsymbol{g}, \quad {A_{\rm c}} \boldsymbol{z_{\rm c}} + {A_{\rm b}} \boldsymbol{z_{\rm b}} = \boldsymbol{h} \\
+& \boldsymbol{z_{\rm c}} \in{\mathbb R}^{n_{\rm c}}, \quad \boldsymbol{z_{\rm b}} \in \{0,1\}^{n_{\rm b}}, \quad  \boldsymbol{z} = [\boldsymbol{z_{\rm c}}, \boldsymbol{z_{\rm b}}] \in {\mathbb R}^n
+\end{array}\label{eq:MIQP_general_form}
+\end{equation}
+% \noindent \rule[7pt]{1\columnwidth}{0.7pt}
+where, ${D_{\rm c}} \in {\mathbb R}^{m \times n_{\rm c}}$, ${D_{\rm b}} \in {\mathbb R}^{m \times n_{\rm b}}$, $\boldsymbol{g}\in {\mathbb R}^m$, ${A_{\rm c}} \in {\mathbb R}^{p \times n_{\rm c}}$, ${A_{\rm b}} \in {\mathbb R}^{p \times n_{\rm b}}$, $\boldsymbol{h}\in {\mathbb R}^p$. Though the problem is not convex in general, one can in principle compute globally optimal solutions whenever $J$ is convex by solving a finite number of convex subproblems \cite{lubin2017mixed}.
+This is apparent when one notes that the problem is convex for each fixed combination of assignments to the integer variables. 
+Formulations with linear, quadratic, or second order cone objectives are commonly applied in a variety of practical applications \cite{richards2002spacecraft,mellinger2012mixed,lorenzetti2018reach,levalley2019mixed,mote2020collision,mote2017robotic}. 
+Although in theory these problems are difficult to solve \cite{del2017mixed}, solutions can readily be found with good average case performance using off-the-shelf optimization software (e.g. CPLEX \cite{cplex2009v12}, Gurobi \cite{optimization2014inc}, MOSEK \cite{mosek2010mosek}). 
+
+
+Integer variables allow for the direct expression of first order logic over the constraints \cite{hillier2004mp,bemporad1999control}.
+% These variables may be assigned a unique value based on the location of the state vector, and in turn be used to relax a different set of constraints over the continuous variables.
+As a consequence of this, assignment operations such as the absolute value of a variable, or maximum between two variables may be exactly represented by mixed integer constraints fitting the form of \eqref{eq:MIQP_general_form}, as shown below. 
+Consider scalar variables $\bar{x},x \in [x_{\rm min}, x_{\rm max}]$, integer variable $\zeta \in \{0,1\}$ and constant $M \geq \text{max}(x_{\rm min}, x_{\rm max})$. Them the assignment $\bar{x} = |x| $ is equivalent to the following set of constraints, 
+% \begin{equation}
+%   \begin{array}{rcccl}
+%      x \leq \bar{x} &\wedge& x\leq M \zeta  &\wedge & \bar{x} \leq x+M(1-\zeta) \\
+%     -x \leq \bar{x} &\wedge& -x\leq M(1-\zeta) &\wedge & \bar{x} \leq -x + M\zeta 
+%   \end{array}
+% \end{equation}
+\begin{equation} \label{eq: constraints for abs operation}
+  \begin{array}{ccc}
+     x \leq \bar{x} &\wedge& -x \leq \bar{x} \\
+     x\leq M \zeta  &\wedge & -x\leq M(1-\zeta) \\ 
+     \bar{x} \leq x+M(1-\zeta) &\wedge& \bar{x} \leq -x + M\zeta. \\
+  \end{array}
+\end{equation}
+A scalar variable $x_{\rm max}$ may be assigned the maximum value of two scalar variables in a similar fashion. Given $\zeta\in\{0,1\}$, the assignment $x_{3} = \text{max}({x_1, x_2}) $ is equivalent to the constraints, 
+\begin{equation}
+  \begin{array}{ccc} \label{eq: constraints for max operation} 
+    x_{1} \leq x_3 &\wedge& x_2\leq x_3  \\
+    x_1-x_2 \leq M\zeta &\wedge& x_2-x_1 \leq M(1-\zeta) \\
+    x_3 \leq x_1+ M(1-\zeta) &\wedge & x_3 \leq x_2 + M\zeta .
+  \end{array}
+\end{equation}
+The equivalency of the constraints in \eqref{eq: constraints for abs operation} and \eqref{eq: constraints for max operation} to their respective assignments is evident in the expression of a truth table. 
+% \mm{I know this is a lazy explanation; I will elaborate if there is time.} 
+% \mm{@Eric: I did these by hand but please let me know if there is someone I need to cite here} 
+
+
+% \begin{equation}
+%   \begin{array}{rcccr}
+%     x_{3} \leq x_1 &\wedge& x_1-x_2 \leq M\zeta   &\wedge & x_3 \leq x_1+ M(1-\zeta) \\
+%     x_3\geq x_2  &\wedge& x_2-x_1 \leq M(1-\zeta) &\wedge & x_3 \leq x_2 + M\zeta 
+%   \end{array}
+% \end{equation}
+
+
+% \newtheorem{lemma}{\textbf{Lemma}}
+% \begin{lemma}\label{lemma 1} {\rm \cite{bemporad1999control} }
+% Given ... then :
+% \begin{equation*}\label{eq:morarri_prop1}
+%  \begin{array}{l}
+%   a \\
+%   b
+%  \end{array}
+% \end{equation*}
+% \end{lemma}
+
+
+% Representation of infinity norm with mixed integer constraints. 
+% While some languages (gurobi) allow this to be .. .
+% We review here anyway 
+
+\subsection{Safety and Invariance of Dynamical Systems}
+% Define: Passively invariant 
+Intuitively, a control policy is safe if it prevents the system from visiting undesirable states for all time, whenever it is possible to do so.
+Such a notion of safety can be formalized in terms of guarantees on set \emph{invariance}. 
+Let $\tilde{S}$ represent the set of all states $\boldsymbol{x}$ that are defined to be safe. 
+Such a set can be constructed directly from a set of defined safety constraints; \emph{e.g.} given a system with $n$ states, $n_h$ equality constraints, and $n_g$ inequality constraints, a safe set may be defined as 
+\begin{equation}
+  \tilde{{\mathcal{S}}} := \{\boldsymbol{x} \in {\mathbb R}^n \, | \, h(\boldsymbol{x})=\boldsymbol{0}, \, g(\boldsymbol{x}) \geq \boldsymbol{0} \}
+\end{equation}
+with $h:{\mathbb R}^n\mapsto{\mathbb R}^{n_h}$, $g:{\mathbb R}^n\mapsto{\mathbb R}^{n_g}$. 
+% $N_{\rm h}$ equality constraints $h_i(\boldsymbol{x})=0$, and $N_{\rm g}$ inequality constraints $g_j(\boldsymbol{x})\leq 0$, \emph{i.e.} \mm{use matrix form} 
+% \begin{equation}
+%   \tilde{S} := \{\boldsymbol{x} \in {\mathbb R}^n \, | h_i(\boldsymbol{x})=0, \, g_j(\boldsymbol{x})\leq0, i=1,...,N_{\rm h}, j=1,...,N_{\rm g} \}
+% \end{equation}
+% where $n$ is the dimension of the state vector. 
+A system is said to be \emph{safe} under a control law if the controller renders a subset ${\mathcal{S}}\subseteq\tilde{{\mathcal{S}}}$ invariant. 
+\newtheorem{Definition}{\textbf{Definition}}
+\begin{Definition}\label{lemma 1} 
+A closed set ${\mathcal{S}}$ is \textbf{invariant} for system \eqref{eq:LinearCWH} under the control law $u(\boldsymbol{x})$ if the solution to \eqref{eq:LinearCWH} with $\boldsymbol{u}(t)=u(\boldsymbol{x}(t))$ satisfies, 
+$\boldsymbol{x}(t_0) \in {\mathcal{S}} \implies \forall t\geq t_0$, $\boldsymbol{x}(t)\in {\mathcal{S}}$.
+\end{Definition}
+For spacecraft, it is important to consider a definition of safety that accounts for fuel usage. 
+We say that a spacecraft is \emph{passively safe} if it is in a passively invariant set contained in $\tilde{S}$. 
+% \newtheorem{Definition}{\textbf{Definition}}
+\begin{Definition}\label{lemma 1} 
+A closed set ${\mathcal{S}}$ is \textbf{passively invariant} for system \eqref{eq:LinearCWH} if the solution to \eqref{eq:LinearCWH} with $\boldsymbol{u}\equiv0$ satisfies, 
+$\boldsymbol{x}(t_0) \in {\mathcal{S}} \implies \forall t\geq t_0$, $\boldsymbol{x}(t)\in {\mathcal{S}}$.
+\end{Definition}
+Note that if a safe finite-time trajectory can be found with an endpoint that lies in a safe passively invariant set, then safety can be guaranteed for all time using only the fuel required to complete the trajectory. 
+
+
+% Note that if a safe trajectory can be found to a passively invariant set, then the s
+% \mm{Explain why this is relevant to the problem that we want to solve, and MPC in general}
+% \mm{Optimal control is an approach to generating safe controllers by ... }
+% \mm{Computational approaches to solving optimal control problems work over a finite horizon. To get the infinite time guarantee, we need to ensure that the terminal point is in a control invariant set ... In this case, we consider ... }
+
+
+% There are two main approaches to designing safe control laws for dynamical systems. 
+% The first one relies on computation of control invariant sets, and attempts 
+
+% for guaranteeing safety in dynamical systems. The first 
+
+% an attempt at unifying these two presented in ... 
+
+
+
+
+% \begin{lemma}\label{lemma 2} 
+% The system \eqref{eq:LinearCWH} is passively \emph{invariant} ... 
+% \begin{equation*}\label{eq:morarri_prop1}
+% x(t_0)\in {\mathcal{S}} \implies ... 
+% \end{equation*}
+% \end{lemma}
+
+% For spacecraft, passive invariance is the quality we look for, as ... 
+
+\subsection{The Kalman Filter}
+
+Introduced in \cite{kalman1960seminal}, the Kalman filter provides a closed-form solution to linear Gaussian dynamics and measurement models. 
+It and its derivatives such as the Extended and Unscented Kalman filters have become the industrial workhorse to solve dynamic filtering problems. Conceptually, the Kalman filter makes a prediction about the state and uncertainty according to a linear model of the system, and then corrects those predictions based on the true measurements obtained. 
+
+\textbf{Predict}
+\begin{equation}\label{eq: predict_kalman}
+\begin{split}
+  \hat{\boldsymbol{x}}^-_{k+1} &= \Phi \hat{\boldsymbol{x}}_k + B \boldsymbol{u}_k\\
+  C^-_{k+1} &= \Phi C_k \Phi^T + Q
+\end{split}
+\end{equation}
+The prediction step in Eq.~\eqref{eq: predict_kalman} hypothesizes the dynamic state at the next time step based on the current best estimated state and a known controller input. 
+It should be noted that $\Phi$ is the state transition matrix and is the solution to the differential equation: $\dot{\boldsymbol{x}}=A \boldsymbol{x}$. 
+The same state transition matrix is applied to the covariance matrix, $P$, and some process noise, $Q$ is applied. 
+Throughout the rest of this work, the simplifying assumption that $Q=0$ is made. 
+Eq.~\eqref{eq: correct_kalman} takes these predictions, and adjusts them based on the true measurement value.
+
+\textbf{Correct}
+\begin{equation}\label{eq: correct_kalman}
+\begin{split}
+\boldsymbol{v}_{k+1} &= \boldsymbol{y}_{k+1} - H\hat{\boldsymbol{x}}^-_{k+1}\\
+S_{k+1} &= H C^-_{k+1} H^T + R\\
+K_{k+1} &= C^-_{k+1}H^TS^{-1}_{k+1}\\
+\hat{\boldsymbol{x}}_{k+1} &= \hat{\boldsymbol{x}}^-_{k+1} + K_{k+1}\boldsymbol{v}_{k+1}\\
+C_{k+1} &= C^-_{k+1} - K_{k+1}S_{k+1}K^T_{k+1}
+\end{split}
+\end{equation}
+The innovation term $\boldsymbol{v}$ compares the predicted measurement to the true measurement. 
+$S$ is analogous to the innovation term for the covariance terms, but with a measurement noise $R$ appended. 
+These innovation terms are then appended to the predicted estimates by weighting them through the Kalman gain matrix $K$.
+
+This work considers the linear system described by the Clohessy-Wiltshire equations \eqref{eq:LinearCWH} and the measurement function:
+%
+\begin{equation}\label{eq: measurement}
+\boldsymbol{y} = H \boldsymbol{x}(t) + \gamma 
+\end{equation}
+%
+where $\gamma \sim \mathcal{N}$$(0,R)$ is defined as the measurement noise, $y$ is the measurement vector, and $H$ is the measurement Jacobian which we consider to be $I_{4}$. 
+The applications of the Kalman filter allow for verification that the safe set is reached under a desired amount of uncertainty.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Trajectory Planning %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newpage 
+\section{Planning and Control to Set of Safe Parking Orbits} \label{sec: planning and control to safe parking orbits set}
+
+The system of interest consists of two spacecraft orbiting around a central body. 
+A passive \emph{target} spacecraft is assumed to lie in a fixed circular orbit, while a controlled \emph{chaser} spacecraft may expend thrust to change its orbit. 
+An idealized system is considered for the purposes of developing a trajectory planning formulation. As such, we consider the dynamics given by Eq.~\eqref{eq:LinearCWH}. The chaser spacecraft is actuation limited with $\boldsymbol{u}\in [-u_{\rm max}, \, u_{\rm max} ]^2$. The goal of the trajectory planner is to find safe and efficient transfer maneuvers to a safe passively invariant set. This set is chosen as a set of eNMTs around the target spacecraft, and is henceforth referred to as the \emph{parking orbit} set. 
+In this Section, safety constraints are defined, and a planning scheme is developed for safely reaching a set of safe parking orbits.
+% Sections \ref{sec: safety constraints}, \ref{sec: ID terminal set} define the safety constraints and the safe parking orbit set respectively. 
+% Section \ref{sec: trajectory planning formulation} formulates the problem of safely reaching the parking orbit set as a mixed integer program. 
+The effects of noise, parametric uncertainty, and nonlinearity are addressed through
+the development of two regulatory controllers. 
+The trajectory planning framework is tested in a simulated environment that includes noise and estimation uncertainty in Section \ref{sec: experimental case study}. 
+
+
+\subsection{Safety Constraints} \label{sec: safety constraints}
+Three safety constraints are defined on the system based on the norms of the position vector $\boldsymbol{r} := [r_{{\rm x}},\,r_{\rm y}]^T$ and velocity vector $\boldsymbol{v} := [v_{\rm x},\,v_{\rm y}]^T$. 
+First, the collision avoidance constraint, 
+\begin{equation} \label{eq: safety constraint 1}
+  \varphi_1(\boldsymbol{x}) := \Vert \boldsymbol{r} \Vert - r_{\rm min} \geq 0 
+\end{equation}
+imposes the requirement that the chaser spacecraft avoid coming within a distance of $r_{\rm min}$ of the target spacecraft. 
+Second, the proximity constraint, 
+\begin{equation} \label{eq: safety constraint 2}
+  \varphi_2(\boldsymbol{x}) := r_{\rm max} - \Vert \boldsymbol{r} \Vert  \geq 0 
+\end{equation}
+requires that the chaser spacecraft stay within a distance of $r_{\rm max}$ of the target. This distance may for example be chosen as the maximum distance where the linearization in Eq.~\eqref{eq:LinearCWH} is considered valid.
+Third, the constraint,
+\begin{equation} \label{eq: safety constraint 3}
+  \varphi_3(\boldsymbol{x}) := \kappa _1 + \kappa_2 \Vert \boldsymbol{r} \Vert - \Vert \boldsymbol{v} \Vert \geq 0 
+\end{equation}
+introduces a limit on the maximum safe relative speed between chaser and target, as a function of the separation distance. 
+This paper assumes values $\kappa_1\geq 0 $, and $\kappa_2 \geq 2n$. 
+The safety constraints \eqref{eq: safety constraint 1}-\eqref{eq: safety constraint 3}
+together define the set of safe states, 
+\begin{equation}
+  {\mathcal{C}}_{\rm s} := \{\boldsymbol{x} \in {\mathbb R}^4 \,\,| \,\, \varphi_i(\boldsymbol{x}) \geq 0 ,\,\, i = 1,2,3 \}. 
+\end{equation}
+The trajectory planning formulation considers the $l^\infty$ norm case for the safe set definition. The constraints defining ${\mathcal{C}}_{\rm s}$ are represented visually in Fig. \ref{fig: eNMT Projections} for $r_{\rm min} = 0.5 $ km, $r_{\rm max}= 8$ km, $\kappa_1 = 1$ m/s, and $\kappa_2 = 2n$ ${\rm s^{-1}}$.
+
+% Define safe set: 
+
+\subsection{Identification of Safe Parking Orbit Set} \label{sec: ID terminal set}
+
+% Recall the set of all eNMTs centered at the origin (target spacecraft) ${\mathcal{M}}$ given by ... .
+% The parking orbit set comprises all eNMTs in ${\mathcal{M}}$. 
+% and contained in 
+% The parking orbit set is constructed to provide a safe invariant subset . 
+% The parking orbit set is comprised of all eNMTs centered at the origin that are contained in the safety set. 
+% The parking orbit set provides as a passively-invariant subset of the safety set ${\mathcal{C}}_{\rm s}$. That is, 
+% The safe parking orbit set is defined as the set of all states on eNMTs that are both centered at the origin, and contained within 
+
+
+To construct the safe parking orbit set, we consider the set of all eNMTs that are contained within the safe set ${\mathcal{C}}_{\rm s}$.
+Recall that the chaser spacecraft is on an eNMT centered at the origin 
+exactly when the following constraints are satisfied, 
+\begin{equation} \label{eq: theta1}
+  \vartheta_1(\boldsymbol{x}) := v_{\rm x} - \frac{n}{2}\, r_{\rm y} = 0,
+\end{equation}
+\begin{equation} \label{eq: theta2}
+  \vartheta_2(\boldsymbol{x}) := v_{\rm y} + 2 n \, r_{\rm x} = 0.
+\end{equation}
+Hence, the set of all states on eNMTs centered at the origin (target) is given by,
+\begin{equation}
+  {\mathcal{M}} = \{\boldsymbol{x}\in{\mathbb{R}}^4 \,\, | \,\, \vartheta_1(\boldsymbol{x}) = \vartheta_2(\boldsymbol{x}) = 0 \}. 
+\end{equation}
+Since this set consists entirely of cNMTs, ${\mathcal{M}}$ is by nature a passively {invariant} set.
+% when $\boldsymbol{u}\equiv 0 $. 
+Under the ideal assumptions of the model, if the chaser can reach this set, it can stay in the set indefinitely without using fuel. 
+However, note that not all trajectories comprising ${\mathcal{M}}$ are safe.
+% \emph{i.e.} ${\mathcal{M}}\not \subseteq {\mathcal{C}}_{\rm s}$. 
+% One may also note that ${\mathcal{M}}\bigcup{\mathcal{C}}_s$ is not an invariant set.
+A safe subset of ${\mathcal{M}}$ ---specifically, a passively invariant subset of ${\mathcal{C}}_{\rm s} \cap {\mathcal{M}}$--- may be constructed by restricting this set to only include the states of eNMTs contained in ${\mathcal{C}}_{\rm s}$. 
+
+Recall that each eNMT has a period of $\tau = 2\pi/n$ and major axis equal to twice the minor axis. 
+Consequently, individual eNMTs can be parameterized in terms of the semi-minor (or semi-major) axis. 
+Let, 
+\begin{equation} \label{eq: theta3}
+  \vartheta_3(\boldsymbol{x}) := r_{\rm x}^2 + \frac{r_{\rm y}^2}{4}, 
+\end{equation}
+then, 
+\begin{equation}
+\eta(b) = \{ \boldsymbol{x} \in {\mathcal{M}} \, | \,  \vartheta_3(\boldsymbol{x}) = b^2 \} 
+\end{equation}
+denotes the set of states occupied by an eNMT with semi-minor axis $b$.
+Projections of $\eta(b)$ in the $r_{\rm x}$-$r_{\rm y}$ plane are level curves of $\vartheta_3$. Projections in the $v_{\rm x}$-$v_{\rm y}$ plane may be obtained similarly by substituting $r_{\rm x}=-(2n)^{-1} v_{\rm y}$, and $r_{\rm y}=(0.5n)^{-1} v_{\rm x}$ into Eq.~\eqref{eq: theta3}. 
+Various simulated projections of $\eta(b)$ are shown in Fig. \ref{fig: eNMT Projections}. 
+
+The trajectory corresponding to $\eta(b)$ is safe when, 
+\begin{equation}
+  \min_{\boldsymbol{x}\in\eta(b)} \varphi_i(\https://www.overleaf.com/project/5bbe3231e5ec0924b125d45fboldsymbol{x}) \geq 0, \quad i = 1,2,3. 
+\end{equation}
+It can be shown that, 
+\begin{align}
+  \min_{\boldsymbol{x}\in\eta(b)} \varphi_1(\boldsymbol{x}) &= \sqrt{\frac{4}{5}} \, b - r_{\rm min} \\ 
+  \min_{\boldsymbol{x}\in\eta(b)} \varphi_2(\boldsymbol{x}) &= r_{\rm max} - 2 b \\
+\end{align}
+and for all $\kappa_1\geq0 $ and $\kappa_2 \geq 2n$,
+\begin{equation}
+   \min_{\boldsymbol{x}\in\eta(b)} \varphi_3(\boldsymbol{x}) \geq 0. 
+\end{equation}
+Thus, the range of safe semi-minor axis values is $b\in \mathcal{B} \,$$ = [b_{\rm min}, \, b_{\rm max}]$ with
+\begin{equation}
+  b_{\rm min} = \sqrt{\frac{5}{4}} \, r_{\rm min}, \quad b_{\rm max} = \frac{1}{2} r_{\rm max }.
+\end{equation}
+The safe parking orbit set may be represented with these values as, 
+\begin{equation}
+  \bar{ {\mathcal{M}} } := \bigcup_{b\in \mathcal{B}} \eta(b) = \{ \boldsymbol{x} \in {{\mathcal{M}}} \,\, | \,\,  b_{\rm min}^2 \leq \vartheta_3(\boldsymbol{x}) \leq b_{\rm max}^2 \}. 
+\end{equation}
+Note that $\bar{{\mathcal{M}}}\subseteq {\mathcal{C}}_{\rm s}$ is passively invariant, as it is the union of cNMTs $\eta(b)$. 
+% invariant with $\boldsymbol{u}\equiv 0$, as it is the union of sets $\eta(b)$, which are invariant with $\boldsymbol{u}\equiv 0$. 
+It is defined by two equality constraints, and two inequality constraints. 
+A projection of this set for $r_{\rm min} = 0.5 $ km, $r_{\rm max}= 8$ km is shown in Fig. \ref{fig: eNMT Projections}. 
+
+% * etab is invariant and M is the union of etab 
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\textwidth]{Figures/NMT_projection_plot_v4.pdf}
+\caption{Projections of elliptical natural motion trajectories $\eta(b)$ with $b= 560 \,{\rm m}, 1706\, {\rm m}, 2853\, {\rm m}, 4000\, {\rm m}$, generated by simulating dynamics \eqref{eq:LinearCWH} over the horizon $\tau=2\pi/n$ with initial conditions $\boldsymbol{x}(0)=[0,\,2b,\,n b,\,0]^T$, and $\boldsymbol{u}\equiv 0$.} 
+\label{fig: eNMT Projections}
+\end{figure*}
+
+% \begin{figure}[]
+% \centering generated 
+% \includegraphics[width=1.3\textwidth]{Figures/nmt_trajectory_plot.png}
+% \caption{Hill's reference frame centered on a target spacecraft and used to describe the relative motion of a chaser spacecraft conducting ARPOD.}
+% \label{fig:HillsFrame}
+% \end{figure}
+
+
+
+% \vspace{50 pt} 
+
+% Let, 
+% \begin{equation}
+%   \eta(b) = \{ \boldsymbol{x} \in {\mathbb R}^4 \, | \, \dot{x} = n/2 y, \,\, \dot{y} = -2n x, \,\, x^2 + 0.25 y^2 = b \} 
+% \end{equation}
+% denote the set states occupied by an eNMT with semi-minor axis $b$. 
+% The set of all states on eNMTs is then given by, 
+% \begin{equation}
+%   {\mathcal{M}} = \{\boldsymbol{x}\in{\mathbb R}^4 \,\, | \,\, \dot{x} = n/2 y, \,\, \dot{y} = -2n x \}. 
+% \end{equation}
+
+
+% - max phi values of eta 
+
+
+% The set of all states on eNMTs centered at the origin (target) is given by, 
+% \begin{equation}
+%   {\mathcal{M}} = \{\boldsymbol{x}\in{\mathbb R}^4 \,\, | \,\, \dot{x} = n/2 y, \,\, \dot{y} = -2n x \}. 
+% \end{equation}
+% Note that all individual trajectories 
+% The states occupied by an individual eNMT centered at the origin can be parameterized by the sm axis as follows... 
+
+
+% % which represents a 2-D surface in ${\mathbb R}^4$. \mm{${\mathbb R}^6$?} 
+% Since this set consists entirely of closed natural motion trajectories, ${\mathcal{M}}$ is by nature a positively \textit{invariant} set when $\boldsymbol{u}\equiv 0 $. 
+% Intuitively, if the chaser can reach this set, it can in principle stay in the set indefinitely without using fuel, assuming ideal conditions. 
+% However, note that not all trajectories comprising ${\mathcal{M}}$ are safe;
+% \emph{i.e.} ${\mathcal{M}}\not \subseteq {\mathcal{C}}_{\rm s}$. 
+% % One may also note that ${\mathcal{M}}\bigcup{\mathcal{C}}_s$ is not an invariant set.
+% A safe subset of ${\mathcal{M}}$ ---specifically, an invariant subset of ${\mathcal{C}}_{\rm s}$--- may be constructed by including only the states of eNMTs contained in ${\mathcal{C}}_{\rm s}$. 
+
+
+
+% A safe subset of this set 
+
+
+% This restriction is made by noting that the 
+
+
+
+% The safe parking orbit set is defined as the largest invariant subset of M contained in Cs. 
+% This is specified by considering that 
+
+
+% As such, it is desirable to restrict the parking orbit set to contain only the eNMTs that are contained in $C_s$. 
+
+
+% The safe parking orbit set is composed of all states on eNMTs that are contai.
+
+% Specifically, it is defined as the largest subset of $M$ that is invariant in ${\mathcal{C}}_{\rm s}$ 
+% % (note that one cannot simply choose, ... as this set is not invariant). 
+
+% We consider the subset of M consisting of only trajectories that fall within the safe set. 
+
+% The parking orbit set is constructed of all --- specifically, 
+
+% To construct such a set, note the projection of eNMTs to the x-y plane forms ellipses. 
+
+% \begin{equation}
+%   \bar{{\mathcal{M}}} = \{x\in \mathcal{N} \,\, | \,\, b_L^2 \leq (s_x)^2+(s_y / 2)^2 \leq b^2_U \} 
+% \end{equation}
+% is the largest invariant set of $\mathcal{N}$ contained entirely in {\mathcal{S}}. Here $b_L$, $b_U$ represent the semi-major (minor?) axes of the inner and outer bounding ellipses respectively. 
+
+
+
+% consider all eNMTs 
+
+
+% This set is composed of all states of eNMTs that fall 
+
+
+% Since M is comprised of 
+
+% Once can restrict -M- to only include states of trajectories falling within .. 
+
+
+% not all trajectories 
+
+% Note that ... 
+
+% M is the largest invariant subset of 
+
+
+
+
+% The parking orbit set is constructed the set of eNMTs falling within the safety set. 
+
+
+
+% The largest invariant subset of ${\mathcal{M}}$ contained in ... may be specified 
+
+% This can be rectified by restricting the set of eNMTs in the parking orbit set to those that fall 
+% In particular, one may note that there are inner- and outer-bounding ellipsoidal trajectories
+
+
+% In order for a parking orbit set to guarantee safety, it must be an invariant subset of ${\mathcal{C}}_{\rm s}$. 
+% The largest invariant 
+
+% This can be rectified by finding the largest subset of ${\mathcal{M}}$
+
+% noting the existence of inner- and outer-bounding elliptical trajectories falling within 
+
+
+% The largest invariant subset of 
+
+% However, while this set is invariant, it is not an invariant subset of ${\mathcal{S}}$. Likewise, we cannot simply choose $\mathcal{N}\bigcup \mathcal {\mathcal{S}} $, as this set is not invariant. The largest invariant of $\mathcal{N}$ lying entirely in ${\mathcal{S}}$ can be found by finding that the inner and outer bounding elliptical trajectories in ${\mathcal{S}}$. ... 
+
+% Fact: 
+% \begin{equation}
+%   {\mathcal{M}} = \{x\in \mathcal{N} \,\, | \,\, b_L^2 \leq (s_x)^2+(s_y / 2)^2 \leq b^2_U \} 
+% \end{equation}
+% is the largest invariant set of $\mathcal{N}$ contained entirely in {\mathcal{S}}. Here $b_L$, $b_U$ represent the semi-major (minor?) axes of the inner and outer bounding ellipses respectively. 
+% Though the two additional constraints here are 
+
+
+
+
+\subsection{Trajectory Planning Formulation} \label{sec: trajectory planning formulation}
+% \mm{Change: xdot ydot to vx vy, etc.}
+This section formulates the problem of generating safe optimal transfer trajectories of a spacecraft from an initial state $\boldsymbol{x}(0)$ to the safe parking orbit set $ \bar{{\mathcal{M}}}$. 
+It is shown that the dynamics of the spacecraft, actuation constraints, and safety constraints are all amenable to approximation with piecewise affine constraints.
+In light of this, we choose to pose the trajectory optimization problem as a MIP. 
+We consider a discrete time approximation of the dynamics \eqref{eq:LinearCWH} over a horizon of with sampled times $t_i$ indexed by $i\in \{1,\,...\,,\,\tau\}$. The period separating all points in the sample horizon is constant $\Delta t = t_{i+1}-t_i$, and the length of the horizon is $T = t_\tau - t_1 $; we let initial reference time $t_1=0$. 
+The state of the vehicle at the $i^{th}$ time-step is represented by the variables $\boldsymbol{x}_i = [r_{{\rm x},{i}}, \, r_{{\rm y},{i}}, \, v_{{\rm x},{i}}, \, v_{{\rm y},{i}} ]^T$, and control vector is denoted by $\boldsymbol{u}_i = [u_{{\rm x},i}, \, u_{{\rm y},i}]^T$. 
+% Safety is guaranteed over this horizon by solving the program subject to constraints reflecting the required safety conditions. Specifically, 
+Safety is guaranteed over $t\in[0,T]$ with the requirement that $\forall i\in \{2,...,\tau-1\}, \,\, \boldsymbol{x}_i\in{\mathcal{C}}_{\rm s} $. 
+Furthermore, safety is ensured $\forall t \geq T$ with the constraint $\boldsymbol{x}_\tau \in \bar{{\mathcal{M}}}$.
+% ensures that the system will remain safe for $\forall t \geq T$.
+
+% initial condition $x(t_0) = x_0$ to a terminal set $x(T)\in{\mathcal{M}}\subset {\mathcal{X}}$ over a time horizon $t\in[t_0,t_0+T]$. Safety is guaranteed over this horizon by solving the program subject to constraints reflecting the required safety conditions, \emph{i.e.} ensuring that $x(t)\in{\mathcal{S}},\,\, \forall t\in[0,T]$. If the terminal set ${\mathcal{M}}$ is a \emph{invariant subset} of ${\mathcal{S}}$, then safety is also guaranteed for all $t\geq T$. 
+
+% The key challenges to developing the MIP are then (i) identification of an invariant set ${\mathcal{M}}$ contained in the safety set {\mathcal{S}}, and (ii) representation of the safety and terminal conditions as mixed integer constraints.
+
+% \subsubsection{Dynamics Constraints}
+
+
+\subsubsection{Intermediate Point Constraints}
+Intermediate point constraints enforce that,
+\begin{equation} \label{eq: xi in Cs}
+  \boldsymbol{x}_i \in {\mathcal{C}}_{\rm s}, \quad i=2, ... , \tau-1. 
+\end{equation}
+% $\boldsymbol{x}_i \in {\mathcal{C}}_{\rm s}$, for all $i\in\{2, ... , \tau-1 \}$. 
+Recall that the safety set ${\mathcal{C}}_{\rm s}$ is defined by constraints \eqref{eq: safety constraint 1}-\eqref{eq: safety constraint 3}, which are linear inequalities of the position and velocity norms. 
+For the case where the $l^\infty$ norm is used to define ${\mathcal{C}}_{\rm s}$,
+\eqref{eq: xi in Cs} may be represented \emph{exactly} as a set of mixed integer constraints involving the state variables. 
+% This is the case as $\Vert [z_1, z_2 ] \Vert _\infty = \text{max}(|z_1|,|z_2|) $, andt
+This is apparent when one notes that variable assignments with both the maximum and absolute value operations can be represented by an equivalent set of mixed integer constraints (see Section \ref{sec: MIP_overview}).
+% Existing optimization interfaces such as \mm{CITE} 
+In this section, we represent assignments of these two operations directly with the understanding that the corresponding set of MIP constraints may be obtained by applying \eqref{eq: constraints for abs operation}, \eqref{eq: constraints for max operation}. 
+Note that direct assignments such as this are supported by some off-the-shelf optimization interfaces; \emph{e.g.} the Python interface to Gurobi \cite{optimization2014inc} is used for the results in Section \ref{sec: experimental case study}. 
+
+Consider, 
+\begin{align} 
+  \bar{r}_{{\rm x},i} &= \text{abs}({r}_{{\rm x},i}) \,\,\wedge \,\, 
+  \bar{r}_{{\rm y},i} = \text{abs}({r}_{{\rm y},i}) \label{eq: intermediate pt const 1}\\
+  \bar{v}_{{\rm x},i} &= \text{abs}({v}_{{\rm x},i}) \,\,\wedge \,\, 
+  \bar{v}_{{\rm y},i} = \text{abs}({v}_{{\rm y},i}) \label{eq: intermediate pt const 2}
+\end{align}
+with $i=2,...,\tau-1$. These constraints set the value of decision variables $\bar{r}_{{\rm x},i},\bar{r}_{{\rm y},i},\bar{v}_{{\rm x},i},\bar{v}_{{\rm y},i}$ to be equal to the absolute values of the corresponding position and velocity components. 
+Variables $r_{\infty,i}$, $v_{\infty,i}$ are set equal to the position and velocity norms respectively with, 
+\begin{align}
+  r_{\infty, i } &= \text{max}(\bar{r}_{{\rm x},i}, \bar{r}_{{\rm x},i}) \label{eq: intermediate pt const 3}\\ 
+  v_{\infty, i } &= \text{max}(\bar{v}_{{\rm y},i}, \bar{v}_{{\rm y},i}) \label{eq: intermediate pt const 4}
+\end{align}
+where $i=2,...,\tau-1$. 
+The safety constraints are constructed with these variables as, 
+\begin{equation} \label{eq: intermediate pt const 5}
+  r_{\infty, i } - r_{\rm min} \geq 0 
+\end{equation}
+\begin{equation} \label{eq: intermediate pt const 6}
+  r_{\rm min} - r_{\infty, i } \geq 0 
+\end{equation}
+\begin{equation} \label{eq: intermediate pt const 7}
+  \kappa_1 + \kappa_2 r_{\infty, i } - v_{\infty, i} \geq 0 
+\end{equation}
+with $i=2,...,\tau-1$. 
+The set of constraints \eqref{eq: intermediate pt const 1}-\eqref{eq: intermediate pt const 7}
+is equivalent to \eqref{eq: xi in Cs}. 
+
+% A conservative approximation of the 2-norm case is considered in the appendix 
+% If the $l^2$ norm is used to define ${\mathcal{C}}_{\rm s}$, then \eqref{eq: xi in Cs} 
+% conservative approximation 
+% mixed integer constraints may be used to enforce that the 
+% as follows. 
+ 
+
+\subsubsection{End Point Constraints}
+
+End point constraints enforce that, 
+\begin{equation} \label{eq: xtau in Mbar}
+  \boldsymbol{x}_i \in \bar{{\mathcal{M}}}, \quad i=\tau, 
+\end{equation}
+by restricting the state to a polytope contained in $\bar{{\mathcal{M}}}$. 
+The constraints $\vartheta_1(\boldsymbol{x}_\tau)=\vartheta_2(\boldsymbol{x}_\tau)=0$ are represented directly as, 
+\begin{equation} \label{eq: MIP end pt const 1}
+  v_{{\rm x},i} - \frac{n}{2} r_{{\rm y},i} = 0,
+\end{equation}
+\begin{equation} \label{eq: MIP end pt const 2}
+  v_{{\rm y},i} + 2n r_{{\rm x},i} = 0 .
+\end{equation}
+where $i=\tau$. 
+The nonlinear inequality constraints defining the outer bound on position $\vartheta_3(\boldsymbol{x}_\tau)\leq b_{\rm max}^2$ and inner position bound $\vartheta_3(\boldsymbol{x}_\tau)\geq b_{\rm min}^2$ are approximated conservatively using a finite number of linear inequality constraints. 
+Consider an $N_{\rm Q}$ sided polygon $\mathcal{Q}$ inscribed in the ellipse $\vartheta_3 = b_{\rm max}^2$, with vertices, 
+\begin{equation*}
+  \boldsymbol{q}_{j}
+  =
+  \begin{bmatrix}
+  q_{{\rm x},j} \\
+  q_{{\rm y},j}
+  \end{bmatrix}
+  = 
+  \begin{bmatrix}
+  \, b_{\rm max} \cos({2\pi j }/{N_{\rm Q}}) \\ 
+  2b_{\rm max} \sin({2\pi j }/{N_{\rm Q}}). 
+  \end{bmatrix}
+  ,
+\end{equation*}
+where $j=1,...,N_{\rm Q}$. 
+Let, 
+\begin{align*}
+  \alpha_{{\rm x}, j} := & \,\,(q_{{\rm y},j}-q_{{\rm y},j+1}) \\ 
+  \alpha_{{\rm y}, j} := & \,\,(q_{{\rm x},j}-q_{{\rm x},j+1}) \\ 
+  \gamma_j := & \,\, \alpha_{{\rm x}, j} q_{{\rm x},j} + \alpha_{{\rm y}, j} q_{{\rm y},j}
+\end{align*}
+then, 
+\begin{equation} \label{eq: MIP end pt const 3}
+  \bigwedge_{j=1,...,N_{\rm Q}} \alpha_{{\rm x}, j} r_{{\rm x},i}+ \alpha_{{\rm y}, j} r_{{\rm y},i} \leq \gamma_j
+\end{equation}
+% \begin{equation}
+%   \bigwedge_{j=1,...,N_{\rm Q}} (q_{{\rm y},j}-q_{{\rm y},j+1})x_i + (q_{{\rm x},j+1}-q_{{\rm x},j})y_i \leq \gamma_j
+% \end{equation}
+with $i=\tau$ gives a sufficient condition for $\vartheta_3(\boldsymbol{x}_\tau)\leq b_{\rm max}^2$ by ensuring that the position stays in $\mathcal{Q}$. 
+
+ The constraint $\vartheta_3\geq b_{\rm min}^2$ is enforced similarly by requiring that the position avoid the interior of a polygonal outer approximation of the ellipse defined by $\vartheta_3= b_{\rm min}^2$. 
+However, since $\vartheta_3\geq b_{\rm min}^2$ is non-convex, approximating this constraint requires the introduction of integer variables. 
+Consider an $N_{\rm P}$ sided polygon $\mathcal{P}$ with edges normal to the ellipse at intersection points, 
+\begin{equation*}
+  \boldsymbol{p}_{j}
+  =
+  \begin{bmatrix}
+  p_{{\rm x},j} \\
+  p_{{\rm y},j}
+  \end{bmatrix}
+  = 
+  \begin{bmatrix}
+  \, b_{\rm min} \cos({2\pi j }/{N_{\rm P}}) \\ 
+  2b_{\rm min} \sin({2\pi j }/{N_{\rm P}}). 
+  \end{bmatrix}
+  ,
+\end{equation*}
+where $j=1,...,N_{\rm P}$. 
+Unit normal vectors to the edges are, 
+% \begin{equation}
+$\hat{n}_{{\rm p},j} = [\hat{n}_{{\rm px},j} , \hat{n}_{{\rm py},j} ]^T := \nabla \vartheta_3(\boldsymbol{r})|_{p_{\rm j}}  $.  
+% \end{equation}
+Letting $\boldsymbol{r}_i:=[r_{{\rm x}_i}, r_{{\rm y}_i}]^T$, and $\zeta_{i,j} \in \{0,1\}$, the constraints, 
+\begin{equation} \label{eq: MIP end pt const 4a}
+  \bigwedge_{j=1,...,N_{\rm Q}} \hat{n}_{{\rm p},j}^T (\boldsymbol{r}_i-\boldsymbol{p}_j) + M(1-\zeta_{i,j}) \geq 0 
+\end{equation}
+\begin{equation} \label{eq: MIP end pt const 4b}
+  \sum_{j=1,...,N_{\rm Q}} \zeta_{i,j} \geq 1 
+\end{equation}
+with $i=\tau$ and $M\in{\mathbb R}_{+}$ (defined sufficiently large as described in Section \ref{sec: MIP_overview}) ensure that $ \vartheta_3(\boldsymbol{x}_\tau) \geq b_{\rm min}^2 $. 
+Specifically, \eqref{eq: MIP end pt const 4a} constrains $\zeta_{i,j}=0$ when the position is on the exterior of the $j^{th}$ edge of $\mathcal{P}$. 
+The requirement that $\boldsymbol{r}_i\not\in\mathcal{P}$ is then represented by \eqref{eq: MIP end pt const 4b}. 
+The constraints developed in this section restrict $\boldsymbol{x}_\tau$ to a polytope contained in $\bar{{\mathcal{M}}}$; consequently, \eqref{eq: MIP end pt const 1}-\eqref{eq: MIP end pt const 4b} $\implies$\eqref{eq: xtau in Mbar}.
+A notional illustration of the polygons $\mathcal{P}, \, \mathcal{Q}$ is shown along with the constraint boundaries in Fig. \ref{fig:safe_region}. 
+
+% Let us parameterize points along a reference ellipse with semi-minor axis $b=1$ and semi-major axis $a=2$ by defining, 
+% Specifically, the constraints 
+% \begin{equation}
+% \end{equation}
+% with $i=\tau$
+% restrict the state to a polytope contained in $\varphi$
+% an $N_{a}$ sided 
+% by representing the ellipsoids with inner
+% The constraint ... restricts ... to the interior an Na 
+% sided polygon inscribed in A 
+% The constraint ... 
+% The set of constraints ... is sufficient for enforcing ... as they restrict the state to a polytope contained in ...
+% As the number of sides of each polytope ... 
+% the set approaches Mbar 
+% The constraint ... 
+% ... may be visualized in Fig. ... 
+% conservative approximations 
+% linear inequalities 
+% conservative 
+% polytopes 
+% While .... cannot be directly expressed with linear constraints,
+% Conservative approximations of these sets ... 
+% We rely on conservative
+% Can construct 
+
+% Table: 
+% safety constraint | MIP representation | ...
+
+% \begin{figure}[]
+%   \centering
+%   \includegraphics[width=0.515\textwidth, trim=2cm 0cm 0 0cm, clip]{Figures/SafeRegion_Rectangle_v3.pdf}
+%   \caption{Notional depiction of the position constraints defined by the minimum allowable distance $r_{\rm min}$ and maximum allowable distance $r_{\rm max}$.}
+%   \label{fig:safe_region}
+% \end{figure}
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.575\textwidth, trim=2cm 0cm 0 0cm, clip]{Figures/SafeRegion_Rectangle.pdf}
+  \caption{Notional depiction of the position constraints defined by the minimum allowable distance $r_{\rm min}$ and maximum allowable distance $r_{\rm max}$.}
+  \label{fig:safe_region}
+\end{figure}
+
+\subsubsection{Example Objective Functions}
+In practice, the appropriate choice of an objective function depends on the specific needs of the mission. The proposed methodology does not assume a particular form for the objective. However, since vehicle efficiency is commonly of critical importance to real-world missions, we find it useful to review here some common approximations for penalizing actuation using quadratic and linear functions. A simple option is to use the power limiting cost function \cite{guelman2001optimal,pardis1995optimal}, 
+\begin{equation} \label{eq: sos_cost}
+  J = \sum_{i=1}^\tau ( u_{{\rm x},\, i}^2 + u_{{\rm y},\, i}^2 ) \Delta t
+\end{equation}
+which forms a Mixed Integer Quadratic Program (MIQP). With the introduction of additional constraints, is also possible to use a peice-wise affine approximation of the Euclidean norm of commanded translational acceleration \cite{richards2002spacecraft}. The resulting cost function is linear, 
+\begin{equation} \label{eq: 2norm_cost}
+  \begin{array}{lc}
+     J = \sum_{i=1}^\tau G_i  \\
+     \\
+     s.t. \quad \bigwedge_{n=1}^{N_J} \,\,\, G_i \geq u_{{\rm x}, i}\sin\Big(\frac{2\pi n}{N_{\rm J}}\Big)
+  + u_{{\rm y}, i}\cos \Big(\frac{2\pi n}{N_{\rm J}}\Big).
+  \end{array}
+  % \, , \quad s.t.
+  % \quad \bigwedge_{n=1}^{N_J} \,\,\, G_i \geq u_{{\rm x},\, i}\sin\Big(\frac{2\pi n}{N_{\rm J}}\Big)
+  % + u_{{\rm y},\, i}\cos \Big(\frac{2\pi n}{N_{\rm J}}\Big).
+\end{equation}
+% \vspace{5pt}
+
+The constraints here approximate the second order cone constraints $G_i\geq \Vert \boldsymbol{u}_i \Vert_2, \,\, i=1,...\,,\tau$ with an $N_{\rm J}$ sided polygon.
+Finally, the cost function $J= \sum_{i=1}^\tau \Vert \boldsymbol{u}_i \Vert_p $ with $p=1$ or $p=\infty$ may be represented with a piece-wise linear cost function; see Chapter 9 of \cite{Borrelli:2017:PCL:3164811}. 
+% \mm{Note: since we are calculating the infinity norm in the constraints, could make a cost that takes this into account} \mm{not true, would have to repreat infinity norm calc for u}
+
+\subsubsection{ Mixed Integer Program }
+Given the initial state $\boldsymbol{x}(0)=\boldsymbol{x}_{\rm init}$, the states and control inputs of a safe reference trajectory leading to the safe parking orbits set $\bar{{\mathcal{M}}}$ are given by the solution to the optimal control problem,
+
+% \noindent \rule{1\columnwidth}{0.7pt}
+% \noindent \textbf{MIP to $\bar{{\mathcal{M}}}$}
+% \begin{equation}
+% \begin{array}{lllc}
+% \underset{\boldsymbol{z}}{\min} & J(\textbf{z}) & &\\
+% \text{s.t.} & \boldsymbol{x}_{i+1}-\boldsymbol{x}_i = (A\boldsymbol{x}_i + B \boldsymbol{u}_i)\Delta t, & i=1,...,\tau-1 & \text{(dynamics)} \\ 
+% & \boldsymbol{u}_{x,i}, \, \boldsymbol{u}_{x,i} \in [-u_{\rm max}, \, u_{\rm max}], & i = 1, ..., \tau & \text{(actuation constraints)} \\ 
+% & \boldsymbol{x}_i = \boldsymbol{x}_{\rm init}, & i = 1 & \text{(initial condition)} \\ 
+% & \eqref{eq: intermediate pt const 1}-\eqref{eq: intermediate pt const 7}, & i=2,...,\tau-1 & \text{(intermediate point constraints)} \\ 
+% & \eqref{eq: MIP end pt const 1}-\eqref{eq: MIP end pt const 4b} & i=\tau & \text{(end point constraints)} \\ 
+% \end{array}\label{eq:QP_ASIF}
+% \end{equation}
+% \noindent \rule[7pt]{1\columnwidth}{0.7pt}
+\newpage
+\noindent \rule{1\columnwidth}{0.7pt}
+\noindent \textbf{MIP to Safe Parking Orbit Set $\bar{{\mathcal{M}}}$}
+\begin{equation}
+\begin{array}{lll}
+\underset{\boldsymbol{z}}{\min} & J(\boldsymbol{z}) & \\
+\text{s.t.} & \boldsymbol{x}_{i+1} = A_{\rm dt}\boldsymbol{x}_i + B_{\rm dt} \boldsymbol{u}_i, & i=1,...,\tau-1 \\ 
+& \boldsymbol{u}_{x,i}, \, \boldsymbol{u}_{x,i} \in [-u_{\rm max}, \, u_{\rm max}], & i = 1, ..., \tau-1 \\ 
+& \boldsymbol{x}_i = \boldsymbol{x}_{\rm init}, & i = 1 \\ 
+& \eqref{eq: intermediate pt const 1}-\eqref{eq: intermediate pt const 7}, & i=2,...,\tau-1 \\ 
+& \eqref{eq: MIP end pt const 1}-\eqref{eq: MIP end pt const 4b} & i=\tau \\ 
+\end{array}\label{eq: MIP to parking orbit set}
+\end{equation}
+\noindent \rule[7pt]{1\columnwidth}{0.7pt}
+where $A_{\rm dt}=e^{A \Delta t}$ is the state transition matrix, $B_{\rm dt} = \int_0^{\Delta t}e^{A(t-\tau)}B{\rm d}\tau $, the decision vector $\boldsymbol{z}$ contains the states $\boldsymbol{x}_i$ (with $i=1,...,\tau$) and control inputs $\boldsymbol{u}_i$ (with $i=1,...,\tau-1$), in addition to the supplemental binary and continuous variables defined in the constraints. 
+Note that the MIP finds both the most efficient parking orbit within the specified range, and the optimal trajectory to that orbit. 
+This program may be modified for the docking problem by removing the collision avoidance constraints, and replacing the endpoint constraint with $\boldsymbol{x}_\tau = \boldsymbol{0}$.
+% defined for the problem. 
+% We solve it with Gurobi and Python. 
+% The solution returns the ... trajectory points $\boldsymbol{x}*_i$, and control 
+% This approximates the solution to the optimal control program 
+
+
+
+\subsection{Regulatory Controllers} \label{sec: regulatory controllers}
+\subsubsection{Regulation to Planned Trajectory} \label{sec: reg to planned trajectories}
+The MIP developed in Section \ref{sec: trajectory planning formulation} returns a set of $\tau-1$ control inputs, along with the $\tau$ corresponding trajectory states. 
+The ideal state at time $t$ is tracked between updates using a Linear Quadratic Regulator (LQR) as the ancillary control law. The net control at $t$ is, 
+\begin{equation} \label{eq: regulate to traj controller}
+  \boldsymbol{u}(t) = \boldsymbol{u}^*(t) + K_{\textrm{lqr}} ( \boldsymbol{x}^*(t) -\boldsymbol{x}(t)) 
+\end{equation}
+where
+$K_{\textrm{lqr}} \in {\mathbb R}^{2\times 4}$ 
+is the LQR gain matrix, $u^*\in{\mathbb R}^2,\,x^*\in{\mathbb R}^4$ are the ideal control and state at time $t$, taken from a linear interpolation of the control and state solutions returned from the MIP. 
+Experiments use state cost matrix $Q=0.001\,I_4$ and control cost matrix $R=1000\, I_2 $ to generate $K_{\rm lqr}$. 
+% \begin{equation}
+%   K_{\rm lqr} = 
+%   \begin{bmatrix}
+%   . & . & . & . \\ 
+%   . & . & . & . 
+%   \end{bmatrix}.
+% \end{equation}
+
+
+\subsubsection{Stabilization to Parking Orbit Set}
+The MIP and the regulatory controller developed in the above sections serve the purpose of safely bringing the spacecraft to the safe parking orbit set $\bar{{\mathcal{M}}}$. 
+Once the chaser spacecraft has successfully reached this set, the spacecraft switches to a simpler control law that stabilizes the system to the eNMT set ${\mathcal{M}}$. 
+Let, $e_1 := \vartheta_1$, $e_2 := \vartheta_2$
+% \begin{align}
+%   e_1 &:= \dot{x} - 0.5 n y \\ 
+%   e_2 &:= \dot{y} + 2 n x 
+% \end{align}
+and note that $\boldsymbol{e}:=[e_1, \,e_2]^T=\boldsymbol{0} $ when $ \boldsymbol{x}\in {\mathcal{M}}$. 
+The \textit{error dynamics} are then, 
+\begin{equation}\label{eq: error dynamics}
+  \begin{bmatrix}
+  \dot{e}_1 \\
+  \dot{e}_2
+  \end{bmatrix}
+  = 
+  \begin{bmatrix}
+   0 & 1.5 n \\ 
+   0 & 0 
+  \end{bmatrix}
+  \begin{bmatrix}
+   e_1 \\ 
+   e_2 
+  \end{bmatrix}
+  + 
+    \begin{bmatrix}
+   1/m_c & 0 \\
+   0 & 1/m_c
+  \end{bmatrix}
+  \begin{bmatrix}
+   u_{\rm x} \\ 
+   u_{\rm y} 
+  \end{bmatrix}.
+\end{equation}
+It can be shown that the control law, 
+\begin{equation} \label{eq: ub of x}
+  u_e(\boldsymbol{e}) = 
+  \begin{bmatrix}
+  -K & -1.5n \\ 
+  0 & -K 
+  \end{bmatrix}
+  \begin{bmatrix}
+   e_1 \\ 
+   e_2 
+  \end{bmatrix}
+\end{equation}
+globally stabilizes \eqref{eq: error dynamics} to the origin for $K>0$; equivalently, it globally stabilizes \eqref{eq:LinearCWH} is to the set ${\mathcal{M}}$. 
+The parameter $K$ is a tunable gain parameter that affects the strength of the response. Experiments in this paper use $K=0.6$.
+Note that since \eqref{eq: ub of x} drives the system to ${\mathcal{M}}$, and not its safe subset $\bar{{\mathcal{M}}}$,
+it may be necessary in practice to temporarily switch back to the MIP controller if sufficient drift occurs. 
+
+% ${\mathcal{M}}$. 
+% it may no longer be necessary to solve the MIP.
+% Instead, one may use a simpler control law to stabilize the system to the parking 
+% This section develops a simpler control law that stabilizes the system to ${\mathcal{M}}$. 
+
+% and instead may switch to a simpler controller that 
+% ... This section develops a 
+% \newpage 
+
+\section{Safe Proximity Verification} \label{sec: estimation}
+
+In practical applications, the relative state information between target and chaser are rarely, if ever, known exactly. Often, these relative states are measured via ground-based optical telescope or radar observations \cite{poore2016}, or via on-board the spacecraft with GPS \cite{abraham2018gps,winkler2017gps}, vision-based systems \cite{tweddle2015relative}, or LIDAR \cite{christian2013survey}. For close approach ARPOD scenarios, the uncertainty levels associated with ground-based observations make extracting out the relative state information difficult. For this reason, in this work, direct relative positions measurement schemes, such as vision-based systems or LIDAR, are employed. It is also assumed the relative velocity is known subject to measurement error. 
+%
+%Spacecraft state estimation may be conducted on the ground via optical telescope or radar observations \cite{poore2016}, or on-board the spacecraft with GPS \cite{abraham2018gps, winkler2017gps}, vision-based systems \cite{tweddle2015relative}, or LIDAR \cite{christian2013survey}. 
+%
+One of the challenges with on-board estimation systems is that there is a trade-off in capability vs. power draw. A highly capable on-board sensor may yield much better estimation information, but may draw so much power that it is turned on sparingly. For these reasons, this research investigates both time and event-based estimation update schedules to ensure knowledge of the spacecraft position stays within upper and lower bounds.
+
+Recalling the safety constraints outlined Section \ref{sec: safety constraints}, the chaser needs to verify that the constraints are met.
+It is assumed the full relative state is known with measurement noise according to Eq.~\eqref{eq: measurement}. 
+The depiction in Fig. \ref{fig:safe_region} is a graphical representation of the proximity constraints used to keep the chaser within a reasonable range around the target. 
+% \begin{figure}[]
+%   \centering
+%   \includegraphics[width=0.55\textwidth, trim=2cm 0cm 0 0cm, clip]{Figures/SafeRegion_Rectangle_v3.pdf}
+%   \caption{Graphical depiction of the position constraints employed in this work.}
+%   \label{fig:safe_region}
+% \end{figure}
+However, because perfect measurements are not assumed, verifying the proximity constraints are satisfied are posed as a probability. 
+
+\begin{equation}\label{eq: prob}
+\begin{split}
+  P(r_{\rm min} & < r <  r_{\rm max})\\
+  &= \int^{r_{\rm min}}_{r_{\rm max}}\frac{1}{\sigma \sqrt{2 \pi}}\exp{\Big[-\frac{1}{2}\Big(\frac{r-||\hat{\boldsymbol{x}}||}{\sigma}\Big)^2\Big]}{\rm d}s
+  \end{split}
+\end{equation}
+
+where $$\sigma = \sum^2_{i=1}C_{i,i}$$ taking into account only the $x$ and $y$ position components of the state vector, and $r$ is the set of range values the integration sums over bounded by $r_{\rm min}$ and $r_{\rm max}$. 
+Eq. (\ref{eq: prob}) integrates over all of the possible distances the chaser may occupy from the target to find the probability the chaser remains within the range specified by $r_{\rm min}$ and $r_{\rm max}$.
+In this case, $R=I_{2 \times 2}$ and the initial covariance $P_0$ is set to be $100 R$. As shown, in Fig. \ref{fig:prob_safe_region} the adaptive measurement update was able to keep the uncertainty above the specified threshold of 0.95. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth, trim={0.75cm 0 0.8cm 1.45cm}, clip]{Figures/probSafe.png}
+  \caption{The probability the chaser spacecraft remains within the safe range defined by \eqref{eq: safety constraint 1}, \eqref{eq: safety constraint 2}. Once the position uncertainty reaches a certain threshold, $0.95$ in this case, a new measurement is taken.}
+  \label{fig:prob_safe_region}
+\end{figure}
+
+% \newpage 
+% . 
+% \newpage 
+
+\section{Simulated Case Studies} \label{sec: experimental case study}
+This section considers case studies for a system with $m_{\rm c} = 50$ kg, $u_{\rm max}=0.5$ N, $n=0.001027$ rad/s.
+In all cases, the safety constraints are defined with, $r_{\rm min}=0.5$ km, $r_{\rm max}=8$ km, $\kappa_1 = 0.5$ m/s, $\kappa_2 = 2n$ ${\rm s^{-1}}$, $N_{\rm P}= N_{\rm Q} = 12$.
+%The MIP \eqref{eq: MIP to parking orbit set} considers the cost function \eqref{eq: sos_cost}. 
+In the first example, the performance of the planning and control algorithms developed in Section \ref{sec: planning and control to safe parking orbits set} are tested under simulated noise and estimation uncertainty. In the second example, the MIP is used to construct an RTA mechanism that filters the input of an unsafe primary controller in such a way that preserves safety of the system. 
+
+\subsection{Cost Comparison} 
+
+
+\begin{figure}[]
+\centering
+\includegraphics[width=1.0\columnwidth, trim=.4cm .01cm 0.9cm 1.05cm, clip]{Figures/mc_trajectory_plot.png}
+\caption{Projected trajectories for the deterministic system from initial states with $r_{\rm y}=v_{\rm x}=v_{\rm y}=0$, and $r_x\in\{500+1875i\}_{ i=0,...,4 }\,{\rm m}$ using the trajectory planning formulation \eqref{eq: MIP to parking orbit set} with $T=1000\,{\rm s}$ and $\tau=101$, and stabilizing controller \eqref{eq: ub of x}} %\in\{500+1875i }_{i=0,...,4}$ }
+\label{fig: MC traj plots}
+\end{figure}
+
+% \begin{table}[] \label{tab: cost comparison}
+% \caption{Cost Values}
+% \begin{center}
+% \begin{tabular}{c|ccc}
+% % \toprule
+% $x$-Position & Ideal [$\rm N^2s$] & RHC-MIP [$\rm N^2s$] & LQR-MIP [$\rm N^2s$] \\
+% \hline 
+% % \midrule
+% 500 & ... & 0.341 & 0.230 \\
+% 2375 & ... & 5.143 & 5.110 \\
+% 4250 & ... & 19.262 & 18.971 \\
+% 6125 & ... & 55.525 & 54.843 \\
+% 8000 & ... & 115.763 & 114.600
+% % \bottomrule
+% % [0.23082333207327013, 5.109866318662872, 18.971248754850095, 54.842654499209075, 114.59972184465619]
+% % Objective Values = [0.3407231002095379, 5.143228089006294, 19.26226444660563, 55.52497062821387, 115.76331085600745]
+% \end{tabular}
+% \end{center}
+% \end{table}
+% \mm{try: rhc with update every 10 s; maybe trade in table for a plot} 
+% \mm{try: controller running at 10 Hz comparison} 
+
+% \begin{table}[] \label{tab: cost comparison}
+% \caption{Cost Values }
+% \begin{center}
+% \begin{tabular}{c|ccc}
+% % \toprule
+% $x$-Position [m] & Ideal [$\rm N^2s$] & RHC-MIP [$\rm N^2s$] & LQR-MIP [$\rm N^2s$] \\
+% \hline 
+% % \midrule
+% 501.0 & 0.23 & 2.15 & 0.228 \\
+% 2375.5 & 5.16 & 6.62 & 5.118 \\
+% 4250.0 & 19.18 & 20.77 & 19.013 \\
+% 6125.5 & 55.79 & 56.05 & 55.120 \\
+% 7999.0 & 116.94 & 116.95 & 115.315 
+% % Objective Values = [ 2.15359183  6.62067483 20.77372617 56.05506825 116.39334477]
+% % Values with controller having 10s period 
+% % Objective Values = [0.22954072452817803, 5.1605306984425345, 19.182307287426955, 55.78853077004547, 116.94145854651966]
+% % LQR IDEAL: Objective Values = [0.22744654262171746, 5.113449336353761, 19.015959355889475, 55.13544962607506, 115.34196017240724]
+% % -----2375.5
+% % 4250.0
+% % 6124.5
+% % 7999.0
+% % RHC Objective Values = [0.23523227369865327, 5.166317287916084, 19.06702228474269, 55.21027111070084, 115.57343228185876]
+% % LQR Objective Values = [0.227955125915321, 5.118030889675583, 19.013011709123344, 55.12038555241447, 115.31504723971027]
+% % Ideal Objective Values = [0.2295255898852969, 5.160190441887209, 19.18063142031501, 55.78416330151038, 116.93314363767317]
+% \end{tabular}
+% \end{center}
+% \end{table}
+
+\begin{table}[] 
+\caption{Cost Values }
+\begin{center}
+\begin{tabular}{c|cc}\label{tab: cost comparison}
+% \toprule
+$x$-Position [m] & Ideal Cost [$\rm N^2s$] & Full Cost [$\rm N^2s$]  \\
+\hline 
+% \midrule
+501.0 & 0.23 & 2.15 \\
+2375.5 & 5.16 & 6.62 \\
+4250.0 & 19.18 & 20.77 \\
+6125.5 & 55.79 & 56.05 \\
+7999.0 & 116.94 & 117.53
+\end{tabular}
+\end{center}
+\end{table}
+
+This section compares the performance of the planning formulation developed in Section \ref{sec: planning and control to safe parking orbits set} under the estimation model developed in Section \ref{sec: estimation}.
+Ideal trajectories are generated with the MIP \eqref{eq: MIP to parking orbit set} using cost function \eqref{eq: sos_cost}, horizon $T=1000$ s, and $\tau = 101$ steps. 
+% First, a receding horizon formulation is considered where the MIP is resolved every $1$ s.  
+LQR regulation to the ideal states is considered, as described in Section \ref{sec: reg to planned trajectories}. 
+Though it is not included in the comparison here, one may also consider receding horizon formulations. 
+% the regulation law \eqref{eq: regulate to traj controller} applied for remaining calls to the controller. 
+The stabilizing controller Eq.~\eqref{eq: ub of x} takes over at the end of the planning horizon --- \emph{i.e.} once $t=T$ and the chaser spacecraft has reached the parking orbit set $\bar{{\mathcal{M}}}$. 
+
+
+Simulations are conducted from initial states with $r_{{\rm y}}=v_{{\rm x}}=v_{{\rm y}}=0$, and $r_{{\rm x}}\in\{501+1874.5i\}_{ i=0,...,4 }\, $m.
+The controller is sampled at 0.1 Hz, and the system is simulated for 3500 s. 
+The simulated trajectories for the ideal case are shown in Fig. \ref{fig: MC traj plots}.
+The simulated cost for the cases with and without uncertainty are indicated in Table \ref{tab: cost comparison}. 
+Here, the \textit{ideal cost} is taken from the reference control points from the MIP, and 
+% \textit{RHC-MIP} refers to the case where trajectories are recalculated with a receding horizon; and 
+% \textit{LQR-MIP} refers to 
+the \textit{full cost} case is the total cost with
+the noise and estimation model included, and the regulatory controllers being used to mitigate the resulting state error. 
+The costs for the case including noise effects represents an average over 10 runs. 
+The values indicate that the control system performs well under effects of noise and uncertainty. 
+Note that for the closest case ---where a relatively low thrust is commanded over a long time period--- most of the actuation effort results from the task of rejecting noise. 
+
+
+% The difference in the full and ideal cost are the greatest at closer distances, as the actuation required... .
+
+% There are diminishing returns 
+
+% \mm{Note to self: Since the estimation model is stochastic, the responsible thing to do here is to average the cost over a series of experiments; do this if there is time - otherwise hold off until final version of the paper.} 
+% \mm{TODO: say something about results}
+
+\subsection{Run Time Assurance} 
+% \mm{explanations in this section need some work}
+
+\begin{figure}[]
+\centering
+\includegraphics[width=\columnwidth, trim=0 1.5cm 0 2.6cm, clip]{Figures/rta_trajectory_plot_v3.png}
+\caption{Projected trajectories from $\boldsymbol{x}=[0,-2\, {\rm km},0,0]^T$ to $\boldsymbol{x}=[0,0.75 \,{\rm km},0,0]^T$ over a 2400 s period. The trajectories without RTA are grey. The trajectories with RTA are blue on iterations where the primary controller $u_{\rm nom}$ provides the input, and red when $u_{\rm b}$ provides the input. The backup trajectories (cyan) are shown at 8 s intervals.  }
+\label{fig: RTA traj plots}
+\end{figure}
+
+We now illustrate the use of the backup controller in an RTA algorithm. 
+% The goal of RTA is to \mm{explain+cite}. 
+Here the trajectory planner Eq.~\eqref{eq: MIP to parking orbit set} is used to override the desired actions of a primary controller when necessary for preserving safety. 
+A \emph{nominal} control law $u_{\rm nom}(\boldsymbol{x})=K \boldsymbol{x}$ attempts to drive the chaser spacecraft from the stationary point at $\boldsymbol{x}=[0,-2000\,\text{m},0,0]$ to the stationary point at $\boldsymbol{x}=[0,750\, \text{m},0,0]$. The matrix $K$ is an LQR gain matrix generated with state cost matrix $Q=0.0005 \, I_4$ and control cost matrix $R=10000\, I_2$. 
+The trajectory under this control law is shown as the grey line in Fig. \ref{fig: RTA traj plots}. 
+It is apparent from these plots that a direct application of $u_{\rm nom}$ results in a violation of the collision avoidance and relative speed constraints (Eq. \eqref{eq: safety constraint 1}, Eq. \eqref{eq: safety constraint 3} respectively). 
+
+An RTA filter is constructed such that at any state $\boldsymbol{x}$, the applied control is either the desired control input $u_{\rm nom}(\boldsymbol{x})$, or  the \emph{backup} control input $u_{\rm b}(\boldsymbol{x})$, where $u_{\rm b}$ is given by the solution to Eq.~\eqref{eq: MIP to parking orbit set}. 
+Whether or not the desired input is accepted at state $\boldsymbol{x}_1$ is based on whether a safe trajectory can be found starting with this input. 
+Specifically, let $\tilde{\boldsymbol{x}}_2$ be the estimated state after applying $u_{\rm nom}(\boldsymbol{x}_1)$ for $\Delta t$ seconds, and consider the MIP solved with initial condition $\tilde{\boldsymbol{x}}_2$. 
+% If the MIP starting at $\boldsymbol{x}'$ is infeasible, then
+The backup control 
+$u_b(\boldsymbol{x}_1)$ is commanded if (i) the MIP is infeasible, or (ii) if any of the points on the \emph{backup} trajectory (\textit{i.e.} the solution states) come within $0.05$ m/s of the constraint defined by \eqref{eq: safety constraint 3}, or $5$ m of the constraints defined by \eqref{eq: safety constraint 1}, \eqref{eq: safety constraint 2}. 
+The first condition ensures that the chaser will only move to new states if it can find a safe solution from that state. 
+The second condition makes the formulation more robust to noise and uncertainty by adding a buffer region on the constraints. 
+Note that if the chaser spacecraft is perturbed into a region where the MIP cannot find a safe solution, then backup control inputs $u_{\rm b}$ may be provided by using \eqref{eq: regulate to traj controller} to regulate to the most recent safe trajectory found. 
+
+The RTA is tested with the MIP using a $T=50$ s horizon composed of $\tau=50$ points.  
+As illustrated in Fig. \ref{fig: RTA traj plots}, the RTA is effective at preventing violations in the safety constraints. 
+Note that while the RTA enforces constraints, the task of successfully reaching the goal location is allocated to the primary controller. 
+That is, the RTA does not guarantee that the goal will be reached. 
+
+% ---.... note: possible to get stuck in a position ...--- 
+% Consider the case where the MIP solver is computationally complete, and the the time horizon $T$ is sufficiently long such that ${\mathcal{C}}_{\rm s}$ is contained in the $T$ second backwards reachable subset of $\bar{{\mathcal{M}}}$, and if 
+% then the 
+
+
+
+% any of the points on the backup trajectory
+
+% or if any points on the ideal trajectory violate come within 
+
+
+
+% a finite time trajectory starting at $\boldsymbol{x}_0$ is sampled with $u_{\rm des}(\boldsymbol{x}_0)$ providing the first input and $u_{\rm b}$ providing all remaining inputs.
+
+
+% the commanded signal is equal to $u_{\rm nom}$ only when it is decided safe, and 
+
+% The safety condition 
+
+% \mm{Chris / Mark work on example(s)}
+% \mm{*code is in progress. Will push with working MIP by Friday}
+
+% Possible Examples: 
+% \begin{itemize}
+%   \item RTA example: use backup controller in RTA scheme 
+%   \item Compare cost under different trajectory update rates 
+% \end{itemize}
+
+% \newpage 
+
+\section{Conclusions}
+An optimal guidance and control framework is developed for safety-constrained transfer maneuvers to a set of safe parking orbits under the Clohessy-Wiltshire-Hill dynamics. 
+The trajectory planning scheme is posed as a mixed integer program, which can be solved to global optimality in the case of the described fuel- or power-minimizing cost functions.
+It is shown that the terminal parking orbit set is both safe and invariant when no thrust is being applied, which allows safety to be guaranteed for all time using only the fuel required to reach the terminal set. 
+The trajectory planner is shown to be an effective backup mechanism for enforcing safety when integrated into a run time assurance scheme. 
+A simulated case study demonstrates the practical effectiveness of the control algorithms under noise and estimation uncertainty. 
+Future work may entail an inclusion of the fuel level as a state in the model, expansion of the terminal set to include stationary points along the $y$-axis, representation of the safety constraints using the $l^2$ norm, and a deeper exploration of the use of the planning scheme in RTA applications. The code used to generate the results may be found at \url{github.com/act3-ace/natural-motion-trajectories}.
+
+ 
+% It is shown that the ... guaruntees safety for all time. 
+
+% , which allows a globally optimal solution to be found by a computational complete 
+
+
+%Talk about: 
+%\begin{itemize}
+%  \item We develop mixed integer constraints for safety-constrained optimal transfer trajectories to natural motion trajectories
+%  \item Algorithm performs well under noise and estimation uncertainty
+%  \item adaptive estimation scheme introduced.
+%  \item The RTA works 
+%  \item Future work will include fuel state in model 
+%  \item Future work will include extension of constraints to 2-norm 
+%  \item Future work will include stationary points along the $y$-axis (I think this is as easy as swapping out one constraint) 
+%  \item While it can be solved to global optimality, the approach is computationally expensive. 
+%\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newpage 
+% OLD CONTENT: 
+% \newpage 
+% \subsection{Identification of Safe Terminal Set using Natural Motion Trajectories}
+
+% Story: 
+% \begin{itemize}
+%   \item If we can reach a closed natural motion trajectory, we can stay on that trajectory for all time without expending fuel. 
+%   \item If the trajectory lies outside of the safe set, then reaching this also guarantees that we stay safe for all time. 
+%   \item We consider the subset of all closed natural motion trajectories centered at the origin that fall within the safe set 
+% \end{itemize}
+
+
+% The set of all closed elliptical natural motion trajectories centered at the origin is given by, 
+% \begin{equation}
+%   \mathcal{N} = \{x\in{\mathbb R}^4 \,\, | \,\, v_x = n/2 s_y, \,\, v_y = -2n s_x \}
+% \end{equation}
+% which represents a 2-D manifold in ${\mathbb R}^4$. 
+% Since this set consists entirely of closed trajectories, $\mathcal{N}$ is by nature a positively \textit{invariant} set, i.e. 
+% \begin{equation}
+%   x(t_0)\in\mathcal{N} \,\, \implies x(t)\in\mathcal{N} \,\, \forall t\geq t_0
+% \end{equation}
+% However, while this set is invariant, it is not an invariant subset of ${\mathcal{S}}$. Likewise, we cannot simply choose $\mathcal{N}\bigcup \mathcal {\mathcal{S}} $, as this set is not invariant. The largest invariant of $\mathcal{N}$ lying entirely in ${\mathcal{S}}$ can be found by finding that the inner and outer bounding elliptical trajectories in ${\mathcal{S}}$. ... 
+
+% Fact: 
+% \begin{equation}
+%   {\mathcal{M}} = \{x\in \mathcal{N} \,\, | \,\, b_L^2 \leq (s_x)^2+(s_y / 2)^2 \leq b^2_U \} 
+% \end{equation}
+% is the largest invariant set of $\mathcal{N}$ contained entirely in {\mathcal{S}}. Here $b_L$, $b_U$ represent the semi-major (minor?) axes of the inner and outer bounding ellipses respectively. 
+% Though the two additional constraints here are 
+
+
+% *iclude regulation strategy 
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%% Problem Formulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Mixed Integer Programming Problem Formulation}
+% This section formulates the problem of generating safe optimal transfer trajectories of a spacecraft from an initial state $\boldsymbol{x}_0$ to a safe closed NMT. 
+
+
+
+% - safety constraints
+% - terminal set constraints 
+
+% It is shown that the combined dynamics of the spacecraft, saturation constraints, and obstacle avoidance conditions are all amenable to approximation with piecewise affine constraints.
+
+% In light of this, we choose to pose the trajectory optimization problem as a MIP. 
+% We consider the discrete time approximations of the models developed in previous sections over a horizon of $i=1,\,...\,,\,\tau$. The state of the vehicle at the $i^{th}$ time-step is defined as $\boldsymbol{x}_i^T = [s_{{\rm x},i}, \, s_{{\rm y},i}, \, {\theta}_i , \, v_{{\rm x},i}, \, v_{{\rm y},i}, \, \omega_i ]$, and control vector as $\boldsymbol{u}_i^T = [u_{{\rm x},i}, \, u_{{\rm y},i}, \, u_{{\rm \uptheta},i}]$. 
+% For completeness, we expound upon some basic control and obstacle avoidance constraint formulations found in \cite{schouwenaars2006safe, richards2005mixed, richards2002spacecraft}. 
+% \
+
+
+% The goal of the mixed integer program (MIP) is to approximate the optimal trajectory ---consistent with the system dynamics and actuation constraints--- driving the system from an initial condition $x(t_0) = x_0$ to a terminal set $x(T)\in{\mathcal{M}}\subset {\mathcal{X}}$ over a time horizon $t\in[t_0,t_0+T]$. Safety is guaranteed over this horizon by solving the program subject to constraints reflecting the required safety conditions, \emph{i.e.} ensuring that $x(t)\in{\mathcal{S}},\,\, \forall t\in[0,T]$. If the terminal set ${\mathcal{M}}$ is a \emph{invariant subset} of ${\mathcal{S}}$, then safety is also guaranteed for all $t\geq T$. 
+% The key challenges to developing the MIP are then (i) identification of an invariant set ${\mathcal{M}}$ contained in the safety set {\mathcal{S}}, and (ii) representation of the safety and terminal conditions as mixed integer constraints.  
+
+
+
+
+% % \subsubsection{Representation of Safety Constraints}
+% % The infinity norm of a decision variable can be represented directly using integer constraints. 
+
+
+
+% \subsection{ Intermediate Point Constraints } 
+
+% - Dynamics
+% - Representation of Norms 
+
+
+
+% \subsubsection{ Dynamics } 
+
+% \subsubsection{ Position-Dependent Speed Constraint }
+
+% \subsubsection{ Proximity Constraint }
+
+% \subsubsection{ Collision Avoidance Constraint }
+
+% \subsection{Terminal Set Constraints}
+ 
+% \subsection{Example Objective Functions }
+
+% In practice, the appropriate choice of an objective function depends on the specific needs of the mission. The proposed methodology does not assume a particular form for the objective. However, since vehicle efficiency is commonly of critical importance to real-world missions, we find it useful to review here two common approximations for penalizing actuation using quadratic and linear functions. A simple option is to use the power limiting cost function \cite{guelman2001optimal, pardis1995optimal}, 
+% \begin{equation} \label{eq: sos_cost}
+%   J_1 = \sum_{i=1}^\tau ( u_{{\rm x},\, i}^2 + u_{{\rm y},\, i}^2 ) 
+% \end{equation}
+% which forms a Mixed Integer Quadratic Program (MIQP). With the introduction of additional constraints, is also possible to use a PWA approximation of the Euclidean norm of commanded translational acceleration \cite{richards2002spacecraft}. The resulting cost function is linear, 
+% \begin{equation} \label{eq: 2norm_cost}
+%   J_2 = \sum_{i=1}^\tau G_i \, , \quad s.t.
+%   \quad \bigwedge_{n=1}^{N_J} \,\,\, G_i \geq u_{{\rm x},\, i}\sin\Big(\frac{2\pi n}{N_{\rm J}}\Big)
+%   + u_{{\rm y},\, i}\cos \Big(\frac{2\pi n}{N_{\rm J}}\Big), \quad i = 1,...\,,\tau .
+% \end{equation}
+% The constraints here approximate the second order cone constraints $G_i\geq \Vert [u_{x,i}, u_{y,i}] \Vert_2, \,\, i=1,...\,,\tau$ with an $N_{\rm J}$ sided polygon.
+
+
+% \newpage 
+
+% This research develops a method to ensure safety of a target and chaser spacecraft during ARPOD operations. The chaser and target are assumed to be point masses capable of maneuvering in any direction. It is assumed that the chaser spacecraft initializes approximately 10 km from the target spacecraft. 
+
+% \subsection{Control Constraints}
+% The backup safety controller should adhere to the safety constraints summarized in Table \ref{t:FormalConstraints} and described in this section.
+
+
+% \begin{table}[hbt!]
+% \begin{center}
+% \caption{\label{t:FormalConstraints} Summary of safety constraints.}
+% %\centering
+% %\setlength\extrarowheight{-10pt}
+% \begin{tabular}{lll}
+% Requirement & Description& Value\\\hline
+% $\varphi_{F_{lim}}$ & $ {F}_x \in[F_{min},F_{max}]$ & $F_{x_{min}}$ = -2 N and $F_{max}$ = 2 N\\
+% $\varphi_{\dot{\boldsymbol{X}}_{lim}}$&$ (|\dot{x}|\leq v_{x_{max}}) \land(|\dot{y}|\leq v_{y_{max}}) $ & $v_{x_{max}} = v_{y_{max}}= v_{max} = 10$ m/s\\
+% $\varphi_{rv}$ & $ ||\boldsymbol{v}_H||\leq v_{H_{max}}$ & $v_{H_{max}} = \frac{(f_s)(||\boldsymbol{r}_H||)} {T_{c}(F_{max}, m_j,||\boldsymbol{r}_H||)}$ \\
+% \end{tabular}
+% \end{center}
+% \end{table}
+
+
+% \begin{itemize}
+%  \item \textit{Bounded thrust force} ($ {F}_{lim} \in[F_{min},F_{max}]$): The spacecraft should obey reasonable thrust limitations. There are a variety of ways to represent this such as a bounded control input \cite{di2012model,weiss2015model,lee2018spacecraft,denenberg2017debris}, bounded thrust force \cite{weiss2014safe,weiss2013spacecraft}, or bounded change in velocity (i.e., $\Delta V)$ \cite{mueller2013avoidance,alfano2005collision,bombardelli2015optimal}. In this challenge problem, a net limit is considered, resulting in a net max and minimum thrust level. 
+
+%   \item \textit{Recoverable relative velocity limit}: Spacecraft maneuvers shall maintain recoverable relative motion. While the linearized dynamics of the system are completely controllable, it is possible for the relative velocity to be so high that it exceeds capabilities of the actuators to respond in a timely manner. One way to deal with this is to place limits on the maximum velocity: 
+%   \begin{equation}
+%   \varphi_{v_{max}} = (|\dot{x}|\leq v_{x_{max}}) \land(|\dot{y}|\leq v_{y_{max}}). %\land(\dot{z}\leq\dot{z}_{max}). 
+%   \end{equation} 
+  
+%   Let $v_{{max}}$ be the maximum velocity that the spacecraft can travel in the x or y direction and stop within one minute given the available thrust. 
+  
+%   \begin{equation}
+%     v_{x_{max}} = v_{y_{max}} = v_{max}=\frac{F_{x_{max}}}{m_j}(t_{stop})= \frac{2 \text{ kg m/s}^2}{12 \text{ kg}} (60{s})=10\text{ m/s}
+%   \end{equation}
+  
+%   \item \textit{Bounded relative velocity limit}: In cases where the ARPOD mission includes docking, the magnitude of the acceptable velocity moving towards the spacecraft may based on the distance between the spacecraft, where acceptable relative velocity decreases as the spacecraft distance decreases. This concept is notionally borrowed from the idea of using a temporal rather than distance requirement to avoid collisions where the time-to-collision $T_c$ is the separation distance $||\vec{r}_H||$ over closure velocity $||\vec{v}_H||$ \cite{barfield2000autonomous}:
+%   \begin{equation}
+%   T_c= \frac{||\vec{r}_H||}{||\vec{v}_H||}.
+%   \end{equation} 
+  
+%   Alternatively, $T_c$ may be a function of the available thrust, spacecraft mass, and distance from the target, where 
+%   \begin{equation}
+%     T_c(F_{max}, m_j,||\vec{r}_H||) = \sqrt{\Big(\frac{2m_j}{F_{max}}(||\vec{r}_H||)\Big)}.
+%   \end{equation}
+%   The relative velocity of the target spacecraft should be less than the limit defined by a safety factor $f_s$ the following equation:
+%   \begin{equation}
+%     \varphi_{rv} = \square ||\vec{v}_H||\leq v_{H_{max}}, v_{H_{max}}=\frac{(f_s)(||\vec{r}_H||)}{T_{c}(F_{max}, m_j,||\vec{r}_H||)}.
+%   \end{equation}
+ 
+  
+%   The combination of both velocity limits may be seen in Fig. \ref{fig:MaxVelocityPlot}.
+
+%  \begin{figure}[hbt!]
+% \centering
+% \includegraphics[width=.7\textwidth]{Figures/MaxVelocityPlot.png}
+% \caption{Maximum velocity versus distance for a constant limit and for a limit allowing for half of maximum deceleration}
+% \label{fig:MaxVelocityPlot}
+% \end{figure}
+
+
+% \item \textit{Relative Position Constraints:}
+% The closed elliptical NMT (cENMT) are good candidates for relative ``parking" orbits during which the chaser may observe the target from a safe distance.
+% Venturing too close will trigger a conjunction alarm, but straying too far will impede on relative operations.
+% Therefore, the spacecraft is constrained to a range of distances in which it is safe for the chaser spacecraft to operate, parametrized by two circles of radii $\delta_{min}$ and $\delta_{max}$, respectively. 
+
+% Next, this set of acceptable ranges must be characterized as a set of linear constraints to incorporate into the linear control schemes.
+% Due to the elliptical nature of the NMTs, the range boundaries $\delta_{max}$ and $\delta_{min}$ will define the maximum semi-major axis and minimum semi-minor axis of the set of safe trajectories, respectively. 
+% This can be visualized in \textcolor{red}{Insert Fig. here to describe scenario}
+
+% Conveniently, each cENMT can be geometrically described as a $2\times 1$ ellipse, meaning $a=2b$, where $a$ is the semi-major axis, and $b$ is the semi-minor axis. 
+% Now using the equation of a filled ellipse, Eq. (\ref{eq:filledellipse}) and substituting in the boundary condition on the semi-major axis, the $2\times 1$ condition, and some algebraic manipulation, a linear constraint for the maximum acceptable NMT is obtained in Eq. (\ref{eq:MaxDistCon}).
+% Similarly, the linear constraint for the minimum acceptable NMT can be expressed as Eq. (\ref{eq:MinDistCon}).
+
+% \begin{equation} \label{eq:filledellipse}
+%   \frac{x^2}{b^2}+\frac{y^2}{a^2} < 1
+% \end{equation}
+
+
+% \begin{equation}\label{eq:MaxDistCon}
+%   x+\frac{y}{2} < \frac{\delta_{max}}{2}
+% \end{equation}
+
+
+% \begin{equation}\label{eq:MinDistCon}
+%   x+\frac{y}{2} > \delta_{min}
+% \end{equation}
+
+% Together, Eq. (\ref{eq:MaxDistCon}-\ref{eq:MinDistCon}) make up the set of linear constraints that describe the safe set of NMTs the chaser can follow. 
+% \end{itemize}
+
+% \subsection{Relative State Estimation}
+
+% Spacecraft state estimation may be conducted on the ground via optical telescope or radar observations \cite{poore2016}, or on-board the spacecraft with GPS \cite{abraham2018gps, winkler2017gps}, vision-based systems \cite{tweddle2015relative}, or LIDAR \cite{christian2013survey}. One of the challenges with on-board estimation systems is that there is a trade-off in capability vs. power draw. A highly capable on-board sensor may yield much better estimation information, but may draw so much power that it is turned on sparingly. For these reasons, this research investigates both time and event-based estimation update schedules to ensure knowledge of the spacecraft position stays within upper and lower bounds.
+
+% \textcolor{red}{I will rewrite and format better later. - Chris}
+
+% To verify the spacecraft maintains within the appropriate range, a line-of-sight measurement tool, such as a lidar, is equipped to provide measurement updates to a standard Extended Kalman Filter (EKF). From Eq. \ref{eq:LinearCWH}, the system can be expressed as:
+
+% \begin{equation*}
+%   \dot{x}=Ax+Bu
+% \end{equation*}
+% \begin{equation*}
+%   y = Hx
+% \end{equation*}
+
+% where $H$ is the Jacobian matrix of the line-of-sight vector measurement model $h(x)$.
+
+% \begin{equation}
+%   h(x) = s = \frac{r}{||r||}
+% \end{equation}
+% \begin{equation*}
+%   H = \frac{1}{||r||}(I-ss^T)
+% \end{equation*}
+
+% \boldsymbol{Predict}
+% \begin{equation*}
+%   x^{-}_{k+1} = \Phi x_k+Bu
+% \end{equation*}
+% \begin{equation*}
+%   P^{-}_{k+1}=\Phi P_k \Phi^T+\Phi Q \Phi^T 
+% \end{equation*}
+
+% \textbf{Update}
+
+% \begin{equation*}
+%   K_{k+1} = P^{-}_{k+1}H_k^T(H_{k+1}P^{-}_{k+1}H_{k+1}^T+R_{k+1})^{-1}
+% \end{equation*}
+% \begin{equation*}
+% \hat{x}_{k+1} = x^{-}_{k+1} +K_{k+1}(y_k-h(x^{-}_{k+1}))
+% \end{equation*}
+% \begin{equation*}
+%   P_{k+1} = (I-K_{k+1}H_{k+1})P^{-}_{k+1}
+% \end{equation*}
+
+% \subsubsection{Fixed Time Measurement Update}
+
+% Update Results
+
+% \subsubsection{Adaptive Time Measurement Update}
+%  Update results
+
+% \section{Approach}
+
+% %In an ideal scenario, a spacecraft on a collision course will be able to calculate whichever NMT would enable it to avoid a collision with the minimum delta-V requirement. However, situations may also arise where a less delta-V-efficient NMT is desirable, for instance if the ultimate goal was to attach a service vehicle to de-orbit a piece of debris, as was attempted in a recent mission to harpoon a piece of debris for orbital cleanup \cite{SpaceHarpoon}. For this reason, a slightly different approach has been taken for this investigation: rather than generating an NMT, a random group of NMTs are pre-generated, and a spacecraft at a random position (guaranteed to be on a collision course) must navigate to the closest one.
+
+% %Tests were run for planar elliptical NMTs in the local frame. In all cases, the randomly-generated deputy started with a velocity directly towards the chief (the origin). Any NMTs farther away from the chief than the deputy are automatically discarded. Following this, the remaining NMTs are discretized. This process improves performance and is a function of the number of points in the original trajectory, as generated by MATLAB's ode45 function. NMTs with fewer than 50 points are not discretized, those with between 50 and 500 are discretized by a factor of 10 (i.e. only every 10th point is retain for later calculations), and larger NMTs are discretized by a factor of 100. This ensures best performance at larger distances, and more accurate delta-V and time-of-flight computation at shorter distances, where it would be more important to mission planners..
+
+% %Finally, the "closest" of these discretized points to the deputy is identified via a cost function. In this function, delta-V difference is weighted 50 times higher than spatial distance, giving a cost function
+
+% %\begin{equation}
+% %  c = r_d * 0.5 + \Delta V * 25
+% %\end{equation}
+
+% %The results of this simulation are shown in Figures \ref{fig:ellipse_only}, \ref{fig:line_only}, and \ref{fig:points_only}. In all figures, a low thrust trajectory to the closest NMT is shown in green, and one for a "docking" trajectory, which will deliver the deputy to the chief with a final relative velocity of zero, is shown in red. In all cases, the NMT maneuver incurred a smaller delta-V cost than the docking maneuver. The savings were most substantial when maneuvering to elliptical, rather than linear or point, NMTs.
+
+% %\begin{figure}[hbt!]
+% %\centering
+% %\includegraphics[width=.8\textwidth]{Figures/ellipse_only}
+% %\caption{Depiction of a deputy navigating to the closest/lowest delta-V elliptical NMT using a continuous-thrust trajectory. The NMT maneuver incurs a delta-V of 17.96 m/s, while the docking maneuver incurs a delta-V for 43.46 m/s.}
+% %\label{fig:ellipse_only}
+% %\end{figure}
+
+% \begin{figure}[hbt!]
+% \centering
+% \includegraphics[width=.8\textwidth]{Figures/line_only}
+% \caption{Depiction of a deputy navigating to the closest/lowest delta-V linear NMT using a continuous-thrust trajectory. The NMT maneuver incurs a delta-V of 18.32 m/s, while the docking maneuver incurs a delta-V for 23.85 m/s.}
+% \label{fig:line_only}
+% \end{figure}
+
+% \begin{figure}[hbt!]
+% \centering
+% \includegraphics[width=.8\textwidth]{Figures/points_only}
+% \caption{Depiction of a deputy navigating to the closest/lowest delta-V fixed-point NMT using a continuous-thrust trajectory. The NMT maneuver incurs a delta-V of 25.02 m/s, while the docking maneuver incurs a delta-V for 28.01 m/s.}
+% \label{fig:points_only}
+% \end{figure}
+
+% \subsection{Generating the Desirable Natural Motion Trajectories}
+
+
+
+% %\subsection{Example}
+% %\textcolor{red}{NOTE - this will be replaced with actual plots, but is here to give an example to start with}
+% A conceptual depiction of the collision avoidance scenario is presented in Fig.~\ref{fig:OV1SpacecraftCollisionAvoidance}, where two spacecraft (SC1 and SC2) with connections to independent ground stations (GS1 and GS2) are conducting a rendezvous and docking operation and violate safety boundaries triggering a collision avoidance maneuver. The collision avoidance maneuver is assumed to select one of multiple nearby NMT to maneuver to avoid the collision. Once the spacecraft transfers to a NMT such as an ellipse, periodic line segment, or stationary point relative to the other spacecraft, it will remain in the trajectory. While the spacecraft will drift from the trajectory over time with the accumulation of disturbances, it remains there for enough time for ground operators to review the operation and determine appropriate next steps.
+
+% %\begin{figure}[hbt!]
+% %\centering
+% %\includegraphics[width=.8\textwidth]{Figures/OV1SpacecraftCollisionAvoidance}
+% %\caption{Conceptual depiction of two spacecraft operating in close proximity with communication back down to separate ground stations on earth.}
+% %\label{fig:OV1SpacecraftCollisionAvoidance}
+% %\end{figure}
+
+% Examples of multiple candidate elliptical trajectories is depicted in Fig.~\ref{fig:NMTforAvoidance}. The top candidate elliptical collision avoidance trajectories are highlighted in a darker green. In Fig.~\ref{fig:PlanarRendezvousExample}, a chaser spacecraft is depicted as rendezvousing with the target at the center using online in-plane motion. Several in-plane ellipses are considered for collision avoidance trajectories. The red ellipse behind the spacecraft is excluded because of the excess fuel required to reverse course, while the next nearest ellipse in green is the top choice and other blue ellipses remain candidate trajectories.
+
+% \begin{figure}[hbt!]
+% \centering
+% \includegraphics[width=.8\textwidth]{Figures/NMTforAvoidance}
+% \caption{Conceptual depiction of a ``chaser" spacecraft operating around a ``target" spacecraft surrounded by NMT ellipses that serve as candidate escape trajectories.}
+% \label{fig:NMTforAvoidance}
+% \end{figure}
+
+% \begin{figure}[hbt!]
+% \centering
+% \includegraphics[width=.8\textwidth]{Figures/PlanarRendezvousExample}
+% \caption{Hill's reference frame with chaser and target satellites and relative positions.}
+% \label{fig:PlanarRendezvousExample}
+% \end{figure}
+
+% Assuming the spacecraft are in a near circular orbit and within a few kilometers of one another, Hill's reference frame and linearized Clohessy-Wiltshire may be used to describe the system dynamics. 
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Formulation of the Safety Controller as a Mixed Integer Program}
+% % This section formulates the problem of generating optimal trajectories for a 
+
+% The goal of the mixed integer program (MIP) is to approximate the optimal trajectory ---consistent with the system dynamics and actuation constraints--- driving the system from an initial condition $x(t_0) = x_0$ to a terminal set $x(T)\in{\mathcal{M}}\subset {\mathcal{X}}$ over a time horizon $t\in[t_0,t_0+T]$. Safety is guaranteed over this horizon by solving the program subject to constraints reflecting the required safety conditions, \emph{i.e.} ensuring that $x(t)\in{\mathcal{S}},\,\, \forall t\in[0,T]$. If the terminal set ${\mathcal{M}}$ is a \emph{invariant subset} of ${\mathcal{S}}$, then safety is also guaranteed for all $t\geq T$. 
+% The key challenges to developing the MIP are then (i) identification of an invariant set ${\mathcal{M}}$ contained in the safety set {\mathcal{S}}, and (ii) representation of the safety and terminal conditions as mixed integer constraints.  
+
+
+% \subsection{Safe Invariant Terminal Set from NMT Trajectories} 
+% The set of all closed elliptical natural motion trajectories centered at the origin is given by, 
+% \begin{equation}
+%   \mathcal{N} = \{x\in{\mathbb R}^4 \,\, | \,\, v_x = n/2 s_y, \,\, v_y = -2n s_x \}
+% \end{equation}
+% which represents a 2-D plane in ${\mathbb R}^4$. 
+% Since this set consists entirely of closed trajectories, $\mathcal{N}$ is by nature a positively \textit{invariant} set, i.e. 
+% \begin{equation}
+%   x(t_0)\in\mathcal{N} \,\, \implies x(t)\in\mathcal{N} \,\, \forall t\geq t_0
+% \end{equation}
+% However, while this set is invariant, it is not an invariant subset of ${\mathcal{S}}$. Likewise, we cannot simply choose $\mathcal{N}\bigcup \mathcal {\mathcal{S}} $, as this set is not invariant. The largest invariant of $\mathcal{N}$ lying entirely in ${\mathcal{S}}$ can be found by finding that the inner and outer bounding elliptical trajectories in ${\mathcal{S}}$. ... 
+
+% Fact: 
+% \begin{equation}
+%   {\mathcal{M}} = \{x\in \mathcal{N} \,\, | \,\, b_L^2 \leq (s_x)^2+(s_y / 2)^2 \leq b^2_U \} 
+% \end{equation}
+% is the largest invariant set of $\mathcal{N}$ contained entirely in {\mathcal{S}}. Here $b_L$, $b_U$ represent the semi-major (minor?) axes of the inner and outer bounding ellipses respectively. 
+% Though the two additional constraints here are 
+
+
+% \subsubsection{Representation of Safety Constraints}
+% The infinity norm of a decision variable can be represented directly using integer constraints. 
+
+
+% % while a subset of an invariant set is not itself invariant, presence in that subset does imply invariant in the larger set 
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Conclusion}
+
+
+
+% \section*{Appendix}
+
+% Eventually, this could include such things as: 
+% \begin{itemize}
+%   \item Truth tables for sets of constraints in the MIP preliminaries section
+%   \item How to represent the 2-norm 
+% \end{itemize}
+
+
+%\section*{Acknowledgments}
+% \section*{Questions (temporary)}
+% \begin{itemize}
+%   \item Is the thruster input:
+%   \begin{itemize}
+%     \item impulsive (discrete time) 
+%     \item continuous time 
+%     \item doesn't matter, do what is most convenient 
+%   \end{itemize}
+%   \item Is the thruster input:
+%   \begin{itemize}
+%     \item continuous space
+%     \item discrete space 
+%     \item doesn't matter, do what is most convenient 
+%   \end{itemize}
+%   \item What are safety constraints? 
+%   \begin{itemize}
+%     \item avoid getting within N km of target spacecraft ("collision constraint")
+%     \begin{itemize}
+%       \item how close is too close? 
+%     \end{itemize}
+%     \item slow down gradually as you approach center ("speed-limit constraint") 
+%     \begin{itemize}
+%       \item how fast is too fast? 
+%     \end{itemize}
+%     \item both of the above (e.g. $||v^2|| + N <= k||r||^2$) 
+%     \item passive safety of backup set? 
+%     \item passive safety all of the time 
+%   \end{itemize}
+%   What happens when safety constraint is violated: \begin{itemize}
+%     \item continuous filtering along boundary (CBFs) 
+%     \begin{itemize}
+%       \item will need to prove that this is possible without leaving safe set boundary (or use implicit approach)
+%       \item will not drive the system to the backup trajectory 
+%       \item may or may not utilize a backup controller 
+%     \end{itemize}
+%     \item simplex with "avoid" set, and "activate" set (either explicitly defined or defined by simulating trajectory) 
+%     \begin{itemize}
+%       \item will need to prove that activation prevents entering the avoid set (could be done by integrating backup controller) 
+%       \item will not drive the system to the backup trajectory 
+%       \item will utilize backup controller 
+%     \end{itemize}
+%     \item activate backup controller until the system is on the backup trajectory 
+%     \item some combination of the above
+%     \begin{itemize}
+%       \item e.g. first filter along boundary, if controller continues to attempt to violate safety constraints, then force it to go to NMT trajectory 
+%       \item use CBFs on backup controller 
+%     \end{itemize}
+%   \end{itemize}
+%   \item What defines a collision (pretty much the same question as above) 
+%   \item What are performance objectives?
+%   \begin{itemize}
+%     \item minimize total delta-v 
+%     \item minimize change from desired input 
+%   \end{itemize}
+%   \item Where should backup controller drive the system to?: 
+%   \begin{itemize}
+%     \item stationary points 
+%     \item ellipses 
+%   \end{itemize}
+%   % \item How characterize a single "elliptical NMT" 
+%   % \item How minimize delta v? 
+%   % \item How characterize preset trajectories? 
+%   % \item Should we find the best NMT or choose a preset NMT? 
+% \end{itemize}
+
+ 
+
+% \section*{Comments (Temporary)} 
+% \begin{itemize}
+%   \item may be able to look through other papers on collision avoidance in docking to answer some of these questions 
+%   \item options for backup controller: QP; MIQP; LQR; what else? 
+%   \item In all cases, will need: 
+%   \begin{itemize}
+%     \item A backup controller that drives the system to a CNMT 
+%     \item Some definition of a "safety set"/"avoid set" 
+%     \item A way to regulate to the CNMT 
+%   \end{itemize}
+%   \item In all cases, will be preferable if: 
+%   \begin{itemize}
+%     \item Goal set has finite volume 
+%     \item Can prove that finite volume goal set rendered invariant under some controller 
+%   \end{itemize}
+%   Activation of Backup controller may be triggered by: 
+%   \begin{itemize}
+%     \item Forward simulated trajectory going into collision set (or speed limit set) 
+%     \item Current state leaving speed limit set 
+%   \end{itemize}
+% \end{itemize}
+
+% \newpage 
+
+% \section*{Proposals}
+% \subsection{"Take me home button" - hierarchy }
+% \subsubsection{"TMHB" - heavy}
+
+% If some condition is met, a backup controller activates until the spacecraft is put on the NMT (similar to fighter jet CAS)
+
+% Backup controller may utilize barrier functions 
+
+% Possible activation conditions: 
+% \begin{itemize}
+%   \item Speed limit constraint is violated 
+%   \item Simulated backup trajectory intersects with collision set (comes within N km of target)
+% \end{itemize}
+
+% \subsubsection{"TMHB" - light}
+% Similar to above, but releases control of the spacecraft before CNMT is reached 
+
+% \subsubsection{"TMHB" - ultralight}
+% Moves along boundary. There are ways of getting smoother responses. 
+
+% \subsubsection{"TMHB" - dynamic}
+% Gradually shorten the leash if the chaser spacecraft continues to disobey 
+
+% \subsection{Active Set Invariance Filtering/ CBFs - hierarchy}
+% Filters the desired inputs in such a way that ensures safety constraints are met. Glides smoothly along safety set boundary. Could potentially be placed on top of backup controller. 
+
+% \subsubsection{CBFs with speed limit set}
+% Prove control invariance of speed limit set and use CBFs 
+
+% \subsubsection{IASIF with collision set}
+% Similar to "TMHB"-ultralight but: 
+% \begin{itemize}
+%   \item more elegant 
+%   \item slides smoothly along boundary 
+%   \item requires CNMT goal set have volume 
+%   \item requires 
+% \end{itemize}
+
+%\bibliographystyle{IEEEtran}
+%\bibliography{sample}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabr,sample.bib}
+
+\bibliography{sample.bib}
+%\begin{thebibliography}{1}
+
+%\bibitem{ITAR}
+%U.S. Munitions List, Sections 38 and 47(7) of the Arms Export Control Act (22 U.S.C 2778 and 2794(7).
+
+%\bibitem{AeroConf}
+%Aerospace Conference Web site: \underline{www.aeroconf.org}.
+
+%\end{thebibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thebiography
+%% This biostyle allows you to insert your photo size 1in X 1.25in
+
+
+\begin{biographywithpic}{Mark L. Mote}{Figures/Mark_Headshot}
+ received his B.S. and M.S. degrees in Aerospace Engineering from the Georgia Institute of Technology in 2015 and 2018. He is currently pursuing a Ph.D. in Robotics from the school of Aerospace Engineering at the same institution. His current research interests are in optimization, trajectory planning, and runtime-assurance for safety-critical systems. 
+\end{biographywithpic}
+
+\begin{biographywithpic}{Christopher W. Hays}{Figures/Hays_Headshot}
+is a second-year PhD student at Embry-Riddle Aeronautical University. Working out of the Space Technologies Laboratory, his current research focuses on state estimation, visual sensing, and applied Lie Group theory for space-based relative navigation. Christopher holds a BS in Aerospace Engineering - Astronautics and an MS in Aerospace Engineering - Dynamics \& Control, both from Embry-Riddle Aeronautical University.
+\end{biographywithpic}
+
+\begin{biographywithpic}{Alexander Collins}{Figures/AlexCollins}
+ is an engineer with the Air Force Research Laboratory. He has an MS in astronautical engineering from the Air Force Institute of Technology and has worked extensively on space transportation and logistics modelling, as well as orbital mechanics and space system design.
+\end{biographywithpic}
+\vspace{13pt}
+
+\begin{biographywithpic}{Eric Feron}{Figures/EricFeron}
+is professor of Electrical, Computer, and Mechanical Engineering at King Abdullah University of Science and Technology (KAUST), Saudi Arabia. Eric Feron's interests are with aerospace systems, ranging from aircraft to space systems, with an emphasis on robotic autonomy and artificial intelligence. 
+Prior to his KAUST appointment, Eric Feron was a professor of Aeronautics and Astronautics at the Massachusetts Institute of Technology (MIT) and a professor of Aerospace Engineering at the Georgia Institute of Technology (Georgia Tech), United States. Eric Feron also works on occasion with the Ecole Nationale de l'Aviation Civile (ENAC) and the Institut Supérieur de l'Aéronautique et de l'Espace (ISAE-Supaéro), France, where he was born.
+\end{biographywithpic}
+
+\begin{biographywithpic}{Kerianne Hobbs}{Figures/HobbsKerianne8x10}
+is the Run Time Assurance Lead on the Autonomy Capability Team (ACT3) at the Air Force Research Laboratory. There she investigates rigorous specification, analysis, and bounding techniques to enable certification of autonomous and learning controllers for aircraft and spacecraft applications. Her previous experience includes work in automatic collision avoidance at AFRL from 2011-2014, and Autonomy Verification and Validation research from 2012-2020. Kerianne has a B.S. in Aerospace Engineering from Embry-Riddle Aeronautical University, an M.S. in Astronautical Engineering from the Air Force Institute of Technology, and a Ph.D. in Aerospace Engineering from the Georgia Institute of Technology.
+\end{biographywithpic}
+
+
+
+\end{document}

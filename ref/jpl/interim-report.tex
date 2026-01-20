@@ -1,0 +1,283 @@
+\documentclass[12pt]{article}
+
+%% Language and font encoding
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{booktabs}
+\usepackage{tabstackengine}
+\usepackage{booktabs}
+\usepackage{tabstackengine}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{longtable,tabularx}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\newcommand{\mm}[1]{\textcolor{OliveGreen}{\textrm{(#1 - MM)}}}   % Mark comments
+\newcommand{\ma}[1]{\textcolor{Purple}{\textrm{(#1 - MA)}}}       % Matt comments
+
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.25em}
+\renewcommand{\baselinestretch}{1.3}
+
+\title{\Large{Spacecraft Swarm Integrated Communications and Control} \\[0.5cm] \large{Interim Report II --- Summer 2019 }}
+\author{Mark L. Mote}
+
+\begin{document}
+\date{ }
+\maketitle
+\newpage
+
+
+
+\subsection*{Introduction}
+
+The high level goal of the project is to develop a methodology for maximizing the scientific data relayed by a swarm of instrument carrying spacecraft around a small body (SB) (e.g. an asteroid) to a single carrier spacecraft in an outer orbit. The objective is to be met by optimizing over the initial orbit states and network flow between the spacecraft. The swarming spacecraft are subject to constraints on their available memory and bandwidth. Only data that can be relayed to the carrier is considered useful to the mission. This document discusses modelling and development of an initial  problem formulation. Many of the design decisions are left open at this point and the assumptions made are likely to be refined over time in order to provide a more realistic analysis. The project has two phases. The first phase of the project ---discussed here--- will consider the task of specifying a nominal mission design. The next phase will address the problem of moving from an arbitrary orbital state to a new formation, subject to constraints on fuel consumption ($\Delta v$). A reference design mission is to be developed for the asteroid \textit{433 Eros}.
+
+\subsection*{Modelling of the System}
+
+\subsubsection*{Orbital Dynamics around SSSBs}
+
+We will assume that the SB selected for the mission is sufficiently larger than the spacecraft, is rotating at a constant angular speed $\Omega_{\rm SB}$ about primary principal axis, and that perturbations from the sun and other planets are negligible. Furthermore, we assume that the acceleration of the SB's center of mass is negligible, enabling us to treat a frame centered here as inertial. Let $\mathcal{F} = (\mathcal{O}\,,\hat{I},\,\hat{J},\,\hat{K})$ be such a frame, where the origin $\mathcal{O}$ is centered at the center of mass, and $\hat{I},\,\hat{J},\,\hat{K}$ are orthogonal basis vectors with $\hat{K}=\hat{I}\times \hat{J}$ being the axis of rotation. Let $\mathcal{F}_{\rm B}= (\mathcal{O}\,,\hat{i},\,\hat{j},\,\hat{k})$  be a body centered frame, that is equivalent to frame $\mathcal{F}$ rotated by angle  $\theta_{\rm SB}$ about $\hat{K}$. The discrete time state equation for such a SB over time horizon $T$ is then, 
+\begin{equation}
+    {\theta}_{\rm SB}(k+1)-{\theta}_{\rm SB}(k) = \Omega_{\rm SB}\Delta t, \qquad \theta_{\rm SB}(1) = \theta_0, \qquad k=1,\,...,\,T-1
+\end{equation}
+
+For the initial problem formulation, we will treat each spacecraft as a point mass. 
+Let the state of the $j^{th}$ spacecraft at time $k$ be denoted by $x_{{\rm s},j}(k) = [r^T_{{\rm s},j}(k), \, v^T_{{\rm s},j}(k) ]^T \in \mathbb{R}^6$, where $j=1,...,N_{\rm s}$ and $r_{{\rm r},j},\,v_{{\rm s},j}\in \mathbb{R}^3$ represent position and velocity expressed in frame $\mathcal{F}$.
+% Likewise, let $x_{\rm c}(t) = [r^T_{\rm c}(t), \, v^T_{\rm c}(t) ]^T \in \mathbb{R}^6$, be the (similarly defined) state of the carrier vehicle. 
+The state dynamics are,
+\begin{align}
+    {x}_{\rm s}(k+1)-{x}_{\rm s}(k) &= f_{\rm g}(x_{\rm s}(k),\, \theta_{\rm SB}(k))\Delta t , \qquad x_{\rm s}(1) = x_{{\rm s,}0}, \quad \theta_{\rm SB}(1) = \theta_0 
+        % \dot{x}_{\rm c}(t) &= f_{\rm g}(x_{\rm c}(t),\, \theta_{\rm SSSB}(t)) , \qquad x_{\rm c}(t_0) = x_{{\rm c,}0} , \quad \theta_{\rm SSSB}(t_0) = \theta_0
+\end{align}
+where $f_{\rm g}$ is derived from the gravitational potential of the body. SBs have very irregular shapes in general. Consequently, a key feature of such bodies is that they exhibit highly non-uniform gravity fields --- hence the dependence of $f_{\rm g}$ on $\theta_{\rm SB}$. A common approach to representing the gravitational potential in functional form is to use a spherical harmonic expansion. It should be noted that this expansion can only be assumed convergent outside of a sphere circumscribing the body, known as the Brillouin sphere. 
+
+\subsubsection*{Observation and Data Collection}
+The observation constraints on each spacecraft are to be derived from a set of high level science requirements related to the scientific instruments being carried. We assume that each spacecraft possesses a single instrument which corresponds to a single type of observation. Hence, the data collection rate and scientific value of an observation is also uniquely determined by the instrument on board. In order to keep track of the equipment for each spacecraft, let us define a vector $\tau_{\rm obs}\in \mathbb{Z}^{N_s}$ of spacecraft $types$, with $\tau_{{\rm obs},i} $ being an index which indicates the set of science instruments possessed by spacecraft $i$. By convention, we define $\tau_{{\rm obs},i}=0$ for the carrier spacecraft. 
+
+The shape of the asteroid is approximated by a polyhedron with $N_{\rm v}$ vertices $\nu_j \in \mathcal{S}_{v} = \{1,\,...,\,N_v\}$. Each vertex represents a location on the surface of the SB. Whether or not a vertex $\nu_j$ is able to be observed (i.e. collect useful data) by a spacecraft $i$ depends on the combined positions of the sun $r_\odot$ and spacecraft $r_{{\rm s,}i}$, along with the pose of the asteroid $\theta_{\rm SB}$, and type of instruments on board $\tau_{{\rm obs},i}$. 
+Let us define the observation feasibility function $f_{\rm obs}( r_{{\rm s},i},\, r_\odot, \theta_{\rm SB},\, \tau_{{\rm obs},i},\, \nu_j):\mathbb{R}^3\times\mathbb{R}^3\times\mathbb{R}\times\mathbb{Z}\times\mathbb{Z} \mapsto \{0,\,1\} $ such that $1$ is returned if the relative geometry permits observation with the given instrument and $0$ is returned otherwise. 
+The set of feasible points for agent $i$ at time $k$ is 
+\begin{equation}
+    \mathcal{S}^{\rm obs}_{ik} \triangleq \{\nu_j \in \mathcal{S}_v \,|\, f_{\rm obs}
+    ( r_{{\rm s},i}(k),\, r_\odot(k), \theta_{\rm SB}(k),\, \tau_{{\rm obs},i},\, \nu_j) = 1 \}
+\end{equation}
+
+We assume that the spacecraft is able to observe no more than one observation point at each timestep. The selection of observation points over the mission is represented by the matrix $\Lambda$, with entries $\Lambda_{ik} 
+% \in \mathcal{S}_{\rm obs}^{ik}
+$ being equal to either (i) the index of the point observed by spacecraft $i$ at time $k$ (selected from $\mathcal{S}_{\rm obs}^{ik}$) if an observation is made, or (ii) $0$ if no observation is made
+\footnote{The observation matrix $\Lambda$ is a decision variable. In the software, we will define an \textit{observation points optimizer} function to make the choice of which of the feasible points to observe }. 
+The data collected from observation of the SB is stored in spacecraft memory. Let $\phi^{\rm obs}(k)\in\mathbb{R}^{N_s}$ be the \textit{observation flow vector}, with components $\phi^{\rm obs}_j(k)$ denoting the rate of data collected by the spacecraft $j$ at time $k$. 
+For the initial model, we will assume that each instrument collects data at a constant rate $\omega_{\rm obs}(\tau_{{\rm obs},i})\in\mathbb{R}^{\geq 0}$ whenever observation is occurring,
+\begin{equation}
+     \phi^{\rm obs}_{i}(k) = 
+     \begin{cases}
+         \omega_{\rm obs}(\tau_{{\rm obs},i}), & {\rm if} \quad  \Lambda_{ik}\not=0  \\
+         0, & o.w.
+     \end{cases}
+\end{equation}
+
+
+Naturally, some  types of information may be more valuable to the science goals of the mission than others. 
+We can represent this relative importance of the data flow by associating with each observation flow vector $\phi^{\rm obs}(k)$ a \textit{priority vector} $w^{\rm obs}(k)$, with components $w^{\rm obs}_j(k)\in\mathbb{R}^{\geq0}$ indicating the relative scientific value the observed information per unit of data collected. How these weighting values are decided upon will depend on the specific objectives of the mission. At this point, let us assume that the science goals of the mission can be translated into matrix function mapping the total set of observed points $\Lambda$ to a matrix $W^{\rm obs}$ containing the priority vectors at each timestep: $f_{\rm reward}:\mathbb{R}^{N_s \times T} \mapsto \mathbb{R}^{N_s \times T}$. Observation points should be selected with this in mind.  
+
+
+
+% Constraint: Observe one point per timestep.
+
+% Then, $\Lambda_{ik}$ is point observed by spacecraft $i$ at time $k$
+
+% We want to choose "the best" observation points subject to $\Lambda_{ik}\in \mathcal{S}_{\rm obs}$
+% But what is best? which of the feasible points to choose
+% Since we assume that some data points are more valuable than others, we have a reward --.
+% ..or just assume that there will be some overall assessment of value J(lambda)
+
+% In the end we choose lambda, and have phi(i,k) which tells you the corresponding data flow, and W which weights the reWARD/ BIT OF DATA FREOM EACH  
+
+% matrix $G=[G_{ij}]\in\{0,1\}^{N_{\rm s} \times N_{\rm v}}$ such that the components indicate whether point $j$ is acceptable for observation by spacecraft $i$,
+% \begin{equation}
+%      G_{{\rm obs},ij} = f_{\rm obs}(\tau_j,\, x_{{\rm s},i},\, r_\odot, \theta_{\rm SB})
+%     %  \begin{cases}
+%     %      1, & {\rm if} \quad h_{j,k}(t) \leq h_{{\rm max},j},\,\, |\alpha_{k}(t)| \leq \alpha_{{\rm max},j},\,\, |\beta_{i,j}(t)| \leq \beta_{{\rm max},j},\,\,j \not = j_{\rm c}  \\
+%     %      0, & o.w.
+%     %  \end{cases}
+% \end{equation}
+% WRONG: nothing passed in about given point. Also, why do we need to make this a matrix? Why not just have fobs return the set of points feasible at a given time, or the vector of feasible points over the asteroid. 
+
+% where $r_\odot$ is the position of the sun, and the $f_{\rm obs}$ returns $1$ if the point is feasible for observation and $0$ otherwise. The sun's position at time $k$, $r_{\rm \odot}(k)$ can be propagated from a known initial state, or retrieved from a data file (e.g. a SPICE file). Note that this value is independent of the state of the spacecraft or asteroid. 
+
+
+
+% where $j_{\rm c}$ is the index of the carrier spacecraft. Again, that the observation threshold values are determined by the instruments being carried by the spacecraft. Note that this matrix simply determines feasibility of observation. The points actually observed at a given time will be selected from this set.
+
+
+
+% % We assume that the $i^{th}$ point on the surface is observable to the $j^{th}$ instrument carrying spacecraft if 
+% % $h_{j,k},\,\alpha_{k},\,\beta_{j,k}$ are simultaneously within some given ranges. The surface is never observable to the carrier. 
+
+
+% Let the data flow from observation be denoted by the vector $\phi_{{\rm obs}}(t)\in \mathbb{R}^{N_{\rm s}+1}$ with components $\phi_{{\rm obs},j}(t)$ indicating the rate of data collection by spacecraft $j$ at time $t$. Similarly, we can can express the available memory of the spacecraft with a vector $c(t)\in \mathbb{R}^{N_s + 1}$, with components $c_{j}(t)\in[0,\,c_{{\rm max},j}]$ indicating the amount of data held by spacecraft $j$ at time $t$, and $c_{{\rm max,}j}$ being the maximum memory available. 
+%  The following two assumptions are made regarding the observation dynamics: (i) a spacecraft will make an observation if memory is available and at least one point is feasible for observation, (ii) the rate of data collected while making an observation $\omega_{\rm obs}$ will be constant for a given spacecraft (instrument).
+% %  \footnote{These are very rough approximations that will later need to be refined to consider other pointing and instrument constraints.}.
+% With these assumptions, we can express the observation flow vector as, 
+% \begin{equation}
+%      \phi_{{\rm obs},j}(t) = 
+%      \begin{cases}
+%           \omega_{{\rm obs},j}, &{\rm if} \quad c_j < c_{{\rm max,}j},\,\,\exists \,k\in\{1,...,N_{\rm v}\} \,|\, G_{j,k}(t)=1 \\
+%          0, & o.w.
+%      \end{cases}
+% \end{equation}
+% If the spacecraft are not transmitting data, then the memory dynamics are simply $\dot{c}(t)=\phi_{\rm obs}(t)$.
+
+% Let the memory usage of the $j^{th}$ spacecraft at time $t$ be denoted by $c_{j}(t)\in [0,\, c_{{\rm max,}j}]$, where $j=1,...,N_{\rm s}$ and $c_{{\rm max,}j}$ is the maximum storage available. The following two assumptions are made regarding the observation dynamics: (i) a spacecraft will make an observation if memory is available and at least one point is feasible for observation, (ii) the rate of data collected while making an observation $\omega_{\rm obs}$ will be constant for a given spacecraft (instrument)\footnote{These are very rough approximations that will later need to be refined to consider other pointing and instrument constraints.}.
+% With these assumptions, 
+% we have the following simplified observation dynamics, 
+% \begin{equation}
+%      \dot{c}_{j}(t) = 
+%      \begin{cases}
+%          \omega_{\rm c}, & c_j\leq  c_{{\rm max,}j}(t),\,\,\exists \,k\in\{1,...,N_{\rm v}\} \,|\, G_{j,k}(t)=1 \\
+%          0, & o.w.
+%      \end{cases}
+% \end{equation}
+
+% Key points:
+% - observation constraints derived from high level science requirements. We will assume these manifest in terms of set constraints on (i) spacecraft angle and (ii) sun angle (for now...)
+% - We will then need to know the location of the sun at a given time. (no dynamics?)
+% - assume each spacecraft possesses one instrument, which can make one type of observation. Multiple spacecraft may have the same instrument. 
+% - have ... types of instruments to choose from 
+% - following parameters are decided from the instrument: ...
+% - body is represented with a discrete set of $N_v$ points. 
+% - the spacecraft are assumed to be limited in memory by $c_{\rm max}$
+% - we define the memory state of the vehicle as $c=$
+% - the memory dynamics are ... 
+% - assume that a spacecraft will always make an observation unless it is at maximum memory 
+% - can represent whether a spacecraft will take an observation by looking at the observation matrix ... 
+
+
+\subsubsection*{Relay and Communication Flow}
+The observed scientific data is relayed between spacecraft to the carrier. We can represent the flow of information among agents by defining a matrix $\Phi(k) \in \mathbb{R}^{N_{\rm s}\times N_{\rm s}}$ such that $\Phi_{ij}$ represents the rate of data being sent from the $j^{th}$ to the $i^{th}$ spacecraft if $i\not=j$, and the amount of memory stored (divided by the discrete time interval $\Delta t$) if $i=j$. Note that if stored memory is treated as a flow of data back to oneself, then no information is retained in the nodes between time steps. This leads us to the following conservation constraint: all data flowing into a node at time $k$, must flow back out of the node at $k+1$. Taking into account the information flow from observation $\phi^{\rm obs}$, we have, 
+\begin{equation}
+    \Sigma_{j=1}^{N_s}\Phi_{ij}(k)+\phi^{\rm obs}_i(k) = \Sigma_{j=1}^{N_s}\Phi_{ji}(k+1) \qquad  \,\, i\in\{1,...,N_s\}
+\end{equation}
+Note that this formulation may be extended to include relay of information of the data by the carrier to the Deep Space Network (DSN). In this sense, flow from $\phi_^{\rm obs}$ acts as a source, and flow to the carrier acts as a sink. 
+
+The diagonal terms are limited by the available memory $c_{\rm max}$ of each spacecraft, 
+\begin{equation}
+    \Phi_{ii} \leq \frac{c_{{\rm max},i}}{\Delta t}, \quad  \,\, i\in \{1,...,N_s\}
+\end{equation}
+The off-diagonal terms in the matrix are limited by the available bandwidth. We can assume that this is a function of both the distance between spacecraft, and whether the asteroid is blocking the path between them. For generality, we will also assume that the spacecraft have differing communication capabilities. Similar to the case of observation, we define the communication type of the $i^{\rm th}$ spacecraft as $\tau_{{\rm com},i}$. The off diagonal constraints are then,  
+\begin{equation}
+    \Phi_{ij} \leq f_{\rm bw}(r_{{\rm s },i},r_{{\rm s },j},\theta_{\rm SB},\,\tau_{{\rm com},i},\, \tau_{{\rm com},j}),\quad i\not=j
+\end{equation}
+The communication flow at each timestep should be chosen such that the useful data relayed to the carrier is optimized, where \textit{useful} in this sense is defined by the priority matrix. If we treat the source flow $\phi^{\rm obs}$ as a given, then this can be posed as a single commodity, maximum flow problem. 
+
+
+% If we assume no information is gained or lost, then this matrix is skew symmetric
+% \begin{equation}
+%     \Phi_{ij}(t) = -\Phi_{ji}(t)
+% \end{equation}
+% The  value of each element is bounded by the available bandwidth, which is in turn decided by 
+% some function of the relative distances between the two spacecraft and asteroid. That is, 
+% \begin{equation}
+%     |\Phi_{ij}(t)| \leq f_B(r_i(t), r_j(t), \theta(t))
+% \end{equation}
+% We will assume that the bandwidth is zero if the path connecting the two spacecraft is obstructed by the asteroid, and a function of the distance between spacecraft otherwise. Clearly, the choice in data flow is also subject to the memory constraints on the spacecraft. Finally, we add the constraint that a spacecraft may only exchange data with one other spacecraft at a time,
+% \begin{equation}
+% \Phi_{ij}(t) \not = 0 \implies \Phi_{ik}(t)=0\,\,\,\forall k\in\{1,...,N_{\rm s} \} \backslash j  
+% \end{equation}
+
+% The data flow rate due to communication between spacecraft is then given by the vector 
+% \begin{equation}
+%     \phi_{\rm comm}(t) = \Phi(t) \mathbbm{1},
+% \end{equation}
+% where $\mathbbm{1}$ is a ones vector of length $N_{\rm s}+1$. The combined memory dynamics from communication and observation is then: 
+% \begin{equation}
+%     \dot{c}(t) = \phi_{\rm comm}(t) + \phi_{\rm obs}(t), \qquad \phi_{\rm comm}(t_0)=0,\,\, \phi_{\rm obs}(t_0)=0
+% \end{equation}
+% If the type of data relayed to the carrier is not important, then the value of the science collected during the mission can be measured in terms of the memory use of the carrier $c_{j_{\rm c}}$. Otherwise, we might assume that it is a weighted function of the memory use, weighted by the value of the respective type of data held. 
+
+\subsection*{Problem Statement}
+\subsubsection*{ICC Optimization Problem}
+The overall goal of the mission design for this project can now be stated as,
+\begin{equation}
+\begin{aligned}
+\max_{\bar{\Phi}_{\rm obs}, \Phi,\, x_{{\rm s}}(1),\, \Lambda} \quad & \sum_i\sum_k W_{ik}\bar{\Phi}_{ik}^{\rm obs}\\
+\textrm{s.t.} \quad & (1),(2),(4)-(7)  \\
+& \Lambda_{ik}\in \mathcal{S}^{\rm obs}_{ik} \, \cup \, \{0\} \\ 
+& W = f_{\rm reward}(\Lambda) \\
+& \bar{\phi}^{\rm obs}(k) \leq \phi^{\rm obs}(k) \\
+& \Phi_{ii}(T) = 0,\quad i\in\{1,...,N_s\}\backslash i_c
+\end{aligned}
+\end{equation}
+where $i_c$ is the index of the carrier spacecraft and $\bar{\Phi}_{\rm obs} = [\bar{\phi}^{\rm obs}(1), ..., \bar{\phi}^{\rm obs}(k)]$ is a matrix of the \textit{effective} observation flow at each timestep; i.e. it contains the subset of observation data collected that actually gets sent out to the carrier. The final constraint ensures that all of the data sent out ($\bar{\Phi}_{\rm obs}$), actually reaches the carrier by the end of the time window. Hence the objective function can be seen as the total effective reward to carrier. 
+One approach to solving the above problem is to divide it into a set of subproblems. These are informally stated below. 
+
+\subsubsection*{Subproblem I: Coverage Optimization} 
+
+Find the best orbits to maximize $W$. Ignore the effects of communication flow among agents. This itself may be reduced to the problem of sequentially finding the best orbit of a single spacecraft at a time, given the existing orbits before it. 
+
+\textit{Status: Monte Carlo chooses best orbit. }
+
+\subsubsection*{Subproblem II: Observation Points Optimization} 
+Given the set of orbits, an observation function, and a reward function, find the best set of points to observe $\Lambda$ such the $W$ is maximized. Solving this subproblem finds the best case coverage reward for a given orbit. 
+
+\textit{Status: No optimization approach proposed (maybe: ILP)}
+
+
+\subsubsection*{Subproblem III: Network Flow Optimization}
+Given the observation flow $\Phi^{\rm obs}$, determine the effective observation flow $\bar{\Phi}_{\rm obs}$ (i.e. what data is sent, what is deleted) and the communication flow $\Phi(k), \, k=1,...,T$ such that the total reward to the carrier $\sum_i\sum_k W_{ik}\bar{\Phi}_{ik}^{\rm obs}$ is maximized. It may be possible to combine this subproblem with the observation points subproblem.  
+
+\textit{Status: Solved}
+
+
+% \subproblem{Base Approach I: Sequential Monte Carlo}
+
+% \subproblem{Base Approach I: Monte Carlo}
+
+
+% \section*{Interfaces} 
+% Spacecraft Object/ struct. 
+
+% $\phi^{\rm comm}_{\overset{\cdot j}{\leftarrow}}(k) = \Sigma_i \Phi_{ij}^{\rm comm}(k)$
+
+% \subsection*{Appendix}
+
+% \subsubsection*{Example Observation Feasibility Conditions }
+
+% {\footnotesize \renewcommand{\baselinestretch}{0.1}
+% \setlength{\parindent}{0em}
+% \setlength{\parskip}{0.1em}
+% \begin{thebibliography}{}
+% \bibitem{NSM_1}
+% Prockter, L., Murchie, S., Cheng, A., Krimigis, S., Farquhar, R., Santo, A., & Trombka, J. (2002). The NEAR shoemaker mission to asteroid 433 eros. Acta Astronautica, 51(1-9), 491-500.
+% \bibitem{NSM_2}
+% Cheng, A. F. (2002). Near Earth asteroid rendezvous: mission summary. Asteroids III, 1, 351-366.
+% \bibitem{ANTS}
+% Curtis, S. A., Rilee, M. L., Clark, P. E., & Marr, G. C. (2003, February). Use of swarm intelligence in spacecraft constellations for the resource exploration of the asteroid belt. In Proceedings of the Third International Workshop on Satellite Constellations and Formation Flying (pp. 24-26).
+% \bibitem{G_42}
+% 42 Simulation Software, NASA, homepage,  https://software.nasa.gov/software/GSC-16720-1
+% \bibitem{NS3}
+% ns-3 Network Simulator, ns-3, homepage, https://www.nsnam.org/
+
+% \end{thebibliography}
+% }
+
+\end{document}

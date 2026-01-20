@@ -1,0 +1,416 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+% \usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage[usenames, dvipsnames]{color}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{gensymb}
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{booktabs}
+\usepackage{tabstackengine}
+
+\usepackage{longtable,tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mm}[1]{\textcolor{OliveGreen}{\textrm{(#1 - MM)}}}   % Mark comments
+% \newcommand{\ar}[1]{\textcolor{Red}{\textrm{(#2 - AR)}}} 
+% \newcommand{\sby}[1]{\textcolor{Blue}{\textrm{(#3 - SB)}}}
+% \newcommand{\fr}[1]{\textcolor{Orange}{\textrm{(#4 - FR)}}}
+% \newcommand{\jp}[1]{\textcolor{Yellow}{\textrm{(#5 - FR)}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}%[section]
+
+
+
+\title{\LARGE \bf
+Integrated Communications and Control for Small Body Exploration with Multiple Spacecraft
+}
+
+\author{Mark Mote$^{1}$, Saptarshi Bandyopadhyay$^{2}$, Amir Rahmani$^{2}$, Federico Rossi$^{2}$  and Jean-Pierre de la Croix$^{2}$% <-this % stops a space
+\thanks{This work is supported by NASA Jet Propulsion Laboratory (JPL)}% <-this % stops a space
+\thanks{$^{1}$M. Mote is a graduate researcher at the Georgia Institute of Technology,
+        301 Ferst St., Atlanta, GA.
+        {\tt\small MarkLMote@gmail.com}}%
+\thanks{$^{2}$A. Bandyopadhyay, A. Rahmani, F. Rossi, and J. P. de la Croix are with the technical staff of the Multi-Agent and Maritime Autonomy Group (347N), Jet Propulsion Laboratory,  4800 Oak Grove Dr, Pasadena, CA
+        {\tt\small }}%
+}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+
+\begin{abstract}
+
+This paper proposes an initial framework for integrated communication and control of robotic exploration missions to small Solar System bodies using multiple spacecraft. 
+% Orbital parameters, network flow, and observation decisions 
+Mission parameters of the
+ swarming spacecraft are designed subject to interdependent constraints on the dynamics, communication, and observation behaviors. 
+The design is directed toward the ultimate goal of maximizing the amount of useful scientific data that can be relayed to a carrier spacecraft in an outer orbit. 
+A Monte Carlo algorithm chooses orbits sequentially to maximize the interim coverage reward of the orbit set.
+At each step, the best case coverage reward is computed by solving an integer linear programming sub-problem to determine the optimal set of observation decisions. 
+Finally, an optimization problem is formulated address the challenge of maximizing data relay to the carrier under tight constraints on memory and available bandwidth. 
+The general design framework is developed in the context of a reference design mission to asteroid 433 Eros. 
+This entails a mapping of high level science requirements into precise mission constraints. 
+A proof of concept analysis is conducted to assess the practicality of this framework. 
+
+\end{abstract}
+
+% \newpage 
+
+% \section{Introduction}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modelling and Simulation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This section introduces a general set of tools and assumptions for representing the mission environment.
+The system of interest is composed of (i) a small body, (ii) the sun, and (iii) $N$ spacecraft, which are associated with indices $\mathcal{N}=\{1,...,N\}$. 
+Of these spacecraft, $N-1$ are given the task of observing the small body and relaying the information to a carrier vehicle in an outer orbit. The carrier  receives the data and  transmits the information back to earth via communication with the Deep Space Network (DSN). Let $\mathcal{N}_{\rm s}$ denote the set of science spacecraft indices and $\mathcal{N}_{\rm c}$ be the carrier index. The simulation software is based in MATLAB \cite{MATLAB:2010} and the mission is assumed to occur over the discrete time horizon $\{t_k\}_{k\in\mathcal{K}}$ with $\mathcal{K} = \{1,...,K\} $. All simulated examples consider the asteroid 433 Eros. A detailed description of this asteroid and its parameters can be found in \cite{miller2002determination, scheeres2002orbital}.  
+
+\begin{figure}
+    \centering
+    \includegraphics[trim={0 1cm 9cm 0cm},clip,width=0.9\columnwidth]{mission_design_figure.pdf}
+    \caption{Notional representation of a mission configuration with swarm of $N=6$ spacecraft orbiting around an asteroid, and sun in the background. Three of the science spacecraft are shown making surface observations, and one communicates with the carrier vehicle. }
+    \label{fig:my_label}
+\end{figure}
+
+\if
+{
+Assumptions on scientific objectives goes here.
+Mention: $N$ spacecraft, with one carrier. The carrier receives data but does not observe. 
+Mention: General organization of software: we use MATLAB, etc.
+Assumptions for what it means to explore an asteroid in a general context. 
+Everything should be derived from science goals 
+The specific goals will come from the reference design mission.
+But, the first part of the paper tries to develop everything in a general sense. 
+It is necessary to start with something about the science before we begin the modelling, else we wont have any reason for modelling anything in a particular way. 
+So here: Lets try to nail down the general scientific objectives and process. 
+}
+\fi 
+
+\subsection{Pose Retrieval for Spacecraft and Sun}
+
+\subsubsection{Propagation of Spacecraft Orbits}
+
+Generally, orbits are only considered around asteroids greater than around 1 km in diameter, as bounded orbits around smaller bodies than this are difficult to achieve without station keeping maneuvers \cite{stacey2018autonomous}.
+Our mission focuses on the case of small bodies that meet this criteria of being sufficiently larger than the orbiting spacecraft and that do not have natural satellites or exist in binary orbits. We assume that the acceleration of the small body's center of mass is negligible, enabling us to treat a frame centered here as inertial. Let $\mathcal{F} = (\mathcal{O}\,,\hat{I},\,\hat{J},\,\hat{K})$ be such a frame, where the origin $\mathcal{O}$ is centered at the center of mass, and $\hat{I},\,\hat{J},\,\hat{K}$ be orthogonal basis vectors with $\hat{K}=\hat{I}\times \hat{J}$. Let $\mathcal{F}_{\rm B}= (\mathcal{O}\,,\hat{i},\,\hat{j},\,\hat{k})$  be a body centered frame with the same origin and $\hat{k}$ aligned with the axis of rotation. 
+
+The initial problem formulation will avoid explicit characterization of the attitude of the spacecraft, and will assume that no thrust is applied over the course of the mission.
+The state of the $i^{th}$ spacecraft at time $k$ is denoted by $x_{{\rm s},i}(k) = [r^T_{{\rm s},i}(k), \, v^T_{{\rm s},i}(k) ]^T \in \mathbb{R}^6$, where $i\in\mathcal{N}$ and $r_{{\rm r},i},\,v_{{\rm s},i}\in \mathbb{R}^3$ represent position and velocity. Orbits are integrated from an initial state using JPL's Small Body Dynamics Toolkit (SBDT) \cite{broschart2015small}.
+SBDT is a collection of MATLAB-based tools for modelling and analyzing trajectories around primitive bodies. It provides various models for representing the gravity of small bodies, along with other complex forces such as solar radiation pressure and comet outgassing. Figure \ref{fig: SBDT_integration_demo} shows an example orbit integration around asteroid 433 Eros. Here a $16^{th}$ order spherical harmonic expansion is used to represent the gravity field. It should be noted that spherical harmonic expansions can only be assumed convergent outside of a sphere circumscribing the body, known as the Brillouin sphere \cite{scheeres2016orbital}.  
+
+\begin{figure}
+\centering
+\begin{subfigure}{1\columnwidth}
+  \centering
+\includegraphics[trim={0 0 0 0cm},clip,width=0.9\columnwidth] {relative_traj.png}
+\end{subfigure}%
+\newline 
+\vspace{8pt}
+\begin{subfigure}{1\columnwidth}
+  \centering
+\includegraphics[trim={0 0 0 0cm},clip,width=0.9\columnwidth] {absolute_traj.png}
+\end{subfigure} %
+\caption{SBDT Integration of spacecraft orbits around Eros 433 in relative (top) and absolute (bottom) reference frames from initial state $x_{{\rm s},0}=[3.5,\, 0,\, 0,\,0,\,0.0025,\,0.0025]^T $ [km, km/s]. Simulation considers 5 day time period with samples taken 10 minutes apart ($\Delta t = 600$ s, $K=721$).}
+  \label{fig: SBDT_integration_demo}
+\vspace{4pt}
+\end{figure}
+
+
+\subsubsection{Location of the Sun}
+The sun's location in the asteroid frame, $r_{\rm \odot}^b$, ---alternatively, the pose of the asteroid with respect to the sun--- is retrieved using JPL's SPICE toolkit \cite{acton2011spice}. SPICE is a collection of APIs, libraries, and data files 
+provided by the Navigation and Ancillary Information Facility (NAIF) at JPL. The primary purpose of this tool set is to provide a means for storing and retrieving ancillary information for observation planning with solar system bodies. The ANSI C based MATLAB-SPICE interface, \textit{MICE} \cite{MICE} is used to access the SPICE APIs from within the MATLAB environment. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Observation of the Small Body}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The shape of the body is modelled using a polyhedral approximation comprising $N_v$ vertices $v \in\mathcal{V}=\{1,...,N_v\}$ connected by triangular facets. The vertices represent discrete points on the surface of the small body. Their locations with respect to the mass center and are specified as vectors $r_v\in \mathbb{R}^{3}$ (with $v\in\mathcal{V}$). Each triangular facet is specified by the three vertices it connects. By Euler's formula for (triangular) polyhedra we have $N_f=2(N_v-2)$ faces in total. A catalogue of shape files for various small solar system bodies is available from NASA's Planetary Data System's Small Bodies Node (PDS-SBN) \cite{NASAPDS}. 
+
+Observations of areas on the surface are modelled as observations of the vertices of the small body. A spacecraft is said to \textit{observe} vertex $v$ at time $k$ if one of its instruments collects data at time $k$ while pointed at vertex $v$. That is, the observed vertex represents the \textit{center} of the observed region. Following from this, we allow a spacecraft to observe at most one vertex at a given time. 
+Assuming that the spacecraft are equipped with basic pointing capabilities, multiple observation points may be available for observation by a spacecraft at a given instant. The size of the potentially observable area is constrained by the spacecraft's limitations on attitude rate. 
+
+The choice in observation point is made according to the constraints and objectives imposed by the high level science goals of the mission. For the purposes of providing a general representation, we assume that these goals can be translated into two (user specified) functions. First, let us consider the set of points that meet the minimum requirements for observation by a spacecraft carrying a particular instrument. Let $g\in\mathcal{G}$ denote the instrument being carried by the spacecraft.  
+The ability of a vertex $v$ to be observed by a spacecraft with instrument $g$ and relative position $r_{{\rm s},i}^{b}$ at time $k$ can be characterized by the predicate
+$f_{\rm obs}:\mathcal{G}\times\mathcal{V}\times\mathcal{K}\times\mathbb{R}^3\mapsto \{0,1\}$. Note that since the vertex has a fixed location in the relative frame, and the sun's location is a function of only time, the triple $(v,k,\,r_{{\rm s},i}^b)$ completely specifies the relative geometry of the sun, spacecraft, and observation point in $\mathcal{F}_b$.  As a convenient representation of the points available for observation, let us define the variable $\omega(i,v,k) \triangleq f_{\rm obs}(g,v,k,\,r_{{\rm s},i}^b)$.
+
+Naturally, certain types of information may be more valuable to the mission than others. We represent the relative importance of each potential observation by defining an observation reward function $f_{\rm reward}:\mathcal{G}\times\mathcal{V}\times\mathcal{K}\times\mathbb{R}^3\mapsto \mathbb{R}_{\geq 0}$. The output of this function yields the amount of value \textit{per bit of information} collected, and is associated with the variable $\rho(i,v,k) \triangleq f_{\rm reward}(g,v,k,\,r_{{\rm s},i}^b)$. Figure \ref{fig: sc_observation_of_Eros} shows an example of the observation geometry simulation for a single spacecraft in orbit around the asteroid 433 Eros. 
+Here $f_{\rm obs}$ returns unity for all vertices within $15^\circ$ nadir, and $f_{\rm reward}(v)=\Vert r_v^b \Vert_2 $, leading to the outermost point to be chosen for observation. Vertices feasible for observation based on this criteria are indicated in yellow, and the observed point is in red.
+
+The selected observation points over the mission are represented by the matrix $\Lambda\in\mathbb{Z}^{N \times K}$, with entries $\Lambda_{ik}\in \{0\} \cup \{v \in \mathcal{V}\,|\,\omega_{iv}(k)=1\}$ being equal to
+either (i) the index of the point observed by spacecraft $i$ at time $k$ if an observation is made, or (ii) $0$ if no observation is made. 
+The data collected from observation of the small body is stored in spacecraft memory. Let $\phi^{\rm obs}(k)\in\mathbb{R}^{N}$ be the {observation flow vector}, with components $\phi^{\rm obs}_j(k)$ denoting the rate of data collected by the spacecraft $j$ at time $k$. This term is equal to zero only if $\Lambda_{ik}=0$. 
+
+% \mm{ May flow better if we define:
+%  Set of candidate observations for $(i,v,k)$: $\mathcal{S}_{ivk}\triangleq\{0\} \cup \{v \in \mathcal{V}\,|\,\omega_{iv}(k)=1\}$}
+
+\begin{figure}
+    \centering
+    \vspace{8pt}
+    \includegraphics[trim={0.0cm 0 0cm 0cm},clip, width=0.675\columnwidth]{observation_20deg.png}
+    \vspace{8pt}
+    \caption{Single spacecraft observation of Eros 433 model with $N_v=5078$ vertices. Observable points (yellow) are taken as the set of vertices within $15^\circ$ of nadir. The chosen observation point (red) is taken as the observable vertex furthest the asteroid's center of mass.}
+    \label{fig: sc_observation_of_Eros}
+\end{figure}
+
+
+\if 
+Assumptions: 
+(1) One point at a given time 
+(2) Can only observe a point once 
+
+Later Section: 
+- "Observation scheduling problem " 
+- DO: comparison of optimal vs greedy algorithm. 
+- Example reward function: dissipating reward based on distance from interest area. 
+\fi 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\
+\subsection{Network and Communication Flow} \label{sec: network_and_comm_flow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The observed scientific data is relayed between spacecraft to the carrier. The flow of information among agents is represented by defining a matrix $\Phi(k) \in \mathbb{R}^{N\times N}$ such that $\Phi_{ij}$ represents the rate of data being sent from the $j^{th}$ to the $i^{th}$ spacecraft if $i\not=j$, and the amount of memory stored (divided by the discrete time interval $\Delta t$) if $i=j$. Note that if stored memory is treated as a flow of data back to oneself, then no information is retained in the nodes between time steps. This leads us to the following conservation constraint: all data flowing into a node at time $k$, must flow back out of the node at $k+1$. Taking into account the information flow from observation $\phi^{\rm obs}$ for the science spacecraft, we have
+\begin{equation} \label{eq: flow_conservation_sc}
+    \sum_{j\in\mathcal{N}}\Phi_{ij}(k)+\phi^{\rm obs}_i(k) = \sum_{j\in \mathcal{N}}\Phi_{ji}(k+1),
+\end{equation}
+for $i\in\mathcal{N}_{\rm s},\,\,k\in\mathcal{K}$. For the carrier spacecraft $j=\mathcal{N}_c$ we have, 
+\begin{equation} \label{eq: flow_conservation_carrier}
+    \sum_{j\in\mathcal{N}}\Phi_{ij}(k)  = \sum_{j\in \mathcal{N}}\Phi_{ji}(k+1) + \phi^{\rm dsn}_i(k),
+\end{equation}
+where, $k\in\mathcal{K}$ and $\phi^{\rm dsn}$ represents data flow by the carrier to the Deep Space Network. 
+Note that flow from $\phi^{\rm obs}$ acts as a source flow here, and $\phi^{\rm dsn}$ a sink. 
+
+The diagonal terms are limited by the available memory $c_{\rm max}$ of each spacecraft, 
+\begin{equation}
+    \Phi_{ii} \leq \frac{c_{{\rm max},i}}{\Delta t}, \quad  \,\, i\in \mathcal{N}
+\end{equation}
+The off-diagonal terms in the flow matrix are limited by the available bandwidth. We can assume that this is a function of both the distance between spacecraft, and whether the asteroid is obstructing the path between them. The off diagonal constraints are then,  
+\begin{equation}
+    \Phi_{ij} \leq f_{\rm bw}(r^b_{{\rm s },i},r^b_{{\rm s },j}),\quad i\not=j
+    % \{(i,j)\in\mathcal{N}\times\mathcal{N}|i\not=j\}
+\end{equation}
+The communication flow at each timestep should be chosen such that the useful data relayed to the carrier is optimized, where \textit{useful} in this sense is determined by the output of the observation reward function. 
+
+
+% Let $\phi^{$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mission Design}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The objective of the mission is to maximize the total amount of data sent to the carrier, weighted by its relative importance. 
+If we impose the terminal constraint that the memory storage of all observing spacecraft must be empty by the end of the time horizon,
+\begin{equation} \label{eq: flow_terminal_constraint}
+    \Phi_{ii}(K) = 0,\quad i\in\mathcal{N}_{\rm s},
+\end{equation}
+then all of the observational data collected can be assumed to reach the carrier. 
+Recalling that $\phi^{\rm obs}_{i}(k)$ is the data flow rate corresponding to the observed vertex $\Lambda_{ik}$, and $\rho(i,\Lambda_{ik},k)$ is the resulting amount of reward obtained per bit of data, we have that the total reward to carrier is proportional to,
+\begin{equation} \label{eq: total_reward}
+    J = \sum_{i\in\mathcal{N}_s} \sum_{k\in\mathcal{K}} \rho(i,\Lambda_{ik},k) \, \phi^{\rm obs}_{i}(k)
+\end{equation}
+
+Note that due to the flow constraints introduced in Section \ref{sec: network_and_comm_flow}, the observation flow rate is limited by the amount of memory storage available, which is a function of the communication flow between spacecraft. 
+Hence, for a given set of orbits, the problem of optimizing observation points is coupled with the problem of optimizing communication flow. 
+With some loss in optimality, we can solve these problems separately by first optimizing for coverage without memory constraints, and then minimizing reward lost due to memory constraints in the next phase.
+Let $\bar{\phi}^{\rm obs}$ be the desired observation flow, which is calculated without consideration of memory constraints. Likewise, let us define the \textit{coverage} reward function as, 
+\begin{equation} \label{eq: coverage_reward}
+    J_{\rm cov} = \sum_{i\in\mathcal{N}_s} \sum_{k\in\mathcal{K}} \rho(i,\Lambda_{ik},k) \, \bar{\phi}^{\rm obs}_{i}(k)
+\end{equation}
+
+The current baseline approach for optimizing the total reward is accomplished in two steps. First the orbits are selected using a greedy Monte Carlo algorithm, which successively appends orbits to the swarm from a trial orbit set such that each new orbit is chosen as the trial orbit yielding the greatest coverage reward ($J_{\rm cov}$) for the current state of the swarm. Since the coverage reward is also a function of the observation decisions, finding the best case coverage reward for a given set of orbits requires solving a subproblem for the optimal set of observations. This subproblem is formulated in Section \ref{sec: observation_points_subproblem}.
+% 
+
+Next, once the orbital parameters and observation decisions have been chosen to maximize the coverage reward, a second subproblem is solved to maximize total reward over the communication flow. This problem is formulated in Section \ref{sec: communication_flow_optimizer}.  
+
+% \begin{algorithm}
+%   \caption{Greedy Monte Carlo for Orbit Selection}
+
+%   \begin{algorithmic}
+%     % \Statex \Comment { \%comment: servers[] contains the index of servers whose         data rate are sorted in descending order\%}
+%     \State $trial\_orbit\_set = initialize\_random\_orbits(n\_trials)$
+    
+%     \For  {$i_{\rm sc}=1:N$} 
+%     % \Statex\Comment{ \%comment: find the equation corresponding the serverIndex        from the mapping at the File Server\%} 
+%     \State  ${reset\_reward = true}$
+%     \For  {$i_{\rm orbit}=1:M$}
+%     \State        $swarm\{i_{\rm orbit}\} = $ 
+%     \Statex\Comment{ \%comment: try insert equation into Z using OFG\%} 
+
+%     \EndFor end for 
+%     \While{ ( linearlyIndependentServerIndex.length!=K ) } 
+%     \Statex\Comment{\%comment: remove all the server index which were not inserted in Z\%}  
+%     \State temp[]=serverIndex[]-linearlyIndependentServerIndex 
+%     \If{  (linearlyIndependentServerIndex.length=K) }
+%     \State break
+%     \EndIf  
+%     \EndWhile  
+%   \end{algorithmic}
+% \end{algorithm}
+
+\subsection{Observation Scheduling Optimization} \label{sec: observation_points_subproblem}
+
+The optimal set of observation decisions for maximizing $J_{\rm cov}$ over a given orbit set can be found by arranging every prospective observation into a vector of binary decision variables, and then enforcing the necessary constraints on these variables. Let us define for each unique triple $(i,v,k)\in\{\mathcal{N}\times \mathcal{V} \times \mathcal{K} \,|\, \omega_{iv}(k)=1\}$ a variable $z_j\in\{0,1\}$ with $j\in\mathcal{M}=\{1,...,M\}$, and vectors $p_i(j)\in\mathcal{N},\,\, p_v(j)\in\mathcal{V},\,\, p_k(j)\in\mathcal{K}$ such that $z_j=1$ if spacecraft $p_i(j)$ observes vertex $p_v(j)$ at time $p_k(j)$. Similarly, let us define the reward corresponding to $z_j$ as $w\in\mathbb{R}^M$ with components, 
+\begin{equation}
+    w_j\triangleq \rho(p_i(j),p_v(j),p_k(j)) \, \bar{\phi}^{\rm obs}_{p_i(j)}({p_k(j)}), \quad j\in\mathcal{M}
+\end{equation}
+which is a constant if the orbit is defined. Then the coverage reward \eqref{eq: coverage_reward} can be expressed as,  
+\begin{equation}
+    J_{\rm cov} = w^T z 
+\end{equation}
+
+The requirement that a given spacecraft can only observe a single vertex per timestep can be translated to the constraints, 
+\begin{equation}
+     \sum_{j\in \alpha(i,k)}z_j\leq 1,\qquad {k\in\mathcal{K}},\,\,{i\in\mathcal{N}}
+\end{equation}
+where, $\alpha(i,k)\triangleq\{j\in\mathcal{M} \,|\, p_i(j) = i\,\,\wedge\,\, p_k(j)=k\}$. 
+Other observation constraints can be translated into this framework in a similar manner. For instance if we wish to enforce the requirement that a given vertex can only be observed once, we can define the constraints, 
+\begin{equation}
+     \sum_{j\in \beta(v)}z_j\leq 1, \qquad v\in\mathcal{V}
+\end{equation}
+where $\beta(v)\triangleq\{j\in\mathcal{M}\,|\,p_v(j)=v\,\}$.
+This version of the problem is solved using MATLAB's native ILP solver. 
+
+\subsection{Maximizing Data Relay to Carrier} \label{sec: communication_flow_optimizer}
+
+The task of maximizing data flow to the carrier can be posed as a single commodity, maximum flow problem. 
+The objective function is taken as the reward to carrier \eqref{eq: total_reward}. The flow is subject to constraints \eqref{eq: flow_conservation_sc}-\eqref{eq: flow_terminal_constraint}.
+The observation flow at each step is bounded from above by the desired observation flow defined in the first stage of the problem,
+\begin{equation} \label{eq: obs_flow_bound}
+    \phi_i^{\rm obs}(k) \leq \bar{\phi}_i^{\rm obs}(k), \quad i\in\mathcal{N}, \,\, k\in\mathcal{K}
+\end{equation}
+We also have initial conditions on flow, 
+\begin{equation}
+    \Phi_{ij}(1)=0, \quad i,j\in\mathcal{N}
+\end{equation}
+Together, the constraints and objective function forms a linear program. The problem is implemented in CVX \cite{grant2008cvx}. 
+% \newpage
+
+% \subsection{Optimizer: Simplified Case Study}
+
+% \mm{Include toy analysis and plot from presentation as initial validation}
+% Before deriving realistic constraints for reference mission, lets use a very simple example to evaluate the optimizer
+
+% How does it compare to random?
+
+% May not have time to do full analysis for reference mission 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Reference Mission}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \subsection{Eros 433}
+% description 
+% 16th order gravity model 
+
+% \subsection{Requirements Flow Down}
+% \mm{add figure}
+% % High level goals from Science Mission Directorate (SMD). 
+% What we want to learn about:
+% \begin{itemize}
+%     \item Origin of solar system, early and evolving solar system formation processes. 
+%     \item Chronology of the solar system bodies and secondary processes (large scale structure to regolith modification after formation)
+%     \item Dynamics of small bodies formation
+% \end{itemize}
+
+% chart, description 
+
+% chart goes in appendix
+
+% instruments chosen 
+
+% insert diagram defining sun angle and spacecraft angle 
+
+% \subsection{Analysis}
+% \mm{A full analysis based on the scientific requirements has yet to be done. }
+
+%  Eros: 
+% - Why we choose it. 
+% - How we know about it 
+% - Parameters 
+
+% For Eros ShapeModel: 
+% - Where do we get the data 
+% - What are the options in terms of resolution
+% - What is the min, max, and  mean distance between vertices for each option. 
+
+% - DO: comparison of optimal vs greedy algorithm for observation points problem 
+
+% - Example reward function: dissipating reward based on distance from interest area. 
+
+% Talk about how to randomly generate orbits 
+
+% DO: 
+% - Compare different approaches: 
+%     - Monte carlo based on coverage reward 
+%     - Monte carlo based on reward to carrier 
+%     - Average values from randomly generated orbits. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         End of Paper                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \section*{ACKNOWLEDGMENT}
+
+% TBD 
+
+
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+% \newpage
+% \section*{APPENDIX}
+% \subsection*{Coverage Optimization Heuristics}
+% % Several runs of Monte Carlo. First with uniform distribution, then start to bias the random generation between interest areas. 
+
+
+% \subsection*{Observation Points Subproblem Extensions}
+
+% \subsection*{Future Work}
+% - Add calculation of sun and spacecraft angle 
+
+% - More rigorous treatment of the way that the simulation handles data collection.
+
+% - Attitude constraints need to be considered in the observation problem 
+
+% - Some realistic definition of an observation reward needs to be included 
+
+% - Relay orbit optimization needs to be incorporated into the observation problem 
+
+% - Orbits may need to be initialized with some consideration of the desired ranges on the instruments
+
+% - Currently the simulation and problem formulation assumes that each spacecraft only carries one instrument (interfaces allow multiple). This is unnecessary assumption 
+
+
+\end{document}
