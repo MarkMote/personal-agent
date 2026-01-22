@@ -51,6 +51,7 @@ Three positioning strategies (will have actual resume docs):
 │   └── out.csv            # Outside NYC targets
 ├── ref/                   # Claude's memory bank (see README.md inside)
 │   ├── mark_profile.md    # Background, timeline, credentials, narrative hooks
+│   ├── web_cv.md          # Full CV from markmote.com/resume (publications, talks, awards)
 │   ├── strategic_context.md # Decision framework, priorities, situational factors
 │   ├── inbound_policy.md  # Scoring framework for inbound opportunities
 │   ├── communication_principles.md # Voice, tone, outreach style
@@ -83,9 +84,10 @@ Three positioning strategies (will have actual resume docs):
 **Interview prep / "how do I answer X":**
 1. `story-bank/q&a.md` — Check if already answered
 2. `ref/mark_profile.md` — Background, timeline, narrative hooks
-3. `ref/roostr/roostr.md` — Current company context
-4. `ref/pytheia/pytheia.md` or `full_context.md` — Previous company
-5. `ref/strategic_context.md` — Why this search, what he wants
+3. `ref/web_cv.md` — Full CV with publications, talks, awards (source: markmote.com/resume)
+4. `ref/roostr/roostr.md` — Current company context
+5. `ref/pytheia/pytheia.md` or `full_context.md` — Previous company
+6. `ref/strategic_context.md` — Why this search, what he wants
 
 **Drafting outreach:**
 1. `ref/communication_principles.md` — Voice and tone
@@ -101,6 +103,7 @@ Three positioning strategies (will have actual resume docs):
 **Technical deep dives (system design interviews, etc.):**
 1. `ref/roostr/roostr_full_tech_documentation.md` — LLM systems, agentic architecture
 2. `ref/pytheia/full_context.md` — CV/robotics systems, Argus architecture
+3. `ref/web_cv.md` — Full publication list, research internships, PhD work details
 
 ## Outreach Tracking System
 
