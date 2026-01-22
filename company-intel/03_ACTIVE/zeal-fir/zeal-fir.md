@@ -42,7 +42,19 @@
 **Scope**
 - What does "Physical AI" mean to them?
 
+## What We Learned (2026-01-21 call)
+- Building a 20-person boutique growth firm for early/growth startups, NYC-based
+- Work with "Sidewalk Infrastructure Partners"
+- Connected to "Substrate Studio" (~$12M process — unclear if per company or fund)
+- No previous spinouts yet — new program
+- Looking specifically for founders who have built companies before
+- Structure: Given investment thesis → 6-12 months to work on idea → three exits: (i) kill/invalidate, (ii) join as founder with "more meaningful equity", (iii) pass on, keep some equity
+- Technical role but open-ended "do what works" mentality
+- **Equity specifics still unclear** — need to clarify in next round
+
 ## Status
 - 2026-01-15: Inbound via LinkedIn, qualified (NYC + $500K), scheduling intro call
 - 2026-01-15: Sent response accepting 15 min call, proposed later next week
 - 2026-01-15: Nate proposed Wed Jan 22 after 1pm ET
+- 2026-01-21: Intro call completed. Positive vibe. They suggested thinking it over, respond by Friday.
+- 2026-01-22: **TODO** Send follow-up to continue process

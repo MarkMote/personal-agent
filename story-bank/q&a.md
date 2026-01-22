@@ -1,10 +1,73 @@
-Answers to Common Interview Questions
+Answers to Common Interview Questions 
+
+## Tell me about yourself (multiple versions)
+
+> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. Im currently winding down as CTO of a Roostr. There I built AI-agent pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia. We a computer vision startup. Right now, I'm 
+`default`
+- and exploring what the right next step is, ideally in the area of embodied AI, .
+`non-robots`
+- im doing some deliberate exploration on what the right next step is. 
+
+## What kinds of things are you looking for really? 
+
+> I’m in a phase of deliberate exploration. 
+> My core interest is robotics and physical systems, but I’m open on the exact form.
+> Broadly, I’m optimizing for the ability to work on hard technical problems with very strong people
+
+Short: 
+> “I’m exploring a few directions. Broadly, I want to work on hard technical problems with very strong people, ideally in robotics or physical systems.”
+
+## What kind of company would you want to build next?
+
+## Short version (use first)
+
+> **“I think great startups are flywheels. 
+> You build a positive feedback loop that compounds into durable advantage, usually through data, networks, or deep operational complexity. 
+> In robotics specifically, I think people underestimate how hard it is to build safe, reliable real-world systems, which creates room for defensible platforms. 
+> I’m interested either in data moats around hard-to-acquire physical data, or infrastructure layers that accelerate robotics development, essentially tooling that creates a ‘ChatGPT moment’ for robotics.”**
+
+---
+
+## If they ask for examples
+
+> **“One direction is data plays around uniquely hard physical data, like high-resolution earth observation or dense real-world telemetry. Another is platform infrastructure: something like a React-for-robots or Vercel-for-robotics that standardizes deployment, testing, safety, and iteration in physical systems.”**
 
 ## Why are you leaving Roostr
+
 > Roostr is still operating, the product works, we are getting inbound, and I'm on great terms with my cofounder. 
 > But at this point the company is mostly in a sales and operations scaling phase. 
 > I'm personally more excited about building hard systems than running a logistic operation day-to-day, so this felt like a natural transition point for me.
 > Rather than move more capital into something thats not my deepest long term conviction, I decided it was the right time to move on. 
+
+
+## Why bootstrap
+
+It forced dicipline. We had to make customers happy or shit down. If we neded capital to unlock growth we would have raised. At that stage we didnt.
+
+  
+
+## Any regrets:
+
+We probably overindex on bootstrapping as an identity rather than strategy. In reality I think you should always just do the thing that works best. Some ideas would have benefited from the extra capital and ability to delegate
+
+## Why do you like being a founder. 
+
+The learning velocity is unmatched. You’re forced to solve real problems end-to-end under tight constraints, and the feedback is direct. Either you made the customer happy or you didn’t. Founding also forces you to engage with the full system rather than just one slice of it, which suits me as a generalist. 
+
+Short: 
+> The learning velocity is unmatched. You’re forced to solve real problems end-to-end under tight constraints, with direct feedback
+
+## What do you like
+Like 
+- Learning velocity of being a founder 
+- Creativity and intellectual challenges of research 
+- The concrete impact of shipping real systems
+Across all those, working with elite teams is a major amplifier, both in terms of learning and day to day enjoyment. 
+
+> I’m drawn to fast learning loops, hard technical creativity, and shipping real systems. Strong teams amplify all of that.
+
+
+
 
 Primary Narrative: 
 - Still operating
@@ -23,6 +86,130 @@ Only If they ask:
 - Raised a small 225k seed, bootstrapped the rest.
 
 
+
+---
+
+# 2. What kinds of problems excite you most technically?
+
+## Short version
+
+> **“Robotics, optimization, and learning, especially where they intersect in real-world systems. I’m most interested in problems where you have tight physical constraints, messy environments, and real safety or reliability requirements.”**
+
+---
+
+## Optional expansion
+
+> **“I think the robotics wave will ultimately be larger than the current software AI wave, simply because it touches the physical economy. There’s an enormous surface area of unsolved technical and product problems there.”**
+
+---
+
+# 3. What did you learn from Roostr and Pytheia?
+
+You don’t need all of this. Pick 2–3 bullets depending on flow.
+
+## Clean version
+
+> **“A few big lessons:
+> 
+> - The gap between what looks good on paper and what works in reality is massive. I learned to ground systems thinking in real operational data and user behavior.
+>     
+> - Fast iteration applies to product as much as hiring. Treat experiments as default-dead and let evidence revive them.
+>     
+> - Distribution matters more than first-time founders expect. Great products don’t matter if nobody discovers them.
+>     
+> - I’ve become more pragmatic about capital. Bootstrapping was valuable for focus, but I now view funding as a tool to accelerate impact when used deliberately.”**
+>     
+
+If you want to add the passion angle:
+
+> **“I also learned that building something people want is necessary but not sufficient. You need to be genuinely excited about the domain long-term or you’ll lose energy.”**
+
+---
+
+# 4. What would you do differently if you started another company?
+
+## Short version
+
+> **“I’d validate distribution and go-to-market earlier rather than assuming it will emerge naturally from product quality. I’d also be more deliberate about when external capital actually accelerates learning or impact rather than defaulting to either bootstrapping or fundraising ideologically.”**
+
+---
+
+## Optional second point
+
+> **“I’d also bias toward faster external validation earlier instead of over-internal optimization.”**
+
+---
+
+# 5. Motivations beyond money
+
+## Clean version
+
+> **“Two things. First, I care about having real positive impact on the world through meaningful systems. Second, I genuinely enjoy learning. As Feynman put it, I just get a kick out of figuring things out.”**
+
+That’s enough. Don’t over-explain.
+
+---
+
+# 6. How do you decide what to work on when there’s ambiguity?
+
+## Suggested answer
+
+> **“I usually start by identifying what assumptions matter most and designing fast experiments to collapse uncertainty. I look for problems where the learning rate is high and the upside compounds if the bet is right. I’m comfortable staying ambiguous early as long as the direction of information gain is clear.”**
+
+---
+
+# 7. Do you want to be a CEO again?
+
+## Balanced answer
+
+> **“I’m open to being a CEO again if the problem and setup are right. What matters more to me than title is ownership, leverage, and being close to the hardest parts of the system. I’m not attached to hierarchy for its own sake.”**
+
+---
+
+# 8. What’s your timeline? Are you in a rush?
+
+## Calm framing
+
+> **“I’m not in a rush. I’m being selective and trying to optimize for the right long-term platform rather than the fastest next move.”**
+
+---
+
+# 9. What are you bad at / don’t enjoy?
+
+## Safe answer
+
+> **“I don’t love long, relationship-heavy sales cycles and heavy process environments. I’m much more energized by building, iteration, and systems-level problem solving.”**
+
+This aligns with your Roostr exit without saying it explicitly.
+
+---
+
+# 10. Why Physical AI?
+
+## Short thesis
+
+> **“Because that’s where AI actually touches the physical economy. The technical challenges are harder, the moats are deeper, and the impact is more durable than pure software. I think we’re still very early in that curve.”**
+
+---
+
+# If You Want a One-Page Mental Stack
+
+If you internalize only these:
+
+1. **Next company thesis:** Flywheels, data moats, robotics infrastructure.
+    
+2. **Technical interests:** Robotics + optimization + learning under constraints.
+    
+3. **Founder lessons:** Reality vs theory, distribution matters, capital is a tool.
+    
+4. **Motivation:** Impact + learning.
+    
+5. **Decision style:** Fast experiments to collapse uncertainty.
+    
+
+You’ll sound consistent, intentional, and high-signal across all variants.
+
+If you want, next we can tighten any single answer further depending on which call you expect to be harder.
 
 
 ## **Whats your biggest weakness**
