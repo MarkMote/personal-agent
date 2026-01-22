@@ -19,7 +19,7 @@
 
 | Name | Role | Channel | Status | Notes |
 |------|------|---------|--------|-------|
-| Mark Dixon | Specialized Recruiter - Robotics & RL Research | LinkedIn | Queued | **Primary.** Seattle-based but recruits for all locations. |
+| Mark Dixon | Specialized Recruiter - Robotics & RL Research | LinkedIn | Sent | **Primary.** Sent 2026-01-22. |
 | Hanquing | Research Scientist, Meta (Menlo Park) | LinkedIn | Queued | Secondary - weak connection, referral ask |
 
 ---
@@ -45,13 +45,15 @@
 
 ### Mark Dixon (Robotics Recruiter - Primary)
 
-**Initial:**
+**Initial (Sent 2026-01-22):**
 
-> Mark - I saw you lead specialized hiring for Robotics and RL Research at Meta. I'm a robotics PhD (Georgia Tech) with a focus on safe autonomy and runtime assurance - my Robotarium work has ~800 citations and I've published on safe RL for spacecraft systems.
->
-> I'm interested in the AI Research Scientist, Robotics role. My background in safety-critical control + RL feels like a strong fit for FAIR's embodied AI work. I'm applying formally as well, but wanted to reach out directly.
->
-> Would love to connect if you think there's alignment.
+Subject: Robotics PhD — AI Research Scientist application
+
+Mark - I saw you lead specialized hiring for Robotics and RL Research at Meta. I'm a robotics PhD (Georgia Tech). I'm also a 2x founder, 1400+ citations, and have research/internship experience at NASA-JPL, MIT Lincoln Lab, and Stanford.
+
+I'm interested in the AI Research Scientist, Robotics role. My background in safety-critical control feels like a strong fit for FAIR's embodied AI work. I'm applying formally as well, but wanted to reach out directly.
+
+Would love to connect if you think there's alignment.
 
 **Follow-up (Day +5):**
 
@@ -98,4 +100,4 @@
 
 ## Notes
 
-_Add notes from conversations here_
+- 2026-01-22: Applied to AI Research Scientist, Robotics + sent LinkedIn message to Mark Dixon

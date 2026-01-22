@@ -57,4 +57,4 @@ Key requirements from JD:
 - GT alumni at FAIR?
 
 ## Notes
-_Add notes from conversations here_
+- Meta careers account password: `_>$D7%";BFUWtRD`

@@ -8,6 +8,18 @@ If someone reacts negatively to reasonable questions, that's a signal to downgra
 
 ---
 
+## On Messages Cover Letters and Writing Style 
+- Style your writing in the likes of Paul Graham, Andrey Karpathy, Sam Altman, or similar. 
+- People are busy and brevity is the soul of wit. Remove anything extra, but no more. 
+- Avoid buzzwords and MBA-speak. Give people the meat not the bread. 
+- Show don't tell. Try to let the facts speak for themselves. 
+- It's ok to sound a bit human at times, but use common sense and moderation. 
+- Don't be too proper, but also don't be too informal. Use complete sentences. 
+- Do not use em dashes or emojis. 
+- Coverletters slightly more formal than messages.
+    - e.g. message may end with "happy to chat if you think there is a fit" but a cover letter might more correctly use "I'd welcome the opportunity to discuss this further" 
+- ALWAYS use correct grammar and complete thoughts. 
+
 ## On Asking About Compensation
 
 **At senior/founder/specialist levels, asking about comp early is normal and expected.**
@@ -21,6 +33,8 @@ It's NOT bad taste to:
 - Ask for ballpark alignment once mutual interest exists
 - Frame as preventing misalignment and wasted time
 - Use ranges rather than demands
+
+Use common sense. 
 
 ### Good Phrasing
 
@@ -93,3 +107,11 @@ Junior candidates can afford ambiguity. You cannot. Your opportunity cost is rea
 **Time pressure degrades decisions.** Protect the buffer. When runway shortens, you disclose too much and rationalize bad paths.
 
 **Trajectory > role.** Every decision: "Does this increase or decrease probability of Tier-1 access in 2-5 years?"
+
+---
+
+## Call Timing (Pink's "When")
+
+- **First impressions / screening:** Morning (before noon) — peak alertness
+- **Deep / strategic conversations:** Late afternoon — recovery phase, more open
+- **Avoid 1-4pm** for anything important — cognitive trough

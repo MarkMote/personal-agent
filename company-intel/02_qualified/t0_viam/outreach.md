@@ -16,7 +16,7 @@
 
 | Name | Role | Channel | Status | Sent | Notes |
 |------|------|---------|--------|------|-------|
-| Eliot Horowitz | CEO | LinkedIn DM | Queued | - | Founder-to-founder angle |
+| Eliot Horowitz | CEO | LinkedIn DM | Sent | 2026-01-22 | Founder-to-founder angle |
 
 ---
 
@@ -40,15 +40,15 @@
 
 ### Eliot Horowitz (LinkedIn DM)
 
-**Initial:**
+**Initial (Sent 2026-01-22 via Sales Navigator InMail):**
 
-> Eliot - I'm a two-time technical founder (most recently CTO at an AI logistics startup) wrapping up my current company and exploring what's next. Before startups, I did a PhD at Georgia Tech in robotics/controls and worked at JPL.
->
-> I've spent the last five years in the customer-problem-to-solution loop - scoping ambiguous problems, building the technical solution, and iterating with users. The Senior FDE role caught my eye because that's exactly the work I find energizing.
->
-> Would love to learn more about what you're building at Viam and where the FDE team is headed. Happy to do a quick call if useful.
+Subject: Robotics founder interested in Viam
 
-(107 words)
+Eliot - I'm a two-time technical founder wrapping up my current company. Before startups, I did a PhD at Georgia Tech in robotics/controls, and research/internships at places like Stanford, MIT, and NASA-JPL.
+
+I've spent the last five years in the customer-problem-to-solution loop - scoping ambiguous problems, building the technical solution, and iterating with users. Having built a lot of robotics infrastructure from scratch, the bet on a unified platform resonates.
+
+Would be glad to chat if you think there's a fit.
 
 **Follow-up 1 (Day +5):**
 

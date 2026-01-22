@@ -30,26 +30,27 @@ Industrial automation is inaccessible - requires specialized robotics expertise.
 ## Open Roles (NYC)
 | Role | Comp | Fit | Notes |
 |------|------|-----|-------|
-| Senior SE, Motion Planning | $180-240k + equity | **Strong** | PhD accepted, ROS2/MoveIt2, algorithms |
-| Staff SE, Full-Stack | ~$200k+ + equity | **Strong** | Leadership track, 70% backend |
-| Senior SE, Full-Stack | $170-220k + equity | Medium | IC full-stack |
+| Staff SE, Full-Stack | $210-300k + equity | **Best** | NYC hybrid. Leadership + hands-on. 8+ yrs exp, 1 yr staff req is a gap but founder exp may count. |
+| Senior SE, Full-Stack | $200-250k + equity | **Strong** | NYC hybrid. 5-10 yrs exp. 70% backend. No robotics req. |
+| Senior SE, Motion Planning | $180-240k + equity | Weak | Requires C++, ROS2/MoveIt2. PhD fits but stack doesn't. |
 
 ## Your Angle
 **Resume:** Chief Engineer
 
 **Why you:**
-- PhD in optimization/controls = their motion planning needs
-- Founder who made complex things simple = their accessibility mission
-- Background spans both Motion Planning role (technical) and Staff Full-Stack (leadership)
+- Full-stack founder experience (Roostr: sole engineer, Pytheia: led build)
+- PhD differentiates from generic full-stack engineers
+- Robotics domain knowledge is upside, not a requirement for Full-Stack roles
+- No C++ experience rules out Motion Planning role
 
-**Hook:** "I understand the hard math of motion planning (PhD), but I've spent 5 years making complex things simple for users (Founder)"
+**Hook:** "Robotics PhD who's been shipping full-stack products as a founder"
 
 ## Warm Paths
 - None identified
 
 ## Application Notes
-- Apply to Motion Planning (higher comp ceiling)
-- Message doesn't specify role - let them route you
+- Apply to Senior SE, Full-Stack (NYC) - best fit given no C++ experience
+- Staff role ($210-300k) is stretch but worth mentioning interest if convo goes well
 - Target Mason (Eng Manager) not CEO - company is $63M Series B, CEO too removed
 
 ## Notes

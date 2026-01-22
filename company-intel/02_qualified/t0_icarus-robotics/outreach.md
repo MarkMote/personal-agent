@@ -16,7 +16,7 @@
 
 | Name | Role | Channel | Status | Sent | Next Action |
 |------|------|---------|--------|------|-------------|
-| Jamie Palmer | CTO | LinkedIn DM | Queued | - | Send Day 1 |
+| Jamie Palmer | CTO | LinkedIn DM | Sent | 2026-01-22 | Follow-up if no response by 1/27 |
 
 ---
 
@@ -40,15 +40,13 @@
 
 ### Jamie Palmer (LinkedIn DM)
 
-**Initial:**
+**Initial (SENT 2026-01-22):**
 
-> Jamie - I'm a spacecraft controls PhD (Georgia Tech) and two-time founder, currently wrapping up my second startup. My dissertation was on optimization-based control for underactuated systems - exactly the problem space you're in with free-flying bimanual manipulation.
->
-> The JOYRIDE-1 mission and the path from teleoperation to embodied autonomy is the kind of work I want to be doing. Would love to learn more about what you're building and where the team is headed.
->
-> Happy to do a quick call if useful.
+Jamie - I'm a Robotics PhD (Georgia Tech) and two-time founder, currently wrapping up my second startup. My dissertation was on safety-critical control for spacecraft.
 
-(143 words)
+The JOYRIDE-1 mission and application of embodied AI in space is exactly the kind of work I want to be doing. Would love to learn more about what you're building and where the team is headed.
+
+Happy to do a quick call or drop by Newlab if useful. (I'm based in Brooklyn.)
 
 **Follow-up 1 (Day +5):**
 
@@ -76,4 +74,4 @@
 
 ## Notes
 
-_Add notes from conversations here_
+- 2026-01-22: Applied online + sent LinkedIn InMail to Jamie

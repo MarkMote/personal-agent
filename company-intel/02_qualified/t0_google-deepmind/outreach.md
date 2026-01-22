@@ -4,12 +4,13 @@
 
 **Tier:** 0 (All-star) - long hiring cycle, start early
 
-**Approach:** Big tech requires formal application. Dual recruiter outreach:
-1. **Aaron Adler** (NYC) - cold
+**Approach:** Dual recruiter outreach. No public robotics applications found in NYC - relying on recruiters to identify appropriate roles.
+
+1. **Catrina Manahan** (NYC) - TA for AI Research (replaced Aaron Adler who left DeepMind Jan 2026)
 2. **Hen Chalmers** (London) - cold
 3. **Formal application** once recruiter identifies role
 
-**Target Role:** Research Scientist, Robotics (or equivalent)
+**Target Role:** Research Scientist, Robotics / Embodied AI (or equivalent)
 
 **Resume Variant:** Distinguished Academic
 
@@ -21,39 +22,44 @@
 
 | Name | Role | Location | Channel | Status | Notes |
 |------|------|----------|---------|--------|-------|
-| Aaron Adler | Senior Research Recruiter | NYC | LinkedIn | Queued | Cold outreach. Has mutual (Peter Sharpe) but going direct. |
-| Hen Chalmers | Talent Acquisition Lead | London | LinkedIn | Queued | Cold outreach. |
+| Catrina Manahan | TA, AI Research | NYC | LinkedIn | Sent 2026-01-22 | Replaced Aaron Adler (left DeepMind). |
+| Hen Chalmers | Talent Acquisition Lead | London | LinkedIn | Sent 2026-01-22 | Cold outreach. |
 
 ---
 
 ## Execution Sequence
 
-| Step | When | Action |
-|------|------|--------|
-| 1 | Day 0 (Wed Jan 22) | Send LinkedIn message to Aaron Adler (NYC) |
-| 2 | Day 0 | Send LinkedIn message to Hen Chalmers (London) |
-| 3 | Day +5 | Follow-up on Aaron if no response |
-| 4 | Day +5 | Follow-up on Hen if no response |
-| 5 | When recruiter responds | Submit formal application to role they identify |
+| Step | When | Action | Status |
+|------|------|--------|--------|
+| 1 | Day 0 (Wed Jan 22) | Send LinkedIn message to Catrina Manahan (NYC) | Done |
+| 2 | Day 0 | Send LinkedIn message to Hen Chalmers (London) | Done |
+| 3 | Day +5 (Mon Jan 27) | Follow-up on Catrina if no response | Pending |
+| 4 | Day +5 | Follow-up on Hen if no response | Pending |
+| 5 | When recruiter responds | Submit formal application to role they identify | Pending |
 
 **Notes:**
 - Long cycle (2-3 months) - don't expect fast response
-- No public robotics listings found - recruiter will route if fit exists
+- No public robotics listings in NYC - recruiter will route if fit exists
 - Open to London for DeepMind specifically
+- Aaron Adler left DeepMind in mid-Jan 2026, replaced with Catrina Manahan
 
 ---
 
 ## Messages
 
-### Aaron Adler (NYC Recruiter)
+### Catrina Manahan (NYC, TA for AI Research)
 
-**Initial:**
+**Initial (Sent 2026-01-22 via LinkedIn):**
 
-> Aaron - I'm a robotics PhD (Georgia Tech) with a focus on safe autonomy and reinforcement learning. My Robotarium work has ~800 citations and I've published on safe RL for spacecraft systems.
+Subject: Robotics PhD interested in embodied AI
+
+> Catrina - I'm a Robotics PhD from Georgia Tech with a background in safe autonomy. I've founded two companies building real systems: multi-camera 3D perception for robotics, and an AI agents platform.
 >
-> I'm interested in DeepMind's robotics research, particularly the RT-2 and embodied AI work. My background in safety-critical control + RL feels like a good fit for the team's direction. NYC is ideal but I'm flexible.
+> I'm interested in DeepMind's embodied AI work as these models move onto real robots. My experience in building perception pipelines, combined with a strong control background, feels directly relevant to closing the gap between research performance and reliable real-world behavior.
 >
-> Would love to connect if there's alignment with what the team is looking for.
+> NYC is ideal, but I'm flexible on location.
+>
+> Would love to connect if there's potential alignment.
 
 **Follow-up (Day +5):**
 
@@ -63,13 +69,15 @@
 
 ### Hen Chalmers (London Recruiter)
 
-**Initial:**
+**Initial (Sent 2026-01-22 via LinkedIn):**
 
-> Hen - I'm a robotics PhD (Georgia Tech) with a focus on safe autonomy and reinforcement learning. My Robotarium work has ~800 citations and I've published on safe RL for spacecraft systems.
+Subject: Robotics PhD open to London for embodied AI work
+
+> Hen - I'm a Robotics PhD from Georgia Tech with a background in control and autonomy. I've founded two companies building real systems: multi-camera 3D perception for robotics, and an AI agents platform that took research into production.
 >
-> I'm interested in DeepMind's robotics research, particularly the RT-2 and embodied AI work. My background in safety-critical control + RL feels relevant to the team's direction. I'm based in NYC but open to London for the right role.
+> I'm interested in DeepMind's embodied AI work as these models move onto real robots. My experience building perception pipelines that ran continuously on hardware, combined with a strong control background, feels directly relevant to closing the gap between research performance and reliable real-world behavior.
 >
-> Would love to connect if there's alignment with what the team is looking for.
+> I'm based in NYC but open to London for the right role. Would be glad to connect if there's potential alignment.
 
 **Follow-up (Day +5):**
 
@@ -80,11 +88,10 @@
 ## Application Materials
 
 **Cover letter angle (when recruiter identifies role):**
-- Lead with safe autonomy as differentiator
-- Robotarium = real robots at scale (not just simulation)
-- Safe RL intersection (spacecraft docking paper)
-- RT-2 / embodied AI interest - RL foundation relevant
-- Mention Lincoln Lab neural network verification work
+- Lead with builder angle: PhD + two-time founder
+- Perception pipelines on real hardware
+- Control background for embodied systems
+- Gap-closing: research performance → reliable real-world behavior
 
 ---
 
@@ -98,4 +105,4 @@
 
 ## Notes
 
-_Add notes from conversations here_
+_2026-01-22: Sent initial messages to Catrina Manahan (NYC) and Hen Chalmers (London). No online applications found for robotics roles in NYC - relying on recruiters to point to appropriate roles._

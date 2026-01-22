@@ -72,10 +72,10 @@ Three positioning strategies (will have actual resume docs):
     ├── 00_pending/        # Not yet researched/prepped
     ├── 01_disqualified/   # Ruled out
     ├── 02_qualified/      # Researched, ready to send or sent
-    │   └── {company}/
-    │       ├── {company}.md    # Structured research
-    │       ├── full_context.md # Raw research dump
-    │       └── outreach.md     # Contacts, messages, status
+    │   └── t{tier}_{company}/   # e.g., t0_icarus-robotics/
+    │       ├── {company}.md     # Structured research
+    │       ├── full_context.md  # Raw research dump
+    │       └── outreach.md      # Contacts, messages, status
     └── 03_ACTIVE/         # Active conversations
 ```
 
@@ -94,6 +94,11 @@ Three positioning strategies (will have actual resume docs):
 2. `ref/outreach_template.md` — Message structure
 3. `ref/mark_profile.md` — What to emphasize
 4. `company-intel/{company}/` — Company-specific context
+
+**Finding company intel files:**
+- Check tracker.csv for status (Qualified → `02_qualified/`, Active → `03_ACTIVE/`)
+- Folder naming: `t{tier}_{company-name}/` (e.g., `t0_icarus-robotics/`)
+- Glob pattern: `company-intel/**/*{company}*.md` (NOT `**/{company}*/**` which misses files)
 
 **Evaluating an opportunity:**
 1. `ref/strategic_context.md` — Decision framework, priorities

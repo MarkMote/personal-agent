@@ -16,7 +16,7 @@
 
 | Name | Role | Channel | Status | Sent | Notes |
 |------|------|---------|--------|------|-------|
-| Mason Rubenstein | Engineering Manager | LinkedIn DM | Queued | - | Ex-Unity, Seattle-based but manages distributed team |
+| Mason Rubenstein | Engineering Manager | LinkedIn DM | Sent | 2026-01-22 | Ex-Unity, Seattle-based but manages distributed team |
 
 ---
 
@@ -35,15 +35,9 @@
 
 ### Mason Rubenstein (LinkedIn DM)
 
-**Initial:**
+**Initial (Sent 2026-01-22):**
 
-> Mason - I'm a robotics PhD (Georgia Tech, optimization/controls) and two-time founder, currently wrapping up my second startup.
->
-> I'm drawn to Standard Bots' accessibility mission - I've spent the last five years trying to make complex things simple for users, which is exactly what you're doing for industrial automation. I've got the motion planning and controls background, but what I care most about is making that complexity disappear for the end user.
->
-> I see a few roles that could be a fit - would love to chat about what you're building and where the team is headed. Let me know if you have 15 minutes.
-
-(111 words)
+Mason - I'm a robotics PhD (Georgia Tech) and two-time founder wrapping up my current company. Built full production stacks at both startups (Python, TypeScript, LLM pipelines). The Senior Full-Stack role caught my eye. Happy to chat if there's a fit.
 
 **Follow-up 1 (Day +5):**
 
@@ -69,4 +63,4 @@
 
 ## Notes
 
-_Add notes from conversations here_
+- 2026-01-22: Applied online + sent LinkedIn message to Mason
