@@ -226,4 +226,10 @@ Since then I’ve learned to actively manage that tendency. I deliberately prote
 Short version
 I naturally bias toward momentum and execution. That’s a strength in startups, but if left unchecked it can crowd out longer-term exploration and compounding learning. I saw this clearly at JPL, where I focused on delivering near-term simulation improvements. It led to a publication and a return offer, but deferred some higher-risk research exploration that I still think could have been valuable.
 
-It’s a tendency I continue to manage deliberately by protecting time for deep work and periodically stepping back to make sure I’m not only optimizing for short-term wins.
+It's a tendency I continue to manage deliberately by protecting time for deep work and periodically stepping back to make sure I'm not only optimizing for short-term wins.
+
+---
+
+## What's your superpower?
+
+> I learn fast and build fast. I can go from zero to functional system in a domain I've never touched before, because I know how to decompose problems and find the right abstractions quickly.

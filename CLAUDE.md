@@ -137,6 +137,18 @@ Two-file system for managing all outreach:
 2. Claude synthesizes into `{company}.md` and drafts `outreach.md`
 3. Claude adds rows to `outreach_queue.csv` with scheduled dates
 
+**When Mark shares a job description:**
+- Save it to `company-intel/{company}/role.md`
+- Include: title, requirements, key skills, and prep notes (what to study/brush up on)
+- This builds a reference for interview prep and skill gap analysis
+
+**Moving companies between status folders:**
+- `00_pending` → `02_qualified`: Once researched and outreach drafted
+- `02_qualified` → `03_ACTIVE`: Once we get a response (positive or neutral)
+- `02_qualified` → `01_disqualified`: If ruled out (bad fit, closed, etc.)
+- `03_ACTIVE` → `01_disqualified`: If process ends negatively (rejected, ghosted after follow-ups)
+- Also update tracker.csv status when moving folders
+
 ## The ref/ Folder
 This is Claude's memory bank. Automatically update `ref/` with new information about Mark as it comes up in conversation—experiences, preferences, stories, wins, lessons. This accumulates context for better assistance over time.
 

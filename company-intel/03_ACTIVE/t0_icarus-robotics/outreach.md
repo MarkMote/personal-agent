@@ -16,7 +16,7 @@
 
 | Name | Role | Channel | Status | Sent | Next Action |
 |------|------|---------|--------|------|-------------|
-| Jamie Palmer | CTO | LinkedIn DM | Sent | 2026-01-22 | Follow-up if no response by 1/27 |
+| Jamie Palmer | CTO | LinkedIn DM | Scheduled | 2026-01-22 | Intro call Thu 1/30 (time TBD) |
 
 ---
 
@@ -75,3 +75,5 @@ Happy to do a quick call or drop by Newlab if useful. (I'm based in Brooklyn.)
 ## Notes
 
 - 2026-01-22: Applied online + sent LinkedIn InMail to Jamie
+- 2026-01-23: Jamie responded asking if partnership or engineering. Clarified engineering.
+- 2026-01-23: Jamie agreed to chat, proposed next Thursday (1/30). Confirmed, awaiting time.

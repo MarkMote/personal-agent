@@ -86,12 +86,36 @@ Alternative framing: "The Weaponized PhD" — Georgia Tech Aerospace/Robotics Ph
 - Not willing to accept: career dead-ends, purely incremental roles, roles that erode technical edge
 - Finance roles = optional capital accelerators, not core identity
 
-### Gap to Close: Production ML/AI Experience
-- Current strength: controls, optimization, safe autonomy, RL theory, founder experience
-- Current gap: hands-on production ML (training/deploying DL models at scale, PyTorch/TensorFlow/JAX)
-- This gap blocks access to: Waymo ML roles, DeepMind ML research, many frontier AI positions
-- **Roles that provide production ML experience should be weighted higher** - even if not perfect fit today, they're stepping stones to elite ML/AI roles later
-- Note: PhD represents ~20% of current knowledge; 4 years of startup experience is the majority
+### Skills Reality Check
+**What I actually have:**
+- PhD-level optimization and control theory (strong math foundation)
+- Safe autonomy / safety-critical control (thesis work)
+- Multi-robot systems (Robotarium)
+- Production CV/perception systems (Pytheia)
+- Production LLM pipelines / agentic systems (Roostr) - but NOT LLM research
+- Full-stack engineering, system design, shipping products
+
+**What I don't have (yet):**
+- Deep ML research experience (training models, architectures, experiments)
+- RL research experience (theory yes, implementation limited)
+- LLM research experience (used LLMs, didn't train or research them)
+- Large-scale distributed training experience
+
+**Gap to close:** Production ML/AI research experience - actually training models, running experiments, publishing
+- This gap blocks access to: DeepMind ML research, FAIR research, frontier LLM labs
+- Need roles that provide hands-on ML research experience, not just deployment
+
+### Role Preferences (Ranked)
+1. **Embodied AI** - Best combination of actual skills (controls, robotics, perception, safe autonomy) with frontier growth area (ML for robotics). This is where PhD meets modern ML.
+2. **Robotics/Autonomy** - Direct PhD fit, less ML growth but high skill utilization
+3. **ML Research (stretch)** - Would close the gap but am underqualified on paper; need roles that value math foundation + curiosity over pure ML pedigree
+4. **Agentic AI / Applied AI** - Fine but replicates Roostr; less math, less creativity, less growth
+5. **Generic SWE** - Avoid; burns option value
+
+### What I'm NOT looking for
+- Just building more agentic pipelines (done that)
+- Pure deployment/MLOps without research component
+- Roles where software engineering is the ceiling, not a tool for research
 
 ---
 
