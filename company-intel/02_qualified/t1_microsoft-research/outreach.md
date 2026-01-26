@@ -1,12 +1,12 @@
-# Outreach: Microsoft Research (MSR NYC)
+# Outreach: Microsoft Research (MSR AI Frontiers)
 
 ## Strategy
 
 **Tier:** 1
 
-**Approach:** Warm researcher contact + recruiter + formal application (academic process)
+**Approach:** Recruiter outreach + formal application
 
-**Target Role:** Senior Researcher - AI/ML ($158k-$258k)
+**Target Role:** Research Software Engineer – Generative AI (Job #200016403)
 
 **Resume Variant:** Distinguished Academic
 
@@ -16,69 +16,63 @@
 
 | Name | Role | Channel | Status | Notes |
 |------|------|---------|--------|-------|
-| Dan Goldstein | Partner Research Manager, MSR NYC | LinkedIn | Queued | 2nd degree via Victor Amelkin or Mo Mahmood. Warm path. |
-| Solina Hambaz | Talent Acquisition | LinkedIn | Secondary | 2nd degree via Andre Kazimierski |
+| Solina Hambaz | Talent Acquisition, MSR | LinkedIn | Queued | Primary contact |
+| Dan Goldstein | Partner Research Manager | LinkedIn | Backup | If recruiter path stalls. Decision-making research alignment. |
 
 ---
 
 ## Execution Sequence
 
-| Step | When | Action |
-|------|------|--------|
-| 1 | Day 0 (Wed Jan 22) | Reach out to Dan Goldstein via warm path |
-| 2 | Day 0 | Submit formal application with academic materials |
-| 3 | Day +3 | Message Solina Hambaz (recruiter) |
-| 4 | Day +7 | Follow-up on Dan if no response |
+| Step | When | Action | Status |
+|------|------|--------|--------|
+| 1 | Day 0 (Thu Jan 23) | LinkedIn message to Solina Hambaz | Done |
+| 2 | Day 0 | Submit formal application (Job #200016403) | Done |
+| 3 | Day +5 (Jan 28) | Follow-up if no response | Pending |
+| 4 | Day +7 (Jan 30) | Message Dan Goldstein if recruiter path stalls | Pending |
 
 ---
 
 ## Messages
 
-### Dan Goldstein (Researcher - Warm Path)
+### Solina Hambaz (Recruiter - Primary)
 
-**Via mutual connection (Victor Amelkin or Mo Mahmood):**
+Solina - I'm a Georgia Tech PhD (optimization/controls) exploring engineering roles at MSR. I'm interested in the Research Software Engineer – Generative AI position on the AI Frontiers team.
 
-Ask mutual to intro: "Victor/Mo - I'm exploring research roles and saw you're connected to Dan Goldstein at MSR NYC. His work on decision-making aligns well with my background in controls and RL. Would you be open to a quick intro?"
+My background: I've spent the last four years as a technical founder building production AI systems. Most recently as CTO of an AI logistics company, I built end-to-end LLM pipelines for document processing and agentic automation. Before that, I built a CV/robotics startup from $20k to $300k ARR.
 
-**Direct (if no mutual intro):**
+The AI Frontiers work on agentic systems (AutoGen, Magentic-One) is exactly where I want to be. Would you be the right person to discuss this role?
 
-> Dan - I'm a Georgia Tech PhD (optimization/controls) exploring research roles in RL and decision-making. My background bridges classical control theory and learning-based approaches - I've worked on safe RL for spacecraft systems and built real-world robotics/AI products.
->
-> I'm interested in MSR NYC's RL and decision-making research. Would love to learn more about the team's direction and whether there might be alignment. Happy to share my work if helpful.
-
----
-
-### Solina Hambaz (Recruiter)
-
-**Initial:**
-
-> Solina - I'm a Georgia Tech PhD (optimization/controls) applying to the Senior Researcher - AI/ML role at MSR NYC. My background is in reinforcement learning and decision-making under uncertainty, with applications in robotics and autonomous systems.
->
-> I've submitted my formal application. Wanted to reach out directly as well to express strong interest in the RL and robotics research at the NYC lab. Happy to provide any additional information.
+Best,
+Mark
 
 ---
 
-## Application Materials
+### Dan Goldstein (Backup - if recruiter stalls)
 
-**Academic statement angle (4 pages):**
-1. PhD achievements: Robotarium (501 citations), safe RL, optimization-based control
-2. Industry impact: Pytheia (CV/robotics), Roostr (AI logistics)
-3. Research agenda: Bridge classical controls + modern RL, safe autonomy for embodied AI
-4. Why MSR: Academic rigor + real-world impact, RL/decision-making alignment
+Dan - I'm a Georgia Tech PhD exploring roles at MSR AI Frontiers. My background bridges optimization/controls (PhD) with production AI systems (4 years as a founder building LLM and robotics products).
 
-**References:** Dissertation advisor + 2 others
+I'm interested in the engineering work on agentic systems. Your research on decision-making aligns with my thesis work on safe autonomy. Would be happy to chat if you think there might be fit.
 
-**Research samples:** Top 2 publications (Robotarium paper, safe RL paper)
+---
 
-**Apply here:** Microsoft careers portal or [MSR NYC Opportunities](https://www.microsoft.com/en-us/research/lab/microsoft-research-new-york/opportunities/)
+## Application Notes
+
+**Apply:** https://careers.microsoft.com/ → Job #200016403
+
+**Materials:**
+- Resume (Distinguished Academic variant)
+- GitHub profile link
+- Code samples (optional but encouraged)
+
+No academic statement or references required (engineering role, not researcher).
 
 ---
 
 ## After Response
 
-**If researcher responds:** Express genuine research interest, ask about team direction, mention specific papers if relevant.
+**If Solina responds:** Express flexibility on timing, ask about team and interview process.
 
-**If recruiter responds:** Coordinate on application status, express flexibility on timing.
+**If interview:** Prep on AutoGen/Magentic-One, agent evaluation benchmarks, system design for agentic pipelines.
 
 ---
 

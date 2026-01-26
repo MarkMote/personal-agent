@@ -9,8 +9,9 @@ If someone reacts negatively to reasonable questions, that's a signal to downgra
 ---
 
 ## On Messages Cover Letters and Writing Style 
-- Style your writing in the likes of Paul Graham, Andrey Karpathy, Sam Altman, or similar. 
-- People are busy and brevity is the soul of wit. Remove anything extra, but no more. 
+- Serious people optimize for clarity and alignment early. Wasting time is rude; asking direct questions is not.
+- Style your writing in the likes of Paul Graham, Andrey Karpathy, Sam Altman, or similar.
+- People are busy. Remove anything extra, but no more. 
 - Avoid buzzwords and MBA-speak. Give people the meat not the bread. 
 - Show don't tell. Try to let the facts speak for themselves. 
 - It's ok to sound a bit human at times, but use common sense and moderation. 

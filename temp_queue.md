@@ -14,6 +14,7 @@
 - Google DeepMind — Hen Chalmers (Jan 22)
 - Jane Street — Laura Parsons (Jan 23)
 - DESRES — Email to Inquiries (Jan 23)
+- Microsoft Research — Solina Hambaz (Jan 23)
 
 **Active Pipelines:**
 - D.E. Shaw (GenAI/Vulcan) — Schedule Round 1 ~Feb 17-21
@@ -22,7 +23,7 @@
 
 **Applications submitted:**
 - Icarus Robotics, Viam, Standard Bots, Meta FAIR (all Jan 22)
-- Jane Street, DESRES (Jan 23)
+- Jane Street, DESRES, Microsoft Research (Jan 23)
 
 ---
 
@@ -35,33 +36,12 @@
 
 ## OVERDUE - Send Today
 
-### Microsoft Research — Solina Hambaz (Recruiter)
-**Contact:** Solina Hambaz (Talent Acquisition, MSR)
-**Channel:** LinkedIn DM
-**Resume:** Distinguished Academic
-**Apply:** https://careers.microsoft.com/ (search MSR NYC)
-
-Solina - I'm a Georgia Tech PhD (optimization/controls) exploring research roles at MSR NYC. My background is in decision-making under uncertainty, with applications in robotics and autonomous systems.
-
-I've spent the last four years as a technical founder building production AI systems. Before that, my PhD work focused on optimization-based approaches to safety-critical control.
-
-I'm interested in the Senior Researcher - AI/ML role. Would you be the right person to discuss opportunities at the NYC lab?
-
-Best,
-Mark
-
-**Also consider:** Direct message to Dan Goldstein (Partner Research Manager) if recruiter path stalls. His work on decision-making aligns with optimization background.
+### ✅ Microsoft Research — DONE
 
 ---
 
-### Meta FAIR — Hanquing (Referral Request)
-**Channel:** LinkedIn DM
-
-Hey Hanquing - hope you're doing well. We overlapped at GT in the robotics program.
-
-I'm exploring research roles and saw Meta has an AI Research Scientist, Robotics position that's a strong fit for my background (safety-critical control, multi-robot systems). Would you be open to submitting an internal referral? I know it's been a while - totally understand if not.
-
-Either way, hope things are going well at Meta.
+### ~~Meta FAIR — Hanquing~~ SKIPPED
+Low priority - already sent to Mark Dixon (recruiter). Referral ask can wait.
 
 ---
 
@@ -202,11 +182,11 @@ Mark
 **Today (Jan 23):**
 - ✅ Jane Street — Done
 - ✅ DESRES — Done
-- ⏳ MSR — Overdue, send today
+- ✅ MSR — Done
 
 **Monday (Jan 27):** 7 apps (Anthropic, OpenAI, Two Sigma, Citadel, HRT, K2, HuggingFace)
 
-**Already submitted:** 6 apps (Icarus, Viam, Standard Bots, Meta FAIR, Jane Street, DESRES)
+**Already submitted:** 7 apps (Icarus, Viam, Standard Bots, Meta FAIR, Jane Street, DESRES, MSR)
 
 ---
 

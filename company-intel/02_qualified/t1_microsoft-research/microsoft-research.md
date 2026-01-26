@@ -1,48 +1,47 @@
-# Microsoft Research (MSR NYC)
+# Microsoft Research (MSR AI Frontiers)
 
 ## Quick Facts
-- **Location:** NYC (300 Lafayette Street, Union Square)
+- **Location:** NYC (3 days/week in office)
 - **Stage:** Big Tech research lab
-- **Focus:** AI/ML research - RL, decision-making, robotics
+- **Lab:** AI Frontiers
+- **Focus:** Agentic AI systems, foundation models, multi-agent orchestration
 
 ## The Opportunity
-MSR NYC is a world-class research lab with strong RL and decision-making focus. Academic publication culture, interdisciplinary work. Key researcher Akshay Krishnamurthy leads RL/bandits research. Dan Goldstein (behavioral economics, decision-making) is 2nd degree connection with warm path potential.
+MSR AI Frontiers builds cutting-edge agentic AI systems. Projects include AutoGen (agent framework), Magentic-One (multi-agent system), Phi models (small language models), and AgentInstruct (synthetic data). Engineering-focused with research prestige.
 
 ## Target Role
-**Senior Researcher - AI/ML** - $158k-$258k NYC
+**Research Software Engineer – Generative AI** (Job #200016403)
+- **Salary:** $131k-$215k NYC
+- **Level:** IC3/IC4
 
-Research areas:
-- Online and reinforcement learning
-- Robotics
-- Decision-making under uncertainty
-- Science of deep learning
+Key responsibilities:
+- Build data, evaluation, and training pipelines for agentic models
+- System design for GenAI technologies
+- Create proof of concepts for AI Frontiers innovations
+- Work with researchers and product groups
 
 ## Your Angle
 **Resume:** Distinguished Academic
 
 **Why you (narrative):**
-- **RL expertise** - safe RL for spacecraft, control-theoretic RL
-- **Decision-making** under uncertainty = core PhD work
-- **Robotics** background (Robotarium, Pytheia perception)
-- **Bridge classical controls + modern RL** - unique angle
+- Built production agentic systems at Roostr (LLM pipelines, document processing, automation)
+- System design experience (sole engineer building entire stack)
+- PhD rigor + startup execution speed
+- Evaluation and debugging tooling experience
 
-**Application requirements:**
-- CV
-- 3+ references (including dissertation advisor)
-- Two research samples (publications)
-- 4-page academic statement (achievements + research agenda)
+**Key differentiator:** Actually shipped agentic systems to production, not just researched them.
 
 ## Key People
 | Name | Role | Path |
 |------|------|------|
-| Dan Goldstein | Partner Research Manager, MSR NYC | 2nd degree (mutuals: Victor Amelkin, Mo Mahmood) - WARM PATH |
-| Akshay Krishnamurthy | Senior Principal Research Manager (RL/bandits) | Research contact, no direct path |
-| Solina Hambaz | Talent Acquisition | 2nd degree (mutual: Andre Kazimierski) |
+| Solina Hambaz | Talent Acquisition | LinkedIn (primary) |
+| Dan Goldstein | Partner Research Manager | LinkedIn (backup) |
 
 ## Application Notes
-- Rolling applications, no deadline
-- Academic publication culture
-- Open publications policy maintained
+- Engineering role - no academic statement required
+- GitHub profile encouraged
+- Code samples welcomed
+- Apply via Microsoft careers (Job #200016403)
 
 ## Notes
 _Add notes from conversations here_
