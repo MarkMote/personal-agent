@@ -1,5 +1,31 @@
 # Message Drafts
 
+## AI MCP Startup (via Craig Wasserman / Code Red Partners)
+**Date:** 2026-01-27
+**Status:** SENT
+
+Craig - Saw your FDE post for the AI MCP startup. I'm a Robotics PhD and startup CTO who's been building production agentic systems. Happy to learn more about the company if you can share.
+
+---
+
+## Scale AI - FDE GenAI + FDAI Enterprise
+**Date:** 2026-01-27
+**Status:** SENT (both roles + messaged Sam Evans)
+
+**LinkedIn message to Sam Evans (AI/ML Recruiter):**
+
+Sam - Just applied for Forward Deployed AI Engineer, Enterprise (NYC). I'm a Robotics PhD and startup CTO who's been building production LLM systems. The role description reads like my last two years. Happy to chat if it makes sense.
+
+---
+
+**Cover Letter:**
+tics PhD and two-time founder. Most recently I was CTO at an AI logistics startup where I built an end-to-end agentic system as sole production engineer: hybrid LLM + deterministic pipelines, full-stack development, and custom tooling for rapid iteration.
+
+Scale's FDE role appeals because it combines the parts of startup life I like most: working directly with customers, shipping across the full stack, and turning ambiguous problems into production solutions. I've done that twice now at companies I co-founded. I'd like to do it at Scale's scope.
+
+I'm a Robo
+---
+
 ## Fauna Robotics - Anthony Moschella (LinkedIn)
 **Date:** 2026-01-27
 **Status:** SENT

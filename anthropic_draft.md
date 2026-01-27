@@ -1,12 +1,43 @@
 # Anthropic Application - Draft Responses
 
 apply here: https://job-boards.greenhouse.io/anthropic/jobs/4981828008
+My path to AI safety began when I lost a family member in a car accident early in my career, which led me to found a startup focused on safer autonomous vehicles. That experience taught me something fundamental: when we build capable systems, safety must be designed in from the beginning, not bolted on afterward.
+
+
 
 ## Why do you want to work at Anthropic? (200-400 words)
 
-My path to AI safety began when I lost a family member in a car accident early in my career, which led me to found a startup focused on safer autonomous vehicles. That experience taught me something fundamental: when we build capable systems, safety must be designed in from the beginning, not bolted on afterward.
+For most of the past decade, I have worked on making intelligent systems safe across various domains: from spacecraft, to robotics, to AI. My PhD research focused on run-time assurance: embedding guardrails into control systems so that they maintain provably safe behavior with minimal compromise to the performance. During this time, I was one of six founding members of the Robotarium, an open access multi-agent robotics research lab. There I was hired to work on safety verification, to ensure users could run their experiments without damanging hardware. The lab has hosted over 16,000 experiments and is still operational today. At MIT Lincoln Lab, I worked on verification of neural networks, researching robustness properties. At Air Force Research Lab, I developed algorithms for safety in the context of spacecraft motion planning. After my PhD, I founded Pytheia, a computer vision startup with the purpose of making autonomous vehicles safer through shared perception. 
 
-For the past decade, I've worked on making intelligent systems safe across domains—from spacecraft to robots to AI. My PhD research focused on runtime assurance: embedding safety principles directly into control systems so they maintain safe behavior even when facing unexpected situations. At MIT Lincoln Lab, I worked on formal verification of neural networks, essentially trying to understand why they make the decisions they do. At Air Force Research Lab, I developed principled approaches to spacecraft autonomy that could guarantee safety properties while still allowing capable behavior.
+What drew me to this wasn't fear technology, but an excitement about its potential. Realizing the benefits means solving the very real risks involved. Working with LLMs over the past few years has been both inspiring and humbling. The capabilities are remarkable, but so are the challenges. The interpretability work I did on smaller neural networks feels like early preparation for the much larger challenge of understanding transformer-based models. Even the approaches we used for spacecraft control feel directly relevant to Constitutional AI. In that work, we focused on embedding principles to guide behavior rather than hard-coding specific responses. 
+
+
+What excites me about Anthropic is the combination of ambition and responsibility. The focus on interpretability and the commitment to understanding behavior is the approach the feild needs. Artificial intelligence is the most important technology we will ever build. Getting is right is the single most important technical challenge of my lifetime, and the ability to contribute to this mission at Anthropic would be the most fulfillling work I could hope to do. 
+
+
+---- 
+
+You're not just building powerful AI systems. You're building them to be helpful, honest, and harmless.IThe focus on interpretability, the systematic approach to alignment research, the commitment to understanding model behavior rather than just improving metrics,  is exactly the approach the field needs.
+
+I want to work at Anthropic because you've made safety research a first-class discipline, not a side project. The goal isn't just to build capable AI, but to build AI we can understand and trust. Artificial intelligence is the most important technology we've ever built, and possibily ever will build. It has an incredible potential to help humanity, but the stakes are real, getting it right is single most important ... of my lifetime. The ability to contribute to this in any way with Antropic, would be the most fulfilling work I could hope to do. 
+
+
+
+
+The more important LLMs become the more 
+
+
+, and the understnading that the benefits would only be possible if we could solve for the very real associated risk. I've seen how transformative intelligent systems can be, But I've also learned that the more capable these systems become, the more crucial it is to understand and shape their behavior. 
+
+
+Working with LLMs over the past few years has been both inspiring and humbling. The capabilities are remarkable, but so are the challenges. The interpretability work I did on smaller neural networks feels like early preparation for the much larger challenge of understanding transformer-based models. The constitutional approaches we used for spacecraft control—embedding principles that guide behavior rather than hard-coding specific responses—feel directly relevant to constitutional AI.
+
+
+Safety and performance are intertwined. If we want to make something powerful, it also needs tobe safe. 
+
+--
+
+For the past decade, I've worked on making intelligent systems safe across domains—from spacecraft to robots to AI. My PhD research focused on runtime assurance: embedding safety principles directly into control systems so they maintain safe behavior even when facing unexpected situations. At this time, I was a founding member of the Robotarium, an open access multi-agent robotics lab, where I was hired to research software guardrails for the robots. 
 
 What drew me to this work wasn't fear of technology, but excitement about its potential combined with respect for its risks. I've seen how transformative intelligent systems can be—robots that enable new scientific discoveries, spacecraft that explore asteroids, automation that solves real logistics problems. But I've also learned that the more capable these systems become, the more crucial it is to understand and shape their behavior.
 
@@ -14,9 +45,7 @@ Working with LLMs over the past few years has been both inspiring and humbling. 
 
 What excites me about Anthropic is the combination of ambition and responsibility. You're not just building powerful AI systems—you're building them to be helpful, honest, and harmless. The focus on interpretability, the systematic approach to alignment research, the commitment to understanding model behavior rather than just improving metrics—this is exactly the approach the field needs.
 
-I want to work at Anthropic because you've made safety research a first-class discipline, not a side project. The goal isn't just to build capable AI, but to build AI we can understand and trust. After spending my career working on safety-critical systems, contributing to that mission feels like the most important work I could do.
-
-This technology has incredible potential to help humanity. Getting it right matters.
+I want to work at Anthropic because you've made safety research a first-class discipline, not a side project. The goal isn't just to build capable AI, but to build AI we can understand and trust. Artificial intelligence is the most important technology we've ever built, and possibily ever will build. It has an incredible potential to help humanity, but the stakes are real, getting it right is single most important ... of my lifetime. The ability to contribute to this in any way with Antropic, would be the most fulfilling work I could hope to do. 
 
 ---
 

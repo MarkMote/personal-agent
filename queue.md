@@ -17,20 +17,7 @@ Jessica - I'm a Robotics PhD (Georgia Tech, 1,400+ citations) and two-time techn
 
 I'm interested in Research Engineer or ML Systems roles on the NYC team. My background spans safe autonomy research and building production ML systems - happy to discuss where I might fit best.
 ```
-
----
-
-### Schrödinger - NYC
-**Role:** ML/Optimization Scientist
-**Contact:** Standard application
-**Link:** https://www.schrodinger.com/careers
-**Fit:** Tier 2. Physics optimization. Long academic cycle.
-**Resume:** Distinguished Academic
-**Time:** 3:30-4:00
-
-```
-[Standard application - no outreach message needed]
-```
+how 
 
 ---
 
@@ -50,7 +37,6 @@ I'm interested in Research Engineer or ML Systems roles on the NYC team. My back
 
 ## TOMORROW - Startups (faster cycles)
 
-- Fauna Robotics
 - Gecko Robotics
 - Hebbia
 - Modal
