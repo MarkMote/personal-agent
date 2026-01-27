@@ -1,87 +1,52 @@
 # Message Drafts
 
-Latest drafts at the top. Edit as needed, then send.
+## Basis - Technical Achievement (pick one)
+**Date:** 2026-01-27
+**Status:** SENT (used Option A - Roostr)
+
+### Option A: Roostr (recommended)
+
+As sole production engineer at Roostr, I built an end-to-end agentic system that automates freight forwarding operations. The system ingests unstructured rate emails, extracts structured data through a hybrid LLM + deterministic pipeline, and manages quoting workflows autonomously. I built the entire stack: backend, frontend, auth, infra, and the agent framework itself. One customer attributed ~$1M in incremental monthly revenue to the faster quoting the system enabled. The interesting part wasn't any single component—it was making the whole thing work reliably in production, with real customers, as a one-person engineering team.
+
+### Option B: PhD (backup)
+
+I developed a real-time safety layer algorithm for autonomous spacecraft control. The core idea is a runtime assurance system that monitors a primary controller and intervenes when it would violate safety constraints. The algorithm solves a constrained optimization problem fast enough to run on spacecraft attitude dynamics in real time—which means millisecond-scale decisions on embedded hardware. The work contributed to a broader research program on safe autonomy that's been cited over 1,400 times.
 
 ---
 
-## Zeal FIR - Confirm Time
-**To:** Nate Loofbourrow
-**Platform:** LinkedIn
-**Re:** FIR intro call
-**Date:** 2026-01-15
+## Ultra - Application (Name Your Job)
+**Date:** 2026-01-27
+**Status:** Ready to send
 
-Wednesday after 1pm works. 2pm ET?
+**What job at Ultra do you want?**
 
----
+Founding Engineer — or whatever you call the person who can own hard problems across the stack, from policy architecture to perception to controls.
 
-## Zeal FIR - Accept Intro Call
-**To:** Nate Loofbourrow (Zeal Talent Ventures)
-**Platform:** LinkedIn
-**Re:** Founder-in-Residence | Physical AI
-**Date:** 2026-01-15
-**Score:** 7/8 — Tier 1, engage
+**What can you bring to the team in that role?**
 
-Thanks Nate. NYC and that range both work. Happy to do the 15 minutes.
-
-I'm flexible later next week. Feel free to propose a time that works for you.
-
----
-
-## D. E. Shaw GenAI - Engage (Follow-up)
-**To:** Marcus Roberts Rajoo (Vulcan)
-**Platform:** LinkedIn
-**Re:** Senior GenAI position at D. E. Shaw
-**Date:** 2026-01-15
-**Score:** 7/8 — Tier 0, auto-engage
-
-Hi Marcus,
-
-Yes, I'm looking now. Happy to pick this back up.
-
-The role sounds well-aligned. I've been building agentic systems end-to-end at Roostr, working directly with stakeholders on product strategy. Interested to learn more.
-
-What's the best next step — a quick intro call with you, or directly with the hiring manager?
+I am a 2x founder. I've built and shipped robotics/AI systems end-to-end, twice. My Robotics PhD gives me depth when needed (controls, optimization), but I'm a generalist who moves fast and figures things out.
 
 
+At a 4-person team, that matters more than specialization.
 
-Hi Marcus,
+**What are 1-2 examples of awesome things you've built or accomplished?**
 
-Yes, I'm looking now. Happy to pick this back up.
-
-The role sounds well-aligned — I've been building agentic systems end-to-end at Roostr, working directly with stakeholders on product strategy. Interested to learn more.
-
-What's the best next step — intro call with you, or directly with the hiring manager?
+1. Built Pytheia, a startup offering real time 3d perception from any camera stream. We later pivoted to LLM SaaS. $20k investment → $300k ARR.
+2. Currently CTO at Roostr, sole engineer building agentic AI systems that automate freight forwarding operations. Production system handling real customer workflows.
 
 ---
 
-## D. E. Shaw GenAI - Engage
-**To:** Marcus Roberts Rajoo (Vulcan)
-**Platform:** LinkedIn
-**Re:** Senior GenAI position at D. E. Shaw
-**Date:** 2026-01-15
+## Laurion Capital - Marcus (LinkedIn)
+**Date:** 2026-01-27
+**Status:** SENT
 
-Hi Marcus,
+Hey Marcus,
 
-Yes, I am now actively looking. Happy to pick this conversation back up.
+Good to hear from you - and noted on D.E. Shaw, keep me posted.
 
-The GenAI role sounds well-aligned with what I've been building — agentic systems, end-to-end product development, stakeholder-facing work. I'd be interested in learning more.
+Laurion looks interesting. Happy to move forward - what's the next step?
 
-What's the best next step — a quick intro call with you, or directly with the hiring manager?
+Mark
 
 ---
 
-## Zeal FIR - Qualify + Defer
-**To:** Nate Loofbourrow (Zeal Talent Ventures)
-**Re:** Founder-in-Residence | Accelerating Physical AI
-**Date:** 2026-01-15
-
-Thanks for the additional context, Nate. The model is interesting. AI applied to physical infrastructure is a space I think about.
-
-I'm currently focused on a few opportunities through mid-February, but would like to keep this on my radar if there's real alignment. Two quick questions that would help me gauge fit:
-
-1. Is this NYC-based or location-flexible?
-2. What's the approximate cash compensation range for the FIR role?
-
-Happy to reconnect in a few weeks once I have more clarity on timing.
-
----

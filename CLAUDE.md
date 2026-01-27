@@ -29,7 +29,7 @@ Keep complexity low. Only build tools/software when clearly needed. Use existing
 - **Core expertise:** GNC, control theory, optimization, computer vision, robotics, ML, safe autonomy
 
 ## Resume Variants
-Three positioning strategies (will have actual resume docs):
+Three positioning strategies (resume docs in `/latex` folder):
 1. **Chief Engineer** - technical leadership, spacecraft/robotics depth
 2. **Product Founder** - zero-to-one, product sense, commercial deep tech
 3. **Distinguished Academic** - research pedigree, publications, PhD culture fit
@@ -49,6 +49,9 @@ Three positioning strategies (will have actual resume docs):
 │   ├── mid.csv            # Series B-D target companies
 │   ├── late.csv           # Big tech / late-stage targets
 │   └── out.csv            # Outside NYC targets
+├── latex/                 # Resume variants (LaTeX source + PDFs)
+│   ├── resume/           # Main resume variants
+│   └── basis_cover_letter/ # Cover letters and custom materials
 ├── ref/                   # Claude's memory bank (see README.md inside)
 │   ├── mark_profile.md    # Background, timeline, credentials, narrative hooks
 │   ├── web_cv.md          # Full CV from markmote.com/resume (publications, talks, awards)
@@ -144,6 +147,14 @@ Two-file system for managing all outreach:
 - Include: title, requirements, key skills, and prep notes (what to study/brush up on)
 - This builds a reference for interview prep and skill gap analysis
 
+**When Mark applies to a company:**
+1. `tracker.csv` → status to "📨 Sent", date applied = today, follow-up = +7 days
+2. `company-intel/{company}/` → create folder if needed, update:
+   - `role.md` — job description + fit assessment
+   - Application questions/answers if any
+   - Notes on contact (or "no LinkedIn contact found")
+3. `message_draft.md` → mark status as SENT if there was a draft
+
 **Moving companies between status folders:**
 - `00_pending` → `02_qualified`: Once researched and outreach drafted
 - `02_qualified` → `03_ACTIVE`: Once we get a response (positive or neutral)
@@ -161,6 +172,9 @@ This is Claude's memory bank. Automatically update `ref/` with new information a
 - Track status and remind on follow-ups
 - Challenge strategy and assumptions
 - Build tools when genuinely useful
+
+## Message Drafts
+When drafting messages during conversation, also add them to the top of `message_draft.md` so Mark has a single place to copy/paste from.
 
 ## Current Phase
 Executing Wave 1 outreach. See `PLAN/action_plan.md` for workflow and `PLAN/timeline.md` for weekly goals.

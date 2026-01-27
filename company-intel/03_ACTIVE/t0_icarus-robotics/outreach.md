@@ -77,3 +77,4 @@ Happy to do a quick call or drop by Newlab if useful. (I'm based in Brooklyn.)
 - 2026-01-22: Applied online + sent LinkedIn InMail to Jamie
 - 2026-01-23: Jamie responded asking if partnership or engineering. Clarified engineering.
 - 2026-01-23: Jamie agreed to chat, proposed next Thursday (1/30). Confirmed, awaiting time.
+- 2026-01-27: Followed up to confirm time for Thursday.
