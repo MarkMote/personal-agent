@@ -1,5 +1,17 @@
 # Message Drafts
 
+## Anthropic - Jessica Andrelevich (LinkedIn)
+**Date:** 2026-01-27
+**Status:** SENT
+
+Jessica - Just applied for Senior+ Software Engineer, Research Tools (NYC). I'm a Georgia Tech Robotics PhD and two-time founder. Most recently I was CTO at an AI startup where I built production LLM systems. Before that, I built safety verification tooling for a robotics research lab.
+
+Happy to chat if it makes sense, or be routed if there's a better fit.
+
+Mark
+
+---
+
 ## AI MCP Startup (via Craig Wasserman / Code Red Partners)
 **Date:** 2026-01-27
 **Status:** SENT

@@ -1,6 +1,6 @@
 # Anthropic (NYC) - Outreach
 
-**Status:** Ready to send
+**Status:** SENT (2026-01-27)
 **Channel:** LinkedIn + formal application
 **Resume:** Distinguished Academic
 
@@ -28,7 +28,7 @@
 
 **Approach:** LinkedIn to Jessica (NYC contact) + formal application same day
 **Timing:** Week 2 (late January 2026)
-**Target Role:** Research Engineer, ML (Reinforcement Learning) - NYC
+**Target Role:** Senior+ Software Engineer, Research Tools - NYC
 
 ---
 

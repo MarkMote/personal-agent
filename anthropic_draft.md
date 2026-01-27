@@ -1,6 +1,33 @@
 # Anthropic Application - Draft Responses
 
 apply here: https://job-boards.greenhouse.io/anthropic/jobs/4981828008
+
+---
+
+## FINAL - Why do you want to work at Anthropic? (200-400 words)
+
+For most of the past decade, I have worked on making intelligent systems safe across different domains: spacecraft, robotics, and AI. My PhD research focused on runtime assurance, embedding guardrails into control systems so they maintain provably safe behavior without compromising performance. During this time, I was one of six founding members of the Robotarium, an open-access multi-agent robotics lab. I was hired to build safety verification tooling so researchers could run experiments without damaging hardware. The lab has hosted over 16,000 experiments and remains operational today. At MIT Lincoln Lab, I worked on verification of neural networks, researching robustness properties. At Air Force Research Lab, I developed safety algorithms for spacecraft motion planning.
+
+After my PhD, I founded Pytheia, a computer vision startup aimed at making autonomous vehicles safer through shared perception. More recently, as CTO at Roostr, I built LLM-based automation systems for freight operations.
+
+What drew me to this work was not fear of technology, but excitement about its potential. Realizing the benefits means solving the very real risks involved. Working with LLMs over the past few years has been both inspiring and humbling. The capabilities are remarkable, but so are the challenges. The interpretability work I did on smaller neural networks feels like early preparation for the much larger challenge of understanding transformer-based models. The approaches we used for spacecraft control feel directly relevant to Constitutional AI.
+
+What excites me about Anthropic is the combination of ambition and responsibility. The focus on interpretability and the commitment to understanding model behavior is the approach the field needs. Artificial intelligence is the most important technology we will ever build. Getting it right is the most important technical challenge of my lifetime. The ability to contribute to this mission at Anthropic would be the most fulfilling work I could hope to do.
+
+---
+
+## FINAL - Cover Letter
+
+I'm a Georgia Tech Robotics PhD and two-time founder. I'm applying to Anthropic because I want to work on problems that matter, and I believe my background in safe autonomy and production AI systems could be useful.
+
+My PhD was in optimization and control theory, focused on safe autonomy for spacecraft and robotics. Part of that work was on the Robotarium, a remotely accessible robotics testbed, where I built safety verification tooling that let researchers run experiments without damaging hardware. Since then I've founded two startups. At Pytheia, I built a real-time 3D perception system from arbitrary camera feeds: detection, tracking, calibration, and fusion. At Roostr, as sole production engineer, I built an end-to-end agentic system for freight operations: hybrid LLM pipelines, a React/TypeScript dashboard, and custom debugging tooling for rapid iteration. The common thread is building systems that work in production, not just on paper.
+
+What appeals to me about Anthropic is the combination of ambition and responsibility. After several years building companies from 0 to 1, I'm eager to return to deep technical work. I'd welcome the opportunity to discuss where my background might be most useful.
+
+---
+
+## DRAFTS BELOW
+
 My path to AI safety began when I lost a family member in a car accident early in my career, which led me to found a startup focused on safer autonomous vehicles. That experience taught me something fundamental: when we build capable systems, safety must be designed in from the beginning, not bolted on afterward.
 
 
