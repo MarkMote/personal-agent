@@ -1,0 +1,51 @@
+# Fauna Robotics - Motor Control Scientist / Senior SWE
+
+**Location:** NYC (Brooklyn)
+**Type:** Full-time
+**Funding:** $16.6M from Kleiner Perkins
+
+## Roles Applied
+
+### Motor Control Scientist (Primary)
+- PhD required (CS, Robotics, Computational Neuroscience)
+- RL, imitation learning, AI techniques for motor control
+- Physics-based simulation tools
+- Kinematics and motion planning for humanoid robots
+- Portfolio of research or industry projects expected
+
+### Senior/Staff Software Engineer (Secondary)
+- 5+ years professional SWE experience
+- Perception, navigation, motor control, reasoning, HRI
+- Production-level code, SDKs
+- Integrate AI models into robotic systems
+- Python, C++, Rust
+
+---
+
+## Fit Assessment
+
+**Motor Control Scientist fit:**
+- PhD in controls/optimization ✓
+- RL + simulation experience (AFRL shielded RL) ✓
+- Physics-based work (spacecraft dynamics) ✓
+- Gap: Humanoid-specific portfolio
+
+**Senior SWE fit:**
+- Production systems (Roostr, Pytheia) ✓
+- CV/perception (Pytheia Argus) ✓
+- Full-stack engineering ✓
+- Integrating ML into systems ✓
+
+---
+
+## Application (Submitted 2026-01-27)
+
+**Contact:** Anthony Moschella (GT alum)
+
+**Connection request:**
+> Fellow GT alum, Robotics PhD '21. 2x founder, now getting back into robotics. Fauna's motor control work stood out. Applying for Motor Control Scientist / Senior SWE. Would appreciate a referral if you think there's a fit. Happy to share more if helpful.
+
+**Other potential contacts:**
+- Bolun Dai (Research Scientist) - Thomas Gurriet is mutual connection / co-author
+- Rob Cochran (CEO)
+- Lerrel Pinto (Co-founder)
