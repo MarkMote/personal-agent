@@ -53,6 +53,7 @@ Three positioning strategies (will have actual resume docs):
 │   ├── mark_profile.md    # Background, timeline, credentials, narrative hooks
 │   ├── web_cv.md          # Full CV from markmote.com/resume (publications, talks, awards)
 │   ├── strategic_context.md # Decision framework, priorities, situational factors
+│   ├── role_preferences.md # Target role types, ideal domain, team preferences
 │   ├── inbound_policy.md  # Scoring framework for inbound opportunities
 │   ├── communication_principles.md # Voice, tone, outreach style
 │   ├── outreach_template.md
@@ -101,9 +102,10 @@ Three positioning strategies (will have actual resume docs):
 - Glob pattern: `company-intel/**/*{company}*.md` (NOT `**/{company}*/**` which misses files)
 
 **Evaluating an opportunity:**
-1. `ref/strategic_context.md` — Decision framework, priorities
-2. `ref/inbound_policy.md` — Scoring criteria
-3. `ref/mark_profile.md` — Fit with background
+1. `ref/role_preferences.md` — Target role types, ideal domains, team preferences
+2. `ref/strategic_context.md` — Decision framework, priorities
+3. `ref/inbound_policy.md` — Scoring criteria
+4. `ref/mark_profile.md` — Fit with background
 
 **Technical deep dives (system design interviews, etc.):**
 1. `ref/roostr/roostr_full_tech_documentation.md` — LLM systems, agentic architecture

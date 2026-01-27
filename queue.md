@@ -1,155 +1,266 @@
-# Monday Jan 27, 2026 - Action Queue
+# Tuesday Jan 28, 2026 - Action Queue
 
-## HIGH PRIORITY (Do First)
+## PART 1: FOLLOW-UPS (Do First - 30 min)
 
-### 1. Icarus Follow-up (Time Coordination)
-**Contact:** Jamie Palmer (CTO)  
-**Channel:** LinkedIn DM  
-**Action:** Pin down Thursday meeting time  
-**Reminder:** 3pm today  
+These were sent Jan 22-23, no response yet. Quick follow-up messages.
+
+### 1. Viam
+**Contact:** Eliot Horowitz (CEO)
+**Original sent:** Jan 22
+```
+Hi Eliot - following up on my note about joining Viam. Happy to chat if there's interest.
+```
+
+### 2. Standard Bots
+**Contact:** Mason Rubenstein (Eng Manager)
+**Original sent:** Jan 22
+```
+Hi Mason - following up on my note about the engineering team. Let me know if you'd like to connect.
+```
+
+### 3. Meta FAIR
+**Contact:** Mark Dixon (recruiter)
+**Original sent:** Jan 22
+```
+Hi Mark - following up on my note about the AI Research Scientist role. Still very interested in the robotics work at FAIR.
+```
+
+### 4. Google DeepMind
+**Contact:** Catrina Manahan (NYC)
+**Original sent:** Jan 22
+```
+Hi Catrina - following up on my note about embodied AI research. Would love to learn more about the NYC team.
+```
+
+### 5. Microsoft Research
+**Contact:** Solina Hambaz (recruiter)
+**Original sent:** Jan 23
+```
+Hi Solina - following up on my note about the RSE GenAI role on AI Frontiers. Still very interested.
+```
+
+### 6. Jane Street
+**Contact:** Laura Parsons (Experienced Hire)
+**Original sent:** Jan 23
+```
+Hi Laura - following up on my note about ML Engineering. Happy to chat when convenient.
+```
+
+---
+
+## PART 2: ANTHROPIC (Tier 0 - Worth the time)
+
+**Contact:** Jessica Andrelevich (NYC Talent)
+**Channel:** LinkedIn DM + Application
+**Target Role:** Research Engineer or ML Systems
+**Resume:** Distinguished Academic
+**Link:** https://jobs.lever.co/Anthropic
 
 **Message:**
 ```
-Hi Jamie - looking forward to our chat this Thursday. What time works best on your end? I'm flexible throughout the day.
+Jessica - I'm a Robotics PhD (Georgia Tech, 1,400+ citations) and two-time technical founder. Currently wrapping up my role as CTO at an AI logistics startup.
+
+I'm interested in Research Engineer or ML Systems roles on the NYC team. My background spans safe autonomy research and building production ML systems - happy to discuss where I might fit best.
 ```
 
-## WAVE 2 OUTREACH (Big Monday Batch)
+**Note:** Application needs attention - cover letter, thoughtful responses. Don't rush.
 
-### 2. Anthropic NYC - Tier 0
-**Contact:** Jessica Andrelevich (NYC Talent)  
-**Channel:** LinkedIn DM  
-**Resume:** Distinguished Academic  
-**Also:** Apply via Greenhouse same day  
+---
 
-**Message:**
+## PART 3: TIER 1 APPLICATIONS (High priority - 1.5 hrs)
+
+All remote-friendly or NYC. Strong fit. Worth individual outreach.
+
+### 7. Foxglove - REMOTE
+**Role:** Robotics platform (observability/viz)
+**Contact:** Find eng lead on LinkedIn
+**Link:** https://foxglove.dev/careers
+**Fit:** Robotics + production systems. Ex-Cruise founders. $40M Series B.
+**Resume:** Chief Engineer
+
 ```
-Jessica - I'm a Robotics PhD (Georgia Tech) and founder of two AI startups. Currently wrapping up my role as CTO at an AI logistics company and starting to look for what's next.
+[Name] - I'm a Robotics PhD (Georgia Tech) and two-time founder. Foxglove's approach to robotics observability resonates - I've built perception and controls systems that would have benefited from better tooling.
 
-Anthropic's approach to building beneficial AI systems at scale really resonates. I've been following the safety systems work and would love to explore opportunities on the NYC team.
-
-Happy to share more about my background in a quick call. (I'm based in Brooklyn.)
-```
-
-### 3. OpenAI NYC - Tier 0  
-**Contact:** Roshni Shah (NYC Recruiter)  
-**Channel:** LinkedIn DM  
-**Target Role:** Sr Researcher Safety Systems  
-**Resume:** Distinguished Academic  
-**Also:** Apply same day  
-
-**Message:**
-```
-Roshni - I'm a Robotics PhD (Georgia Tech) with a background in safety-critical control systems and two AI startups. Currently wrapping up my role as CTO at an AI freight forwarder.
-
-The Sr Researcher Safety Systems role caught my eye - my dissertation was on formal verification for spacecraft control, and I've been thinking deeply about safe deployment of AI systems in real-world applications.
-
-Would love to learn more about what the NYC research team is working on. Happy to do a quick call if useful.
+Currently wrapping up my CTO role at an AI startup. Would love to learn more about the team.
 ```
 
-### 4. Two Sigma - Tier 1
-**Contact:** Jason Wu (QR Recruiter)  
-**Channel:** LinkedIn DM  
-**Target Role:** QR Machine Learning  
-**Resume:** Distinguished Academic  
-**Also:** Apply same day  
-**Note:** Need 2+ weeks prep
+### 8. True Anomaly - REMOTE GNC
+**Role:** GNC Engineer (space security/domain awareness)
+**Contact:** Find GNC or eng lead
+**Link:** https://www.trueanomaly.space/careers
+**Fit:** Space + GNC + defense-adjacent. $100M+ raised. Perfect PhD fit.
+**Resume:** Chief Engineer
 
-**Message:**
 ```
-Jason - I'm a Robotics PhD (Georgia Tech) and two-time founder. My research focused on optimization under uncertainty, and I've spent the last few years building and scaling ML systems in production.
+[Name] - I'm a Robotics PhD (Georgia Tech) with a dissertation on spacecraft GNC and safe autonomous control. Currently wrapping up my CTO role.
 
-I'm interested in the QR Machine Learning role. My background spans everything from spacecraft trajectory optimization to LLM-powered logistics agents - excited to bring that perspective to quantitative research.
-
-Would love to learn more about what Two Sigma is building. Happy to chat when convenient.
+The GNC work at True Anomaly is a strong fit with my background. Would love to connect.
 ```
 
-### 5. K2 Space - Tier 1
-**Contact:** Karan Talati (CEO, ex-SpaceX)  
-**Channel:** LinkedIn DM  
-**Target Role:** Principal GNC Engineer (REMOTE)  
-**Resume:** Chief Engineer  
-**Also:** Apply same day  
+### 9. Muon Space - REMOTE GNC
+**Role:** GNC Lead (weather satellites)
+**Comp:** $150-190K
+**Contact:** Find GNC lead
+**Link:** https://www.muonspace.com/careers
+**Fit:** Space + GNC. Series B. Fast Company Most Innovative 2025.
+**Resume:** Chief Engineer
 
-**Message:**
 ```
-Karan - Fellow space nerd here. I'm a Robotics PhD (Georgia Tech) with a dissertation on safety-critical spacecraft control. Currently wrapping up my role as CTO of an AI startup and looking for my next adventure.
+[Name] - I'm a Robotics PhD (Georgia Tech) with a dissertation on spacecraft trajectory optimization. Currently wrapping up my CTO role.
 
-The Principal GNC Engineer role is a perfect fit - I've published on spacecraft trajectory optimization and have been following K2's progress with interest. The combination of proven GNC fundamentals with modern manufacturing is exactly where the industry needs to go.
-
-Would love to learn more about the technical challenges you're solving. Happy to chat when useful. (Founder-to-founder conversations are always the best ones.)
+The GNC Lead role caught my eye. Would love to learn more about the technical challenges.
 ```
 
-### 6. Hugging Face (LeRobot) - Tier 0
-**Contact:** Remi Cadene (LeRobot Lead, ex-Tesla)  
-**Channel:** LinkedIn DM  
-**Target Role:** Open-Source ML Eng for Robotics  
-**Resume:** Distinguished Academic  
-**Backup:** Twitter @RemiCadene  
+### 10. Ultra - NYC (In-person)
+**Role:** Robotics Engineer
+**Contact:** Find founder/eng lead
+**Link:** https://www.ultra.inc/careers (or YC listing)
+**Fit:** General-purpose robots. YC W24. 4-person team. IK solvers, neural network control.
+**Resume:** Chief Engineer
 
-**Message:**
 ```
-Remi - I'm a Robotics PhD (Georgia Tech) and two-time founder, currently wrapping up my role as CTO at an AI startup. Your work bridging the gap between ML and robotics at scale is exactly what the field needs.
+[Name] - I'm a Robotics PhD (Georgia Tech) and two-time founder. Ultra's approach to general-purpose robotics is exciting - small team, hard problems, real hardware.
 
-LeRobot's approach to open-source robotics learning really resonates. I've been working on the intersection of CV, control, and LLMs - would love to explore how I could contribute to what you're building.
-
-Happy to chat about robotics, transformers, or anything in between when convenient.
+I'm in Brooklyn and wrapping up my current role. Would love to chat.
 ```
 
-## MEDIUM PRIORITY
+### 11. Basis Research Institute - NYC
+**Role:** Research roles (AI research nonprofit)
+**Contact:** Find research lead
+**Link:** https://www.basis.ai/careers
+**Fit:** PhD culture. Ships open source. Applied AI research.
+**Resume:** Distinguished Academic
 
-### 7. Citadel Securities - Tier 1  
-**Contact:** Crystal Galati (Head QR Lateral)  
-**Target Role:** Research Scientist  
-**Note:** STALL if fast reply, need 2+ weeks prep  
-
-**Message:**
 ```
-Crystal - I'm a Robotics PhD (Georgia Tech) with expertise in optimization and machine learning. Currently wrapping up my role as CTO at an AI startup.
+[Name] - I'm a Robotics PhD (Georgia Tech, 1,400+ citations) and two-time founder. Basis's model of applied AI research that actually ships resonates.
 
-The Research Scientist role aligns well with my background - I've published on optimization under uncertainty and have been scaling ML systems in production. Interested in bringing that research perspective to quantitative finance.
-
-Would love to learn more about the research problems Citadel is tackling. Happy to chat when convenient.
+Exploring research roles and would love to learn more about the team's current focus.
 ```
 
-### 8. Hudson River Trading - Tier 1
-**Contact:** Madison Kraus (Recruiting Leader)  
-**Target Role:** QR Mid-Freq  
-**Note:** Need 2+ weeks prep  
+### 12. Sweep - NYC + DC
+**Role:** Defense autonomy
+**Contact:** Find eng lead
+**Link:** https://www.sweep.tech/careers
+**Fit:** Defense layer for autonomous systems. Small team. Safe autonomy directly relevant.
+**Resume:** Chief Engineer
 
-**Message:**
 ```
-Madison - I'm a Robotics PhD (Georgia Tech) and founder of two startups. My research focused on real-time optimization and control systems, and I've spent recent years building ML systems that operate under strict latency constraints.
+[Name] - I'm a Robotics PhD (Georgia Tech) with a background in safe autonomous control. My dissertation was on runtime assurance - making autonomous systems fail gracefully.
 
-The QR Mid-Freq role caught my attention - the intersection of low-latency systems and machine learning is fascinating. Would love to learn more about the technical problems HRT is working on.
-
-Happy to chat when convenient about how my background might fit.
+Sweep's focus on the defense layer for autonomy is a strong fit. Would love to connect.
 ```
 
-## ADMIN TASKS
+---
 
-### 9. Update Outreach Queue  
-- [ ] Mark Icarus follow-up as sent (when completed)  
-- [ ] Mark all Wave 2 messages as sent with dates  
-- [ ] Update status tracking  
+## PART 4: TIER 2 BATCH (Quick sends - 1 hr)
 
-### 10. Prep Applications
-- [ ] Anthropic: Find Greenhouse link, submit Distinguished Academic resume  
-- [ ] OpenAI: Find application portal, submit Distinguished Academic resume  
-- [ ] Two Sigma: Submit application  
-- [ ] K2 Space: Submit application  
-- [ ] Citadel: Submit application  
-- [ ] HRT: Submit application  
+Template-based outreach. Light customization. Volume play.
 
-## NOTES
+**Base template:**
+```
+[Name] - I'm a Robotics PhD (Georgia Tech) and two-time founder, currently wrapping up my CTO role at an AI startup. [1 sentence about why this company]. Would love to learn more about the team.
+```
 
-- London expansion noted ✓  
-- Follow-ups rescheduled to Tue/Wed ✓  
-- 3pm Icarus reminder set ✓  
-- Focus on Tier 0/1 companies today  
-- Save Tier 2 companies for tomorrow if energy permits  
+### NYC Robotics/AI Batch:
+| # | Company | Role/Focus | Contact to find | Custom hook |
+|---|---------|------------|-----------------|-------------|
+| 13 | Scale AI | FDE/Federal | Recruiter | "Scaling AI for real-world deployment" |
+| 14 | Gecko Robotics | Inspection robots | Eng lead | "Robotics + industrial inspection" |
+| 15 | Hebbia | AI for finance | Eng lead | "AI systems for complex documents" |
+| 16 | Modal | AI infrastructure | Eng lead | "Infrastructure for ML deployment" |
+| 17 | Runway | Generative video | Eng lead | "World models and video generation" |
+| 18 | Radical AI | Material science | Joseph Krause (CEO) | "Optimization for physical systems" |
 
-## SUCCESS METRICS
-- [ ] 6-7 messages sent today  
-- [ ] 6-7 applications submitted  
-- [ ] Icarus time confirmed  
-- [ ] Queue updated with sent confirmations
+### Remote-friendly Batch:
+| # | Company | Role/Focus | Contact to find | Custom hook |
+|---|---------|------------|-----------------|-------------|
+| 19 | May Mobility | Autonomous vehicles | Eng lead | "Controls and autonomy at scale" |
+| 20 | Field AI | Embodied AI | Eng lead | "Embodied AI for unstructured environments" |
+
+### Maritime/Aerospace Batch (Brooklyn Navy Yard cluster):
+| # | Company | Role/Focus | Contact to find | Custom hook |
+|---|---------|------------|-----------------|-------------|
+| 21 | Sea Machines | Maritime autonomy | Michael Johnson (Founder) | "Maritime + autonomy at scale" |
+| 22 | Mythos AI | Maritime mapping | Geoff Douglass (CEO) | "Autonomous maritime systems" |
+| 23 | Bedrock Ocean | AUVs for mapping | Anthony DiMare (CEO) | "Underwater autonomy" |
+
+---
+
+## SUMMARY
+
+| Category | Count | Time Est |
+|----------|-------|----------|
+| Follow-ups | 6 | 30 min |
+| Anthropic (Tier 0) | 1 | 45 min |
+| Tier 1 applications | 6 | 1.5 hrs |
+| Tier 2 batch | 11 | 1 hr |
+| **TOTAL** | **24** | **~4 hrs** |
+
+---
+
+## PART 5: ADDITIONS
+
+### 24. Fauna Robotics - NYC (Tier 1)
+**Role:** Robotics / AI Motor Control Scientist
+**Contact:** Lerrel Pinto (Co-founder, NYU prof) or Rob Cochran (CEO)
+**Link:** https://faunarobotics.com/careers
+**Fit:** General-purpose robots. NYC. $16.6M from Kleiner Perkins. Motor control = your PhD. Yann LeCun endorsed.
+**Resume:** Chief Engineer
+
+```
+[Name] - I'm a Robotics PhD (Georgia Tech) with a dissertation on safe autonomous control. My research focused on trajectory optimization and runtime assurance for spacecraft and multi-robot systems.
+
+Fauna's approach to general-purpose robots in human environments is exactly the kind of work I want to do. The Motor Control Scientist role is a strong fit. Would love to connect.
+```
+
+### 25. Lux Capital - EIR/FIR
+**Contact:** Grace Isford or Josh Wolfe
+**Link:** https://www.luxcapital.com/
+**Fit:** Deep tech VC. Space/robotics portfolio. Perfect for your PhD + founder background.
+**Resume:** Product Founder
+
+```
+[Name] - I'm a Robotics PhD (Georgia Tech) and two-time founder. My background spans spacecraft controls research (JPL, Stanford, AFRL) and building AI products from scratch.
+
+I'm exploring what's next and Lux's deep tech focus resonates. Would love to discuss EIR or other ways to get involved.
+```
+
+### 26. Founders Fund - EIR/FIR
+**Contact:** Find partner or talent contact
+**Link:** https://foundersfund.com/
+**Fit:** Frontier tech. Would appreciate PhD + founder + space background.
+**Resume:** Product Founder
+
+```
+[Name] - I'm a Robotics PhD (Georgia Tech) and two-time founder. Background in spacecraft controls and AI systems.
+
+Exploring EIR opportunities and Founders Fund's frontier tech focus aligns with where I want to be. Would love to connect.
+```
+
+---
+
+## SUMMARY (Updated)
+
+| Category | Count | Time Est |
+|----------|-------|----------|
+| Follow-ups | 6 | 30 min |
+| Anthropic (Tier 0) | 1 | 45 min |
+| Tier 1 applications | 6 | 1.5 hrs |
+| Tier 2 batch | 11 | 1 hr |
+| Additions (Fauna, Lux, FF) | 3 | 30 min |
+| **TOTAL** | **27** | **~4.5 hrs** |
+
+---
+
+## ALSO ON RADAR
+
+**Thursday 1/30:**
+- Icarus call with Jamie (confirm time tomorrow)
+- DESRES follow-up
+
+**Quant roles (when ready for prep):**
+- Citadel - has connection, discuss fit first
+- HRT - similar prep needs
+
+**Pushed:**
+- Anthropic application details in scratch.md if needed

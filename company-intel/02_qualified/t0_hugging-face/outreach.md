@@ -1,65 +1,34 @@
 # Hugging Face (LeRobot) - Outreach
 
-**Status:** Ready to send
-**Channel:** LinkedIn/Twitter + formal application
+**Status:** Applied (Jan 27, 2026)
+**Channel:** Formal application only (no contact available)
 **Resume:** Distinguished Academic
 
 ---
 
 ## Contact
 
-### Primary: Remi Cadene
-- **Title:** Principal Research Scientist, LeRobot Lead
-- **Background:** Ex-Tesla Optimus (2021-2024)
-- **LinkedIn:** Remi Cadene
-- **Twitter/X:** @RemiCadene
-- **GitHub:** @cadene
-- **Notes:** Direct to team lead. Ex-Tesla = understands robotics + ML intersection.
+**Remi Cadene has left HuggingFace.** No recruiter found on LinkedIn for LeRobot team.
 
 ---
 
-## Outreach Strategy
+## Application Details
 
-**Approach:** Direct outreach to Remi (researcher-to-researcher) + formal application same day
-**Timing:** Week 2 (late January 2026)
-**Target Role:** Open-Source ML Engineer, AI for Robotics
-
-**Optional pre-outreach:** Consider making a small LeRobot PR to demonstrate interest (valued in job posting)
+**Role:** Open-Source ML Engineer, AI for Robotics (Paris Office)
+**Applied:** January 27, 2026
+**Location concern:** Role says Paris on-site, but company description says "very distributed" with remote employees
 
 ---
 
-## Messages
+## Next Steps
 
-### Initial Message (LinkedIn - Remi)
-
-Hi Remi,
-
-I've been following LeRobot since launch—the vision of doing for robotics what Transformers did for NLP really resonates.
-
-My background is in controls and optimization (PhD Georgia Tech, h-index 13) with the last 4 years building AI products as a founder. I'm exploring the Open-Source ML Engineer role on your team.
-
-I'm particularly drawn to the model integration and scaling work—bridging research and production is exactly where I want to be. Would you be open to a brief conversation about what you're looking for?
-
-Best,
-Mark
-
-### Follow-up (5 days if no response)
-
-Hi Remi,
-
-Following up on my note about the LeRobot ML Engineer role. Happy to share more about my background or discuss how my controls experience might complement the team.
-
-Thanks,
-Mark
+- Monitor for application response
+- If no response in 2 weeks, search for new LeRobot team contacts
+- Could consider small LeRobot PR contribution to get visibility
 
 ---
-
-## Post-Response Instructions
-- If positive: Schedule call, prepare to discuss PyTorch experience, robotics ML literature, potential contributions
-- If location concern: Emphasize remote-first culture, willingness to travel to Paris regularly
-- If no response: Try Twitter DM as backup, then apply formally
 
 ## Notes
-- Cover letter required for application - explain open-source interest
-- Consider small LeRobot contribution before applying
-- This role closes the ML gap - high strategic value
+- High strategic value - closes the ML gap
+- Robotarium parallel is strong positioning
+- Application included detailed responses on runtime guardrails project

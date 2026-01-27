@@ -1,8 +1,9 @@
 # OpenAI (NYC) - Outreach
 
-**Status:** Ready to send
+**Status:** Applied + Message Sent (Jan 27, 2026)
+**Follow-up due:** Feb 1, 2026 (if no response)
 **Channel:** LinkedIn + formal application
-**Resume:** Distinguished Academic
+**Resume:** Product Founder
 
 ---
 
@@ -28,7 +29,7 @@
 
 **Approach:** LinkedIn to Roshni (NYC recruiter) + formal application same day
 **Timing:** Week 2 (late January 2026)
-**Target Role:** Senior Researcher - Safety Systems, Misalignment Research (NYC)
+**Target Role:** Full Stack Software Engineer, B2B Applications (NYC or SF)
 
 ---
 
@@ -38,11 +39,11 @@
 
 Hi Roshni,
 
-I'm exploring the Senior Researcher role in Safety Systems (NYC). My PhD is in safe autonomy—designing systems that fail gracefully under uncertainty—and I think that perspective maps well to AI safety research.
+I'm a technical founder (2x) wrapping up my role as CTO at an AI logistics startup. Just applied to the Full Stack Engineer role on the B2B Applications team.
 
-I've published on optimization and controls (h-index 13, 1,449 citations) and spent the last 4 years building AI products as a founder. Currently CTO of an AI logistics company.
+I've spent the last four years building AI products from scratch. At my current company, I built long-running LLM agent pipelines, a multi-tenant Next.js/TypeScript dashboard, and the Python backend. Before that I bootstrapped an LLM data product to $300k ARR.
 
-Would you be the right person to discuss this role, or could you point me to someone on the Safety team?
+Would love to connect about the role if you're the right person. Based in Brooklyn.
 
 Best,
 Mark
@@ -51,7 +52,7 @@ Mark
 
 Hi Roshni,
 
-Just following up on my note about the Safety Systems Senior Researcher role in NYC. Happy to be routed if there's someone better suited to discuss.
+Following up on my note about the Full Stack Engineer role on the B2B team. Happy to be routed if there's someone better suited to discuss.
 
 Thanks,
 Mark
@@ -59,9 +60,9 @@ Mark
 ---
 
 ## Post-Response Instructions
-- If positive: Schedule intro call, prepare adversarial ML / red-teaming / robustness talking points
-- If routed: Follow up with Safety team hiring manager
-- If no response after 2 follow-ups: Apply formally via careers page and move on
+- If positive: Schedule intro call, prepare talking points on agentic pipelines, production LLM reliability, B2B product building
+- If routed: Follow up with B2B Applications hiring manager
+- If no response after 2 follow-ups: Try Sean Breaker (secondary contact)
 
 ## Note
-This is the ONLY NYC-based research role at OpenAI. If this doesn't work out, consider t3_openai_ext (SF roles) if relocation becomes acceptable.
+Role is listed as SF or NYC. Emphasize NYC preference but flexibility if needed.
