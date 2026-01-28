@@ -37,7 +37,9 @@ Key responsibilities:
 ## Key People
 | Name | Role | Path |
 |------|------|------|
-| Laura Parsons | Experienced Hire Recruiting | Cold - best fit for experienced hires |
+| Hannah Hasen | Recruiting (primary contact) | Responded to application |
+| Matt Horder | Recruiting (cc'd) | On thread |
+| Laura Parsons | Experienced Hire Recruiting | Original outreach target |
 | Greg Mannix | Technical Recruiting | 2nd degree (mutual: Anand Chaturvedi) |
 
 ## Application Notes
@@ -46,5 +48,26 @@ Key responsibilities:
 - No finance background required
 - May suggest alternative roles based on profile
 
+## Interview Process (from Hannah's email)
+1. **Round 1:** Programming via Zoom/CoderPad (35-60 min)
+2. Multiple Zoom rounds
+3. Full day onsite
+
+**Question categories:**
+- Coding (system design focus > clever algorithms)
+- ML Theory (NN architectures, expected behavior, improvements)
+- Data science (dataset exploration, feature analysis, modeling)
+
+**Notes:**
+- OCaml is their language but use whatever you're comfortable with
+- They evaluate for all roles continuously
+- No remote work—hybrid expected (commute to 250 Vesey)
+
+## Prep Areas
+- [ ] ML theory fundamentals (NN architectures, training dynamics, failure modes)
+- [ ] PyTorch proficiency
+- [ ] System design for ML pipelines
+- [ ] OCaml basics (awareness, not fluency)
+
 ## Notes
-_Add notes from conversations here_
+**2026-01-28:** Hannah Hasen responded. Interested in ML Engineering role (we applied for ML Researcher—they may have rerouted). Requested Feb 17 week for first round to allow prep time. Awaiting confirmation.

@@ -16,13 +16,21 @@ What excites me about Anthropic is the combination of ambition and responsibilit
 
 ---
 
-## FINAL - Cover Letter
+## FINAL - Cover Letter (Generic)
 
 I'm a Georgia Tech Robotics PhD and two-time founder. I'm applying to Anthropic because I want to work on problems that matter, and I believe my background in safe autonomy and production AI systems could be useful.
 
 My PhD was in optimization and control theory, focused on safe autonomy for spacecraft and robotics. Part of that work was on the Robotarium, a remotely accessible robotics testbed, where I built safety verification tooling that let researchers run experiments without damaging hardware. Since then I've founded two startups. At Pytheia, I built a real-time 3D perception system from arbitrary camera feeds: detection, tracking, calibration, and fusion. At Roostr, as sole production engineer, I built an end-to-end agentic system for freight operations: hybrid LLM pipelines, a React/TypeScript dashboard, and custom debugging tooling for rapid iteration. The common thread is building systems that work in production, not just on paper.
 
 What appeals to me about Anthropic is the combination of ambition and responsibility. After several years building companies from 0 to 1, I'm eager to return to deep technical work. I'd welcome the opportunity to discuss where my background might be most useful.
+
+## DRAFT - Cover Letter (FDE-focused)
+
+I'm a Georgia Tech Robotics PhD and two-time founder. I'm applying for the FDE role because it matches what I've spent the last four years doing: embedding with customers, understanding their problems, and shipping production AI systems that solve them.
+
+At Roostr, I was the sole production engineer building an end-to-end agentic system for freight operations. That meant designing LLM pipelines, building evaluation frameworks, and iterating rapidly based on real user feedback. At Pytheia, I took a computer vision product from concept to $300k ARR doing everything from customer discovery to production deployment. Both experiences required high agency, comfort with ambiguity, and the ability to translate technical capabilities into business outcomes.
+
+The FDE role appeals to me because it's the work I already know how to do, applied to the most important technology being built today. I'm excited about helping customers realize the potential of Claude and bringing real-world feedback back to Anthropic.
 
 ---
 

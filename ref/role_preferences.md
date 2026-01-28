@@ -41,6 +41,10 @@
 - **Open-ended roles** with autonomy and scope for creativity
 - High agency, high ownership environments
 
+## Lifestyle & Logistics
+- **Travel:** Loves travel - 25-50% travel is a plus, not a con
+- **Location:** NYC preferred, remote acceptable for right role
+
 ## Compensation Philosophy
 **Opportunistic across the spectrum:**
 

@@ -173,8 +173,57 @@ This is Claude's memory bank. Automatically update `ref/` with new information a
 - Challenge strategy and assumptions
 - Build tools when genuinely useful
 
-## Message Drafts
-When drafting messages during conversation, also add them to the top of `message_draft.md` so Mark has a single place to copy/paste from.
-
 ## Current Phase
 Executing Wave 1 outreach. See `PLAN/action_plan.md` for workflow and `PLAN/timeline.md` for weekly goals.
+
+## Important Rules
+- Be familiar with communication principles before writing messages
+- Any message you write for mark should be added to the top of `message_draft.md` so Mark has a single place to copy/paste from. Message drafts put only in the terminal are not usable on their own. This document is a temporary staging ground for the most recent message. It will likely be wiped clean every few messages so do not bother storing permanent info here.
+
+## Status Change Triggers (Do These Automatically)
+
+**Before drafting or advising:**
+- [ ] Check `ref/` for relevant context (preferences, background, stories)
+
+**When drafting any message:**
+- [ ] Add to top of `message_draft.md` with date, status (DRAFT), channel
+
+**When message is sent:**
+- [ ] `tracker.csv` → status to 📨 Sent, date applied = today
+- [ ] `outreach_queue.csv` → update row status if applicable
+
+**When company responds positively:**
+- [ ] `tracker.csv` → status to 🟢 Active, add response date, update next step
+- [ ] Move folder `02_qualified` → `03_ACTIVE`
+- [ ] Update intel file with new contact info and process details
+- [ ] Update contact name in tracker if different from original
+
+**When interview is scheduled:**
+- [ ] `tracker.csv` → next step = interview type + date
+- [ ] Company intel → add interview details, prep notes
+- [ ] If technical interview: note prep areas based on JD/process
+
+**When company disqualified:**
+- [ ] `tracker.csv` → status to ❌ Disqualified, add reason in notes
+- [ ] Move folder → `01_disqualified`
+
+**When process ends (rejected/ghosted):**
+- [ ] `tracker.csv` → status to ❌ Closed or 💀 Dead
+- [ ] Move folder `03_ACTIVE` → `01_disqualified`
+- [ ] Note outcome in intel file for future reference
+
+**When new info about Mark comes up:**
+- [ ] Update relevant file in `ref/` (profile, stories, preferences, etc.)
+- [ ] This includes: preferences, experiences, wins, lessons, stories, constraints, lifestyle factors
+
+## Interview Scheduling Rules
+
+**Tier 0 (All-stars):** Delay technical interviews until Feb 16+ (calibration complete). These are career-defining—don't interview rusty.
+
+**Tier 1 (Protect):** Delay technical screens 7-14 days if possible. If pushed hard, accept.
+
+**Tier 2 (Calibration):** Schedule normally. Use for practice and rust removal.
+
+**Delay script:** "I'm wrapping up some prior commitments. Would [date] work?"
+
+**Exception:** If any company says "this week or never," take the shot. Don't lose opportunities over scheduling purity. 

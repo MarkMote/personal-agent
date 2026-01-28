@@ -1,6 +1,6 @@
 # Anthropic (NYC) - Company Intel
 
-**Tier:** 0 | **Status:** Qualified | **Resume:** Distinguished Academic
+**Tier:** 0 | **Status:** Active | **Resume:** Product Founder
 
 ---
 
@@ -57,3 +57,46 @@
 - Rolling applications, no cutoff
 - Technical interviews use Colab/CodeSignal live coding
 - Emphasize: RL background, safe autonomy research, PhD publications
+
+---
+
+## Active Role: Forward Deployed Engineer, Applied AI (Jessica's pitch)
+
+**Salary:** $200-300k
+**Locations:** NYC + 7 others
+**Travel:** 25-50%
+
+**What it is:**
+- Embedded with strategic customers building production apps with Claude
+- MCP servers, sub-agents, agent skills
+- Customer-facing / consulting hybrid
+
+**Requirements:**
+- 4+ years technical customer-facing roles
+- Production LLM experience (prompt engineering, agents, evals)
+- Python + additional languages
+
+**Fit assessment:**
+- Pro: Production LLM aligns with Roostr work
+- Pro: "Former founders on the team" - explicit culture fit
+- Pro: Active recruiter interest
+- Pro: 25-50% travel (Mark likes travel)
+- Con: $100k+ lower ceiling than Research Tools
+- Con: More consulting than pure engineering
+
+---
+
+## Contacts
+
+| Name | Role | Status |
+|------|------|--------|
+| Jessica Andrelevich | Talent (FDE recruiter) | Active - responded 2026-01-28 |
+| Unknown | Research Tools recruiter | Pending - no response yet |
+
+---
+
+## Notes
+
+**2026-01-27:** Applied for Senior+ SWE Research Tools ($300-405k). Messaged Jessica on LinkedIn.
+
+**2026-01-28:** Jessica responded within 2 minutes. Not the recruiter for Research Tools but pitched FDE Applied AI role. Mentioned "former founders on the team." Applied to FDE and messaged Jessica confirming. Pursuing both tracks.
