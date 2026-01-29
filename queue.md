@@ -1,93 +1,35 @@
 # Wednesday January 29, 2026 - Action Queue
 
-## ACTIVE PIPELINE - Waiting on them
+## ACTIVE PIPELINE - Scheduled/Waiting
+
+### ✅ Nominal Systems - Just applied (Tier 0!)
+**Role:** Roboticist-in-Residence  
+**Status:** 📨 Sent (applied today)  
+**Fit:** EXCEPTIONAL - Perfect robotics/autonomy/perception match  
+**Backing:** Sequoia, General Catalyst, Founders Fund, Lux, Lightspeed  
+**Next:** Follow-up if no response by Feb 5
+
+### ✅ Percepta - Call scheduled
+**Contact:** Brandon Smouse (Quantum recruiting)  
+**Status:** 🟢 Active (General Catalyst, Tier 0)  
+**Call:** Tuesday Feb 3, 11:30am ET  
+**Action:** Prep research-to-deployment narrative
 
 ### ✅ Zeal (FIR) - Ball in their court
 **Contact:** Nate Loofbourrow  
 **Status:** 🚀 In Progress (~$500K FIR role, NYC)  
 **Last update:** Monday 1/27 - Nate catching up with Jonathan/team "later this week"  
-**Action:** Wait for their follow-up (no action needed from you)
+**Action:** Wait for their follow-up
 
 ---
 
-## TODAY - Follow-ups Due (1/29)
+## TODAY - Completed
 
-### Viam - Tier 0
-**Contact:** Eliot Horowitz (CEO)  
-**Last contact:** 1/22 (7 days ago)  
-**Action:** Gentle follow-up
+### ✅ Viam - Pivoted to Amanda Mills (recruiter)
+Sent message 1/29. Follow-up 2/5 if no response.
 
-```
-Hi Eliot,
-
-Following up on my message about the Senior FDE role at Viam. I'm a PhD + technical founder interested in the robotics platform space.
-
-Would you be the right person to discuss this, or could you point me to someone on your engineering team?
-
-Best,
-Mark
-```
-
-### Standard Bots - Tier 1  
-**Contact:** Mason Rubenstein (Eng Manager)  
-**Last contact:** 1/22 (7 days ago)  
-**Action:** Follow-up
-
-```
-Hi Mason,
-
-Following up on my message about engineering roles at Standard Bots. I'm a robotics PhD + founder interested in your robot arms work.
-
-Would you have time for a brief conversation about what you're building and whether there might be a fit?
-
-Best,
-Mark
-```
-
-### Meta FAIR - Tier 0
-**Contact:** Mark Dixon (recruiter)  
-**Last contact:** 1/22 (7 days ago)  
-**Action:** Follow-up
-
-```
-Hi Mark,
-
-Following up on my message about AI Research Scientist roles in Robotics at Meta FAIR. My background is in safe autonomy research + building AI products as a founder.
-
-Would you be the right person to discuss research scientist opportunities, or could you connect me with someone on the team?
-
-Best,
-Mark
-```
-
-### Google DeepMind - Tier 0
-**Contact:** Catrina Manahan (NYC) + Hen Chalmers (London)  
-**Last contact:** 1/22 (7 days ago)  
-**Action:** Follow-up to both
-
-**To Catrina (NYC):**
-```
-Hi Catrina,
-
-Following up on my message about embodied AI research roles at DeepMind NYC. My background is in safe autonomy (PhD) + building production AI systems as a founder.
-
-Would you be the right person to discuss research opportunities in NYC, or could you point me in the right direction?
-
-Best,
-Mark
-```
-
-**To Hen (London):**
-```
-Hi Hen,
-
-Following up on my message about robotics research roles at DeepMind. My PhD is in safe autonomy and I've spent 4 years building AI products as a founder.
-
-Would you be able to discuss research opportunities, or connect me with someone on the robotics team?
-
-Best,
-Mark
-```
+### ✅ Craig Wasserman - Sent bump
+AI MCP startup FDE role.
 
 ---
 
@@ -105,10 +47,19 @@ Mark
 
 ---
 
-## TOMORROW PREP (1/30)
+## TOMORROW (1/30)
+
+### InMail follow-ups - Need alternate contacts
+*Original messages were InMails, can't thread follow-ups. Find new contacts or send connection requests.*
+
+| Company | Tier | Original Contact | Action |
+|---------|------|------------------|--------|
+| Standard Bots | T1 | Mason Rubenstein | Find different eng manager or recruiter |
+| Meta FAIR | T0 | Mark Dixon | Try referral (Hanquing?) or different recruiter |
+| DeepMind | T0 | Catrina + Hen | Connection request or find another recruiter |
 
 ### Microsoft Research
-**Contact:** Solina Hambaz  
+**Contact:** Solina Hambaz
 **Follow-up due:** 1/30 if no response to 1/23 message
 
 ---
@@ -122,11 +73,9 @@ Mark
 
 ## Priority Order for Today
 
-1. **ZEAL follow-up** (overdue - send immediately)
-2. **Check D.E. Shaw + Laurion status** (active pipelines)
-3. **Send 1/29 follow-ups:** Viam, Standard Bots, Meta FAIR, DeepMind
-4. **Prep LinkedIn job alert review** (got one this morning)
-
-**Time estimate:** 45 minutes total
+1. ~~**Send 1/29 follow-ups**~~ → Can't follow up on InMails, moved to tomorrow (find alt contacts)
+2. ✅ **Viam** → Pivoted to Amanda Mills, sent
+3. ✅ **Craig Wasserman** → Sent bump
+4. **Check D.E. Shaw + Laurion status** (active pipelines)
 
 **After clearing this queue:** Return to interview prep (ML systems, NeetCode practice)

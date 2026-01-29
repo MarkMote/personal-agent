@@ -123,30 +123,27 @@ Three positioning strategies (resume docs in `/latex` folder):
 
 ## Outreach Tracking System
 
-Two-file system for managing all outreach:
-
-**1. `data/outreach_queue.csv`** - Centralized action queue
+**Primary queue: `queue.md`** - Daily action list
+- Updated each day with follow-ups due, active pipeline status, and pre-drafted messages
 - Use for "what's due today?" queries
-- One row per message (initial + follow-ups are separate rows)
-- Status: `Queued` → `Sent` → `Done` (or `Pending` for follow-ups awaiting prior outcome)
-- Filter by `Scheduled` column to find due actions
+- Includes message drafts inline for quick reference
 
-**2. `company-intel/.../outreach.md`** - Per-company details
+**Per-company details: `company-intel/.../outreach.md`**
 - Full message text (initial + follow-ups)
 - Contact info and channel
 - Strategy notes (tier, delay rules, warm paths)
 - Post-response instructions
 
 **Workflow:**
-1. "What's due today?" → Read queue, filter by scheduled date
-2. "What do I send?" → Pull message text from that company's outreach.md
-3. "I sent it" → Update queue status to `Sent`, add sent date
-4. "They responded" → Update queue to `Done`, update outreach.md notes, update tracker.csv status
+1. "What's due today?" → Read `queue.md`
+2. "What do I send?" → Copy from queue.md or company's outreach.md
+3. "I sent it" → Update tracker.csv status, update queue.md
+4. "They responded" → Update tracker.csv, update outreach.md notes, move folders if needed
 
 **When prepping a new company:**
 1. Mark adds raw research to `full_context.md`
 2. Claude synthesizes into `{company}.md` and drafts `outreach.md`
-3. Claude adds rows to `outreach_queue.csv` with scheduled dates
+3. Claude updates `queue.md` with scheduled follow-ups
 
 **When Mark shares a job description:**
 - Save it to `company-intel/{company}/role.md`
@@ -184,7 +181,7 @@ Executing Wave 1 outreach. See `PLAN/action_plan.md` for workflow and `PLAN/time
 
 ## Important Rules
 - Be familiar with communication principles before writing messages
-- Any message you write for mark should be added to the top of `message_draft.md` so Mark has a single place to copy/paste from. Message drafts put only in the terminal are not usable on their own. This document is a temporary staging ground for the most recent message. It will likely be wiped clean every few messages so do not bother storing permanent info here.
+- **CRITICAL: Every message draft MUST go in `message_draft.md`** - This is non-negotiable. Any message draft you write must go here. You dont need to ask, you can just do. Anytime there is a draft in the terminal it should without exception go to `message_draft.md`. Mark copies from this file, not from the terminal. If you draft a message and don't put it in message_draft.md, it's useless. Add new drafts to the TOP of the file with date, status (DRAFT), and channel. This file is a temporary staging ground - it gets cleared regularly, so don't store permanent info here. 
 
 ## Status Change Triggers (Do These Automatically)
 
