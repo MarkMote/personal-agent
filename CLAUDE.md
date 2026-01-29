@@ -6,8 +6,14 @@ Local CRM and planner for Mark's job search. We manage outreach, research compan
 ## Current Status
 - **Date context:** January 2026
 - **Target start:** April 2026
-- **Wave 1:** NYC-only companies (48 targets in tracker.csv)
-- **Personal runway:** Through end of April 
+- **Wave 1:** NYC-only companies (80+ targets in tracker.csv)
+- **Personal runway:** Through end of April
+
+## Week Reference (February 2026)
+- **W06:** Mon Feb 2 - Fri Feb 6
+- **W07:** Mon Feb 9 - Fri Feb 13
+- **W08:** Mon Feb 16 - Fri Feb 20
+- **W09:** Mon Feb 23 - Fri Feb 27 
 
 ## Key Principles
 

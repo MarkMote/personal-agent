@@ -61,4 +61,14 @@ Astronauts spend ~75% of time on cargo logistics ("Amazon warehouse workers with
 - Message to Jamie (CTO) does the heavy lifting
 
 ## Notes
-_Add notes from conversations here_
+**2026-01-22:** Initial outreach to Jamie. He responded same day asking if partnership or joining.
+
+**2026-01-23:** Clarified joining engineering. Jamie said "happy to chat how does next thursday look"
+
+**2026-01-24:** Confirmed Thursday works, asked for time.
+
+**2026-01-28:** Followed up asking about time. No response.
+
+**2026-01-29:** Attended Critical Mass event at Newlab where Icarus was presenting. No connection made.
+
+**Status: 👻 GHOSTED** - Strong initial interest, then radio silence despite multiple follow-ups. May revisit later or try Ethan connection if pipeline thins.

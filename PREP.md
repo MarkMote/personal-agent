@@ -1,8 +1,182 @@
-Building agentic systems
-- How build X 
-- Common patterns
-- langchain
+# Interview Prep - February 2026
 
-Leetcode
+## Scheduled Interviews
+| Date | Company | Type | Tests |
+|------|---------|------|-------|
+| 2/6 | Anthropic | Recruiter | Fit only |
+| 2/11 | Laurion | Intro | Fit only |
+| **2/17** | **Jane Street** | **Technical** | Coding, ML Theory, Data Science |
+| ~2/17-21 | D.E. Shaw | Round 1 | Leetcode, Agentic Design, System Design |
 
+## Priority Areas
 
+### **P0: Leetcode Fundamentals** ⚠️ Never done before
+- Neetcode 150 (targeted): Arrays, Hashing, Two Pointers, Trees
+- Focus on mediums, communicate thought process
+- 2-3 problems/day starting NOW
+
+### **P1: ML Theory** ⚠️ Limited experience
+- NN architectures (MLP, CNN, RNN, Transformer basics)
+- Training dynamics, failure modes, debugging
+- Jane Street explicitly tests this
+
+### **P2: System Design**
+- ML pipeline design (Jane Street)
+- Agentic architecture patterns (D.E. Shaw, Laurion)
+- You have strength here from Roostr - refresh, don't rebuild
+
+### **P3: Data Science**
+- Dataset exploration, feature analysis
+- Statistical intuition (PhD helps here)
+
+### **P4: Domain-Specific (lower priority)**
+- OCaml awareness (not fluency)
+- Trading concepts (light touch)
+- Quant fund dynamics
+
+---
+
+## Detailed Breakdown
+
+### **ML Systems & Theory (Week 1-2 focus)**
+
+**Core Implementation Skills:**
+- [ ] Implement neural network from scratch (no PyTorch)
+  - Forward/backward pass
+  - SGD, Adam optimizers
+  - Batch normalization, dropout
+- [ ] PyTorch proficiency
+  - Custom datasets, data loaders
+  - Model debugging, loss not decreasing
+  - Distributed training concepts
+- [ ] System Design Patterns
+  - Model serving architectures
+  - A/B testing for ML
+  - Data pipeline design
+  - Production debugging
+
+**Theory (refresh, don't memorize):**
+- [ ] Loss functions and when to use each
+- [ ] Regularization techniques (L1/L2, dropout, early stopping)
+- [ ] Optimization dynamics (learning rate schedules, gradient clipping)
+- [ ] Common failure modes (vanishing gradients, overfitting, mode collapse)
+
+### **Algorithmic Fundamentals (Ongoing, 1-2 hrs/day)**
+
+**NeetCode 150 - Targeted Categories:**
+- [ ] **Arrays & Hashing** (15 problems)
+  - Two sum, product except self, group anagrams
+  - Data manipulation fundamentals
+- [ ] **Two Pointers** (5 problems)
+  - Time series analysis patterns
+- [ ] **Dynamic Programming** (12 problems)
+  - Your optimization background gives you an edge here
+  - Knapsack, LCS, coin change
+- [ ] **Trees & Graphs** (10 problems)
+  - DFS/BFS, shortest path
+  - Network analysis for trading systems
+
+**Skip These Categories:**
+- Bit manipulation (low ROI for your targets)
+- Advanced graph algorithms (union find, etc.)
+- Hard edge cases (focus on mediums)
+
+### **Domain-Specific Prep**
+
+**Jane Street (Week 3 focus):**
+- [ ] OCaml syntax basics
+  - Pattern matching, recursion, immutability
+  - Not fluency, just awareness
+- [ ] Financial concepts (light touch)
+  - Market making, arbitrage concepts
+  - Multi-agent competitive dynamics
+- [ ] Trading system design
+  - Low latency considerations
+  - Risk management systems
+
+**Anthropic/Research Roles:**
+- [ ] Transformer architecture deep dive
+- [ ] Safety research concepts (alignment, robustness)
+- [ ] Research code quality patterns
+
+**Your Optimization Background (refresh):**
+- [ ] Convex optimization fundamentals
+- [ ] Control theory → ML connections
+- [ ] Nonstationary dynamics (regime changes)
+
+### **Research Storytelling**
+
+**Core Narrative:**
+- [ ] PhD research → real-world impact story
+- [ ] Safety/verification expertise relevance to ML
+- [ ] Startup systems experience + research rigor
+
+**Demo Preparation:**
+- [ ] Update Robotarium demo materials
+- [ ] Pytheia Argus system walkthrough
+- [ ] Roostr LLM agent architecture explanation
+
+**Technical Examples Ready:**
+- [ ] Control barrier functions → ML safety
+- [ ] Multi-agent coordination → trading strategies
+- [ ] Runtime assurance → production ML reliability
+
+---
+
+## Weekly Schedule
+
+### **W05 (Jan 27 - Jan 31) - Current**
+- **Focus:** Leetcode foundations (arrays, hashing) + ML theory basics
+- **Daily:** 2-3 leetcode problems + 1-2 hrs ML content
+- **Goal:** Break the seal on leetcode, establish routine
+
+### **W06 (Feb 2 - Feb 6)**
+- **Focus:** Continue leetcode (two pointers, stack) + ML theory depth
+- **Daily:** 2-3 problems + ML architecture study
+- **Fri 2/6:** Anthropic recruiter screen (11am) - light prep, fit only
+- **Goal:** 20+ problems done, solid on NN fundamentals
+
+### **W07 (Feb 9 - Feb 13)**
+- **Focus:** Trees/graphs + system design + narrative practice
+- **Daily:** 2 problems + system design patterns
+- **Wed 2/11:** Laurion intro call (1pm) - fit only, no coding
+- **Goal:** 35+ problems, can explain ML pipeline design
+
+### **W08 (Feb 16 - Feb 20) - Interview Week**
+- **Mon-Tue:** Final review, light practice, rest
+- **Tue 2/17:** Jane Street technical (10:30am)
+- **~Feb 17-21:** D.E. Shaw Round 1
+- **Goal:** Peak performance, execute
+
+---
+
+## Key Resources
+
+**ML Implementation:**
+- [Neural Networks from Scratch](https://nnfs.io/) 
+- [PyTorch tutorials](https://pytorch.org/tutorials/)
+- [ML System Design Interview](https://github.com/chiphuyen/machine-learning-systems-design)
+
+**Algorithms:**
+- [NeetCode.io](https://neetcode.io/practice) - Curated problems
+- Focus on video explanations for pattern recognition
+
+**Jane Street Specific:**
+- [OCaml tutorial](https://ocaml.org/docs/first-hour)
+- Jane Street tech talks on YouTube
+- [Real World OCaml](https://dev.realworldocaml.org/) (skim, don't deep dive)
+
+**Research Prep:**
+- Your own publications (refresh the narrative)
+- Recent Anthropic safety papers (alignment tax, constitutional AI)
+
+---
+
+## Success Metrics
+
+**W05:** Leetcode routine established, 10+ problems, basic NN theory solid
+**W06:** 20+ problems total, can explain CNN/RNN/Transformer at high level
+**W07:** 35+ problems, can whiteboard ML system design, narrative polished
+**W08:** Peak readiness, execute interviews
+
+**Remember:** You're not a new grad grinding for FAANG. You have production systems experience and a PhD. The goal is interview fluency, not algorithm mastery. Leverage your strengths.
