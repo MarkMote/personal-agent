@@ -24,6 +24,45 @@
 
 ---
 
+## Top questions
+
+Idea: evaluate on vibe + potential of business
+
+Cofounders / general
+- What does team look like right now?
+- What gaps are you trying to fill? 
+- What are biggest risks? 
+- Who is paying for the first deployments? How will grow from that? 
+	- is the revenue more like contracts or recurring service?
+- What hardware are you making in-house? 
+- How are you doing perception? what does the stack look like? 
+	- “How are you localizing the robot and objects in microgravity. AprilTags, onboard VO, station priors, something else?
+- Seems like a lot of different moving parts with government and different entities
+- how are you hoping to grow the team over the next year? 
+- Why not just keep doing teleop forever? Why arent they doing it now? 
+- At what point does teleop stop making sense economically for you? 
+- Whats the first thing you expect to automate end to end? 
+- How do you prevent a learned component from becoming a safety bottleneck? 
+-
+
+
+
+Other people on team: 
+- What do you work on? Whats day to day like? 
+- How do you like it? 
+- 
+
+See if can figure out, but only ask if not online - help me answer if you know
+- Are you building your own
+
+
+Interesting things - learn more about, generate quesitons
+- have a zero-g testbed like the one i worked with at stanford - seems to use acro tags rather than vicap
+- looks like they are doing training, using teleoperation and using that data 
+- i worked with a lab at stanford that did a lot of research on gripping robots and free fliers. 
+- feel like i should ask more about design descisions
+
+
 ## Questions to Ask
 
 **About the tech:**

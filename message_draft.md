@@ -1,33 +1,36 @@
 # Message Drafts
 
-## Jane Street - Reply to Hannah Hasen (interview confirmed)
+## Laurion - Reply to Marcus Roberts Rajoo (schedule intro call)
 **Date:** 2026-01-28
-**Status:** DRAFT
-**Channel:** Email
+**Status:** NEEDS TO SEND - URGENT
+**Channel:** LinkedIn
 
 ---
 
-Hi Hannah,
+Hi Marcus,
 
-Perfect - Tuesday, February 17th at 10:30am ET works great for me. I've added the Zoom details to my calendar.
+Thanks for setting this up! Let's do Tuesday 2/11 at 1pm ET.
 
-Thanks for the thorough overview of the interview process and the helpful resources. Looking forward to the conversation!
+Looking forward to it.
 
 Best,
 Mark
 
 ---
 
-## Anthropic - Reply to Jessica Andrelevich (after applying)
-**Date:** 2026-01-28
+## Anthropic - Confirm recruiter screen with Jessica
+**Date:** 2026-01-29
 **Status:** DRAFT
-**Channel:** LinkedIn DM
+**Channel:** Email reply
 
 ---
 
-Jessica, just applied to the FDE role. Thanks for flagging it - the production LLM and agent work aligns well with what I've been building.
+Hi Jessica,
 
-Happy to chat whenever makes sense on your end.
+Thanks for reaching out. Just booked time for Friday, Feb 6 at 11am ET. Looking forward to connecting.
+
+Best,
+Mark
 
 ---
 

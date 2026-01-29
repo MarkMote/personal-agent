@@ -6,6 +6,8 @@ _Unstructured reference document for all company research, notes, and context._
 
 Notes: online app requires: linkedinurl and resume. thats it. 
 
+**CLARIFICATION (Jan 28, 2026)**: No third co-founder departure - was confusion with another similarly-named company. Team is Jamie Palmer (CTO) + Ethan Rublee (CEO) as expected.
+
 ---
 
 
