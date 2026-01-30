@@ -19,11 +19,14 @@
 - NN architectures (MLP, CNN, RNN, Transformer basics)
 - Training dynamics, failure modes, debugging
 - Jane Street explicitly tests this
+- PyTorch 60 Minute Blitz https://docs.pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html
+- Zero to hero https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ (Karpathy)  
 
 ### **P2: System Design**
 - ML pipeline design (Jane Street)
 - Agentic architecture patterns (D.E. Shaw, Laurion)
 - You have strength here from Roostr - refresh, don't rebuild
+- Figure out how clawd works - read memory articles on twitter
 
 ### **P3: Data Science**
 - Dataset exploration, feature analysis
@@ -99,6 +102,23 @@
 - [ ] Safety research concepts (alignment, robustness)
 - [ ] Research code quality patterns
 
+**Robotics ML (Nominal, Percepta, FAIR):**
+- [ ] RL fundamentals refresh (2-3 hrs)
+  - PPO, SAC conceptually (not implementation)
+  - Reward shaping, sparse rewards problem
+  - Spinning Up in Deep RL (OpenAI) - skim intro + PPO section
+- [ ] Sim-to-real basics (1-2 hrs)
+  - Domain randomization concept
+  - Reality gap, system identification
+  - Why simulation alone isn't enough
+- [ ] Mujoco awareness (1 hr)
+  - What it is, when it's used
+  - Run one tutorial if time permits
+- [ ] Skim 2-3 recent papers (titles/abstracts + key ideas)
+  - RT-1/RT-2 (Google robotics transformers)
+  - Diffusion Policy (action generation via diffusion)
+  - Just know they exist and the high-level approach
+
 **Your Optimization Background (refresh):**
 - [ ] Convex optimization fundamentals
 - [ ] Control theory → ML connections
@@ -169,6 +189,11 @@
 **Research Prep:**
 - Your own publications (refresh the narrative)
 - Recent Anthropic safety papers (alignment tax, constitutional AI)
+
+**Robotics ML (if time):**
+- [Spinning Up in Deep RL](https://spinningup.openai.com/) - Part 1 + PPO section only
+- [Mujoco quickstart](https://mujoco.readthedocs.io/en/stable/overview.html)
+- RT-2 paper abstract + figures (skim)
 
 ---
 
