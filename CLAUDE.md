@@ -4,7 +4,7 @@
 Local CRM and planner for Mark's job search. We manage outreach, research companies, prep for interviews, and build tools only as needed.
 
 ## Current Status
-- **Date context:** January 2026
+- **Date context:** Late January 2026 (entering W06)
 - **Target start:** April 2026
 - **Wave 1:** NYC-only companies (80+ targets in tracker.csv)
 - **Personal runway:** Through end of April
@@ -45,6 +45,8 @@ Three positioning strategies (resume docs in `/latex` folder):
 /search
 ├── CLAUDE.md              # This file
 ├── scratch.md             # Working notes
+├── queue.md               # Daily task queue (messages to send, follow-ups due)
+├── message_draft.md       # Staging file for outreach drafts (copy from here)
 ├── PLAN/
 │   ├── action_plan.md     # Outreach strategy and execution plan
 │   └── timeline.md        # Weekly goals and milestones
@@ -123,10 +125,15 @@ Three positioning strategies (resume docs in `/latex` folder):
 
 ## Outreach Tracking System
 
-**Primary queue: `queue.md`** - Daily action list
-- Updated each day with follow-ups due, active pipeline status, and pre-drafted messages
+**Daily queue: `queue.md`** - Today's action list
+- Created at start of day with tasks and messages to send
 - Use for "what's due today?" queries
-- Includes message drafts inline for quick reference
+- Ephemeral—rebuilt daily, not a permanent record
+
+**Long-term planner: `data/outreach_queue.csv`** - Full outreach schedule
+- Tracks all contacts and planned follow-ups across the pipeline
+- Source of truth for who to contact and when
+- Persists across days; use to build daily queue.md
 
 **Per-company details: `company-intel/.../outreach.md`**
 - Full message text (initial + follow-ups)
@@ -218,6 +225,16 @@ Executing Wave 1 outreach. See `PLAN/action_plan.md` for workflow and `PLAN/time
 **When new info about Mark comes up:**
 - [ ] Update relevant file in `ref/` (profile, stories, preferences, etc.)
 - [ ] This includes: preferences, experiences, wins, lessons, stories, constraints, lifestyle factors
+
+## Company Tiers
+
+**Tier 0 - Dream companies.** Career-defining opportunities. Top priority, protect at all costs. (Jane Street, DeepMind, Meta FAIR, Viam, HuggingFace, D.E. Shaw)
+
+**Tier 1 - Strong fits.** Excellent opportunities worth protecting. Would accept without hesitation. (Microsoft Research, Standard Bots, Anduril)
+
+**Tier 2 - Calibration.** Good companies for practice and pipeline building. Solid options but not top priority.
+
+**Tier 3 - Next wave.** Companies to pursue if Wave 1 doesn't pan out. Would take in absence of better options. Often out-of-region or less ideal fit.
 
 ## Interview Scheduling Rules
 
