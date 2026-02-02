@@ -1,35 +1,30 @@
 # Message Drafts
 
-## Hannah Gottas - Scale AI Interview Confirmation
-**Date:** 2026-01-30
-**Status:** DRAFT
-**Channel:** Email
-
 ---
 
-Hi Hannah,
+## 2026-02-02 | DRAFT | Email - markmote@gmail.com
+**Re: Wrong email on applications**
 
-Thanks for reaching out! I've scheduled our intro call for Thursday at 2 PM EST. Looking forward to discussing the Forward Deployed AI Engineer role and learning more about the team.
+Hi,
 
-Best,
+I accidentally listed this email on some job applications instead of my own (marklmote@gmail.com). If you receive anything that looks like it's meant for me, I'd really appreciate a forward.
+
+Thanks for understanding.
+
 Mark
 
 ---
 
-## Marcus Roberts Rajoo - Missing Link Follow-up
-**Date:** 2026-01-30
-**Status:** DRAFT
-**Channel:** LinkedIn
-
----
+## 2026-02-02 | DRAFT | LinkedIn - Marcus Roberts Rajoo (Vulcan)
+**Re: Email correction**
 
 Hi Marcus,
 
-Thanks for confirming the 2/11 call at 1 PM ET and sharing the research paper. I didn't receive the meeting link though - could you resend it?
+Quick note - I just realized the resume I sent has a typo in my email. It says "markmote@gmail.com" but should be "marklmote@gmail.com" (with an L).
 
-Also noted on the paper. I'll take a look before our call.
+Sorry for the hassle. Could you update this before sharing with Laurion/Shaw? Happy to resend a corrected version if easier.
 
-Best,
+Thanks,
 Mark
 
 ---
