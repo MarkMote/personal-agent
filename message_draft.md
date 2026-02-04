@@ -1,30 +1,29 @@
-# Message Drafts
+# Message Drafts - Feb 4, 2026
+
+## DRAFT STATUS LEGEND
+- DRAFT: Ready to send
+- SENT: Already sent
+- STALE: Outdated, don't send
 
 ---
 
-## 2026-02-02 | DRAFT | Email - markmote@gmail.com
-**Re: Wrong email on applications**
+## NOTE: Remote-First Companies to Prioritize (Feb 4, 2026)
+**Status: RESEARCH & PREP**
 
-Hi,
+Mark flagged these companies for application focus - all potentially remote:
 
-I accidentally listed this email on some job applications instead of my own (marklmote@gmail.com). If you receive anything that looks like it's meant for me, I'd really appreciate a forward.
+### Already in Tracker:
+- **NVIDIA** (#33, Tier 3) - Isaac Sim/robotics, likely CA/remote
+- **Tesla** (#87, Tier 3) - Autopilot/Optimus, Palo Alto/Austin 
+- **SpaceX** (#45, Tier 3) - Starship GNC, LA
+- **Joby Aviation** (#91, Tier 2) - eVTOL, competitor to Archer
 
-Thanks for understanding.
+### Newly Added:
+- **Figure** (#92, Tier 3) - Humanoid robots, OpenAI partnership, $675M Series B
+- **Astrobotic** (#93, Tier 3) - Lunar/planetary robotics, NASA contracts
 
-Mark
-
----
-
-## 2026-02-02 | DRAFT | LinkedIn - Marcus Roberts Rajoo (Vulcan)
-**Re: Email correction**
-
-Hi Marcus,
-
-Quick note - I just realized the resume I sent has a typo in my email. It says "markmote@gmail.com" but should be "marklmote@gmail.com" (with an L).
-
-Sorry for the hassle. Could you update this before sharing with Laurion/Shaw? Happy to resend a corrected version if easier.
-
-Thanks,
-Mark
+**Next Steps:** Research remote policies for these companies. Despite being outside NYC, talent shortage in robotics/AI may make remote negotiable for senior roles.
 
 ---
+
+*New drafts go here at the top*

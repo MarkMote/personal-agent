@@ -3,8 +3,12 @@
 ## What This Is
 Local CRM and planner for Mark's job search. We manage outreach, research companies, prep for interviews, and build tools only as needed.
 
+## Mark contact info 
+marklmote@gmail.com
+https://www.linkedin.com/in/mote/
+
 ## Current Status
-- **Date context:** Late January 2026 (entering W06)
+- **Date context:** Early February 2026 (W06)
 - **Target start:** April 2026
 - **Wave 1:** NYC-only companies (80+ targets in tracker.csv)
 - **Personal runway:** Through end of April

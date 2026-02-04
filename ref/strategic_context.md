@@ -169,3 +169,30 @@ Sees himself as:
 Not motivated by titles or status alone. Motivated by leverage, mastery, and long-term agency.
 
 Has already de-risked many identities (academia, national labs, founding, engineering leadership). No longer needs to optimize for "proving you belong." Should optimize for leverage, compounding, and personal sustainability.
+
+---
+
+## Current Situational Notes (Updated Feb 2026)
+
+### Roostr Status
+- Co-founder Jacky continuing fundraise push through mid-March 2026
+- Stopping condition: 2+ term sheets ($700k-$1.5M) by March 15 or shut down
+- Mark is not actively involved in fundraise but supporting
+
+### The March 13 Agreement
+- Mark agreed: if Roostr raises X by March 13, he'll stay
+- Mark's assessed likelihood of raise: 10-20%
+- At those odds, job search is the primary path—not a hedge
+- This is a personal closure ritual, not a meaningful fork in the road
+- Implication: Proceed with full confidence in "I'm transitioning" narrative
+
+### LinkedIn Constraint (Feb 2 - Mar 16, 2026)
+- Mark's LinkedIn profile frozen for 6 weeks to support Roostr investor outreach
+- Will not change anything visible on profile until at least Mar 16
+- Jacky sends draft messages, Mark sends manually (to avoid TOS violation / account suspension risk)
+- Job search continues normally - just no profile changes
+
+### Implication for Job Search
+- Can still message recruiters, respond to threads, do outreach
+- Cannot update headline, about section, or positioning during this window
+- If accepting an offer before Mar 16, will need to coordinate with Jacky on LinkedIn transition

@@ -17,6 +17,24 @@ Answers to Common Interview Questions
 Short: 
 > “I’m exploring a few directions. Broadly, I want to work on hard technical problems with very strong people, ideally in robotics or physical systems.”
 
+## My Evaluation Criteria 
+- **Impact**: am I making a real change here? 
+- **Alignment**: does the change I'm making align with my interests and beliefs? 
+- **Vibe**: do i like the team and day-to-day?  that one is just a feeling, but its important
+- **Comp** 
+
+## Whats your timeline? 
+What to say: 
+- I am heads down at roostr wrapping things up over the next two weeks
+- I have additional light commitments there until March 16th, but I'll be part time by then 
+- Earliest start date would be April 1st, as I promised my wife a vacation. 
+
+Internal strategy
+- Next two weeks prep time
+	- Feb 23rd for T0
+	- Feb 18th for T1+ 
+
+
 ## What kind of company would you want to build next?
 
 ## Short version (use first)
@@ -34,10 +52,39 @@ Short:
 
 ## Why are you leaving Roostr
 
-> Roostr is still operating, the product works, we are getting inbound, and I'm on great terms with my cofounder. 
-> But at this point the company is mostly in a sales and operations scaling phase. 
+> Roostr is still operating, the product works, we are getting inbound, and I'm on great terms with my cofounder.
+> But at this point the company is mostly in a sales and operations scaling phase.
 > I'm personally more excited about building hard systems than running a logistic operation day-to-day, so this felt like a natural transition point for me.
-> Rather than move more capital into something thats not my deepest long term conviction, I decided it was the right time to move on. 
+> Rather than move more capital into something thats not my deepest long term conviction, I decided it was the right time to move on.
+
+---
+
+## Recruiter Narrative: Timeline & Commitment (Feb 2026)
+
+**Context (internal, don't share):**
+- Agreement with Jacky: if raise happens by March 13, Mark stays
+- Mark's assessed probability: 10-20%
+- At those odds, the job search IS the plan—not a hedge
+
+**Core framing:** You are leaving. The raise is a tail event, not a real alternative.
+
+### Why leaving (the "Ops vs Tech" pivot)
+> "I've spent the last year building Roostr, and while we've made great progress, the next phase of the business is shifting heavily toward operations and logistics. I've realized that my true value and passion lie in building hard technical systems. I'm looking to transition back into a high-growth environment where I can focus on that core technical work again."
+
+### Timeline framing (the "clean handoff")
+> "Because I was a co-founder, I have a responsibility to ensure a smooth transition. I have a few final product milestones and hand-off documentation to complete. To leave the team in a good place and start fully focused, I'm targeting an April 1st start date."
+
+### "Are you considering other options?"
+> "I'm exploring a few select opportunities that align with my technical background. My goal is to find the right long-term home by end of March so I can hit the ground running in April."
+
+### "Why not hire someone to do ops so you can stay?"
+> "At our stage and funding level, that's not viable. The business would need significantly more capital to support that kind of hire, and I'd rather transition now than wait on an uncertain raise."
+
+### If the unlikely happens (withdrawal script)
+If the raise does happen and you need to withdraw:
+> "I'm reaching out because circumstances at my startup changed significantly this week. I need to see it through. I have to withdraw my candidacy, but I've been impressed with your team and would love to stay in touch for the future."
+
+**Note:** This is honest. Don't oversell it as a "black swan"—just state that circumstances changed. 
 
 
 ## Why bootstrap
@@ -232,4 +279,29 @@ It's a tendency I continue to manage deliberately by protecting time for deep wo
 
 ## What's your superpower?
 
+> Adaptability: my whole career has been a cycle of facing some hard ambiguous problem, needing to get up to speed quickly. It was how I operated in grad school, and it is how you are forced to operate
+
+> Getting the benefits of stress and insecurity without the stress and insecurity themselves. 
+
+
+> 
 > I learn fast and build fast. I can go from zero to functional system in a domain I've never touched before, because I know how to decompose problems and find the right abstractions quickly.
+
+
+## What are some things you failed at
+- I founded two companies, I wanted to make them rocket ships, but they were more like hot air balloons. I never really got the growth I needed. 
+
+## Mistakes made 
+* I really shouldnt have bootstrapped my first startup. It was unmatched in learning velocity, and forced dicipline, but we had and ambitious idea that really would have benefited. 
+* Technical mistake made: shipped a bug.  
+	* It wasnt on core infrastructure but it sure was embarrasing
+	* We were in the business of rapidly prototyping an shipping helper tools to get a feel of what customers likeed at roostr
+	* We made this quick rate overview dashboard for one of our customers 
+	* api had a condition on the rates that was too strict meaning some of what they got wasnt there
+	* rates from an email they received that morning didnt show up
+	* customer showed it to his dad on that day, who was the one that started their company
+	* felt like a complete idiot
+	* was a 15 minute fix but the damage was done, 
+	* Learned that you just have to write the test and look it over. customers dont always distinguish between "this is my core product" and "this is this experimental add on, we can make it reliable if you like it"
+
+

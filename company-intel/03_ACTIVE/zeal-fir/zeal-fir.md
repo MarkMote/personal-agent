@@ -57,4 +57,6 @@
 - 2026-01-15: Sent response accepting 15 min call, proposed later next week
 - 2026-01-15: Nate proposed Wed Jan 22 after 1pm ET
 - 2026-01-21: Intro call completed. Positive vibe. They suggested thinking it over, respond by Friday.
-- 2026-01-22: **TODO** Send follow-up to continue process
+- 2026-01-22: Sent follow-up to continue process
+- 2026-01-27: Nate replied - catching up with Jonathan/team "later this week/early next week"
+- **Next:** Follow up Thu Feb 5 if no response
