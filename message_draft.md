@@ -26,4 +26,38 @@ Mark flagged these companies for application focus - all potentially remote:
 
 ---
 
+## INTERVIEW PREP PLAN - Feb 4-5, 2026
+**Status: ACTIVE PLAN**
+
+### **TODAY (Tuesday 3pm-9pm):**
+
+**3-4pm: Viam Research**
+- Read their recent blog posts/press releases (check website news section)
+- Browse their docs to understand the platform architecture 
+- Look at their customer case studies - what problems are they actually solving?
+- **Key outcome**: 2-3 specific reasons why their approach excites you
+
+**4-6pm: Code Review → Story Building**
+- **Roostr**: The agent orchestration architecture - draw it out, understand the data flow
+- **Pytheia**: The CV pipeline decisions - why those choices, what trade-offs
+- **Key outcome**: Can explain both systems clearly without looking at code
+
+**6-7pm: Dinner break**
+
+**7-8pm: Verbal Practice** 
+Practice out loud:
+- 2-3 minute "tell me about yourself"
+- "Why Viam" and "Why Anthropic" 
+- One technical story from each company
+- **Pro tip**: Record yourself on phone, play back to catch filler words
+
+### **TOMORROW (Wednesday 9am-12pm):**
+- Review company mission statements one more time
+- Prepare 2-3 thoughtful questions for each recruiter
+- Maybe 30 min of basic coding warmup (just in case)
+
+**Goal**: Sleep-before-practice approach - brain consolidates stories overnight
+
+---
+
 *New drafts go here at the top*

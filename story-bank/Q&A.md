@@ -1,28 +1,49 @@
 Answers to Common Interview Questions 
 
+## UNIQUE TO EVERY COMPANY: 
+- Why them 
+- Intro 
+- Discuss best role fit? especially if FDE 
+- Answer to Thiel question
+
+## Need to fit in 
+- My Timeline 
+- What I'm looking for role-wise
+
+--- 
+
+## What comp range are you looking for? 
+I can't say as it depends on too many other factors. 
+
+I can't say that yet since it depends on too many other factors.  
+Can you tell me what you have bugeted for role like this? 
+
+Push #1: 
+Really hard to even give a range 
+
+Push #2: 
+I'd say 250-350 is the best ballpark, but again flexible and subject to change, 
+
+--- 
 ## Tell me about yourself (multiple versions)
 
-> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. Im currently winding down as CTO of a Roostr. There I built AI-agent pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia. We a computer vision startup. Right now, I'm 
-`default`
-- and exploring what the right next step is, ideally in the area of embodied AI, .
-`non-robots`
-- im doing some deliberate exploration on what the right next step is. 
+> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. Im currently winding down as CTO of a Roostr. There I built AI-agent pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, we sold computer vision 
 
+---
 ## What kinds of things are you looking for really? 
 
-> I’m in a phase of deliberate exploration. 
-> My core interest is robotics and physical systems, but I’m open on the exact form.
-> Broadly, I’m optimizing for the ability to work on hard technical problems with very strong people
+I'm looking for something in the Research Engineer sweet spot: 
+- R&D-oriented work where I'm building real frontier systems and shipping things
+	- not just implementing known solutions
+	- not just writing papers. 
+- Heavy communication with stakeholders is a plus for me, not a burden.
 
-Short: 
-> “I’m exploring a few directions. Broadly, I want to work on hard technical problems with very strong people, ideally in robotics or physical systems.”
+The best case scenario is I am on an elite team given a hard and open-ended problem, we need to whiteboard, implement it, and we actually ship something. I'm around people I can learn from, and I'm pushed out of my comfort zone. 
 
-## My Evaluation Criteria 
-- **Impact**: am I making a real change here? 
-- **Alignment**: does the change I'm making align with my interests and beliefs? 
-- **Vibe**: do i like the team and day-to-day?  that one is just a feeling, but its important
-- **Comp** 
+The worst case is narrow, already solved problems, where its just implementing specs  
 
+
+---
 ## Whats your timeline? 
 What to say: 
 - I am heads down at roostr wrapping things up over the next two weeks
@@ -34,22 +55,7 @@ Internal strategy
 	- Feb 23rd for T0
 	- Feb 18th for T1+ 
 
-
-## What kind of company would you want to build next?
-
-## Short version (use first)
-
-> **“I think great startups are flywheels. 
-> You build a positive feedback loop that compounds into durable advantage, usually through data, networks, or deep operational complexity. 
-> In robotics specifically, I think people underestimate how hard it is to build safe, reliable real-world systems, which creates room for defensible platforms. 
-> I’m interested either in data moats around hard-to-acquire physical data, or infrastructure layers that accelerate robotics development, essentially tooling that creates a ‘ChatGPT moment’ for robotics.”**
-
 ---
-
-## If they ask for examples
-
-> **“One direction is data plays around uniquely hard physical data, like high-resolution earth observation or dense real-world telemetry. Another is platform infrastructure: something like a React-for-robots or Vercel-for-robotics that standardizes deployment, testing, safety, and iteration in physical systems.”**
-
 ## Why are you leaving Roostr
 
 > Roostr is still operating, the product works, we are getting inbound, and I'm on great terms with my cofounder.
@@ -57,41 +63,34 @@ Internal strategy
 > I'm personally more excited about building hard systems than running a logistic operation day-to-day, so this felt like a natural transition point for me.
 > Rather than move more capital into something thats not my deepest long term conviction, I decided it was the right time to move on.
 
+
+## What did you do at Roostr 
+
+
+## What did you do at Pytheia 
+
+
+## Why did Pytheia shut down 
+
+
 ---
+## My Evaluation Criteria 
+- **Impact**: am I making a real change here? 
+- **Alignment**: does the change I'm making align with my interests and beliefs? 
+- **Vibe**: do i like the team and day-to-day?  that one is just a feeling, but its important
 
-## Recruiter Narrative: Timeline & Commitment (Feb 2026)
-
-**Context (internal, don't share):**
-- Agreement with Jacky: if raise happens by March 13, Mark stays
-- Mark's assessed probability: 10-20%
-- At those odds, the job search IS the plan—not a hedge
-
-**Core framing:** You are leaving. The raise is a tail event, not a real alternative.
-
-### Why leaving (the "Ops vs Tech" pivot)
-> "I've spent the last year building Roostr, and while we've made great progress, the next phase of the business is shifting heavily toward operations and logistics. I've realized that my true value and passion lie in building hard technical systems. I'm looking to transition back into a high-growth environment where I can focus on that core technical work again."
-
-### Timeline framing (the "clean handoff")
-> "Because I was a co-founder, I have a responsibility to ensure a smooth transition. I have a few final product milestones and hand-off documentation to complete. To leave the team in a good place and start fully focused, I'm targeting an April 1st start date."
-
-### "Are you considering other options?"
-> "I'm exploring a few select opportunities that align with my technical background. My goal is to find the right long-term home by end of March so I can hit the ground running in April."
-
-### "Why not hire someone to do ops so you can stay?"
-> "At our stage and funding level, that's not viable. The business would need significantly more capital to support that kind of hire, and I'd rather transition now than wait on an uncertain raise."
-
-### If the unlikely happens (withdrawal script)
-If the raise does happen and you need to withdraw:
-> "I'm reaching out because circumstances at my startup changed significantly this week. I need to see it through. I have to withdraw my candidacy, but I've been impressed with your team and would love to stay in touch for the future."
-
-**Note:** This is honest. Don't oversell it as a "black swan"—just state that circumstances changed. 
-
-
+---
 ## Why bootstrap
 
-It forced dicipline. We had to make customers happy or shit down. If we neded capital to unlock growth we would have raised. At that stage we didnt.
+It forced dicipline. We had to make customers happy or shut down. If we neded capital to unlock growth we would have raised. At that stage we didnt.
 
-  
+--- 
+### Worst quality 
+It changes month to month, as I become cognizant of something, I try to fix it, then I notice another area to work on. 
+Something I'm working on now 
+
+
+--- 
 
 ## Any regrets:
 
@@ -112,6 +111,28 @@ Like
 Across all those, working with elite teams is a major amplifier, both in terms of learning and day to day enjoyment. 
 
 > I’m drawn to fast learning loops, hard technical creativity, and shipping real systems. Strong teams amplify all of that.
+
+
+
+## What's your superpower?
+
+> Adaptability: my whole career has been a cycle of facing some hard ambiguous problem, needing to get up to speed quickly. It was how I operated in grad school, and it is how you are forced to operate
+
+> Getting the benefits of stress and insecurity without the stress and insecurity themselves. 
+
+
+
+
+
+
+-----
+
+
+
+
+
+
+
 
 
 
@@ -277,15 +298,6 @@ It's a tendency I continue to manage deliberately by protecting time for deep wo
 
 ---
 
-## What's your superpower?
-
-> Adaptability: my whole career has been a cycle of facing some hard ambiguous problem, needing to get up to speed quickly. It was how I operated in grad school, and it is how you are forced to operate
-
-> Getting the benefits of stress and insecurity without the stress and insecurity themselves. 
-
-
-> 
-> I learn fast and build fast. I can go from zero to functional system in a domain I've never touched before, because I know how to decompose problems and find the right abstractions quickly.
 
 
 ## What are some things you failed at
@@ -305,3 +317,17 @@ It's a tendency I continue to manage deliberately by protecting time for deep wo
 	* Learned that you just have to write the test and look it over. customers dont always distinguish between "this is my core product" and "this is this experimental add on, we can make it reliable if you like it"
 
 
+## What kind of company would you want to build next?
+
+## Short version (use first)
+
+> **“I think great startups are flywheels. 
+> You build a positive feedback loop that compounds into durable advantage, usually through data, networks, or deep operational complexity. 
+> In robotics specifically, I think people underestimate how hard it is to build safe, reliable real-world systems, which creates room for defensible platforms. 
+> I’m interested either in data moats around hard-to-acquire physical data, or infrastructure layers that accelerate robotics development, essentially tooling that creates a ‘ChatGPT moment’ for robotics.”**
+
+---
+
+## If they ask for examples
+
+> “One direction is data plays around uniquely hard physical data, like high-resolution earth observation or dense real-world telemetry. Another is platform infrastructure: something like a React-for-robots or Vercel-for-robotics that standardizes deployment, testing, safety, and iteration in physical systems.”

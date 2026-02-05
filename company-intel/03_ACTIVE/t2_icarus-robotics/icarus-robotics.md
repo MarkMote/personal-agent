@@ -71,4 +71,6 @@ Astronauts spend ~75% of time on cargo logistics ("Amazon warehouse workers with
 
 **2026-01-29:** Attended Critical Mass event at Newlab where Icarus was presenting. No connection made.
 
-**Status: 👻 GHOSTED** - Strong initial interest, then radio silence despite multiple follow-ups. May revisit later or try Ethan connection if pipeline thins.
+**Status: 👻 GHOSTED** - Strong initial interest, then radio silence despite multiple follow-ups.
+
+**2026-02-04:** Decided to deprioritize. Red flag that they can't follow up on their own stated interest. Check back ~Feb 18 if pipeline thins—try Ethan (CEO) directly, no social capital via mutual connection.
