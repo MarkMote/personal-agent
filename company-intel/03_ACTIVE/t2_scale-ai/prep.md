@@ -3,7 +3,7 @@
 **Contact:** Sam Evans (AI/ML Recruiter)
 **Tier:** 2 (Calibration)
 **Applied for:** FDE GenAI + FDAI Enterprise
-**Posted comp:** $179-224k + equity (seems low for your level)
+**Posted comp:** $179-224k (lowball) — actual is $250-320k (Senior), $400k+ (Staff)
 
 ---
 
@@ -20,11 +20,11 @@ If they only have FDE-type roles, that's fine—it's T2 calibration. But worth a
 
 ## Why Scale
 
-> "Scale is at the center of what's becoming the real bottleneck in AI—data quality and infrastructure. I find that interesting because it's a hard, unglamorous problem that actually matters.
+> "I'm interested in Scale because while everyone else is playing with chatbots, Scale is solving the actual data-quality and evaluation bottleneck that makes or breaks enterprise AI. I want to be where the 'dirty work' of the frontier is happening.
 >
-> The FDAI Enterprise work also connects directly to what I built at Roostr—production agent systems. And the defense and autonomous vehicle customers touch areas I care about from my robotics background."
+> The FDAI Enterprise work also connects directly to what I built at Roostr—production agent systems. And the defense work touches areas I care about from my aerospace background."
 
-(Keep it measured—this is T2, not your dream company. "Interesting problem, connects to my background" is honest and sufficient.)
+(Punchier framing: "dirty work of the frontier" signals you get what actually matters.)
 
 ---
 
@@ -51,7 +51,7 @@ If they only have FDE-type roles, that's fine—it's T2 calibration. But worth a
 **If pushed:**
 > "Best ballpark would be $250-350k total comp, but it really depends on scope, level, and equity. I'm flexible for the right opportunity."
 
-Note: This is above their posted range ($179-224k). If they can't get there, that's useful signal. It's T2—don't stress about it.
+Note: Your range aligns with their actual Senior comp ($250-320k). Posted range is lowball.
 
 ---
 
