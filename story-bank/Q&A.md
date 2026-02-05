@@ -13,65 +13,78 @@ Answers to Common Interview Questions
 --- 
 
 ## What comp range are you looking for? 
-I can't say as it depends on too many other factors. 
-
 I can't say that yet since it depends on too many other factors.  
-Can you tell me what you have bugeted for role like this? 
+Can you tell me what you have budgeted for role like this? 
 
 Push #1: 
-Really hard to even give a range 
+Really hard to even give a range, really most concerned with the role 
 
 Push #2: 
-I'd say 250-350 is the best ballpark, but again flexible and subject to change, 
+I'd say 250-350 is the best ballpark, but again that's very subject to change
 
 --- 
 ## Tell me about yourself (multiple versions)
 
-> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. Im currently winding down as CTO of a Roostr. There I built AI-agent pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, we sold computer vision 
+> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. Im currently winding down as CTO of a Roostr. There I built the complete production stack of centered around LLM pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, a company that did camera based robotic perception
 
 ---
-## What kinds of things are you looking for really? 
+## Desired Role? 
+
+> ONE-LINER: I want a role where I feel like I'm learning things: elite team, open-ended problems, whiteboard, shipping. Not implementing predefined specs. 
 
 I'm looking for something in the Research Engineer sweet spot: 
 - R&D-oriented work where I'm building real frontier systems and shipping things
-	- not just implementing known solutions
-	- not just writing papers. 
+	- not just implementing known solutions, or just writing papers. 
 - Heavy communication with stakeholders is a plus for me, not a burden.
 
-The best case scenario is I am on an elite team given a hard and open-ended problem, we need to whiteboard, implement it, and we actually ship something. I'm around people I can learn from, and I'm pushed out of my comfort zone. 
+**The best case scenario** is I am on an **elite team** given a hard and **open-ended** problem, we need to **whiteboard**, implement it, and we actually **ship** something. I'm around people I can learn from, and I'm pushed out of my comfort zone. 
 
-The worst case is narrow, already solved problems, where its just implementing specs  
-
+**The worst case** is narrow, already solved problems, where its just implementing specs  
 
 ---
 ## Whats your timeline? 
 What to say: 
-- I am heads down at roostr wrapping things up over the next two weeks
+- I am heads down at roostr wrapping things up over the **next two weeks**
 - I have additional light commitments there until March 16th, but I'll be part time by then 
 - Earliest start date would be April 1st, as I promised my wife a vacation. 
 
-Internal strategy
-- Next two weeks prep time
-	- Feb 23rd for T0
-	- Feb 18th for T1+ 
+Internal strategy: **Feb 23rd for T0**    |     Feb 18th for T1+ 
 
 ---
+
+### Roostr vs Pytheia
+Biggest difference is at Roostr, my cofounder sets up the calls and I hop on, at Pytheia, I set up all the calls: from talking to customers to 
+
+
 ## Why are you leaving Roostr
+> Roostr is **still operating**, the product works, we are getting **inbound**, and I'm on great terms with my cofounder.
+> But at this point the company is mostly in a **sales and operations scaling phase**.
+> I'm personally **more excited about building hard systems** than running a logistic operation day-to-day, so this felt like a **natural transition point** for me.
 
-> Roostr is still operating, the product works, we are getting inbound, and I'm on great terms with my cofounder.
-> But at this point the company is mostly in a sales and operations scaling phase.
-> I'm personally more excited about building hard systems than running a logistic operation day-to-day, so this felt like a natural transition point for me.
-> Rather than move more capital into something thats not my deepest long term conviction, I decided it was the right time to move on.
-
-
+---
 ## What did you do at Roostr 
+I was the CTO and sole production engineer. I built the entire operations stack, including everything from a user facing dashboard and payment portal to the LLM agents that automate workflows on the backend. 
+The core technology is centered around automating the job of a freight forwarding operator, a job thats been centered around spreadsheets and emails for decades. 
+I can go into a specfic workflow if you would like, but the big picture was to use email and slack as an information source to understand offerings from vendors, present that information to customers, and keep the 50+ steps in the shipment journey running smoothly
 
+Specific Workflow: procurement - say we need to answer the question "How do i ship a 40ft container from amsterdam to san diego"
 
+---
 ## What did you do at Pytheia 
+3d camera based perception. 
+initially for autonomous vehicles , then for robots, then for analytics 
 
-
+---
 ## Why did Pytheia shut down 
+A long story 
 
+---
+### What are some of the things you learned: 
+- Grad school, how to build something complex
+- Startup: to stop conflating complexity with value
+	- figuring out what to build is usually harder than knowing how to build it
+- Distribution is important: people need to know about your product
+- Strategic detatchment is everything: one of the most important skills in life is learning to keep a cool head in stressful situations. 
 
 ---
 ## My Evaluation Criteria 
@@ -82,27 +95,32 @@ Internal strategy
 ---
 ## Why bootstrap
 
-It forced dicipline. We had to make customers happy or shut down. If we neded capital to unlock growth we would have raised. At that stage we didnt.
+It forced discipline. We had to make customers happy or shut down. If we needed capital to unlock growth we would have raised. At that stage we didnt.
 
 --- 
 ### Worst quality 
-It changes month to month, as I become cognizant of something, I try to fix it, then I notice another area to work on. 
-Something I'm working on now 
+> By the time I become cognizant of the issue, it stops being an issue, but I recently learned the importance of **delegating**. I went from phd student, to founder to founder again. The idea that I can just hand a problem off to someone else rather than taking charge felt wrong. It was more about ego than what was best for the business. But a few months ago, we realized "hey we have a little money to outsource some of the work, it actually makes the business better" - though we mostly applied that to non-technical things, but it was impactful. 
 
+ALT:
+It changes month to month, as I become cognizant of something, I try to fix it, then I notice another area to work on. 
+Something I'm working on now is to **stop being so biased toward immediate execution**. 
+Its a great quality in startups, but if you always treat the thing most immediate as the most important thing in the world, you don't always take the time to solve the bigger problem. 
+I was recently thinking back at my time at JPL and I noticed I did it there... 
 
 --- 
 
 ## Any regrets:
 
-We probably overindex on bootstrapping as an identity rather than strategy. In reality I think you should always just do the thing that works best. Some ideas would have benefited from the extra capital and ability to delegate
+We probably under-indexed on distribution over product and over-indexed on bootstrapping as an identity rather than strategy. In reality I think you should always just do the thing that works best. Some ideas would have benefited from the extra capital and ability to delegate
 
+---
 ## Why do you like being a founder. 
 
-The learning velocity is unmatched. You’re forced to solve real problems end-to-end under tight constraints, and the feedback is direct. Either you made the customer happy or you didn’t. Founding also forces you to engage with the full system rather than just one slice of it, which suits me as a generalist. 
+The **learning velocity** is unmatched. You’re forced to solve real problems end-to-end under tight constraints, and the **feedback is direct**. Either you made the customer happy or you didn’t. Founding also forces you to engage with the full system rather than just one slice of it, which suits me as a generalist. 
 
-Short: 
-> The learning velocity is unmatched. You’re forced to solve real problems end-to-end under tight constraints, with direct feedback
+> **ONE-LINER**: The learning velocity is unmatched. You’re forced to solve real problems end-to-end under tight constraints, with direct feedback. And it forces you to always be looking at the bigger picture: for example its not just a problem of how to build something, but what to build.
 
+---
 ## What do you like
 Like 
 - Learning velocity of being a founder 
@@ -112,14 +130,18 @@ Across all those, working with elite teams is a major amplifier, both in terms o
 
 > I’m drawn to fast learning loops, hard technical creativity, and shipping real systems. Strong teams amplify all of that.
 
-
-
+---
 ## What's your superpower?
 
-> Adaptability: my whole career has been a cycle of facing some hard ambiguous problem, needing to get up to speed quickly. It was how I operated in grad school, and it is how you are forced to operate
+> Adaptability: my whole career has been a cycle of facing some hard ambiguous problem, needing to get up to speed quickly. It was how I operated in grad school, and it is how you are forced to operate in startups. 
 
-> Getting the benefits of stress and insecurity without the stress and insecurity themselves. 
+> Strategic detachment: Getting the benefits of stress and insecurity without the stress and insecurity themselves. 
 
+> Really listening to what people are really saying rather than what they are telling you. A customer might tell you everything is great but be on the verge of churning. There's no magic bullet you just have to pay attention and go through it a lot of times. 
+
+---
+### Ever ship a bug to production
+Story: chris and his dad 
 
 
 

@@ -1,4 +1,4 @@
-# Scale AI
+# Scale AI (Tier 1)
 
 ## Quick Facts
 - **Location:** SF HQ, NYC office (hybrid)

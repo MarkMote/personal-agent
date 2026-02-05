@@ -2,6 +2,7 @@
 
 ## Top
 - **ROLE**: How open-ended is the role? Is it mainly building new things or implementing existing solutions? 
+	- What kinds of things are built
 	- Based on my backgrond, are there other roles I should consider along with this one?  
 - **TEAM**: Can you tell me about the team I'd be working with? Whats the size and typical background. 
 - **PROBLEMS**: whats the biggest problem or bottleneck the team is trying to solve right now? 

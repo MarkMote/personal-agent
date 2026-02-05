@@ -37,18 +37,28 @@ Note: This is above their posted FDE range ($165-235k). Signals you're senior an
 
  https://docs.viam.com/operate/hello-world/problems-viam-solves/ i
 
+### What is Viam? 
+Robotics software development platform. Sort of an integration layer that abstracts away the complexities around networking and hardware, and makes robotics development about algorithms. 
+
 ### **Why Viam**
 I've seen the problem and I believe in the mission.
 Viam seems to be going after what I see as holy grail of robotics - building a platform that abstracts away the complexities of hardware and networking, and that makes robotics an algorithms problem.
 Any one thats worked with hardware knows making your code interact with the physical world is the greatest feeling on earth, but also sometimes you feel like for every hour you are doing the real work you spend 3 on debugging, calibration or networking
 If you can fix that I mean you don't just turn a lot of new people on to robotics, you build something that will genuinely change the world.
 
-
 ### Pitch/ Intro
-I'm a 2x founder. I have a Robotics PhD. My dissertation was on controls and safe autonomy.  During that time I was one of 6 founding members of the Robotarium. This is an open access multi-agent robotics lab at Georgia tech that's still running today.
-After graduation I started Pytheia with two lab-mates. We sold camera-based robotic perception as service,.
-Currently I'm stepping down as CTO of Roostr, here I built the full production stack for automating supply chain workflows with LLMs.
+I'm a 2x founder. I have a **Robotics PhD**. My **dissertation** was on controls and safe autonomy.  
+During that time I was one of 6 founding members of the **Robotarium**. This is an open access multi-agent robotics lab at Georgia tech that's still running today.
+After graduation I started **Pytheia** with two lab-mates. We sold camera-based robotic perception as service
+Currently I'm stepping down as CTO of **Roostr**, here I built the full production stack for automating supply chain workflows with LLMs.
 Roostr is still going, but robotics has always been my passion and I'm hoping to get back into this area.
+
+### Why FDE
+> "I applied for FDE because my founder background seemed like a fit, but honestly I'm most excited about technical depth. Given my research background, I'm also curious about roles on the motion or platform side. What do you think would be the best fit?"
+
+## Timeline
+**What to say:**
+> "I'm heads down at Roostr wrapping things up over the next two weeks. I have light commitments there until March 16th, but I'll be part-time by then. Earliest start would be April 1st—I promised my wife a vacation."
 
 ### How did you end up in Supply Chain
 Long story short it was just following a long path of trying to listen to the market and build something that people wanted.
