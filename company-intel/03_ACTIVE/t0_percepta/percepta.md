@@ -97,5 +97,10 @@ Percepta embeds engineers, product leaders, and researchers directly into Fortun
 - **Next:** Wait to hear back from Percepta and Arena AI teams
 
 ## Next Steps
-- Awaiting response from Percepta and Arena AI teams
-- Resume and webpage sent to Brandon
+- **Feb 6 call with Athul Jacob (Co-founder, Chief AI Officer)** — introduced by Brandon
+- Annie coordinating logistics (also Jaclyn cc'd)
+- Agenda: what they're working on, open roles, fit discussion
+- Arena AI track also in motion via Brandon
+
+## Communication Log
+- **Feb 3:** Brandon emailed intro to Athul Jacob + Annie (coordinator) + Jaclyn. Team "reviewed your background and would love to connect." Agenda: discuss what they're working on, open roles, and alignment.

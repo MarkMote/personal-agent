@@ -1,4 +1,4 @@
-# Message Drafts - Feb 5, 2026
+# Message Drafts - Feb 6, 2026
 
 ## DRAFT STATUS LEGEND
 - DRAFT: Ready to send
@@ -7,7 +7,29 @@
 
 ---
 
-## Scale AI | Reply to Hannah | EMAIL | DRAFT
+## Anthropic | Jessica Andrelevich | Late to Call Follow-Up | STALE
+
+Hi Jessica — just checking in on our 11:00 call. Happy to jump on whenever works, or we can reschedule if today's not good. No worries either way!
+
+---
+
+## Anthropic | Jessica Andrelevich | Reschedule Reply | DRAFT
+
+No worries at all! 1 PM works great. Talk to you then!
+
+---
+
+## Anthropic | Jessica Call | FDE vs Research Tools | TALKING POINT
+
+> "I'm excited about the FDE role—it's the part of being a founder I loved most: talking to customers and building 0-to-1. That really resonates with me.
+>
+> That said, I originally applied to Research Tools because I also love the research engineering side—being close to frontier technical problems. Ideally I'm looking for something that blends both: building real systems with depth, but with customer or stakeholder interaction.
+>
+> I'm curious which track you think is the better fit given my background, or if there's a way to explore both."
+
+---
+
+## Scale AI | Reply to Hannah | EMAIL | SENT
 
 Hi Hannah,
 

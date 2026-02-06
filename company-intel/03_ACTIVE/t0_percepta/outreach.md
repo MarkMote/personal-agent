@@ -29,11 +29,24 @@ Let me know what times work best for a chat.
 
 Brandon responded with Calendly link and scheduled call for Tue Feb 3, 11:30am ET.
 
-## Next Steps
-- **Call:** Tuesday Feb 3, 2026 at 11:30am ET
-- **Prep:** Research-to-deployment narrative, optimization background, embedded model questions
+## Timeline (continued)
+
+### Feb 3, 2026 - Brandon Intro Email to Athul
+**Status:** Received
+**Channel:** Email
+
+Brandon emailed Mark + Athul Jacob (Co-founder, Chief AI Officer) + Annie (coordinator) + Jaclyn.
+
+> "The Percepta team reviewed your background and would love to connect. I'm introducing you to their Co-Founder & Chief AI Officer, Athul Jacob."
+
+**Agenda:** Discuss what they're working on behind the scenes, open roles, and how Mark's background/ambitions align.
+
+### Feb 6, 2026 - Call with Athul Jacob
+**Status:** Scheduled
+**Type:** Co-founder conversation (not a recruiter screen)
 
 ## Notes
 - Tier 0 opportunity (General Catalyst backing + MIT research leadership)
 - Good fit for research-to-practice bridge background
 - Fast response time after delayed reply suggests strong interest
+- **Athul taking the call personally = high interest signal**
