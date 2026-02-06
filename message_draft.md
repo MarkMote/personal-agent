@@ -1,9 +1,22 @@
-# Message Drafts - Feb 4, 2026
+# Message Drafts - Feb 5, 2026
 
 ## DRAFT STATUS LEGEND
 - DRAFT: Ready to send
 - SENT: Already sent
 - STALE: Outdated, don't send
+
+---
+
+## Scale AI | Reply to Hannah | EMAIL | DRAFT
+
+Hi Hannah,
+
+Thanks for the quick follow-up—I enjoyed our conversation as well. Just submitted my availability through the link.
+
+Looking forward to the next step.
+
+Best,
+Mark
 
 ---
 
