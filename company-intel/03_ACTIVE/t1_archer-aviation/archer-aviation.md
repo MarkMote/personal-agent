@@ -20,7 +20,14 @@
 ## Status
 - 2026-02-02: Call with Suresh (thought it was Shield AI, he'd moved to Archer)
 - 2026-02-02: Received email from Eddy Yu requesting phone screen availability
-- **Next:** Submit availability via calendar link
+- 2026-02-11: Dennis call confirmed Tue 2/11 4pm ET (phone screen / HM screen?)
+- **Next:** Dennis call Tue 2/11 4pm ET
+
+## C++ Strategy
+- Mark has no recent C++ but strong Python + PhD numerical computing (MATLAB)
+- At Staff level, domain expertise (GNC, trajectory opt, safe autonomy) is the value, not C++ fluency
+- If C++ interview happens: prep Eigen, basic OOP for controls, LeetCode mediums in C++
+- Frame: "Recent work has been Python-heavy, but PhD involved numerical computing. C++ is a tool I can ramp on — the domain knowledge is what takes years."
 
 ## Key People
 | Name | Role | Notes |

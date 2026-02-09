@@ -1,4 +1,4 @@
-# Message Drafts - Feb 6, 2026
+# Message Drafts - Feb 9, 2026
 
 ## DRAFT STATUS LEGEND
 - DRAFT: Ready to send
@@ -7,92 +7,40 @@
 
 ---
 
-## Anthropic | Jessica Andrelevich | Late to Call Follow-Up | STALE
+## D.E. Shaw | Max Ma | Email Correction + Availability | DRAFT | Email to mama@deshaw.com (from marklmote@gmail.com)
 
-Hi Jessica — just checking in on our 11:00 call. Happy to jump on whenever works, or we can reschedule if today's not good. No worries either way!
+Hi Max,
+
+Thanks for reaching out. Quick note: there was a typo on my resume. My correct email is marklmote@gmail.com (with an L), not markmote@gmail.com. Apologies for the confusion.
+
+I'm excited about the opportunity and happy to confirm that working from the NYC office works well for me.
+
+Here are some 45-minute windows over the next two weeks:
+
+- [FILL IN AVAILABILITY]
+
+I do have a couple of other processes moving, happy to keep you posted as things develop.
+
+Looking forward to it.
+
+Best,
+Mark Mote
+marklmote@gmail.com
 
 ---
 
-## Anthropic | Jessica Andrelevich | Reschedule Reply | DRAFT
+## D.E. Shaw | Mark B (markmote@gmail.com) | Thank You for Forward | DRAFT | Email
 
-No worries at all! 1 PM works great. Talk to you then!
-
----
-
-## Anthropic | Jessica Call | FDE vs Research Tools | TALKING POINT
-
-> "I'm excited about the FDE role—it's the part of being a founder I loved most: talking to customers and building 0-to-1. That really resonates with me.
->
-> That said, I originally applied to Research Tools because I also love the research engineering side—being close to frontier technical problems. Ideally I'm looking for something that blends both: building real systems with depth, but with customer or stakeholder interaction.
->
-> I'm curious which track you think is the better fit given my background, or if there's a way to explore both."
-
----
-
-## Scale AI | Reply to Hannah | EMAIL | SENT
-
-Hi Hannah,
-
-Thanks for the quick follow-up—I enjoyed our conversation as well. Just submitted my availability through the link.
-
-Looking forward to the next step.
+Hey Mark, really appreciate you forwarding that. Turns out there was a typo on my resume. I owe you one.
 
 Best,
 Mark
 
 ---
 
-## NOTE: Remote-First Companies to Prioritize (Feb 4, 2026)
-**Status: RESEARCH & PREP**
+## Anthropic | Megan Cowden | HM Screen Confirmation | DRAFT | Email (Reply All)
 
-Mark flagged these companies for application focus - all potentially remote:
+Thanks Megan, got the invite. Looking forward to speaking with Samuel on the 18th.
 
-### Already in Tracker:
-- **NVIDIA** (#33, Tier 3) - Isaac Sim/robotics, likely CA/remote
-- **Tesla** (#87, Tier 3) - Autopilot/Optimus, Palo Alto/Austin 
-- **SpaceX** (#45, Tier 3) - Starship GNC, LA
-- **Joby Aviation** (#91, Tier 2) - eVTOL, competitor to Archer
-
-### Newly Added:
-- **Figure** (#92, Tier 3) - Humanoid robots, OpenAI partnership, $675M Series B
-- **Astrobotic** (#93, Tier 3) - Lunar/planetary robotics, NASA contracts
-
-**Next Steps:** Research remote policies for these companies. Despite being outside NYC, talent shortage in robotics/AI may make remote negotiable for senior roles.
-
----
-
-## INTERVIEW PREP PLAN - Feb 4-5, 2026
-**Status: ACTIVE PLAN**
-
-### **TODAY (Tuesday 3pm-9pm):**
-
-**3-4pm: Viam Research**
-- Read their recent blog posts/press releases (check website news section)
-- Browse their docs to understand the platform architecture 
-- Look at their customer case studies - what problems are they actually solving?
-- **Key outcome**: 2-3 specific reasons why their approach excites you
-
-**4-6pm: Code Review → Story Building**
-- **Roostr**: The agent orchestration architecture - draw it out, understand the data flow
-- **Pytheia**: The CV pipeline decisions - why those choices, what trade-offs
-- **Key outcome**: Can explain both systems clearly without looking at code
-
-**6-7pm: Dinner break**
-
-**7-8pm: Verbal Practice** 
-Practice out loud:
-- 2-3 minute "tell me about yourself"
-- "Why Viam" and "Why Anthropic" 
-- One technical story from each company
-- **Pro tip**: Record yourself on phone, play back to catch filler words
-
-### **TOMORROW (Wednesday 9am-12pm):**
-- Review company mission statements one more time
-- Prepare 2-3 thoughtful questions for each recruiter
-- Maybe 30 min of basic coding warmup (just in case)
-
-**Goal**: Sleep-before-practice approach - brain consolidates stories overnight
-
----
-
-*New drafts go here at the top*
+Best,
+Mark

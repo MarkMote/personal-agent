@@ -20,6 +20,9 @@ If someone reacts negatively to reasonable questions, that's a signal to downgra
 - Coverletters slightly more formal than messages.
     - e.g. message may end with "happy to chat if you think there is a fit" but a cover letter might more correctly use "I'd welcome the opportunity to discuss this further" 
 - ALWAYS use correct grammar and complete thoughts. 
+- Try to avoid present perfect tense. e.g. I led instead of I have have led
+
+
 
 ## On Asking About Compensation
 

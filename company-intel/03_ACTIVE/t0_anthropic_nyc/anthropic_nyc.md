@@ -91,7 +91,9 @@
 | Name | Role | Status |
 |------|------|--------|
 | Jessica Andrelevich | Talent (FDE recruiter) | Active - responded 2026-01-28 |
+| Megan Cowden | Recruiting Coordinator | Scheduling/logistics |
 | Unknown | Research Tools recruiter | Pending - no response yet |
+| Samuel Flamini | Manager, Applied AI Engineering | HM screen confirmed Wed 2/18 2:30pm ET. See profile below. |
 
 ---
 
@@ -100,3 +102,32 @@
 **2026-01-27:** Applied for Senior+ SWE Research Tools ($300-405k). Messaged Jessica on LinkedIn.
 
 **2026-01-28:** Jessica responded within 2 minutes. Not the recruiter for Research Tools but pitched FDE Applied AI role. Mentioned "former founders on the team." Applied to FDE and messaged Jessica confirming. Pursuing both tracks.
+
+**2026-02-06:** Recruiter screen with Jessica (rescheduled from 11am to 1pm). Call went well. Same day Jessica emailed to advance to next step: hiring manager call. Looped in Megan Cowden (recruiting coordinator) for scheduling.
+
+**2026-02-09:** HM screen confirmed. Wed Feb 18, 2:30-3:00pm ET with Samuel Flamini (Hiring Manager). Google Meet: https://meet.google.com/xsn-uivx-tbj. Note: no AI tools allowed during interview.
+
+---
+
+## Samuel Flamini - Profile
+
+**Current:** Manager, Applied AI Engineering @ Anthropic (May 2025 - present, SF hybrid)
+- Before promotion: Applied AI, Product Engineer (Jun 2024 - May 2025)
+- ~1 yr 9 mos total at Anthropic
+
+**Blog:** https://www.definiteoptimist.co/
+
+**Background:**
+- **AssemblyAI** (Feb 2024 - Jun 2024): Senior Solutions Architect. Building AI solutions.
+- **Superfluid** (Sep 2021 - Jun 2023): DevRel Team Lead. Maintained libraries, APIs, docs. Podcast host.
+- **Self-employed SWE** (Jun 2021 - Jun 2022): React.js client work. Built drone tracking platform (Mapbox, real-time data, device telemetry).
+- **Visible.vc** (May 2020 - Jun 2021): Account Executive. Grew ARR and customers 70%+. Led customer success for 1000+ startup/VC customers. Improved trial conversion 70%+.
+- **Prime Prospects LLC** (Apr 2019 - Mar 2020): General Manager. Launched Amazon DSP franchise, grew to 35 routes/65 drivers. Owned P&L.
+- **Cerkl** (Sep-Dec 2018): Customer Success.
+
+**Key observations:**
+- Not a traditional eng manager. Career path is sales/ops -> devrel -> solutions architect -> product engineer -> manager. Very customer-facing trajectory.
+- Only ~2.5 years of engineering work. Strength is clearly in customer-facing technical roles.
+- The FDE team reports to someone who was himself basically an FDE. He'll value customer instinct and shipping over pure technical depth.
+- "Definite Optimist" blog name is a Peter Thiel reference (Zero to One). Likely values founder/builder mentality.
+- Grew an Amazon franchise from 0 to 35 routes. Understands operations and scaling from scratch. Will relate to Mark's founder stories.
