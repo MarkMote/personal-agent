@@ -71,4 +71,26 @@ Floating this back up in case it got buried. Still very interested in connecting
 
 ## Notes
 
-_Add notes from conversations here_
+**2026-01-28:** Hannah Hasen responded (hhasen@janestreet.com), cc'd Matt Horder (mhorder@janestreet.com). Rerouted to ML Engineering position. Requested Feb 17 week for first round.
+
+**2026-02-09:** Interview confirmed Tue 2/17 10:30am ET. Key detail from invite: first round is standard SWE coding interview (not ML-specific). Interviewer is a regular SWE with no ML role context. ML interview guide PDF reviewed — ML-focused rounds come later.
+
+## Hannah's Initial Email (Jan 28, 2026)
+
+> Hi Mark,
+> Thank you for your interest in Jane Street. My name is Hannah and I work on the Recruiting team at Jane Street, along with my colleague Matt (cc'd). We received your application and would like to consider you for an ML Engineering position. If this is not a position you're interested in, please let me know. Please keep in mind that as we go through the interview process, we will continuously evaluate your potential for all roles at Jane Street.
+>
+> We realize many similar positions offer remote work opportunities. I want to be up front that we do not offer that on a general basis. At the moment, almost everybody lives close enough to the office to commute regularly. Some choose to work in the office almost all the time; others split their working time between the office and their home. However, fully remote work is not something that we typically offer.
+>
+> If you would like to interview for this position, please let me know your weekday availability for a Zoom interview over the next week or so between 10:00 am - 12:00 pm and 1:00 pm - 5:00 pm Eastern Time. While we recommend blocking off a full hour on your calendar, our interviews can range in duration from 35 to 60 minutes.
+>
+> The interview process typically includes several Zoom calls followed by a full day of interviews. There are three broad categories of technical questions listed below that we will ask during the interview process. You can also reference our ML interview guide for more information.
+> - Coding (like for a tech job, but less emphasis on clever algorithms and more on system design)
+> - ML Theory (e.g. here's a NN architecture, how would you expect it to perform on a given problem, how would you improve it, etc?)
+> - Data science (here's a data set, let's examine it together, talk about its features, discuss how to model it)
+>
+> The first round will be a programming round that we'll hold via Zoom video. Our interviewers use coderpad.io to do some coding exercises. Your interviewer will provide you with a session key at the start of the call.
+>
+> While OCaml is our programming language of choice, we encourage you to program in whatever language you're most comfortable with. To get an idea of what to expect in our programming interviews you can read our blog post. You can also learn more about our Software Engineer interview process on our prep page.
+>
+> If you receive any offers or deadlines from other firms while interviewing with us please email me with details so we can work with you to expedite our process.

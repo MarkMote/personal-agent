@@ -9,7 +9,7 @@ Read this first every session. Short entries only. Detail lives in company intel
 ### Schedule (confirmed)
 - Tue 2/11 1pm: Laurion Capital interview w/ Sarkis
 - Tue 2/11 4pm: Archer Aviation phone screen w/ Dennis
-- Mon 2/17 10:30am: Jane Street ML coding round
+- Tue 2/17 10:30am: Jane Street SWE coding round (NOT ML — standard SWE interviewer, CoderPad)
 - Tue 2/18 2:30pm: Anthropic HM screen w/ Samuel Flamini (Google Meet)
 - Mon 2/24 9:30am: Scale AI technical screen (1hr, live coding, Python, not leetcode - more implementation/data manipulation)
 - TBD: D.E. Shaw internal screen (scheduling w/ Max Ma, likely post-2/17)
@@ -33,7 +33,7 @@ Read this first every session. Short entries only. Detail lives in company intel
 - Anthropic (T0): HM screen 2/18 w/ Samuel Flamini. Research Tools app rejected (doesn't affect FDE). Samuel's background: sales/ops/devrel path, not deep eng. Lean into founder angle.
 - Percepta (T0): pivoted to Research PM track. Waiting on Jackie (head of recruiting). Brandon looped in.
 - D.E. Shaw GenAI (T0): interview invite received, email typo needs fixing. Max Ma (internal recruiting) scheduling. Marcus Roberts Rajoo is external recruiter (Vulcan), not D.E. Shaw.
-- Jane Street (T0): coding round 2/17
+- Jane Street (T0): SWE coding round Tue 2/17 10:30am. Standard SWE interviewer, no ML context. ML rounds come later. Reviewed ML interview guide PDF + blog post + prep page. interview_prep.md created.
 - Archer (T1): Dennis call 2/11 4pm. C++ strategy: "domain knowledge takes years, C++ is a tool I can ramp on"
 - Laurion Capital (T1): Sarkis call 2/11 1pm
 - Scale AI (T2): tech screen 2/24. Hannah mentioned robotics lab (Mexico/SF). Strategy: do FDE first, explore robotics transfer later. Internal transfers are common at Scale.
@@ -54,6 +54,15 @@ Read this first every session. Short entries only. Detail lives in company intel
 - These contacts didn't accept connection requests, so can't follow up: Meta FAIR, DeepMind, OpenAI, Standard Bots, Microsoft Research, Two Sigma, Ultra, Fauna Robotics, Palantir, Muon Space, Basis Research, Nominal Systems, Shield AI
 - Strategy: move on unless finding alternate contacts. Pipeline is strong with 6+ active processes.
 
+### Interview prep created (Session 2)
+- Jane Street first round is SWE coding (NOT ML). Standard SWE interviewer, no role context. ML rounds come later.
+- Hannah's full email saved to outreach.md. Zoom details in jane-street.md.
+- JS ML Interview Guide PDF reviewed — ML Engineer focus: implementation, workflow, open-source tools, code efficiency.
+- Created company-intel/03_ACTIVE/t0_jane-street/interview_prep.md — full prep plan with candidate-reported problems.
+- Created prep/queue.md — 6-day prep schedule (Tue 2/10 – Sun 2/15). 3 core + 2 non-core per day. Neetcode priorities listed.
+- JS candidate-reported problems: Connect Four, Tetris, Serialize/Deserialize Tree, Merkle Tree, Course Schedule, Interval Scheduling, Memoization/LRU (published example).
+- Key JS insight: problems are "build a thing cleanly" not leetcode. Progressive, multi-stage, open-ended. Hints expected and welcomed.
+
 ### Files created/modified this session
 - ref/memory.md (this file) - created
 - company-intel/03_ACTIVE/t0_anthropic_nyc/anthropic_nyc.md - Samuel Flamini profile, rejection note for Research Tools
@@ -64,3 +73,14 @@ Read this first every session. Short entries only. Detail lives in company intel
 - message_draft.md - cleaned up, current drafts only
 - temp_spacex.md - all 17 SpaceX GNC JDs with links
 - CLAUDE.md - added memory.md rules, directory entry, update trigger
+- company-intel/03_ACTIVE/t0_jane-street/jane-street.md - full rewrite with Hannah's email, Zoom details, interview process, prep resources
+- company-intel/03_ACTIVE/t0_jane-street/interview_prep.md - created, full prep plan
+- company-intel/03_ACTIVE/t0_jane-street/outreach.md - added Hannah's email, interview confirmation note
+- prep/queue.md - created, 6-day interview prep schedule
+- prep/fundamentals_qa.md - created, ~50 Q&As across 9 topics (DS, complexity, Python internals, trees, sys design, ML, LLM/agentic, concurrency, prod eng)
+- prep/interview_problems/W07/tuesday.md - full problem specs for Day 1 (LRU Cache, File System, HashMap, MNIST, PyTorch debugging, Doc Processing API)
+- prep/interview_problems/W07/wednesday.md - Day 2 (Serialize Tree, Validate BST, Construct Tree, FastAPI, Inference, Roostr storytelling)
+- prep/interview_problems/W07/thursday.md - Day 3 (Txn KV Store, Connect Four, Spreadsheet, ReAct Agent, Log Parser, LLM Orchestration SD)
+- prep/interview_problems/W07/friday.md - Day 4 (Rate Limiter, Task Queue, Intervals, MCP Server, Async Jobs, Pytheia storytelling)
+- prep/interview_problems/W07/saturday.md - Day 5 (Tetris, Load Balancer, Course Schedule, Async Agent, Data Stream, Model Eval SD)
+- prep/interview_problems/W07/sunday.md - Day 6 (Timed Mocks x2, Review, RAG Pipeline, File Upload, Python Depth)
