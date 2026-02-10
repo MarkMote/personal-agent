@@ -92,7 +92,7 @@
 |------|------|--------|
 | Jessica Andrelevich | Talent (FDE recruiter) | Active - responded 2026-01-28 |
 | Megan Cowden | Recruiting Coordinator | Scheduling/logistics |
-| Unknown | Research Tools recruiter | Pending - no response yet |
+| Unknown | Research Tools recruiter | ❌ Rejected 2/9 (does not affect FDE track) |
 | Samuel Flamini | Manager, Applied AI Engineering | HM screen confirmed Wed 2/18 2:30pm ET. See profile below. |
 
 ---

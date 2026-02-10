@@ -20,8 +20,9 @@ https://www.linkedin.com/in/mote/
 - **W09:** Mon Feb 23 - Fri Feb 27 
 
 ## TIER 1 RULES (most important)
-- Any message draft you write in the terminal must be copied to message_draft.md. No exceptions. Mark cannot copy or edit messages you write for him if they are not put in message_draft.md. 
-- Record as much as practically possible, while maintaining good organization. There is very little cost to writing things down that may be useful in the future. If we take an action with a company, record it. If you learn new information about mark or a company, or that could be useful later, record it. As long as we maintain good file organization, there is little cost to not new recording information and a huge gain in terms of organization, writing, and the ability to audit. 
+- **Start every new session by reading `ref/memory.md`.** This is the running log of recent activity. It tells you what happened, what's pending, and what changed. Read it before doing anything else.
+- Any message draft you write in the terminal must be copied to message_draft.md. No exceptions. Mark cannot copy or edit messages you write for him if they are not put in message_draft.md.
+- Record as much as practically possible, while maintaining good organization. There is very little cost to writing things down that may be useful in the future. If we take an action with a company, record it. If you learn new information about mark or a company, or that could be useful later, record it. As long as we maintain good file organization, there is little cost to not new recording information and a huge gain in terms of organization, writing, and the ability to audit.
 - Maintain this claude.md file, the other files, and the overall organization of this directory. If rules change, or you learn new things, make sure its recorded so that you will be able to remember after a new session starts.
 
 
@@ -72,6 +73,7 @@ Three positioning strategies (resume docs in `/latex` folder):
 │   ├── resume/           # Main resume variants
 │   └── basis_cover_letter/ # Cover letters and custom materials
 ├── ref/                   # Claude's memory bank (see README.md inside)
+│   ├── memory.md          # Running log of recent activity (READ FIRST every session)
 │   ├── mark_profile.md    # Background, timeline, credentials, narrative hooks
 │   ├── web_cv.md          # Full CV from markmote.com/resume (publications, talks, awards)
 │   ├── strategic_context.md # Decision framework, priorities, situational factors
@@ -186,6 +188,16 @@ Three positioning strategies (resume docs in `/latex` folder):
 ## The ref/ Folder
 This is Claude's memory bank. Automatically update `ref/` with new information about Mark as it comes up in conversation—experiences, preferences, stories, wins, lessons. This accumulates context for better assistance over time.
 
+### ref/memory.md - Running Session Log
+This is the cross-session memory file. It solves the cold-start problem: new sessions read this first to know what happened recently.
+
+**Rules:**
+- **Read first** at the start of every new session.
+- **Update frequently** during a session. Any notable action, decision, update, or new info should get a short entry. This is in ADDITION to updating the proper files (tracker.csv, company intel, etc.), not instead of them.
+- Keep entries short: date header, bullet points, one line per item.
+- Keep it to ~50 lines max. Prune entries older than 2-3 weeks. The detail lives in company intel files and tracker.csv; this is just the quick-reference layer.
+- If something is important enough to remember next session, it goes here.
+
 ## What I Help With
 - Research companies before outreach
 - Draft cold emails and LinkedIn messages
@@ -236,6 +248,10 @@ Executing Wave 1 outreach. See `PLAN/action_plan.md` for workflow and `PLAN/time
 **When new info about Mark comes up:**
 - [ ] Update relevant file in `ref/` (profile, stories, preferences, etc.)
 - [ ] This includes: preferences, experiences, wins, lessons, stories, constraints, lifestyle factors
+
+**After any notable action or update:**
+- [ ] Add a short entry to `ref/memory.md` (date + one-line summary)
+- [ ] This is in addition to updating the proper files, not a replacement
 
 ## Company Tiers
 

@@ -45,6 +45,18 @@ Brandon emailed Mark + Athul Jacob (Co-founder, Chief AI Officer) + Annie (coord
 **Status:** Scheduled
 **Type:** Co-founder conversation (not a recruiter screen)
 
+### Feb 7, 2026 - LinkedIn to Athul (Mark)
+**Status:** Sent
+**Channel:** LinkedIn (direct to Athul, not on Brandon's thread)
+
+Pivoted from embedded researcher to Research PM track.
+
+### Feb 9, 2026 - Status update to Brandon (Mark)
+**Status:** Sent
+**Channel:** Email (reply to Brandon's "how did it go?")
+
+Told Brandon call went great, pursuing Research PM, Jackie handling next steps.
+
 ## Notes
 - Tier 0 opportunity (General Catalyst backing + MIT research leadership)
 - Good fit for research-to-practice bridge background

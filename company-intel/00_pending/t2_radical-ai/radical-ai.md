@@ -1,37 +1,52 @@
 # Radical AI
 
 ## Quick Facts
-- **Location:** NYC
+- **Location:** NYC (on-site)
 - **Stage:** Startup
-- **Focus:** Material science optimization
+- **Focus:** Generative materials science. AI/ML to accelerate materials R&D.
+- **Backing:** Unknown (research needed)
 
-## Bleeding Neck (from JDs)
-- [ ] Research: Check careers page for keywords
-- Keywords: _TBD_
+## Target Roles
 
-## Recent News
-- [ ] Research: Funding, partnerships
-- _TBD_
+### 1. AI Research Scientist - Agentic Systems (Primary)
+- **Team:** AI/ML - Generative
+- **Location:** NYC, on-site
+- **Level:** Senior / Staff / Principal
+- **URL:** https://jobs.lever.co/radical-ai (via careers page)
+- **What it is:** Lead development of agentic systems for materials development. Reasoning, planning, data acquisition, model eval, pre/post-training, SFT, reward modeling, RL.
+- **Requirements:** PhD/MS/BS in CS/AI/ML, 3+ years AI research, agentic systems track record, Python/PyTorch, publications in NeurIPS/ICML/ICLR
+- **Pluses:** ML for science, materials domain knowledge, large-scale training, LLM engineering
+- **Fit:** Very strong. PhD + RL + agentic systems (Roostr) + publications (h-index 13). Materials domain is new but AI/agentic piece is core strength. Mentoring experience from PhD advising.
+
+### 2. Robotics Engineer (Secondary)
+- **Team:** Lab Automation - Software
+- **Location:** NYC, on-site
+- **URL:** https://jobs.lever.co/radical-ai
+- **What it is:** Design and deploy automation systems for materials science lab. Robotics, perception, control software for autonomous workcells.
+- **Requirements:** 4+ years SWE, BS/MS, Python/C++, ROS/ROS2, simulation (MuJoCo, IsaacSim), motion planning, state machines, hardware integration
+- **Pluses:** Lab/manufacturing automation, SLAM, RL + CV for robotics, startup experience
+- **Fit:** Strong. PhD controls/robotics, CV experience (Pytheia Argus), Python/C++, simulation background. Lab automation is new domain but skills transfer directly.
+
+### 3. Software Engineer - Systems (Tertiary)
+- **Team:** Lab Automation - Software
+- **Location:** NYC, on-site
+- **What it is:** Full-stack systems work across lab automation. Hardware drivers, scheduling/orchestration, telemetry, dashboarding.
+- **Requirements:** 4+ years SWE, Python + C++/Go, concurrency/threading, hardware integration
+- **Fit:** Decent but less differentiated. More infra-focused, doesn't leverage PhD or research strengths as well.
 
 ## Key People
 | Name | Role | Notes |
 |------|------|-------|
 | Joseph Krause | CEO | |
+| Raymond Bjorkman | Robotics Engineer | Posted LinkedIn hiring announcement. Warm lead. |
 
 ## Your Angle
-**Resume:** Distinguished Academic
-**Hook:** Strong PhD fit
-**Pitch:** Material science and optimization experience.
-
-## Research Questions
-- What materials are they optimizing?
-- What's the ML approach?
-- What's the PhD culture like?
-
-## Questions to Ask Them
-- What's the current team size and structure?
-- What's the biggest technical challenge right now?
-- What does the optimization pipeline look like?
+**Resume:** Distinguished Academic (PhD culture, publications) or Product Founder (agentic systems, startup)
+**Hook:** PhD in robotics/spacecraft controls + built production agentic AI systems as startup CTO + CV/perception background (Pytheia)
+**Pitch:** Rare combination of PhD-level controls/optimization expertise and production agentic systems experience. Built a real agentic pipeline at Roostr (sense-plan-act on semantic data), CV/perception systems at Pytheia. Not a pure ML researcher but someone who builds AI systems that work in the real world.
 
 ## Notes
-_Add notes from conversations here_
+- Raymond Bjorkman's LinkedIn post (2w ago) invites people to reach out or apply directly
+- NYC on-site fits location preference perfectly
+- All three roles are on-site, which is fine
+- Consider upgrading tier if process gains traction (strong PhD fit + NYC + warm lead)
