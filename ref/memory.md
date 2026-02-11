@@ -11,7 +11,8 @@ Read this first every session. Short entries only. Detail lives in company intel
   - Laurion: ~80 people total, Sarkis interested in AI Coscientist paper, not a rigid process — open to Mark's background
   - Marcus may connect Mark with **PDT Partners** (new lead)
   - Industry note: hedge funds prefer founders/big tech hires over competitor poaches (IP theft risk)
-- Laurion call tomorrow Tue 2/11 1pm w/ Sarkis — prep: read AI Coscientist paper, Roostr agentic systems story
+- **Laurion call with Sarkis completed.** Good convo, waiting to hear back. Very interesting work — build prototypes for researchers fast, open-ended, startup culture. Quant Co-scientist vision (AI drives research, agents assist execution). Mark's "what I'm looking for" aligns well. Full transcript in `t1_laurion-capital/call_2026-02-10.md`.
+- **Radical AI call with Raymond Bjorkman completed.** Building lab automation for materials science — robotic arms, ROS, modular "lego ecosystem." 2-3 robotics engineers, looking for generalists. Currently 29th St, moving to BNY. Mark says "could be interesting." Upgraded to 🟢 Active in tracker.
 - **Archer onsite confirmed: Thu 2/26, 11:45am-3:30pm PST, 190 W Tasman San Jose.** Case study presentation + 5 interviews (Mason U'ren, Peter Anderson, Dheepak Khatri, Suresh Kannan, Dennis Ding). Travel covered via Navan. Need to request 2nd hotel night from Jessica (jcadigal@archer.com). Casual dress, bring personal laptop for case study via Zoom.
 
 ## 2026-02-09 (Mon, W07)

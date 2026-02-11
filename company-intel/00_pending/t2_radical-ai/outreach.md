@@ -4,7 +4,7 @@
 
 | Name | Role | Channel | Warm Path | Status | Sent | Next Action |
 |------|------|---------|-----------|--------|------|-------------|
-| Raymond Bjorkman | Robotics Engineer | LinkedIn | His public post inviting outreach | Sent | 2026-02-09 | Follow-up 2/14 if no response |
+| Raymond Bjorkman | Robotics Engineer | LinkedIn | His public post inviting outreach | Responded ✅ | 2026-02-09 | Call completed 2/11. Awaiting next steps. |
 
 ## Messages
 

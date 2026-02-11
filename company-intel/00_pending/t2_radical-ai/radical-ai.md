@@ -45,8 +45,31 @@
 **Hook:** PhD in robotics/spacecraft controls + built production agentic AI systems as startup CTO + CV/perception background (Pytheia)
 **Pitch:** Rare combination of PhD-level controls/optimization expertise and production agentic systems experience. Built a real agentic pipeline at Roostr (sense-plan-act on semantic data), CV/perception systems at Pytheia. Not a pure ML researcher but someone who builds AI systems that work in the real world.
 
+## Call Notes — Raymond Bjorkman (2026-02-11)
+
+**The vision:** AI determines the research direction, then robots execute the experiments autonomously.
+
+**Raymond's team (Lab Automation):**
+- Building out 2-3 robotics engineers
+- Building a stack to automate lab equipment
+- "Lego ecosystem" for the lab — modular, composable tooling
+- Robots are **robotic arms**
+- ROS-based, but pragmatic — "build whatever works"
+- Looking for **generalists**
+
+**Company stage:** Actually building now (not just research/planning). Raymond joined ~5 months ago.
+
+**Eval framework** is a key focus area for the AI team.
+
+**Potential deal-killers discussed:**
+- Location: 5 days/week on-site
+- Currently at 29th St, **moving to Brooklyn Navy Yard**
+
+**Mark's take:** Could be interesting.
+
 ## Notes
 - Raymond Bjorkman's LinkedIn post (2w ago) invites people to reach out or apply directly
-- NYC on-site fits location preference perfectly
+- NYC on-site fits location preference perfectly (BNY even better — multiple robotics companies there)
 - All three roles are on-site, which is fine
 - Consider upgrading tier if process gains traction (strong PhD fit + NYC + warm lead)
+- Raymond responded and had a call — good signal, process is moving

@@ -23,13 +23,13 @@
 
 **Important:** Not a one-size-fits-all process. Sarkis is open to working with Mark's background and what he has to offer. Flexible on fit.
 
-## Key Themes
-- **Agentic workflows** - building agentic workflows for a hedge fund (confirmed by Marcus)
-- **AI Coscientist paper** - Sarkis has been thinking about this; likely to come up in conversation
+## Key Themes (updated after Sarkis call 2/11)
+- **Build prototypes for researchers fast** - open-ended, startup culture. Accelerating the quant research cycle (idea → data cleaning → backtest → ...)
+- **Quant Co-scientist vision** - AI determines research direction, agents assist with execution. Inspired by AI Coscientist paper.
 - **Small elite team** - 4 engineers, ~80 people total at the firm
 - **High-touch environment** - full onsite, close collaboration
-- **Quant focus** - intersection of quantitative research and engineering
 - **Fresh hire preference** - hedge funds prefer founders/big tech over other fund hires (IP theft litigation risk)
+- **Not rigid process** - open to working with Mark's specific background and strengths
 
 ## Your Angle
 **Resume:** Product Founder (agentic systems experience at Roostr)
