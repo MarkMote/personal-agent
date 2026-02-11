@@ -352,4 +352,92 @@ It's a tendency I continue to manage deliberately by protecting time for deep wo
 
 ## If they ask for examples
 
-> “One direction is data plays around uniquely hard physical data, like high-resolution earth observation or dense real-world telemetry. Another is platform infrastructure: something like a React-for-robots or Vercel-for-robotics that standardizes deployment, testing, safety, and iteration in physical systems.”
+> "One direction is data plays around uniquely hard physical data, like high-resolution earth observation or dense real-world telemetry. Another is platform infrastructure: something like a React-for-robots or Vercel-for-robotics that standardizes deployment, testing, safety, and iteration in physical systems."
+
+---
+
+# D.E. Shaw Behavioral Angles
+
+*From their prep guide. These hit differently than standard STAR questions. They care about self-awareness, rigorous thinking, and collaboration.*
+
+---
+
+## How has your approach to solving a specific problem evolved with more experience?
+
+*Tip: They want to see growth and self-awareness, not just "I got better." Pick one problem class and show how your thinking changed.*
+
+Think about: early Pytheia (brute force, build everything yourself) vs Roostr (lean on existing tools, LLMs, focus on the integration layer). Or: how your approach to system architecture changed after shipping Argus and realizing the perception pipeline needed to be modular, not monolithic.
+
+---
+
+## What were your individual contributions vs the team's?
+
+*Tip: D.E. Shaw cares about this a lot. They want to know what YOU did, not what the company did. Be precise.*
+
+Roostr: you were the sole production engineer. Everything technical was you. Be specific: "I designed the agent architecture, built the FSM policy graph, wrote the email parsing pipeline, built the frontend." At Pytheia: "I built Argus end-to-end, but I also did all the sales and customer discovery." PhD: "My thesis work was individual, but the Robotarium was collaborative. I built the safety verification layer, others built the hardware and comms."
+
+---
+
+## How have you impacted the teams you've worked on?
+
+*Tip: At Roostr you're a team of two. At Pytheia you were CEO. Frame impact as: what did you enable others to do?*
+
+Think about: Roostr - freeing Jacky to focus on sales/ops because the tech stack was reliable. Pytheia - enabling the team to test perception algorithms without worrying about infrastructure. PhD/Robotarium - the safety verification framework let 16,000+ external experiments run without human oversight.
+
+---
+
+## What would you do differently in retrospect?
+
+*Tip: They explicitly ask this. Have 2-3 ready. Be honest, not defensive.*
+
+- Pytheia: would have validated distribution earlier instead of assuming the product would sell itself
+- Roostr: would have hired a part-time contractor sooner instead of trying to do everything solo
+- PhD: would have pursued more exploratory research at JPL instead of optimizing for near-term deliverables
+
+---
+
+## What questions would you tackle next?
+
+*Tip: This is about intellectual curiosity and forward thinking. What unsolved problems keep you up at night?*
+
+Think about: the gap between LLM capabilities and reliable agentic systems (how do you make agents that don't fail silently?). Or: the tooling gap in robotics (why is deploying a robot 100x harder than deploying a web app?). Or: safe autonomy at scale (your PhD topic, still largely unsolved).
+
+---
+
+## How have you handled ethical decision-making?
+
+*Tip: Not a trick question. They want to see you've thought about it.*
+
+Think about: at Roostr, automating jobs that real people do. You chose to build tools that augment operators rather than replace them wholesale. At Pytheia, camera-based perception raises privacy questions. Your PhD work on collision-inclusive trajectories was literally about minimizing harm when things go wrong.
+
+---
+
+## What excites you about D.E. Shaw?
+
+*Tip: "I don't need finance knowledge" but show you understand what they do with GenAI.*
+
+D.E. Shaw applies quantitative and computational methods at massive scale. The GenAI role is about bringing LLM/agentic capabilities into that infrastructure. What's exciting: the combination of rigorous engineering culture with cutting-edge AI, applied to problems where correctness and reliability actually matter (not just demos). The scale of compute and data they operate at. The intellectual caliber of the team.
+
+---
+
+## Imagine you're new to a project and not sure about next steps. What do you do?
+
+*Tip: Situational question. They want process, not bravado.*
+
+Map the system first. Read the code, read the docs, talk to whoever built it. Identify what the current bottleneck or goal is. Ask clarifying questions early rather than spending a week going the wrong direction. At Roostr every new customer integration started this way: understand their workflow before writing any code.
+
+---
+
+## How would you weigh a decision that isn't clear-cut?
+
+*Tip: They want structured thinking under uncertainty.*
+
+Identify what's reversible vs irreversible. For reversible decisions, bias toward action and learn from the result. For irreversible decisions, invest more in analysis. Frame the tradeoffs explicitly. At Pytheia, the pivot from CV to LLM was nearly irreversible, so you spent weeks validating demand before committing. At Roostr, most product decisions were reversible, so you shipped fast and iterated.
+
+---
+
+## Tell us about your creative accomplishments outside of work.
+
+*Tip: They literally ask this. Have something ready.*
+
+Think about: the language learning app you built, any side projects, the zero-gravity quadcopter from undergrad, or anything personal that shows intellectual curiosity beyond your job.

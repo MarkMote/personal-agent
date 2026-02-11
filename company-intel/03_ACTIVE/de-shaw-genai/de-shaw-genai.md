@@ -22,17 +22,22 @@
 - "Two new trading teams" also spinning up
 - They want: scrappy founders who ship fast + care about code quality/fundamentals
 
-**Interview Process:**
-1. Round 1: General fit + maybe one tech question
-2. Round 2: Main technical screening
-3. Round 3: 3 people (including Max Kabin?)
-4. Pass → Dinner + in-person offer
+**Interview Process (updated 2/10 from Marcus):**
+- One-size-fits-all process: 5 calls, 3 rounds
+1. **Round 1 (Fri 2/13 2pm):** Leetcode easy or medium. Standard leetcode (e.g. calculate square root, binary search). With Max Ma.
+2. **Round 2:** High-level design. Things you've built. "How would you build an agent to do X end-to-end" (document processing, doc search, agent eval).
+3. **Final round:** Meet with Mark and Max (Mark's boss). If you get to onsite, it's essentially a formality.
+- All about agentic workflows and GenAI. Will want to know what you did at Roostr.
 
 **Prep needed:**
-- Leetcode mediums
+- Leetcode easy-mediums (Round 1 focus)
 - SWE fundamentals
-- Agentic design patterns + failure modes
-- System design: "how would you build X"
+- Agentic design patterns + failure modes (Round 2 focus)
+- System design: "how would you build X" (Round 2 focus)
+
+**Industry context (from Marcus):** Hedge funds prefer hiring founders and big tech engineers over other fund employees — IP theft litigation risk means they avoid poaching from competitors. Mark's founder background is ideal.
+
+**Potential lead:** Marcus may also connect Mark with **PDT Partners**.
 
 ## Status
 - 2026-01-15: Inbound via LinkedIn from Marcus (Vulcan recruiter)
@@ -40,4 +45,5 @@
 - 2026-01-15: Marcus asked to schedule via Calendly
 - 2026-01-15: Booked intro call Wed Jan 22 5:30pm ET
 - 2026-01-21: Recruiter screen completed. Strong positive. Small elite team, real products.
-- **Next:** Schedule Round 1 for Week 8 (~Feb 17-21). Marcus will follow up.
+- 2026-02-10: Marcus prep call. Updated interview process details. Round 1 confirmed Fri 2/13 2pm.
+- **Next:** Round 1, Fri 2/13 2pm ET (WebEx with Max Ma)

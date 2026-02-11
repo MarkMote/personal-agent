@@ -4,8 +4,9 @@
 - **Location:** Manhattan (5 days onsite required)
 - **AUM:** $6 billion
 - **Type:** Quantitative hedge fund
+- **Firm Size:** ~80 people total
 - **Team Size:** Front Office Engineering team (4 people - very small!)
-- **Focus:** Agentic systems, quant trading technology
+- **Focus:** Agentic workflows for hedge fund operations
 
 ## Role Details
 - **Position:** Front Office Engineer (Quant GenAI focus)
@@ -16,15 +17,19 @@
 
 ## Interview Process
 1. **Intro call:** 30-min fit assessment (no coding) - with Sarkis
-2. **Technical rounds:** 2x interviews with Quant Devs (live coding)  
+2. **Technical rounds:** 2x interviews with Quant Devs (live coding)
 3. **Final meetings:** 1 with QR (Quantitative Researcher), 1 with Trader
 4. **Reference/Offer stage**
 
+**Important:** Not a one-size-fits-all process. Sarkis is open to working with Mark's background and what he has to offer. Flexible on fit.
+
 ## Key Themes
-- **Agentic systems** - likely AI agents for trading/research
-- **Small elite team** - 4 engineers supporting $6B fund
+- **Agentic workflows** - building agentic workflows for a hedge fund (confirmed by Marcus)
+- **AI Coscientist paper** - Sarkis has been thinking about this; likely to come up in conversation
+- **Small elite team** - 4 engineers, ~80 people total at the firm
 - **High-touch environment** - full onsite, close collaboration
 - **Quant focus** - intersection of quantitative research and engineering
+- **Fresh hire preference** - hedge funds prefer founders/big tech over other fund hires (IP theft litigation risk)
 
 ## Your Angle
 **Resume:** Product Founder (agentic systems experience at Roostr)
@@ -80,6 +85,7 @@
 - Understand the difference between Front Office (trading) vs Middle/Back Office
 - Be ready to discuss reliability, latency, and risk management for AI systems
 - Prepare examples of how you've built systems that handle real money/business decisions
+- **Read the AI Coscientist paper** — Sarkis will likely want to discuss it. This is the kind of work he's thinking about for the team.
 
 ## Post-Interview Action Items
 - [ ] Update tracker with interview notes and next steps

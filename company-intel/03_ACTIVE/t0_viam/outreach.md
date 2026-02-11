@@ -74,4 +74,7 @@ Would be glad to chat if you think there's a fit.
 
 ## Notes
 
-_Add notes from conversations here_
+### Feb 10, 2026 - Interview invite from Matt Leva
+Matt emailed: hiring team impressed with background, moving to first-stage interview with **Ian (VP of Product)** over Zoom. Alexa (cc'd) coordinating scheduling. Submit availability via link.
+
+This is a product/fit screen, not technical. No need to delay.

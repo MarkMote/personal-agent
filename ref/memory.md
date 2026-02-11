@@ -4,13 +4,23 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
+## 2026-02-10 (Tue, W07)
+
+- Marcus prep call completed. Key intel updates:
+  - D.E. Shaw: one-size-fits-all process, 5 calls 3 rounds. Round 1 (Fri 2/13) = leetcode easy/medium. Round 2 = high-level design ("build an agent to do X"). Final round = meet Mark + Max (boss), onsite is formality.
+  - Laurion: ~80 people total, Sarkis interested in AI Coscientist paper, not a rigid process — open to Mark's background
+  - Marcus may connect Mark with **PDT Partners** (new lead)
+  - Industry note: hedge funds prefer founders/big tech hires over competitor poaches (IP theft risk)
+- Laurion call tomorrow Tue 2/11 1pm w/ Sarkis — prep: read AI Coscientist paper, Roostr agentic systems story
+- **Archer onsite confirmed: Thu 2/26, 11:45am-3:30pm PST, 190 W Tasman San Jose.** Case study presentation + 5 interviews (Mason U'ren, Peter Anderson, Dheepak Khatri, Suresh Kannan, Dennis Ding). Travel covered via Navan. Need to request 2nd hotel night from Jessica (jcadigal@archer.com). Casual dress, bring personal laptop for case study via Zoom.
+
 ## 2026-02-09 (Mon, W07)
 
 ### Schedule (confirmed)
 - Tue 2/11 1pm: Laurion Capital interview w/ Sarkis
-- Tue 2/11 4pm: Archer Aviation phone screen w/ Dennis
+- ~~Tue 2/11 4pm: Archer phone screen~~ CANCELLED — skipped to onsite directly. TBD scheduling.
 - Tue 2/17 10:30am: Jane Street SWE coding round (NOT ML — standard SWE interviewer, CoderPad)
-- Tue 2/18 2:30pm: Anthropic HM screen w/ Samuel Flamini (Google Meet)
+- Wed 2/18 2:30pm: Anthropic HM screen w/ Samuel Flamini (Google Meet)
 - Mon 2/24 9:30am: Scale AI technical screen (1hr, live coding, Python, not leetcode - more implementation/data manipulation)
 - TBD: D.E. Shaw internal screen (scheduling w/ Max Ma, likely post-2/17)
 
@@ -31,8 +41,8 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ### Active processes
 - Anthropic (T0): HM screen 2/18 w/ Samuel Flamini. Research Tools app rejected (doesn't affect FDE). Samuel's background: sales/ops/devrel path, not deep eng. Lean into founder angle.
-- Percepta (T0): pivoted to Research PM track. Waiting on Jackie (head of recruiting). Brandon looped in.
-- D.E. Shaw GenAI (T0): interview invite received, email typo needs fixing. Max Ma (internal recruiting) scheduling. Marcus Roberts Rajoo is external recruiter (Vulcan), not D.E. Shaw.
+- ~~Percepta (T0):~~ **REJECTED 2/9.** "Looking for more enterprise experience." Possibly triggered by Research PM pivot. Brandon offering other options. Moved to 01_disqualified.
+- D.E. Shaw GenAI (T0): **Fri 2/13 2pm ET confirmed.** Technical first round — CoderPad possible, GenAI + algorithms + behavioral mix. WebEx link in email. Max Ma (internal recruiting). Marcus Roberts Rajoo is external recruiter (Vulcan).
 - Jane Street (T0): SWE coding round Tue 2/17 10:30am. Standard SWE interviewer, no ML context. ML rounds come later. Reviewed ML interview guide PDF + blog post + prep page. interview_prep.md created.
 - Archer (T1): Dennis call 2/11 4pm. C++ strategy: "domain knowledge takes years, C++ is a tool I can ramp on"
 - Laurion Capital (T1): Sarkis call 2/11 1pm
@@ -45,7 +55,7 @@ Read this first every session. Short entries only. Detail lives in company intel
 - Location tier: NYC > SF > international > everything else. Mexico acceptable for right role.
 - Percepta: Research PM over embedded researcher (founder background maps better)
 - SpaceX: apply cold to all GNC roles, save Lars Blackmore connection as escalation
-- D.E. Shaw: this screen is internal first contact (not technical round). Schedule after Jane Street.
+- D.E. Shaw: Round 1 confirmed Fri 2/13. One-size-fits-all process (5 calls, 3 rounds). Round 1 = leetcode easy/medium. Round 2 = high-level design. Final = onsite (formality).
 - Scale robotics: don't raise it now, Hannah already planted the seed. Get in via FDE, transfer later.
 - Most overdue follow-ups were InMail/connection requests that weren't accepted. Can't re-send. Moving on from those unless finding alternate contacts.
 - Resume typo (markmote vs marklmote) caused D.E. Shaw email issue. Need to check which resume PDF has the error.

@@ -57,8 +57,15 @@ Pivoted from embedded researcher to Research PM track.
 
 Told Brandon call went great, pursuing Research PM, Jackie handling next steps.
 
+### Feb 9, 2026 - Rejection (Brandon)
+**Status:** Rejected
+**Channel:** Email
+
+> "Hi Mark - unfortunately Percepta decided not to move forward at this time. Seems like they're looking for a little more experience with large enterprise clients. I'll share a few more options"
+
 ## Notes
-- Tier 0 opportunity (General Catalyst backing + MIT research leadership)
-- Good fit for research-to-practice bridge background
-- Fast response time after delayed reply suggests strong interest
-- **Athul taking the call personally = high interest signal**
+- Rejected after pivoting from Embedded Researcher to Research PM
+- Stated reason: "more experience with large enterprise clients"
+- Possible real reason: role pivot may have confused their process, or enterprise experience was always the gap
+- Brandon offering to share other opportunities — keep relationship warm
+- Fast turnaround: rejected ~3 days after pivoting to Research PM track

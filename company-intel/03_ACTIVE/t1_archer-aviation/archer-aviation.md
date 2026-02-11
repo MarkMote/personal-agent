@@ -20,20 +20,60 @@
 ## Status
 - 2026-02-02: Call with Suresh (thought it was Shield AI, he'd moved to Archer)
 - 2026-02-02: Received email from Eddy Yu requesting phone screen availability
-- 2026-02-11: Dennis call confirmed Tue 2/11 4pm ET (phone screen / HM screen?)
-- **Next:** Dennis call Tue 2/11 4pm ET
+- ~~2026-02-11: Dennis call confirmed Tue 2/11 4pm ET~~ CANCELLED — skipped phone screen, advanced directly to onsite
+- 2026-02-10: **Onsite confirmed Thu 2/26 in San Jose, CA**
+- **Next:** Onsite interview Thu Feb 26, 11:45am-3:30pm PST
 
-## C++ Strategy
-- Mark has no recent C++ but strong Python + PhD numerical computing (MATLAB)
-- At Staff level, domain expertise (GNC, trajectory opt, safe autonomy) is the value, not C++ fluency
-- If C++ interview happens: prep Eigen, basic OOP for controls, LeetCode mediums in C++
-- Frame: "Recent work has been Python-heavy, but PhD involved numerical computing. C++ is a tool I can ramp on — the domain knowledge is what takes years."
+## C++ Reality
+- Mark has **zero C++ experience** — not rusty, just never used it. Cannot learn before this interview.
+- At Staff level, domain expertise (GNC, trajectory opt, safe autonomy) is the value proposition.
+- If C++ comes up, be honest: "I don't have C++ experience. My work has been Python and MATLAB. The domain knowledge and the math are what I bring — C++ is a tool I'd ramp on."
+- Don't try to fake it.
+
+## Case Study Prep
+- **Topic:** PhD safe autonomy work (Robotarium barrier certificates / CBF). Maps directly to Archer's FAA certification challenge — "how do you guarantee an autonomous vehicle doesn't do something unsafe."
+- **Backup topic:** Trajectory optimization thesis work (maps to flight planning).
+- **Format:** ~30-35 min presentation + ~25 min Q&A. Audience is 5 autonomy engineers.
+- **Prep time:** 3-5 hours if adapting PhD defense/conference slides, 6-8 hours from scratch.
+- **When to prep:** Week of 2/23 (after Shaw, Jane Street, Anthropic, Scale). Don't start before then.
+
+## Onsite Interview — Thu Feb 26, 2026 (San Jose, CA)
+
+**Location:** 190 W Tasman, San Jose, CA
+**Logistics:** Free parking. Check in at lobby iPad under recruiter/coordinator name. Casual dress.
+**Coordinator:** Jessica Cadigal (jcadigal@archer.com)
+**Travel:** Archer covers round-trip flight + 1 hotel night + $75 meal/transport reimbursement via Navan. Need to request 2nd hotel night (cross-country flight from LGA).
+**Case Study:** Bring personal laptop (NOT work laptop). Present via Zoom to connect to TV. Share backup copy of presentation. Download Zoom beforehand.
+
+### Schedule (all PST)
+| Time | Type | Interviewers |
+|------|------|-------------|
+| 11:45am-12:00pm | Greet | Jessica Cadigal, Eddy Yu |
+| 12:00pm-1:00pm | **Case Study** | Mason U'ren, Suresh Kannan, Peter Anderson, Dheepak Nand Kishore Khatri, Xuchu (Dennis) Ding |
+| 1:00pm-1:30pm | Interview | Mason U'ren |
+| 1:30pm-2:00pm | Interview | Peter Anderson |
+| 2:00pm-2:30pm | Interview | Dheepak Nand Kishore Khatri |
+| 2:30pm-3:00pm | Interview | Suresh Kannan |
+| 3:00pm-3:30pm | Interview | Xuchu (Dennis) Ding |
+
+**Zoom link (case study):** https://archer.zoom.us/j/87111600117?pwd=ce1kMbmV0fWzBWBgUujphsBHiQaaOm.1
+
+### Prep Resources (from Archer)
+- Archer's Master Plan
+- Latest Investor Deck / Shareholder Letter
+- Midnight Production eVTOL Aircraft Unveil (YouTube)
+- Archer News
 
 ## Key People
 | Name | Role | Notes |
 |------|------|-------|
-| Suresh Kannan | Scientist | Warm contact - did consulting work previously. Just joined from Shield AI |
-| Eddy Yu | Recruiter | eyu@archer.com - initial outreach |
+| Suresh Kannan | Scientist | Warm contact - did consulting work previously. Just joined from Shield AI. **Interviewer 2:30pm** |
+| Eddy Yu | Recruiter | eyu@archer.com - initial outreach. **Greeter** |
+| Jessica Cadigal | Recruiting Coordinator | jcadigal@archer.com - onsite logistics, travel booking |
+| Mason U'ren | (TBD) | **Case study + 1:00pm interview** |
+| Peter Anderson | (TBD) | **Case study + 1:30pm interview** |
+| Dheepak Nand Kishore Khatri | (TBD) | **Case study + 2:00pm interview** |
+| Xuchu (Dennis) Ding | (TBD) | **Case study + 3:00pm interview** |
 
 ## Company Overview
 
