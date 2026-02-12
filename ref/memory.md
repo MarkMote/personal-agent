@@ -4,6 +4,15 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
+## 2026-02-12 (Thu, W07)
+
+- **Fauna Robotics: Josh Merel replied.** Wants to meet week of Feb 23 or Mar 2. Sent to typo email (markmote), forwarded by other Mark. Moved Fauna to 03_ACTIVE. Draft reply in message_draft.md — corrects email, keeps scheduling open.
+- **Viam: Ian Whalen (VP Product) interview confirmed Feb 17 3pm ET.** Zoom details saved. Note: same day as Jane Street (10:30am) — no conflict.
+- **Archer: flights + hotel booked.** LGA→SJC Wed 2/25, return Fri 2/27. Jessica denied 2nd hotel night (policy). Mark covering out of pocket.
+- **Laurion/Sarkis call recap:** Mark says most enjoyable conversation of the search. Role is in his wheelhouse. Waiting to hear if Sarkis moves him forward. Connected on LinkedIn.
+- **PDT Partners (via Marcus):** Declined for now. Good firm but general SWE, not ideal fit. Told Marcus to revisit in 1-2 weeks. Draft in message_draft.md.
+- **Interview prep:** Worked through wednesday.md tree problems (Serialize/Deserialize, Validate BST, Kth Smallest, Construct from Preorder+Inorder). All 3 cores covered conceptually + code.
+
 ## 2026-02-10 (Tue, W07)
 
 - Marcus prep call completed. Key intel updates:

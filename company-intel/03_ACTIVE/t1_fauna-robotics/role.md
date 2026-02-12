@@ -49,3 +49,15 @@
 - Bolun Dai (Research Scientist) - Thomas Gurriet is mutual connection / co-author
 - Rob Cochran (CEO)
 - Lerrel Pinto (Co-founder)
+
+---
+
+## Status
+- 2026-01-27: Applied + sent LinkedIn connection request to Anthony Moschella
+- 2026-02-12: **Josh Merel replied** (sent to typo email markmote@gmail.com, forwarded by other Mark). Wants to meet. Available week of Feb 23 or Mar 2. NYC / ET timezone.
+- **Next:** Intro call with Josh Merel, targeting week of Feb 23 or Mar 2.
+
+## Josh Merel
+- Email: josh@faunarobotics.com
+- Reached out proactively after seeing Mark's inbound application
+- Need to reply from correct email (marklmote@gmail.com) and note the typo

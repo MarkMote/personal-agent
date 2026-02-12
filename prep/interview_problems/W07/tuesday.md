@@ -216,3 +216,7 @@ You're building an API for a company that needs to ingest thousands of documents
 - Search: full-text vs embeddings vs both? How do you index?
 - What breaks at 10x scale? At 100x?
 - How would you add a new document type in 6 months without rewriting?
+
+
+UNDERSTAND: 
+- how would i do rag on my thesis

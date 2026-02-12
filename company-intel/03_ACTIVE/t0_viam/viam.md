@@ -55,5 +55,23 @@ Robotics software is fragmented and hard to scale. Every team reinvents the whee
 - Can apply via LinkedIn or Greenhouse form (resume + cover letter optional)
 - Direct outreach to Eliot is the play - founder-to-founder, he's technical, FDE is senior enough role
 
+## Status
+- 2026-01-29: Applied
+- 2026-02-02: Matt Leva (recruiter) reached out
+- 2026-02-06: Intro call with Matt
+- 2026-02-12: **Interview confirmed: Ian Whalen (VP Product), Feb 17 3:00pm ET**
+  - Zoom: https://viam.zoom.us/j/83896334059?pwd=8gNMHXAM3pGQEMxv1aQDeXaunyfS14.1
+  - Meeting ID: 838 9633 4059, Passcode: 013496
+  - Coordinated by Alexa Ridolfi (People Ops)
+  - Alexa suggested reviewing company values before the call
+
+## Key People
+| Name | Role | Background |
+|------|------|------------|
+| Eliot Horowitz | CEO | MongoDB co-founder/CTO |
+| Ian Whalen | VP Product | **Interviewer Feb 17** |
+| Matt Leva | Recruiter | Initial outreach |
+| Alexa Ridolfi | People Ops Associate | Coordinating interviews |
+
 ## Notes
 _Add notes from conversations here_

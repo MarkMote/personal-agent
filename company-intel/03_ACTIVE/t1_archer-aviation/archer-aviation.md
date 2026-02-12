@@ -35,14 +35,15 @@
 - **Backup topic:** Trajectory optimization thesis work (maps to flight planning).
 - **Format:** ~30-35 min presentation + ~25 min Q&A. Audience is 5 autonomy engineers.
 - **Prep time:** 3-5 hours if adapting PhD defense/conference slides, 6-8 hours from scratch.
-- **When to prep:** Week of 2/23 (after Shaw, Jane Street, Anthropic, Scale). Don't start before then.
+- **When to prep:** Sat 2/21 (full day, ~8-10 hrs). Case study + company research + interviewer LinkedIn + behavioral answers. Tue 2/24 for any final touches. Light review on Wed flight.
 
 ## Onsite Interview — Thu Feb 26, 2026 (San Jose, CA)
 
 **Location:** 190 W Tasman, San Jose, CA
 **Logistics:** Free parking. Check in at lobby iPad under recruiter/coordinator name. Casual dress.
 **Coordinator:** Jessica Cadigal (jcadigal@archer.com)
-**Travel:** Archer covers round-trip flight + 1 hotel night + $75 meal/transport reimbursement via Navan. Need to request 2nd hotel night (cross-country flight from LGA).
+**Travel:** Archer covers round-trip flight + 1 hotel night + $75 meal/transport reimbursement via Navan. 2nd hotel night request denied (company policy) — Mark covering out of pocket.
+**Flights booked:** LGA → SJC Wed 2/25 (arrive 5:55pm, 1 stop DEN), SJC → LGA Fri 2/27 (depart 11:30am, 1 stop DAL). Southwest.
 **Case Study:** Bring personal laptop (NOT work laptop). Present via Zoom to connect to TV. Share backup copy of presentation. Download Zoom beforehand.
 
 ### Schedule (all PST)

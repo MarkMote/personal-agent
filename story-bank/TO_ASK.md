@@ -14,6 +14,7 @@
 	- Would have to happen in the next 1-2 years for you to look back and think "this was the best hiring decision i ever made"
 - **BACKGROUND**: Is there anything about my background that gives you a pause? 
 - **SUPRISE**: What's suprised you most about the company since joining?
+- **DEAL BREAKERS**: Are the any non-negotiables or deal breakers i should know about?
 - **LAST**: Is there anything you wished I should have asked you but didn't?
 
 
