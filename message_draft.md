@@ -1,3 +1,62 @@
+## Drift — Application email to founders@godrift.ai
+**Date:** 2026-02-13
+**Status:** DRAFT
+**Channel:** Email to founders@godrift.ai (+ LinkedIn apply)
+
+---
+
+Subject: Founding AI & Robotics Engineer — Mark Mote
+
+Hi Sanjil,
+
+Saw the Founding AI & Robotics Engineer posting and it caught my attention. My background is a close match: I'm a robotics PhD (Georgia Tech, controls and optimization) and I just spent the last year as CTO of an AI startup where I built our entire agentic pipeline from scratch, including RAG, document processing, and tool-use agents in production.
+
+Quick summary:
+- PhD in robotics/controls with simulation and ROS experience
+- Built production LLM agent systems at Roostr (AI freight forwarder) as sole engineer
+- Previously founded Pytheia (computer vision for industrial inspection)
+- Python is my primary language, comfortable with TypeScript
+
+The intersection of agentic AI and robotics simulation is exactly where my two skill sets meet. Happy to share more or jump on a call.
+
+Best,
+Mark Mote
+marklmote@gmail.com
+linkedin.com/in/mote
+
+---
+
+## Radical AI — Reply to Dave Veisz (schedule first round)
+**Date:** 2026-02-13
+**Status:** SENT
+**Channel:** Email reply to Dave Veisz (dveisz@radical-ai.com)
+
+---
+
+Hi Dave,
+
+Thanks for reaching out, I'd love to chat.
+
+Let's do 11am Wednesday (2/18) if it still works.
+
+Looking forward to it.
+
+Best,
+Mark
+
+---
+
+## Fauna — Reply to Josh Merel (confirm invite)
+**Date:** 2026-02-13
+**Status:** DRAFT
+**Channel:** Email reply to Josh Merel (josh@faunarobotics.com)
+
+---
+
+Ha — you're right, good catch. Works perfectly, see you then!
+
+---
+
 ## Fauna — Reply to Josh Merel (schedule intro + fix email)
 **Date:** 2026-02-12
 **Status:** DRAFT

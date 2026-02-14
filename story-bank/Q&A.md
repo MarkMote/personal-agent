@@ -69,6 +69,39 @@ I can go into a specfic workflow if you would like, but the big picture was to u
 
 Specific Workflow: procurement - say we need to answer the question "How do i ship a 40ft container from amsterdam to san diego"
 
+
+## How often were you interfacing with customers 
+
+
+## Can you go into more detail about the procurement agent at Roostr, like how specifically did it work 
+
+
+
+
+## What didn't you get to do? If you were still working on it, what would you want to add? 
+
+
+
+
+## Can you talk about a time you had to work with someone non-technical and explain the product there? What were the challenges? 
+
+
+
+## Is there a time a user requested something that you had to push back on. 
+
+
+
+## How do you think about making a great UI? 
+
+
+
+
+
+
+
+
+
+
 ---
 ## What did you do at Pytheia 
 3d camera based perception. 

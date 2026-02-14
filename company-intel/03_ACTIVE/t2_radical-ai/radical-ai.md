@@ -38,6 +38,7 @@
 | Name | Role | Notes |
 |------|------|-------|
 | Joseph Krause | CEO | |
+| Dave Veisz | Head of Automation | Reached out 2/13 to schedule intro call. dveisz@radical-ai.com |
 | Raymond Bjorkman | Robotics Engineer | Posted LinkedIn hiring announcement. Warm lead. |
 
 ## Your Angle
@@ -66,6 +67,11 @@
 - Currently at 29th St, **moving to Brooklyn Navy Yard**
 
 **Mark's take:** Could be interesting.
+
+## Call Scheduled — Dave Veisz, Head of Automation (2026-02-18 11am ET)
+- Dave reached out 2/13 after reviewing application for Robotics role
+- 30-minute intro call to discuss role + Mark's background
+- Dave is Head of Automation — leadership level, good sign that they're bringing him in after Raymond's screen
 
 ## Notes
 - Raymond Bjorkman's LinkedIn post (2w ago) invites people to reach out or apply directly

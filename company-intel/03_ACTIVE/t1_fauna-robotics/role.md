@@ -55,9 +55,9 @@
 ## Status
 - 2026-01-27: Applied + sent LinkedIn connection request to Anthony Moschella
 - 2026-02-12: **Josh Merel replied** (sent to typo email markmote@gmail.com, forwarded by other Mark). Wants to meet. Available week of Feb 23 or Mar 2. NYC / ET timezone.
-- **Next:** Intro call with Josh Merel, targeting week of Feb 23 or Mar 2.
+- 2026-02-13: Confirmed intro call Tue 2/24 5pm ET with Josh Merel.
 
 ## Josh Merel
 - Email: josh@faunarobotics.com
 - Reached out proactively after seeing Mark's inbound application
-- Need to reply from correct email (marklmote@gmail.com) and note the typo
+- Email typo was on resume (markmote), not on registration — Josh caught it
