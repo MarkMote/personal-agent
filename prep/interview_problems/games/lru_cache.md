@@ -2,6 +2,8 @@
 
 Jane Street's canonical blog example. The "Memo" problem. Practice until this is muscle memory.
 
+**Task:** Build a memoization wrapper for functions that caches results. Add a capacity limit — when the cache is full, evict the **least recently used** entry. Both `get` and `put` must be O(1).
+
 ```python
 class LRUCache:
     def __init__(self, capacity: int): ...

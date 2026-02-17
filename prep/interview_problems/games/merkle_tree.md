@@ -1,6 +1,8 @@
 # Merkle Tree
 
-Build a Merkle tree with incremental hash verification. Reported Jane Street problem.
+Reported Jane Street problem.
+
+**Task:** Given a list of data items, build a Merkle tree (binary tree where each node stores the hash of its children). Then implement `get_proof(index)` that returns the minimal set of hashes needed to verify a specific item, and `verify(index, value, proof)` that checks the proof against the root hash.
 
 ```python
 import hashlib

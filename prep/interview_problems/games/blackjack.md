@@ -1,6 +1,6 @@
 # Blackjack
 
-Build a Blackjack game engine. Progressive stages.
+**Task:** Build a Blackjack game. Deal cards from a shuffled deck, compute hand values (aces count as 11 or 1 to avoid busting), and run a game loop where players hit or stand.
 
 ```python
 class Deck:

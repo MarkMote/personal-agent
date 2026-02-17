@@ -1,6 +1,8 @@
 # Rate Limiter
 
-General-purpose "build a thing" problem. Reported at Scale AI, Stripe, and various tech companies.
+Reported at Scale AI, Stripe, and various tech companies.
+
+**Task:** Build a rate limiter. `allow(client_id, timestamp)` returns `True` if the client is under the request limit for the current time window, `False` otherwise. Each client is tracked independently. Handle edge cases at window boundaries.
 
 ```python
 class RateLimiter:

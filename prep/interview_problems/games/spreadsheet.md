@@ -1,6 +1,6 @@
 # Spreadsheet Engine
 
-Classic "build a thing" problem. Tests expression evaluation, graph dependencies, topological sort.
+**Task:** Build a spreadsheet. Cells hold numbers, strings, or formulas (e.g. `"=A1+B2"`). `get(cell)` evaluates the cell's value, resolving any references to other cells. Handle dependency chains and detect circular references.
 
 ```python
 class Spreadsheet:

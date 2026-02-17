@@ -1,6 +1,6 @@
 # Minesweeper
 
-Build a Minesweeper game engine. Progressive stages.
+**Task:** Build Minesweeper. Place mines randomly on a grid, compute adjacency counts for each cell, and implement `reveal(row, col)` — if the cell is a mine the game is over, if it's a zero it flood-fills to reveal all connected empty cells.
 
 ```python
 class Minesweeper:

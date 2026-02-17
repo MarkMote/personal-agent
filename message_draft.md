@@ -1,3 +1,16 @@
+## Marcus — D.E. Shaw update + Laurion scheduling
+**Date:** 2026-02-15
+**Status:** DRAFT
+**Channel:** Reply to Marcus (LinkedIn message)
+
+---
+
+Hey Marcus — Shaw didn't go well. I underestimated the prep time needed for the coding assessment and didn't recognize the pattern quickly enough to solve the problem cleanly. Not expecting to hear back on that one.
+
+Great to hear about Laurion though. Let's do Thursday 2/19 at 11am ET if that works for Yev. Friday 2/20 same time works too if needed.
+
+---
+
 ## Drift — Application email to founders@godrift.ai
 **Date:** 2026-02-13
 **Status:** DRAFT

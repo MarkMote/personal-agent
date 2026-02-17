@@ -1,6 +1,8 @@
 # In-Memory Key-Value Database
 
-Anthropic's canonical CodeSignal problem. Also reported at Scale AI and Rippling. The exact format Anthropic uses for their coding assessment.
+Anthropic's canonical CodeSignal problem. Also reported at Scale AI and Rippling.
+
+**Task:** Build an in-memory key-value store where each key maps to a set of field/value pairs (like a row with columns). Support `set`, `get`, `delete`, plus queries that scan/filter across keys, and transactions with rollback.
 
 ```python
 class Database:

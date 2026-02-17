@@ -1,10 +1,14 @@
 # Expression Parser
 
-Build a math expression evaluator. This is the exact problem type from D.E. Shaw — nail it this time.
+D.E. Shaw problem type (Jan 2026).
+
+**Task:** Given a math expression as a string (e.g. `"3 + 5 * 2"`), evaluate it and return the numeric result. Handle operator precedence (`*`/`/` before `+`/`-`) and parentheses.
 
 ```python
 def evaluate(expression: str) -> float: ...
 ```
+
+---
 
 ## Stage 1 — Single operations (~5 min)
 - Parse and evaluate: `"3 + 5"` → 8, `"10 / 2"` → 5.

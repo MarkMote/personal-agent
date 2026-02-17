@@ -1,6 +1,8 @@
 # State Machine Simulator
 
-Build a configurable state machine. Reported Jane Street pattern.
+Reported Jane Street pattern.
+
+**Task:** Build a configurable state machine. Register transitions (`from_state + event → to_state`), then process a sequence of events. The machine moves between states according to registered transitions and optionally runs callbacks on each transition.
 
 ```python
 class StateMachine:

@@ -1,6 +1,6 @@
 # Connect Four
 
-Build a Connect Four game engine. Progressive stages.
+**Task:** Build a Connect Four game on a 6x7 grid. Players take turns dropping pieces into columns. Pieces fall to the lowest empty row. Detect when a player gets 4 in a row (horizontal, vertical, or diagonal).
 
 ```python
 class ConnectFour:

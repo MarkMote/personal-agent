@@ -1,6 +1,8 @@
 # Interval Scheduler
 
-Build a meeting room / interval scheduling system. Reported Jane Street problem.
+Reported Jane Street problem.
+
+**Task:** Build a meeting room booking system. `book(start, end)` reserves a time slot and returns whether it succeeded (fails if it overlaps an existing booking). Support cancellation and finding the next available slot of a given duration.
 
 ```python
 class Scheduler:

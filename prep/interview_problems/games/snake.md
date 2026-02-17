@@ -1,6 +1,6 @@
 # Snake
 
-Build the classic Snake game engine. Progressive stages.
+**Task:** Build the Snake game on a grid. The snake moves one cell per tick in a given direction. It grows when it eats food, and the game ends if it hits a wall or itself. Implement `move(direction)` that advances the game one step and returns the outcome.
 
 ```python
 from collections import deque

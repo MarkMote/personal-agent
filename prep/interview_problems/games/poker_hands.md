@@ -2,6 +2,8 @@
 
 Scale AI's most frequently reported tech screen problem. OOP + card game logic.
 
+**Task:** Given 5 playing cards, classify the poker hand (high card, pair, two pair, three of a kind, straight, flush, full house, four of a kind, straight flush). Then implement comparison so you can determine which of two hands wins.
+
 ```python
 class Card:
     def __init__(self, rank: str, suit: str): ...

@@ -1,6 +1,12 @@
 # Stack Machine / Interpreter
 
-Recently verified Jane Street problem (Jan 2026). Build a stack-based virtual machine.
+Recently verified Jane Street problem (Jan 2026).
+
+---
+
+## The Prompt
+
+Build a stack-based virtual machine. You'll be given a program as a list of string tokens. Implement `execute(program)` that runs the program and returns the top of the stack.
 
 ```python
 class StackMachine:
@@ -8,12 +14,46 @@ class StackMachine:
     def execute(self, program: list[str]) -> int: ...
 ```
 
-## Stage 1 — Basic arithmetic operations (~10 min)
-- Program is a list of tokens: numbers and operators.
-- Numbers get pushed onto the stack.
-- Operators pop operands, compute, push result.
-- Supported: `PUSH <n>`, `ADD`, `SUB`, `MUL`, `DIV`.
-- `execute` returns the top of stack after program completes.
+The interviewer will add features in stages:
+
+**Stage 1 — Basic arithmetic (~10 min)**
+- Numeric tokens get pushed onto the stack.
+- Operator tokens pop two operands, compute, push the result.
+- Operators: `ADD`, `SUB`, `MUL`, `DIV` (integer division).
+- Return the top of the stack when the program ends.
+- Example: `["3", "4", "ADD"]` → `7`
+- Example: `["10", "3", "SUB"]` → `7` (second-from-top minus top)
+
+**Stage 2 — Stack manipulation + comparison (~10 min)**
+- `DUP` — duplicate top of stack.
+- `SWAP` — swap top two elements.
+- `POP` — remove top element.
+- `EQ` — pop two, push 1 if equal, 0 otherwise.
+- `GT` — pop two, push 1 if second > first, 0 otherwise.
+- `NOT` — pop one, push 1 if 0, push 0 if nonzero.
+
+**Stage 3 — Control flow (~15 min)**
+- `LABEL <name>` — mark a position. No-op at runtime.
+- `JMP <name>` — unconditional jump.
+- `JZ <name>` — pop top; jump if it was 0.
+- `JNZ <name>` — pop top; jump if it was nonzero.
+
+**Stage 4 — Functions (~15 min)**
+- `DEF <name>` ... `END` — define a function.
+- `CALL <name>` — push return address, jump to function.
+- `RET` — pop return address, jump back.
+- Functions can call other functions (including themselves).
+
+**Stage 5 — Variables + local scope (~10 min)**
+- `STORE <name>` — pop top, store in variable.
+- `LOAD <name>` — push variable value onto stack.
+- Each `CALL` creates a new scope; `RET` destroys it.
+
+---
+
+## Solutions
+
+### Stage 1
 
 ```python
 class StackMachine:
@@ -39,15 +79,11 @@ class StackMachine:
         return self.stack[-1]
 ```
 
-- Note: `a - b` not `b - a`. Order matters for SUB and DIV.
+Key: pop order matters. `b` is the top (popped first), `a` is second. So `SUB` computes `a - b` (second minus top), matching RPN convention.
 
-## Stage 2 — Stack manipulation + comparison (~10 min)
-- `DUP` — Duplicate top of stack.
-- `SWAP` — Swap top two elements.
-- `POP` — Remove top element.
-- `EQ` — Pop two, push 1 if equal, 0 otherwise.
-- `GT` — Pop two, push 1 if second > first, 0 otherwise.
-- `NOT` — Pop one, push 1 if 0, push 0 if nonzero.
+### Stage 2
+
+Add to the token dispatch:
 
 ```python
 elif token == "DUP":
@@ -62,15 +98,13 @@ elif token == "EQ":
 elif token == "GT":
     b, a = self.stack.pop(), self.stack.pop()
     self.stack.append(1 if a > b else 0)
+elif token == "NOT":
+    self.stack.append(1 if self.stack.pop() == 0 else 0)
 ```
 
-## Stage 3 — Control flow (jumps + conditionals) (~15 min)
-- `LABEL <name>` — Mark a position in the program. No-op at runtime.
-- `JMP <name>` — Unconditional jump to label.
-- `JZ <name>` — Pop top; jump to label if it was 0.
-- `JNZ <name>` — Pop top; jump to label if it was nonzero.
+### Stage 3
 
-- **Implementation:** First pass to build label→index map. Then execute with an instruction pointer.
+Big structural change: switch from a `for` loop to a `while` loop with an instruction pointer. Do a first pass to build a label→index map.
 
 ```python
 def execute(self, program):
@@ -80,8 +114,8 @@ def execute(self, program):
         if token.startswith("LABEL "):
             labels[token.split()[1]] = i
 
-    # Execute
-    ip = 0  # instruction pointer
+    # Execute with instruction pointer
+    ip = 0
     while ip < len(program):
         token = program[ip]
         if token.startswith("LABEL"):
@@ -101,53 +135,110 @@ def execute(self, program):
                 ip = labels[token.split()[1]]
                 continue
         else:
-            # handle arithmetic/stack ops as before
-            self._exec_op(token)
+            self._exec_op(token)  # stages 1+2 dispatch
         ip += 1
     return self.stack[-1] if self.stack else None
 ```
 
-## Stage 4 — Functions + call stack (~15 min)
-- `DEF <name>` ... `END` — Define a function (sequence of instructions).
-- `CALL <name>` — Push return address, jump to function.
-- `RET` — Pop return address, jump back.
-- Use a separate call stack (list of return addresses).
-- Functions can call other functions (and themselves — recursion!).
+Why two passes? Forward jumps — a `JMP end` needs to know where `LABEL end` is before reaching it.
+
+### Stage 4
+
+First pass also maps `DEF <name>` → index. `END` acts like `RET`. Separate call stack for return addresses.
 
 ```python
-# In first pass, also find DEF/END blocks
-# call_stack stores return addresses
-def call(self, name):
-    self.call_stack.append(self.ip + 1)
-    self.ip = self.functions[name]
+def __init__(self):
+    self.stack = []
+    self.call_stack = []  # return addresses
+    self.functions = {}   # name → instruction index
 
-def ret(self):
-    self.ip = self.call_stack.pop()
+# In first pass, also find DEF/END blocks:
+# if token.startswith("DEF "):
+#     self.functions[token.split()[1]] = i + 1  # jump past DEF
+
+# In execute loop:
+elif token.startswith("CALL"):
+    self.call_stack.append(ip + 1)
+    ip = self.functions[token.split()[1]]
+    continue
+elif token == "RET" or token == "END":
+    ip = self.call_stack.pop()
+    continue
+elif token.startswith("DEF"):
+    # skip function body during normal execution
+    while program[ip] != "END":
+        ip += 1
+    ip += 1
+    continue
 ```
 
-## Stage 5 — Variables + local scope (~10 min)
-- `STORE <name>` — Pop top, store in named variable.
-- `LOAD <name>` — Push variable's value onto stack.
-- Local scope per function: each `CALL` creates a new scope. `RET` destroys it.
-- Implementation: stack of dicts. `STORE/LOAD` operate on the top dict. `CALL` pushes new dict. `RET` pops.
+### Stage 5
 
-## Example programs
+Stack of dicts for scoped variables. `CALL` pushes a new dict, `RET` pops it.
+
 ```python
-# Factorial of 5
-["5", "1",                     # n=5, result=1
+def __init__(self):
+    self.stack = []
+    self.call_stack = []
+    self.functions = {}
+    self.scopes = [{}]  # global scope
+
+# CALL also does: self.scopes.append({})
+# RET also does:  self.scopes.pop()
+
+elif token.startswith("STORE"):
+    name = token.split()[1]
+    self.scopes[-1][name] = self.stack.pop()
+elif token.startswith("LOAD"):
+    name = token.split()[1]
+    self.stack.append(self.scopes[-1][name])
+```
+
+---
+
+## Example Programs
+
+```python
+# Reverse Polish: (3 + 4) * 2 = 14
+["3", "4", "ADD", "2", "MUL"]
+
+# Countdown: 5 + 4 + 3 + 2 + 1 = 15 (stages 1-3, sentinel trick)
+["0", "5",                         # sentinel=0, n=5
  "LABEL loop",
- "SWAP", "DUP", "1", "EQ",    # if n == 1, done
+ "DUP", "0", "EQ",                 # n == 0?
+ "JNZ sum_phase",
+ "DUP", "1", "SUB",                # push n-1
+ "JMP loop",
+ "LABEL sum_phase",                # stack: [0, 5, 4, 3, 2, 1, 0]
+ "POP",                            # drop the 0
+ "LABEL sum_loop",
+ "ADD",                            # add top two
+ "SWAP", "DUP", "0", "EQ",         # is next value the sentinel?
  "JNZ done",
- "DUP", "SWAP",                # keep n, bring result up
- "MUL",                        # result *= n
- "SWAP", "1", "SUB",           # n -= 1
+ "SWAP",
+ "JMP sum_loop",
+ "LABEL done",
+ "POP"]                            # remove sentinel
+
+# Factorial of 5 = 120 (stages 1-5, uses STORE/LOAD)
+["5", "STORE n",
+ "1", "STORE result",
+ "LABEL loop",
+ "LOAD n", "1", "EQ",
+ "JNZ done",
+ "LOAD result", "LOAD n", "MUL", "STORE result",
+ "LOAD n", "1", "SUB", "STORE n",
  "JMP loop",
  "LABEL done",
- "POP"]                        # remove n, result on top
+ "LOAD result"]
 ```
 
-## Talking points
-- Why two passes (label scan + execute) instead of one? Handles forward jumps cleanly.
-- How do you detect infinite loops? Instruction counter limit.
-- This is essentially how the Python bytecode interpreter works (cpython's ceval.c).
-- Real-world: WebAssembly, JVM, Forth, PostScript are all stack machines.
+Note: factorial with only stages 1-3 (no variables) is much harder — you can't easily access values buried in the stack with just DUP/SWAP. The STORE/LOAD version is what you'd actually write.
+
+---
+
+## Talking Points
+- Why two passes (label scan + execute) instead of one? Handles forward jumps.
+- How to detect infinite loops? Instruction counter limit.
+- This is essentially how cpython's bytecode interpreter works (ceval.c).
+- Real-world stack machines: WebAssembly, JVM, Forth, PostScript.

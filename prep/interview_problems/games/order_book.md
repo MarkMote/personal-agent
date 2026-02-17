@@ -2,6 +2,8 @@
 
 Trading firm staple. Confirmed at Jane Street (onsite) and general quant finance interviews.
 
+**Task:** Build a limit order book. Buy and sell orders come in with a price and quantity. When a new order's price crosses the other side (buy price >= best ask, or sell price <= best bid), match and fill orders by price-time priority. Support cancellation and querying best bid/ask.
+
 ```python
 from collections import defaultdict
 from sortedcontainers import SortedDict

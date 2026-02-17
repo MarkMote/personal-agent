@@ -12,7 +12,7 @@ These are confirmed/verified JS problems. Do in this order:
 6. **merkle_tree.md** — Reported (immutable tree with hashing)
 7. **state_machine.md** — Reported pattern
 8. **interval_scheduler.md** — Reported
-
+ 
 ## Priority for Scale AI (Mon 2/24)
 Scale's tech screen is HackerRank + Zoom, 60 min, 2-3 questions. Most reported problems:
 1. **poker_hands.md** — #1 most reported Scale AI problem (card game OOP)
@@ -41,3 +41,5 @@ Every problem follows the same arc:
 - **Stage 2:** Handle a complication (edge cases, new requirement, performance issue).
 - **Stage 3:** Major extension (new data structure, algorithm upgrade, feature).
 - **Stage 4-5:** Stretch goals. Don't worry if you don't reach these.
+
+
