@@ -4,7 +4,19 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-13 (Fri, W07) — Latest Session
+## 2026-02-17 (Tue, W08) — Latest Session
+
+- **Jane Street Round 1: went generally well.** Didn't nail everything but expects pass more likely than not. Waiting to hear back.
+- **Viam interview at 3pm ET today** w/ Ian Whalen (VP Product). Prepping now.
+
+## 2026-02-15 (Sun, W07)
+
+- **SpaceX: connection request sent to Christopher Lowe** (Manager, Dragon GNC). Tier upgraded 3→1. Plan B in ~1 week: internal referral via Mehregan Dor (1st degree, GT PhD, Starlink GNC) or Prince Kuevor. Lars Blackmore is a warm connection but saving that capital.
+- **Laurion: live coding assessment scheduled.** Fri 2/20 11am ET with Yev (Quant Dev), 1 hour. Marcus reply drafted.
+- **Marcus reply drafted:** D.E. Shaw update (didn't go well, underprepped for coding pattern) + Laurion scheduling.
+- **Practice problems restructured:** Added clear task descriptions to all 14 games/ problems. Fixed broken stack machine factorial example.
+
+## 2026-02-13 (Fri, W07)
 
 - **D.E. Shaw Round 1: didn't go well.** Wrong interviewer, wrong team, generic SWE focus. String calculator problem. Mark doesn't expect to hear back. Reflecting that LC-style interviews are a poor fit for his profile.
 - **Radical AI: Dave Veisz (Head of Automation) reached out.** Intro call scheduled Wed 2/18 11am ET. Leadership-level interest after Raymond screen — good sign.

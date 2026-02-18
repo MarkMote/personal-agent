@@ -10,6 +10,32 @@ Work in:
 - IMPORTANT: overview of some of the work in gradschool 
 - Important: 
     - Really good backup slides on anticipated questions 
+- end: QR code with example: LOS controller implementation in safe cone 
+
+Story point: 
+- Introduce barrier functions 
+- Talk about invariant sets 
+    - the barrier function is just a statement: if you do this you will be safe
+    - actual work is in this problem
+- Compare:
+    - gritsbots trial - mention robotarium
+        - joke: is_invariant(set): return True
+    - but thats not what we care about. We want systems like [list of examples we will go through]
+        - double integator car
+        - spacecraft rendezvous
+        - spacecraft attitude control
+
+- Ending recap: 
+    - list out steps in safety filter design process
+        - if invariant set is easy -> CBFs
+        - else: find safety kernel and controller to it
+    - same thing works for all the sysetms 
+        - It works for a black box system! as long as you can
+            (i) simulate 
+            (ii) design a backup controller 
+            (iii) find a safety kernel 
+        - even better, you dont even have to prove invariance under the backup controller, you can just switch to any controller thats invariant in the backup set.
+
 
 Need: 
 - Find original presentation for thesis

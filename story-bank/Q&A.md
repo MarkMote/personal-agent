@@ -95,8 +95,21 @@ Specific Workflow: procurement - say we need to answer the question "How do i sh
 
 
 
+## Give me a contrarian opinion you have about software 
 
 
+
+## Tell me something you were wrong about recently. 
+Give example
+
+longer: I'm a baysian, if everything is a probability then youre not wrong just uncalibrated, likewise you are never right, just better calibrated. 
+
+
+
+## Out of everything you've worked on, what are you the most proud of? What was the actual impact. 
+
+
+## If you were to go back and try PYtheia again, do you think the idea would work?
 
 
 
@@ -131,8 +144,9 @@ A long story
 It forced discipline. We had to make customers happy or shut down. If we needed capital to unlock growth we would have raised. At that stage we didnt.
 
 --- 
-### Worst quality 
+### Whats your worst quality 
 > By the time I become cognizant of the issue, it stops being an issue, but I recently learned the importance of **delegating**. I went from phd student, to founder to founder again. The idea that I can just hand a problem off to someone else rather than taking charge felt wrong. It was more about ego than what was best for the business. But a few months ago, we realized "hey we have a little money to outsource some of the work, it actually makes the business better" - though we mostly applied that to non-technical things, but it was impactful. 
+
 
 ALT:
 It changes month to month, as I become cognizant of something, I try to fix it, then I notice another area to work on. 
@@ -177,265 +191,61 @@ Across all those, working with elite teams is a major amplifier, both in terms o
 Story: chris and his dad 
 
 
+---
+## What were biggest learnings from Roostr and Pytheia? 
 
 
 
 -----
+## How do you think having a phd would give you an edge in this role? 
 
 
+--- 
+
+## Where do you see yourself in 5 years? 
 
 
-
-
-
-
-
-
-
-Primary Narrative: 
-- Still operating
-- Have a 6 figure run rate and getting inbound
-- Still have a great relationship with my cofounder
-- Proved thesis to some extent
-- Mostly about scaling now
-- Very slow business to build
-- I'm personally more interested in building hard systems than running a logistics operation day to day. 
-- Rather than raise more capital into a domain thats not my deepest conviction, I decided this was the right moment to get back to where i want to be building long term
-
-Only If they ask: 
-- We are low 6 figures. It's not a clean number like a subscription service, but its comfortably low 6 figures.  
-- The business comfortably supports one operator comfortably at this stage, along with a few off-site employees. If I stayed, we’d need to raise sooner. This gives Jacky more room to operate without pressure.
-- Freight is fundamentally trust-driven and relationship-heavy. Sales cycles are measured in quarters, not weeks
-- Raised a small 225k seed, bootstrapped the rest.
-
+--- 
+## Tell me about a time you and a cofounder disagreed on something. 
 
 
 ---
+## What motivates you? 
 
-# 2. What kinds of problems excite you most technically?
 
-## Short version
+--- 
+## Whats your greatest acheivement? 
 
-> **“Robotics, optimization, and learning, especially where they intersect in real-world systems. I’m most interested in problems where you have tight physical constraints, messy environments, and real safety or reliability requirements.”**
 
----
-
-## Optional expansion
-
-> **“I think the robotics wave will ultimately be larger than the current software AI wave, simply because it touches the physical economy. There’s an enormous surface area of unsolved technical and product problems there.”**
+--- 
+## How do you handle criticism? 
+I steelman their case first, then I try to repeat it back to them so that its clear I've understood. Ultimately its data. If its a person I feel really comfortable with, and I have disagreements, I'll explain my reasoning. We will work collaboratively on finding the gradient. 
 
 ---
 
-# 3. What did you learn from Roostr and Pytheia?
-
-You don’t need all of this. Pick 2–3 bullets depending on flow.
-
-## Clean version
-
-> **“A few big lessons:
-> 
-> - The gap between what looks good on paper and what works in reality is massive. I learned to ground systems thinking in real operational data and user behavior.
->     
-> - Fast iteration applies to product as much as hiring. Treat experiments as default-dead and let evidence revive them.
->     
-> - Distribution matters more than first-time founders expect. Great products don’t matter if nobody discovers them.
->     
-> - I’ve become more pragmatic about capital. Bootstrapping was valuable for focus, but I now view funding as a tool to accelerate impact when used deliberately.”**
->     
-
-If you want to add the passion angle:
-
-> **“I also learned that building something people want is necessary but not sufficient. You need to be genuinely excited about the domain long-term or you’ll lose energy.”**
+## How do you stay up to date? 
+I subscrible to a lot blogs and newsletters, its also the main reason I use x. I also talk with friends about tech a lot. Finally, if I need to do something new, I'll ask a language model to give me a breif or do an analysis of tradeoffs and recent updates. 
 
 ---
 
-# 4. What would you do differently if you started another company?
+## How do you measure sucess? 
 
-## Short version
 
-> **“I’d validate distribution and go-to-market earlier rather than assuming it will emerge naturally from product quality. I’d also be more deliberate about when external capital actually accelerates learning or impact rather than defaulting to either bootstrapping or fundraising ideologically.”**
-
----
-
-## Optional second point
-
-> **“I’d also bias toward faster external validation earlier instead of over-internal optimization.”**
+--- 
+## Leadership philosophy
+People are everything
+Invest in high IQ high EQ high integrity high curiousity 
+Good faith 
 
 ---
+## What makes you unique? 
 
-# 5. Motivations beyond money
 
-## Clean version
 
-> **“Two things. First, I care about having real positive impact on the world through meaningful systems. Second, I genuinely enjoy learning. As Feynman put it, I just get a kick out of figuring things out.”**
+## Motivations beyond money? 
 
-That’s enough. Don’t over-explain.
 
----
-
-# 6. How do you decide what to work on when there’s ambiguity?
-
-## Suggested answer
-
-> **“I usually start by identifying what assumptions matter most and designing fast experiments to collapse uncertainty. I look for problems where the learning rate is high and the upside compounds if the bet is right. I’m comfortable staying ambiguous early as long as the direction of information gain is clear.”**
-
----
-
-# 7. Do you want to be a CEO again?
-
-## Balanced answer
-
-> **“I’m open to being a CEO again if the problem and setup are right. What matters more to me than title is ownership, leverage, and being close to the hardest parts of the system. I’m not attached to hierarchy for its own sake.”**
-
----
-
-# 8. What’s your timeline? Are you in a rush?
-
-## Calm framing
-
-> **“I’m not in a rush. I’m being selective and trying to optimize for the right long-term platform rather than the fastest next move.”**
-
----
-
-# 9. What are you bad at / don’t enjoy?
-
-## Safe answer
-
-> **“I don’t love long, relationship-heavy sales cycles and heavy process environments. I’m much more energized by building, iteration, and systems-level problem solving.”**
-
-This aligns with your Roostr exit without saying it explicitly.
-
----
-
-# 10. Why Physical AI?
-
-## Short thesis
-
-> **“Because that’s where AI actually touches the physical economy. The technical challenges are harder, the moats are deeper, and the impact is more durable than pure software. I think we’re still very early in that curve.”**
-
----
-
-# If You Want a One-Page Mental Stack
-
-If you internalize only these:
-
-1. **Next company thesis:** Flywheels, data moats, robotics infrastructure.
-    
-2. **Technical interests:** Robotics + optimization + learning under constraints.
-    
-3. **Founder lessons:** Reality vs theory, distribution matters, capital is a tool.
-    
-4. **Motivation:** Impact + learning.
-    
-5. **Decision style:** Fast experiments to collapse uncertainty.
-    
-
-You’ll sound consistent, intentional, and high-signal across all variants.
-
-If you want, next we can tighten any single answer further depending on which call you expect to be harder.
-
-
-## **Whats your biggest weakness**
-I think  effectiveness in a leader or an engineer is the art of keeping thousands of different knobs perfectly in tune. The knob I think I've had to stay most cognizant of. 
-
---
-A natural tendency I still have to stay cognizant of is over-optimizing for immediate execution and delivery. I enjoy shipping and solving concrete problems, so if I’m not careful I can underinvest in longer-term exploratory work or skill compounding.
-
-I first became aware of this at JPL. I focused heavily on delivering simulation improvements that created fast impact and led to a return offer, but I deferred some higher-risk theoretical exploration that I later wished I had pursued. That experience made the pattern very clear to me.
-
-Since then I’ve learned to actively manage that tendency. I deliberately protect time for deeper exploration and learning, and I periodically step back to ask whether I’m optimizing for the right horizon, not just the fastest local win. It’s a balance, but being intentional about it has significantly improved my long-term leverage.”
-
-
-Short version
-I naturally bias toward momentum and execution. That’s a strength in startups, but if left unchecked it can crowd out longer-term exploration and compounding learning. I saw this clearly at JPL, where I focused on delivering near-term simulation improvements. It led to a publication and a return offer, but deferred some higher-risk research exploration that I still think could have been valuable.
-
-It's a tendency I continue to manage deliberately by protecting time for deep work and periodically stepping back to make sure I'm not only optimizing for short-term wins.
-
----
-
-
-
-## What are some things you failed at
-- I founded two companies, I wanted to make them rocket ships, but they were more like hot air balloons. I never really got the growth I needed. 
-
-## Mistakes made 
-* I really shouldnt have bootstrapped my first startup. It was unmatched in learning velocity, and forced dicipline, but we had and ambitious idea that really would have benefited. 
-* Technical mistake made: shipped a bug.  
-	* It wasnt on core infrastructure but it sure was embarrasing
-	* We were in the business of rapidly prototyping an shipping helper tools to get a feel of what customers likeed at roostr
-	* We made this quick rate overview dashboard for one of our customers 
-	* api had a condition on the rates that was too strict meaning some of what they got wasnt there
-	* rates from an email they received that morning didnt show up
-	* customer showed it to his dad on that day, who was the one that started their company
-	* felt like a complete idiot
-	* was a 15 minute fix but the damage was done, 
-	* Learned that you just have to write the test and look it over. customers dont always distinguish between "this is my core product" and "this is this experimental add on, we can make it reliable if you like it"
-
-
-## What kind of company would you want to build next?
-
-## Short version (use first)
-
-> **“I think great startups are flywheels. 
-> You build a positive feedback loop that compounds into durable advantage, usually through data, networks, or deep operational complexity. 
-> In robotics specifically, I think people underestimate how hard it is to build safe, reliable real-world systems, which creates room for defensible platforms. 
-> I’m interested either in data moats around hard-to-acquire physical data, or infrastructure layers that accelerate robotics development, essentially tooling that creates a ‘ChatGPT moment’ for robotics.”**
-
----
-
-## If they ask for examples
-
-> "One direction is data plays around uniquely hard physical data, like high-resolution earth observation or dense real-world telemetry. Another is platform infrastructure: something like a React-for-robots or Vercel-for-robotics that standardizes deployment, testing, safety, and iteration in physical systems."
-
----
-
-# D.E. Shaw Behavioral Angles
-
-*From their prep guide. These hit differently than standard STAR questions. They care about self-awareness, rigorous thinking, and collaboration.*
-
----
-
-## How has your approach to solving a specific problem evolved with more experience?
-
-*Tip: They want to see growth and self-awareness, not just "I got better." Pick one problem class and show how your thinking changed.*
-
-Think about: early Pytheia (brute force, build everything yourself) vs Roostr (lean on existing tools, LLMs, focus on the integration layer). Or: how your approach to system architecture changed after shipping Argus and realizing the perception pipeline needed to be modular, not monolithic.
-
----
-
-## What were your individual contributions vs the team's?
-
-*Tip: D.E. Shaw cares about this a lot. They want to know what YOU did, not what the company did. Be precise.*
-
-Roostr: you were the sole production engineer. Everything technical was you. Be specific: "I designed the agent architecture, built the FSM policy graph, wrote the email parsing pipeline, built the frontend." At Pytheia: "I built Argus end-to-end, but I also did all the sales and customer discovery." PhD: "My thesis work was individual, but the Robotarium was collaborative. I built the safety verification layer, others built the hardware and comms."
-
----
-
-## How have you impacted the teams you've worked on?
-
-*Tip: At Roostr you're a team of two. At Pytheia you were CEO. Frame impact as: what did you enable others to do?*
-
-Think about: Roostr - freeing Jacky to focus on sales/ops because the tech stack was reliable. Pytheia - enabling the team to test perception algorithms without worrying about infrastructure. PhD/Robotarium - the safety verification framework let 16,000+ external experiments run without human oversight.
-
----
-
-## What would you do differently in retrospect?
-
-*Tip: They explicitly ask this. Have 2-3 ready. Be honest, not defensive.*
-
-- Pytheia: would have validated distribution earlier instead of assuming the product would sell itself
-- Roostr: would have hired a part-time contractor sooner instead of trying to do everything solo
-- PhD: would have pursued more exploratory research at JPL instead of optimizing for near-term deliverables
-
----
-
-## What questions would you tackle next?
-
-*Tip: This is about intellectual curiosity and forward thinking. What unsolved problems keep you up at night?*
-
-Think about: the gap between LLM capabilities and reliable agentic systems (how do you make agents that don't fail silently?). Or: the tooling gap in robotics (why is deploying a robot 100x harder than deploying a web app?). Or: safe autonomy at scale (your PhD topic, still largely unsolved).
-
----
+--- 
 
 ## How have you handled ethical decision-making?
 
@@ -443,34 +253,109 @@ Think about: the gap between LLM capabilities and reliable agentic systems (how 
 
 Think about: at Roostr, automating jobs that real people do. You chose to build tools that augment operators rather than replace them wholesale. At Pytheia, camera-based perception raises privacy questions. Your PhD work on collision-inclusive trajectories was literally about minimizing harm when things go wrong.
 
----
+--- 
 
-## What excites you about D.E. Shaw?
 
-*Tip: "I don't need finance knowledge" but show you understand what they do with GenAI.*
+# 3. What did you learn from Roostr and Pytheia?
 
-D.E. Shaw applies quantitative and computational methods at massive scale. The GenAI role is about bringing LLM/agentic capabilities into that infrastructure. What's exciting: the combination of rigorous engineering culture with cutting-edge AI, applied to problems where correctness and reliability actually matter (not just demos). The scale of compute and data they operate at. The intellectual caliber of the team.
-
----
-
-## Imagine you're new to a project and not sure about next steps. What do you do?
-
-*Tip: Situational question. They want process, not bravado.*
-
-Map the system first. Read the code, read the docs, talk to whoever built it. Identify what the current bottleneck or goal is. Ask clarifying questions early rather than spending a week going the wrong direction. At Roostr every new customer integration started this way: understand their workflow before writing any code.
+You don’t need all of this. Pick 2–3 bullets depending on flow.
+- The gap between what looks good on paper and what works in reality is massive. I learned to ground systems thinking in real operational data and user behavior.
+     
+- Fast iteration applies to product as much as hiring. Treat experiments as default-dead and let evidence revive them.
+     
+- Distribution matters more than first-time founders expect. Great products don’t matter if nobody discovers them.
+     
+- I've become more pragmatic about capital. Bootstrapping was valuable for focus, but I now view funding as a tool to accelerate impact when used deliberately.
 
 ---
 
-## How would you weigh a decision that isn't clear-cut?
+## How do you prioritize when everything is on fire?
+In a 2-3 person startup, everything is on fire. You learn to ask: what kills us if I don't do it today?
+For the 
 
-*Tip: They want structured thinking under uncertainty.*
+Don't burn your house down to stay warm. 
 
-Identify what's reversible vs irreversible. For reversible decisions, bias toward action and learn from the result. For irreversible decisions, invest more in analysis. Frame the tradeoffs explicitly. At Pytheia, the pivot from CV to LLM was nearly irreversible, so you spent weeks validating demand before committing. At Roostr, most product decisions were reversible, so you shipped fast and iterated.
+
+- At a 2-person startup, everything is always on fire. You learn to ask: what kills us if I don't do it today?
+- Framework: urgency vs irreversibility. Urgent and irreversible gets done now. Urgent but reversible can wait. Most things feel urgent but aren't.
+- Roostr example: customer escalation vs fixing a data pipeline bug vs investor update all due same day — the pipeline bug was the only one that compounded if ignored.
 
 ---
 
-## Tell us about your creative accomplishments outside of work.
+## How do you balance speed vs quality?
 
-*Tip: They literally ask this. Have something ready.*
+- Depends entirely on what phase you're in and what the cost of failure is.
+- Prototyping / exploring: speed wins. Ship ugly, learn fast, throw it away.
+- Production / safety-critical: quality wins. My PhD was literally about this — safe autonomy means knowing where the line is.
+- The real skill is knowing which mode you're in. Most mistakes come from applying startup speed to production systems, or production rigor to throwaway experiments.
 
-Think about: the language learning app you built, any side projects, the zero-gravity quadcopter from undergrad, or anything personal that shows intellectual curiosity beyond your job.
+---
+
+## What kind of team or culture do you thrive in?
+
+- Small, high-caliber, low-ego. People who care more about getting it right than being right.
+- I do my best work when there's real ownership — where I can see the connection between what I build and the outcome.
+- High trust, direct feedback, low process. I'd rather have a 5-minute whiteboard conversation than a 30-minute standup.
+- I actively dislike: politics, performance theater, and environments where the goal is to look busy.
+
+---
+
+## What are you looking for in a manager?
+
+- Someone I can learn from. Doesn't have to be technical — could be strategic thinking, product instinct, or just how they run a team.
+- Clear expectations, direct feedback, then get out of the way. I don't need hand-holding but I do want honest signal on how I'm doing.
+- I've been my own boss for 5 years, so I'm not looking for someone to tell me what to do — I'm looking for someone who makes me better at deciding what to do.
+
+---
+
+## Why not start a third company?
+
+- I might, eventually. But right now the highest-value move is to join a team where I can go deep on hard problems with people better than me.
+- Founding teaches you breadth under constraints. I want the inverse for a while: depth with resources.
+- Also honest about timing: I want financial stability to start a family. That's easier to build inside a strong company than from zero again.
+
+---
+
+## Describe the most complex system you've architected end-to-end.
+
+- Two candidates depending on what they care about:
+- **Argus (Pytheia):** Real-time multi-camera 3D perception — detection, tracking, 2D→3D projection, Kalman filtering, multi-camera fusion via Hungarian matching. Hardest part wasn't ML, it was calibration across heterogeneous hardware and maintaining real-time performance.
+- **Roostr ops stack:** Long-running LLM agent pipeline that ingested messy emails/attachments, extracted structured pricing data, validated against business rules, and automated 50+ step shipment workflows. Hardest part was reliability — wrapping stochastic LLM outputs in deterministic control logic.
+- Pick based on audience: Argus for robotics/perception roles, Roostr for AI/agent roles.
+
+---
+
+## How do you approach an unfamiliar domain?
+
+- I've done it enough times that I have a pattern: aerospace → CV → retail → freight → LLMs.
+- Step 1: Talk to people who live in the domain. Customers, operators, domain experts. Listening > reading.
+- Step 2: Build something small and ugly immediately. You learn more from a bad prototype than a week of research.
+- Step 3: Find the structural analogies to domains I already know. Freight forwarding turned out to have a lot in common with finite-state control systems.
+- The PhD trains you to get comfortable being confused. Startups train you to get uncomfortable staying confused.
+
+---
+
+## How do you give feedback?
+
+- Direct but with good intent. I try to separate the person from the work.
+- I learned at Pytheia that tension accumulates silently on teams. So I created a bi-weekly "state of the business" ritual — open forum, no agenda, just honest check-in. Chick-fil-A afterwards. That's why we're still close friends.
+- When giving technical feedback: I try to frame it as a question first. "Have you considered X?" lands better than "X is wrong." But if something is actually wrong, I'll say so directly.
+
+---
+
+## Why should we hire you over someone with more [X] experience?
+
+- Framework: depends on what [X] is, but the honest answer is usually range.
+- Most people who have more years in one area have fewer years across areas. I've shipped production systems in perception, LLMs, controls, and full-stack product. That cross-domain pattern recognition is rare.
+- I also have the founder filter: I know what matters and what doesn't. I won't over-engineer, I won't build the wrong thing, and I won't wait for permission to fix a problem.
+- If the role needs a narrow specialist with 10 years in one stack, I'm not the right hire. If it needs someone who can own ambiguous, cross-cutting problems — that's me.
+
+---
+
+## What does good engineering look like to you?
+
+- Good engineering solves the right problem simply. Coding was never the hard part — taste and judgment are.
+- Concretely: clear interfaces, explicit state, fast feedback loops. Systems designed for the world as it is, not as you wish it were.
+- The thing I respect most is engineers who know when NOT to build something. Restraint is underrated.
+- Bad engineering is complexity that exists to make the engineer feel smart rather than to serve the user.
+

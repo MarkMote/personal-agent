@@ -1,3 +1,14 @@
+## SpaceX — Connection request to Christopher Lowe (Manager, Dragon GNC)
+**Date:** 2026-02-15
+**Status:** SENT
+**Channel:** LinkedIn connection request (300 char limit)
+
+---
+
+Hi Christopher, I'm a Georgia Tech PhD (spacecraft controls/optimization) wrapping up a startup CTO role. Interested in Sr. GNC Engineer roles at SpaceX, Dragon in particular. Would love to connect.
+
+---
+
 ## Marcus — D.E. Shaw update + Laurion scheduling
 **Date:** 2026-02-15
 **Status:** DRAFT

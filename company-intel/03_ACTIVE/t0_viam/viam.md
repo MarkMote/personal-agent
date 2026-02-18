@@ -66,12 +66,12 @@ Robotics software is fragmented and hard to scale. Every team reinvents the whee
   - Alexa suggested reviewing company values before the call
 
 ## Key People
-| Name | Role | Background |
-|------|------|------------|
-| Eliot Horowitz | CEO | MongoDB co-founder/CTO |
-| Ian Whalen | VP Product | **Interviewer Feb 17** |
-| Matt Leva | Recruiter | Initial outreach |
-| Alexa Ridolfi | People Ops Associate | Coordinating interviews |
+| Name           | Role                 | Background              |
+| -------------- | -------------------- | ----------------------- |
+| Eliot Horowitz | CEO                  | MongoDB co-founder/CTO  |
+| Ian Whalen     | VP Product           | **Interviewer Feb 17**  |
+| Matt Leva      | Recruiter            | Initial outreach        |
+| Alexa Ridolfi  | People Ops Associate | Coordinating interviews |
 
 ## Notes
 _Add notes from conversations here_

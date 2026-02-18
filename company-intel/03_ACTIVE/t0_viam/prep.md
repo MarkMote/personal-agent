@@ -1,16 +1,41 @@
-# Viam - Recruiter Call Prep
+# Viam - Interview Prep
 
 **Applied for:** Senior FDE ($165-235k + equity)
 **Also consider:** Lead SE Sensing ($205-235k), Senior/Staff SE Motion ($180k+)
 
 ---
 
-## CRITICAL: Role Exploration
+## Round 2: Ian Whalen (VP Product Management) — Feb 17, 3pm ET
 
-You applied for FDE because your founder background seemed like a fit, but your PhD work is in controls/optimization. Use this call to explore whether Motion or Sensing might be better fits.
+### About Ian
+- **Title:** VP of Product Management (owns Product, Design, Docs, DevRel, AND Solutions Engineering)
+- **Solutions Engineering is under him** — likely the hiring manager or exec sponsor for FDE
+- **MongoDB for 11 years** — grew from EPM when company was 40 people to VP over 700+ engineers. Followed Eliot Horowitz to Viam.
+- **Background:** Columbia poli sci → law firm → QA/community → product → program management → VP. Self-made technical leader, not an engineer.
+- **Culture builder:** Created hackathons, tech talks, 20% time, intern programs, Lego SumoBot tournaments at MongoDB.
+- **Entrepreneurial:** Angel investor (Manifest Nail), owns Tangerine Yoga studio.
+- **Style:** "Brought quantitative sanity" — thinks in impact measurement. Wants numbers.
 
-**Say:**
-> "I applied for FDE because my founder background seemed like a fit, but honestly I'm most excited about technical depth. Given my PhD in controls and optimization, I'm curious about roles on the motion or platform side. What do you think would be the best fit?"
+### What this round IS
+- Product/fit screen with the executive who owns the FDE org
+- 45 minutes (3:00-3:45pm)
+- Evaluating: judgment, customer instinct, communication, culture fit
+- NOT a technical deep dive
+
+### Strategy
+- Treat him as the decision-maker, not a screening step
+- Lean into founder/operator stories — his language
+- Have numbers ready ($1M/mo Roostr impact, $300k ARR on $20k, 16k Robotarium experiments)
+- Show you'd contribute to team culture, not just fill a seat
+- Ask about building the Solutions Engineering function — mirrors his own career arc
+
+### Viam Values (they asked you to read these)
+1. **Vision Driven** — believe robotics can improve the world
+2. **Collaborate Openly** — open feedback, timely, with good intent
+3. **Act Decisively** — moving forward over perfection, fast iteration
+4. **Succeed Through Diversity** — diversity of thought in decision-making
+5. **Hold Ourselves Accountable** — own work, take responsibility
+6. **Lead with Curiosity** — learning over being right, continuous exploration
 
 ---
 
