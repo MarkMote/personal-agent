@@ -179,12 +179,13 @@ Has already de-risked many identities (academia, national labs, founding, engine
 - Stopping condition: 2+ term sheets ($700k-$1.5M) by March 15 or shut down
 - Mark is not actively involved in fundraise but supporting
 
-### The March 13 Agreement
-- Mark agreed: if Roostr raises X by March 13, he'll stay
+### The March 14 Agreement (Updated Feb 18)
+- **Conditions for Mark to stay:** $750k closed by March 14, $180k salary each from close, 12-month commitment, back pay forgiven.
 - Mark's assessed likelihood of raise: 10-20%
-- At those odds, job search is the primary path—not a hedge
-- This is a personal closure ritual, not a meaningful fork in the road
-- Implication: Proceed with full confidence in "I'm transitioning" narrative
+- At those odds, job search is the primary path — not a hedge
+- Continue all interview processes regardless. Decision point is March 14, not before.
+- If Roostr closes: withdraw from pipeline gracefully. Early-stage processes (SpaceX, Anthropic) are warm re-entries later.
+- If Roostr doesn't close: move on with no hard feelings, full pipeline intact.
 
 ### LinkedIn Constraint (Feb 2 - Mar 16, 2026)
 - Mark's LinkedIn profile frozen for 6 weeks to support Roostr investor outreach
@@ -196,3 +197,8 @@ Has already de-risked many identities (academia, national labs, founding, engine
 - Can still message recruiters, respond to threads, do outreach
 - Cannot update headline, about section, or positioning during this window
 - If accepting an offer before Mar 16, will need to coordinate with Jacky on LinkedIn transition
+
+### SpaceX Priority (Feb 18 update)
+- SpaceX is a dream job, not just a pipeline item. Mark would take SpaceX over nearly everything except possibly Anthropic.
+- If other offers come in before SpaceX finishes, use them as leverage to accelerate SpaceX, not as reasons to close out SpaceX.
+- Comp is low ($120-170k) but this is a passion/trajectory decision, not a comp optimization.

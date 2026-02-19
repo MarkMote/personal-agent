@@ -100,3 +100,5 @@ Three question categories across the ML-focused interviews:
 **2026-01-23:** Applied for ML Researcher + sent LinkedIn InMail to Laura Parsons.
 **2026-01-28:** Hannah Hasen responded. Rerouted to ML Engineering position. Requested Feb 17 week for first round.
 **2026-02-09:** Interview confirmed Tue 2/17 10:30am. First round is SWE coding (not ML-specific). Interviewer is standard SWE, no ML role context. ML interview guide PDF reviewed.
+**2026-02-17:** Round 1 completed. Felt it went generally well.
+**2026-02-18:** Rejected via email. "We've decided not to move forward with your candidacy at this time."

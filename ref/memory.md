@@ -4,10 +4,19 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-17 (Tue, W08) — Latest Session
+## 2026-02-18 (Wed, W08) — Latest Session
 
-- **Jane Street Round 1: went generally well.** Didn't nail everything but expects pass more likely than not. Waiting to hear back.
-- **Viam interview at 3pm ET today** w/ Ian Whalen (VP Product). Prepping now.
+- **Jane Street: Rejected.** Email received 2/18. Moved to 01_disqualified.
+- **SpaceX: Recruiter call moved up to Fri 2/20 2:00pm ET** with Eric Harvey (phone to +17703662040). Originally 3/2, rescheduled same day. GNC Engineer (Starlink). Moved to 03_ACTIVE.
+- **SpaceX: Interview process researched.** Full write-up in `full_context.md`. Process: recruiter screen -> HM technical screen (PD control, orbits, freq domain) -> take-home (Codility) -> onsite (project presentation + coding + sys design + behavioral). **Starlink GNC is in Redmond, WA, not LA.** Corrected in spacex.md.
+- **Anthropic HM screen completed.** Call with Samuel Flamini went well. Good vibe, likely advancing. Stumbled a bit on quoting agent details. Next round: build an agent in Colab in 45 min (Python SDK). Prep: read all Anthropic agent docs + tool use docs. FDEs can contribute to Claude Code between projects. Team is ~30 ppl globally, 70/30 keyboard/customer split.
+- **Radical AI intro call with Dave Veisz at 11am** (Head of Automation). Outcome TBD.
+- **Roostr conditions set for Jacky call:** $750k closed by Mar 14, $180k salary each from close, 12-month commitment, back pay forgiven. All interview processes continue regardless.
+
+## 2026-02-17 (Tue, W08)
+
+- **Jane Street Round 1: went generally well.** Didn't nail everything but expects pass more likely than not.
+- **Viam interview at 3pm ET today** w/ Ian Whalen (VP Product).
 
 ## 2026-02-15 (Sun, W07)
 
@@ -74,15 +83,15 @@ Read this first every session. Short entries only. Detail lives in company intel
 ## Key context (persistent)
 
 ### Active processes
-- Anthropic (T0): HM screen 2/18. Samuel Flamini — sales/ops/devrel background. Lean into founder angle.
-- D.E. Shaw (T0): Round 1 Fri 2/13. Leetcode easy/med. Round 2 = high-level design. Final = onsite (formality).
-- Jane Street (T0): SWE coding 2/17. "Build a thing cleanly" not leetcode. Progressive, multi-stage. interview_prep.md exists.
-- Viam (T0): Ian Whalen 2/17 3pm. Intro call was 2/6.
+- Anthropic (T0): HM screen done 2/18, advancing. Next: Colab agent build (45 min, Python SDK). Prep agent docs.
+- Viam (T0): Ian Whalen interview 2/17. Waiting on outcome.
+- D.E. Shaw (T0): Round 1 2/13 didn't go well. Likely dead but no official rejection yet.
+- SpaceX (T1): Eric Harvey scheduling recruiter call for GNC Engineer (Starlink). Submit availability.
 - Archer (T1): Onsite 2/26. Case study on PhD safe autonomy (CBF/barrier certs). C++ strategy: be honest, sell domain expertise.
-- Laurion (T1): Waiting on Sarkis. Most enjoyable convo yet.
-- Fauna (T1): Josh Merel intro call TBD week of Feb 23.
-- Scale AI (T2): Tech screen 2/24. FDE role, robotics transfer later.
-- Radical AI (T2): Active, Raymond call done, next steps TBD.
+- Laurion (T1): Live coding assessment Fri 2/20 11am ET with Yev. 1 hour.
+- Fauna (T1): Josh Merel intro call Tue 2/24 5pm ET.
+- Scale AI (T2): Tech screen Mon 2/24 9:30am ET. FDE role, robotics transfer later.
+- Radical AI (T2): Dave Veisz call 2/18 11am. Outcome TBD.
 - Arena AI (T1): Waiting on team outreach (Brandon connection).
 
 ### Key decisions

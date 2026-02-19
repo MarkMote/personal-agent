@@ -25,7 +25,7 @@ I'd say 250-350 is the best ballpark, but again that's very subject to change
 --- 
 ## Tell me about yourself (multiple versions)
 
-> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. Im currently winding down as CTO of a Roostr. There I built the complete production stack of centered around LLM pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, a company that did camera based robotic perception
+> I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. I'm currently winding down as CTO of a Roostr. There I built the complete production stack of centered around LLM pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, a company that did camera based robotic perception
 
 ---
 ## Desired Role? 
@@ -44,8 +44,7 @@ I'm looking for something in the Research Engineer sweet spot:
 ---
 ## Whats your timeline? 
 What to say: 
-- I am heads down at roostr wrapping things up over the **next two weeks**
-- I have additional light commitments there until March 16th, but I'll be part time by then 
+- I have light commitments there until March 16th, but I'll be part time until then 
 - Earliest start date would be April 1st, as I promised my wife a vacation. 
 
 Internal strategy: **Feb 23rd for T0**    |     Feb 18th for T1+ 
@@ -53,8 +52,7 @@ Internal strategy: **Feb 23rd for T0**    |     Feb 18th for T1+
 ---
 
 ### Roostr vs Pytheia
-Biggest difference is at Roostr, my cofounder sets up the calls and I hop on, at Pytheia, I set up all the calls: from talking to customers to 
-
+Biggest difference is at Roostr, my co-founder sets up the calls and I hop on, at Pytheia, I set up all the calls: from talking to customers to 
 
 ## Why are you leaving Roostr
 > Roostr is **still operating**, the product works, we are getting **inbound**, and I'm on great terms with my cofounder.
@@ -63,14 +61,60 @@ Biggest difference is at Roostr, my cofounder sets up the calls and I hop on, at
 
 ---
 ## What did you do at Roostr 
-I was the CTO and sole production engineer. I built the entire operations stack, including everything from a user facing dashboard and payment portal to the LLM agents that automate workflows on the backend. 
-The core technology is centered around automating the job of a freight forwarding operator, a job thats been centered around spreadsheets and emails for decades. 
-I can go into a specfic workflow if you would like, but the big picture was to use email and slack as an information source to understand offerings from vendors, present that information to customers, and keep the 50+ steps in the shipment journey running smoothly
 
-Specific Workflow: procurement - say we need to answer the question "How do i ship a 40ft container from amsterdam to san diego"
+I built the complete software stack for Roostr, everything from the payment portal to AI agents to search through email and process documents.
+
+Roostr is a freight forwarder, its like a middle man but for shipping products internationally. 
+At a high level, the job is to collect rates from vendors are selling spots on a ship, and sell them to buyers that need to ship.  
+- it sounds simple, but its a 200B dollar problem
+As our core tech, we built two workflows to automate this.  
+- One was to process vendor data. Anytime someone sent us rates in an email, we would automatically process it and get it in the database 
+	- this was the more complex of the two
+- The second was a more general agent to reference data and answer questions 
+Aside from that, we carried out a lot of experiments in other areas, like computer use, sales automation, and automatically managing shipment tracking.
+We also did a few iterations in the first year before finding this idea. 
+
+## Tell me about the procurement workflow
+Right. 
+The job was to automatically process rate contracts coming through email.
+A rate contract is essentially all the information that you would need to define 
+- how something gets shipped 
+- where it gets shipped to
+- and who pays for what
+What made this difficult was that it had to be extremely robust in terms of what it could handle. 
+- we could get 1 rate or hundreds
+- could be in an attached document, or in the text of a previous email in the chain
+- everyone had their own fees and terminology 
+- and if we got anything wrong we had to pay for it. 
+## How did the procurement agent work
+So the pipeline was really a combination of LLM analysis and structured processing, with a dashboard for human review at the end. 
+- first we get the message and decide if its something we want to pay attention to, ignore or respond to
+- then we extract the relevant parts of the conversation and where we think the rates are
+- based on this, we do anything from call a tool to extract the rates directly to call a tool to extract the rows of a spreadsheet in python 
+- The final data get standardized, a confidence ranking is attached and it goes into the database for human review
+- One useful thing here is that there is an audit trail, so when we are reviewing rates on the dashboard, we have a comment on exactly where the information was found
+	- e.g. the rate from Shanghai to Sandiego has a suspicious price, I found it at row36 of rates.csv
+
+In terms of the stack
+- nextjs 
+- python 
+- digital ocean 
+- mongo db
+
+
+## If you were to rebuild X again, what would you do differently?
+Procurement agent: 
+- 
+
+
 
 
 ## How often were you interfacing with customers 
+
+
+
+## Tell me about a time you had to push back on a customer request. 
+
 
 
 ## Can you go into more detail about the procurement agent at Roostr, like how specifically did it work 
@@ -211,7 +255,7 @@ Story: chris and his dad
 
 ---
 ## What motivates you? 
-
+Impact, alignment, vibe 
 
 --- 
 ## Whats your greatest acheivement? 
@@ -224,12 +268,13 @@ I steelman their case first, then I try to repeat it back to them so that its cl
 ---
 
 ## How do you stay up to date? 
-I subscrible to a lot blogs and newsletters, its also the main reason I use x. I also talk with friends about tech a lot. Finally, if I need to do something new, I'll ask a language model to give me a breif or do an analysis of tradeoffs and recent updates. 
+In grad school i had google scholar updates set up for all my favorite authors, 
+now I subscrible to a lot blogs and newsletters, its also the main reason I use x. I also talk with friends about tech a lot. Finally, if I need to do something new, I'll ask a language model to give me a breif or do an analysis of tradeoffs and recent updates. 
 
 ---
 
-## How do you measure sucess? 
-
+## How do you measure success? 
+Depends on the system;,. 
 
 --- 
 ## Leadership philosophy
@@ -358,4 +403,10 @@ Don't burn your house down to stay warm.
 - Concretely: clear interfaces, explicit state, fast feedback loops. Systems designed for the world as it is, not as you wish it were.
 - The thing I respect most is engineers who know when NOT to build something. Restraint is underrated.
 - Bad engineering is complexity that exists to make the engineer feel smart rather than to serve the user.
+
+--- 
+## Thoughts on AI and coding
+First I'd say its important to not confuse means with ends. Your goal is to produce a great robust solution, how you do that is not important. 
+Second: 
+Coding was never the hard part, the hard part was figuring out what to build, how to understand customers needs and bring something ambiguous  to reality. Producing great code has always been important, but really great people are great because their taste and their judgement. 
 

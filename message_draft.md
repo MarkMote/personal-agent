@@ -1,3 +1,35 @@
+## Archer — Email to Jessica/Eddy (case study clarification)
+**Date:** 2026-02-18
+**Status:** DRAFT
+**Channel:** Reply to confirmation email (Jessica Cadigal + Eddy Yu)
+
+---
+
+Hi Jessica,
+
+Looking forward to the 26th. Quick question — the prep materials reference an "official case study document" with in-depth instructions, but I don't think I received that. Could you send it over when you get a chance? Just want to make sure I'm preparing for the right thing.
+
+Thanks!
+Mark
+
+---
+
+## SpaceX — Reply to Eric Harvey (schedule recruiter call)
+**Date:** 2026-02-18
+**Status:** SENT
+**Channel:** Email reply to Eric Harvey (eric.harvey@spacex.com)
+
+---
+
+Hi Eric, thanks for reaching out. I'm excited about the opportunity and happy to set up a call.
+
+I just submitted my availability through the link. Looking forward to speaking with you.
+
+Best,
+Mark
+
+---
+
 ## SpaceX — Connection request to Christopher Lowe (Manager, Dragon GNC)
 **Date:** 2026-02-15
 **Status:** SENT
