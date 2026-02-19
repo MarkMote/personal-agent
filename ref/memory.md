@@ -4,7 +4,13 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-18 (Wed, W08) — Latest Session
+## 2026-02-19 (Thu, W08) — Latest Session
+
+- **Created 5 prep area docs** in `prep/`: leetcode.md, scale_ai.md, anthropic_agents.md, robotics.md, gnc.md
+- **Created 10-day Anthropic agent prep plan** in `prep/agents/` (day_01 through day_10). Covers: SDK fundamentals, tool use, agent loop, error handling, ReAct, streaming/thinking, MCP, workflow patterns, full agent system, timed practice.
+- **Anthropic prep plan built from official docs:** Read llms.txt, llms-full.txt, api_primer.md, links.md, fetched Building Effective Agents blog + cookbook + tool use docs.
+
+## 2026-02-18 (Wed, W08)
 
 - **Jane Street: Rejected.** Email received 2/18. Moved to 01_disqualified.
 - **SpaceX: Recruiter call moved up to Fri 2/20 2:00pm ET** with Eric Harvey (phone to +17703662040). Originally 3/2, rescheduled same day. GNC Engineer (Starlink). Moved to 03_ACTIVE.

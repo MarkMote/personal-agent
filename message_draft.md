@@ -1,15 +1,27 @@
-## Archer — Email to Jessica/Eddy (case study clarification)
-**Date:** 2026-02-18
+## Anthropic — Reply to Jessica Andrelevich (scheduling)
+**Date:** 2026-02-19
 **Status:** DRAFT
-**Channel:** Reply to confirmation email (Jessica Cadigal + Eddy Yu)
+**Channel:** Email reply to Jessica
 
 ---
 
-Hi Jessica,
+Hi Jessica, thanks for sending this over! I have commitments scheduled through the end of February and would love a few days to prep beforehand. Would Thursday 3/5 or Friday 3/6 work on your end?
 
-Looking forward to the 26th. Quick question — the prep materials reference an "official case study document" with in-depth instructions, but I don't think I received that. Could you send it over when you get a chance? Just want to make sure I'm preparing for the right thing.
+Best,
+Mark
 
-Thanks!
+---
+
+## Archer — Email to Suresh Kannan (case study clarification)
+**Date:** 2026-02-19
+**Status:** DRAFT
+**Channel:** LinkedIn message or email to Suresh Kannan
+
+---
+
+Hey Suresh, looking forward to next week. Quick question on the case study — should I just prepare a 30-minute presentation on a past project? Want to make sure I'm preparing for the right thing.
+
+Thanks,
 Mark
 
 ---
