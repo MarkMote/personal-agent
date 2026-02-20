@@ -4,103 +4,56 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-19 (Thu, W08) — Latest Session
+## 2026-02-20 (Fri, W08) — Latest Session
 
-- **Created 5 prep area docs** in `prep/`: leetcode.md, scale_ai.md, anthropic_agents.md, robotics.md, gnc.md
-- **Created 10-day Anthropic agent prep plan** in `prep/agents/` (day_01 through day_10). Covers: SDK fundamentals, tool use, agent loop, error handling, ReAct, streaming/thinking, MCP, workflow patterns, full agent system, timed practice.
-- **Anthropic prep plan built from official docs:** Read llms.txt, llms-full.txt, api_primer.md, links.md, fetched Building Effective Agents blog + cookbook + tool use docs.
+- **Viam: Rejected.** Matt Leva email 2/20. "Unique needs of the team at this stage." Moved to 04_closed_lost.
+- **SpaceX: Passed recruiter screen → HM interview Thu 3/5 4:00-4:45pm ET w/ Cole Morgan (Sr. GNC Engineer).** 45 min phone. Accomplishment deep-dive + technical. No AI. Cole has been at SpaceX 5.5 yrs, UW MS Aerospace (controls). Mutual connection: Prince Kuevor (Mark knows from Lincoln Lab).
+- **Anthropic scheduling:** Requested Thu 3/5 or Fri 3/6 for Colab agent build. SpaceX is 4pm on 3/5, so Anthropic morning would work. No conflict if Anthropic picks 3/5 (only requested 11am-3pm slots).
+- **Radical AI: Dave Veisz call went well (2/18).** Good vibe, 40 ppl (37 engineers), 100% in office. Dave putting Mark in touch with Hassan for next steps. Reminder set for 2/24 to nudge if no intro yet.
+- Laurion live coding done (11am w/ Yev). Mark expects likely out.
+- Created SpaceX briefing doc, Laurion coding prep guide, call prep for recruiter screen.
+- **CLAUDE.md updated:** Must read communication_principles.md before drafting any message. Must read reminders.md on session start. Date context updated to W08.
+- **Created ref/reminders.md** for date-triggered follow-ups.
+
+## 2026-02-19 (Thu, W08)
+
+- Created prep docs: leetcode.md, scale_ai.md, anthropic_agents.md, robotics.md, gnc.md
+- Created 10-day Anthropic agent prep plan in prep/agents/ (SDK, tool use, MCP, workflow patterns)
+- Memory/queue/timeline pruned and updated
 
 ## 2026-02-18 (Wed, W08)
 
-- **Jane Street: Rejected.** Email received 2/18. Moved to 01_disqualified.
-- **SpaceX: Recruiter call moved up to Fri 2/20 2:00pm ET** with Eric Harvey (phone to +17703662040). Originally 3/2, rescheduled same day. GNC Engineer (Starlink). Moved to 03_ACTIVE.
-- **SpaceX: Interview process researched.** Full write-up in `full_context.md`. Process: recruiter screen -> HM technical screen (PD control, orbits, freq domain) -> take-home (Codility) -> onsite (project presentation + coding + sys design + behavioral). **Starlink GNC is in Redmond, WA, not LA.** Corrected in spacex.md.
-- **Anthropic HM screen completed.** Call with Samuel Flamini went well. Good vibe, likely advancing. Stumbled a bit on quoting agent details. Next round: build an agent in Colab in 45 min (Python SDK). Prep: read all Anthropic agent docs + tool use docs. FDEs can contribute to Claude Code between projects. Team is ~30 ppl globally, 70/30 keyboard/customer split.
-- **Radical AI intro call with Dave Veisz at 11am** (Head of Automation). Outcome TBD.
-- **Roostr conditions set for Jacky call:** $750k closed by Mar 14, $180k salary each from close, 12-month commitment, back pay forgiven. All interview processes continue regardless.
+- **Jane Street: Rejected.** Moved to 04_closed_lost.
+- **Anthropic HM screen completed.** Samuel Flamini, went well, advancing. Next: build agent in Colab (45 min, Python SDK).
+- **SpaceX interview process researched.** Full write-up in full_context.md.
 
-## 2026-02-17 (Tue, W08)
+## 2026-02-13-17 (W07-W08)
 
-- **Jane Street Round 1: went generally well.** Didn't nail everything but expects pass more likely than not.
-- **Viam interview at 3pm ET today** w/ Ian Whalen (VP Product).
-
-## 2026-02-15 (Sun, W07)
-
-- **SpaceX: connection request sent to Christopher Lowe** (Manager, Dragon GNC). Tier upgraded 3→1. Plan B in ~1 week: internal referral via Mehregan Dor (1st degree, GT PhD, Starlink GNC) or Prince Kuevor. Lars Blackmore is a warm connection but saving that capital.
-- **Laurion: live coding assessment scheduled.** Fri 2/20 11am ET with Yev (Quant Dev), 1 hour. Marcus reply drafted.
-- **Marcus reply drafted:** D.E. Shaw update (didn't go well, underprepped for coding pattern) + Laurion scheduling.
-- **Practice problems restructured:** Added clear task descriptions to all 14 games/ problems. Fixed broken stack machine factorial example.
-
-## 2026-02-13 (Fri, W07)
-
-- **D.E. Shaw Round 1: didn't go well.** Wrong interviewer, wrong team, generic SWE focus. String calculator problem. Mark doesn't expect to hear back. Reflecting that LC-style interviews are a poor fit for his profile.
-- **Radical AI: Dave Veisz (Head of Automation) reached out.** Intro call scheduled Wed 2/18 11am ET. Leadership-level interest after Raymond screen — good sign.
-- **Marcus draft already sent.** PDT hold + Laurion update.
-- **Strategy discussion:** LC screens are a weakness after 2 weeks of practice with no improvement. Shifting strategy toward companies with builder-friendly interview processes. Archer is a location last resort (San Jose). Laurion expected to move forward.
-- **Fauna: intro call confirmed Tue 2/24 5pm ET w/ Josh Merel.**
-- **Updated Wed 2/18 schedule:** Radical AI 11am, Anthropic 2:30pm.
-
-## 2026-02-12 (Thu, W07)
-
-### Pipeline snapshot: 10 active processes, 6 confirmed interviews in next 14 days
-| Date | Company | Type |
-|------|---------|------|
-| Fri 2/13 2pm ET | D.E. Shaw | Round 1 (leetcode easy/med, WebEx) |
-| Tue 2/17 10:30am ET | Jane Street | SWE coding (CoderPad, NOT ML) |
-| Tue 2/17 3pm ET | Viam | Interview w/ Ian Whalen VP Product (Zoom) |
-| Wed 2/18 2:30pm ET | Anthropic | HM screen w/ Samuel Flamini (Google Meet) |
-| Mon 2/24 9:30am ET | Scale AI | Tech screen (Python, implementation-style) |
-| Thu 2/26 11:45am PST | Archer | Onsite San Jose (case study + 5 interviews) |
-
-### Key updates this session
-- **Fauna Robotics: Josh Merel replied.** Wants to meet week of Feb 23 or Mar 2. Sent to typo email (markmote), forwarded by other Mark. Moved Fauna to 03_ACTIVE. Draft reply in message_draft.md — corrects email, keeps scheduling open. Targeting Feb 23-24 for call.
-- **Viam: Ian Whalen (VP Product) interview confirmed Feb 17 3pm ET.** Zoom details in viam.md. Same day as Jane Street (10:30am) — no conflict.
-- **Archer: flights + hotel booked.** LGA→SJC Wed 2/25 (1 stop DEN, arrive 5:55pm), SJC→LGA Fri 2/27 (depart 11:30am, 1 stop DAL). Southwest. Jessica denied 2nd hotel night (policy). Mark covering out of pocket.
-- **Laurion/Sarkis call recap:** Most enjoyable conversation of the search. Role is in his wheelhouse. Waiting to hear if Sarkis moves him forward. Connected on LinkedIn.
-- **PDT Partners (via Marcus):** Declined for now. Good firm but general SWE, not ideal fit. Told Marcus to revisit in 1-2 weeks.
-- **Zeal FIR: Closed.** Focusing on existing candidates. Moved to 01_disqualified.
-- **Radical AI: Moved to 03_ACTIVE.** Raymond Bjorkman call was good, lab automation/robotics in NYC.
-
-### Pipeline strategy decisions
-- **Feb 20 checkpoint policy:** If <5 active processes by Feb 20, spend 2 full days on new apps. If 5-6, add 3-4 targeted apps. If 8+, stay the course.
-- **Hard deadline:** Mar 10 for new applications to convert by April start.
-- **Archer prep:** Sat 2/21 full day (~8-10 hrs). Case study + company research + interviewer LinkedIn + behavioral. Tue 2/24 for final touches. Light review on Wed flight.
-- **Archer odds:** ~50%. Case study is ~80% of the outcome.
-
-### 4 unsent message drafts in message_draft.md
-1. Fauna/Josh Merel — reply from correct email, fix typo, schedule call
-2. Marcus — PDT hold + Laurion/Sarkis update
-3. Archer/Jessica — confirm schedule, flights/hotel booked
-4. Viam/Alexa — confirm Ian Whalen interview
-
-### Folder moves this session
-- Fauna: 02_qualified → 03_ACTIVE (Josh replied)
-- Radical AI: 00_pending → 03_ACTIVE (Raymond call went well)
-- Zeal FIR: 00_pending → 01_disqualified (closed)
-- D.E. Shaw: renamed de-shaw-genai → t0_de-shaw-genai (naming convention)
-
-## 2026-02-10 (Tue, W07)
-
-- Marcus prep call: D.E. Shaw process (5 calls, 3 rounds), Laurion intel, PDT intro
-- Laurion call with Sarkis: build prototypes for researchers, quant co-scientist vision. Full transcript in `t1_laurion-capital/call_2026-02-10.md`.
-- Radical AI call with Raymond Bjorkman: lab automation, robotic arms, ROS, NYC.
-- Archer onsite confirmed: Thu 2/26, case study + 5 interviews.
+- D.E. Shaw Round 1 (2/13): didn't go well. Likely dead.
+- Fauna: intro call confirmed Tue 2/24 5pm ET w/ Josh Merel.
+- Archer prep plan: Sat 2/21 full day. Case study ~80% of outcome.
+- Strategy shift: LC screens are a weakness, pivoting toward builder-friendly processes.
 
 ## Key context (persistent)
 
-### Active processes
-- Anthropic (T0): HM screen done 2/18, advancing. Next: Colab agent build (45 min, Python SDK). Prep agent docs.
-- Viam (T0): Ian Whalen interview 2/17. Waiting on outcome.
-- D.E. Shaw (T0): Round 1 2/13 didn't go well. Likely dead but no official rejection yet.
-- SpaceX (T1): Eric Harvey scheduling recruiter call for GNC Engineer (Starlink). Submit availability.
-- Archer (T1): Onsite 2/26. Case study on PhD safe autonomy (CBF/barrier certs). C++ strategy: be honest, sell domain expertise.
-- Laurion (T1): Live coding assessment Fri 2/20 11am ET with Yev. 1 hour.
-- Fauna (T1): Josh Merel intro call Tue 2/24 5pm ET.
-- Scale AI (T2): Tech screen Mon 2/24 9:30am ET. FDE role, robotics transfer later.
-- Radical AI (T2): Dave Veisz call 2/18 11am. Outcome TBD.
-- Arena AI (T1): Waiting on team outreach (Brandon connection).
+### Active processes — use folder names for tiers
+- **Anthropic (T0):** Colab agent build ~3/5-3/6. Only T0.
+- **SpaceX (T1):** HM interview 3/5 w/ Cole Morgan. GNC Starlink, Redmond WA. Top choice if not for relocation.
+- **Archer (T1):** Onsite Thu 2/26 San Jose. Case study (safe autonomy/CBF). Flights booked.
+- **Fauna (T1):** Josh Merel intro Tue 2/24 5pm ET. NYC. Humanoid robots.
+- **Scale AI (T1):** Tech screen Mon 2/24 9:30am ET.
+- **D.E. Shaw GenAI (T2):** Likely dead. No official rejection.
+- **Laurion (T2):** Live coding done 2/20. Likely out per Mark's read.
+- **Radical AI (T2):** Advancing, waiting on Hassan intro.
+- **Arena AI:** Stalled, waiting on Brandon.
+
+### Key learnings this session
+- **Tier source of truth = folder names**, not tracker.csv. Mark reassesses tiers based on conversations and fit.
+- **No fintech at T0** (rule of thumb, not hard rule). Passion-driven.
+- **Rejection pattern:** Coding screens are the filter, not fit conversations. Every process where Mark talks to humans about the work is advancing.
+- **Pipeline assessment (Feb 20 checkpoint):** 6 real prospects, healthy. No T0s lost (Jane St was T2, Viam/Percepta were T1). Anthropic carrying the T0 weight. 2 of 3 T1s require relocation.
 
 ### Key decisions
 - Location tier: NYC > SF > international > everything else
-- Resume typo (markmote vs marklmote) has affected D.E. Shaw and Fauna emails
-- Interview prep: W07 daily problems in prep/interview_problems/W07/. Fundamentals in prep/fundamentals_qa.md.
+- Feb 20 checkpoint: 6 active, stay the course (threshold was 5).
+- Hard deadline Mar 10 for new apps to convert by April start.

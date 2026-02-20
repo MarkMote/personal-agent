@@ -8,7 +8,7 @@ marklmote@gmail.com
 https://www.linkedin.com/in/mote/
 
 ## Current Status
-- **Date context:** Early February 2026 (W06)
+- **Date context:** Late February 2026 (W08)
 - **Target start:** April 2026
 - **Wave 1:** NYC-only companies (80+ targets in tracker.csv)
 - **Personal runway:** Through end of April
@@ -20,7 +20,8 @@ https://www.linkedin.com/in/mote/
 - **W09:** Mon Feb 23 - Fri Feb 27 
 
 ## TIER 1 RULES (most important)
-- **Start every new session by reading `ref/memory.md`.** This is the running log of recent activity. It tells you what happened, what's pending, and what changed. Read it before doing anything else.
+- **Start every new session by reading `ref/memory.md` and `ref/reminders.md`.** Memory tells you what happened. Reminders tells you what's due. Read both before doing anything else. If a reminder's date has arrived, surface it to Mark immediately.
+- **Read `ref/communication_principles.md` before drafting any message.** Every time. No exceptions. This defines Mark's voice, style, and rules (no em dashes, no buzzwords, no emojis, Paul Graham style, show don't tell, correct grammar).
 - Any message draft you write in the terminal must be copied to message_draft.md. No exceptions. Mark cannot copy or edit messages you write for him if they are not put in message_draft.md.
 - Record as much as practically possible, while maintaining good organization. There is very little cost to writing things down that may be useful in the future. If we take an action with a company, record it. If you learn new information about mark or a company, or that could be useful later, record it. As long as we maintain good file organization, there is little cost to not new recording information and a huge gain in terms of organization, writing, and the ability to audit.
 - Maintain this claude.md file, the other files, and the overall organization of this directory. If rules change, or you learn new things, make sure its recorded so that you will be able to remember after a new session starts.

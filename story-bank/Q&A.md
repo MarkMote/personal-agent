@@ -28,6 +28,7 @@ I'd say 250-350 is the best ballpark, but again that's very subject to change
 > I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. I'm currently winding down as CTO of a Roostr. There I built the complete production stack of centered around LLM pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, a company that did camera based robotic perception
 
 ---
+
 ## Desired Role? 
 
 > ONE-LINER: I want a role where I feel like I'm learning things: elite team, open-ended problems, whiteboard, shipping. Not implementing predefined specs. 
@@ -86,6 +87,7 @@ What made this difficult was that it had to be extremely robust in terms of what
 - could be in an attached document, or in the text of a previous email in the chain
 - everyone had their own fees and terminology 
 - and if we got anything wrong we had to pay for it. 
+
 ## How did the procurement agent work
 So the pipeline was really a combination of LLM analysis and structured processing, with a dashboard for human review at the end. 
 - first we get the message and decide if its something we want to pay attention to, ignore or respond to
@@ -104,8 +106,7 @@ In terms of the stack
 
 ## If you were to rebuild X again, what would you do differently?
 Procurement agent: 
-- 
-
+- would use MCP servers rather than trying to roll my own tools for everything 
 
 
 
@@ -144,18 +145,16 @@ Procurement agent:
 
 
 ## Tell me something you were wrong about recently. 
-Give example
+I built an agent to crawl emails to help answer questions. 
+I thought having the control would be nice, but I later learned the out of the box tools for this are very mature, so a lot of the work was unneccesary
 
 longer: I'm a baysian, if everything is a probability then youre not wrong just uncalibrated, likewise you are never right, just better calibrated. 
-
 
 
 ## Out of everything you've worked on, what are you the most proud of? What was the actual impact. 
 
 
 ## If you were to go back and try PYtheia again, do you think the idea would work?
-
-
 
 
 

@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "project": "image-labeling-q1",
+    "export_date": "2024-01-16T00:00:00Z",
+    "total_tasks": 47
+  },
+  "sessions": [
+    {
+      "session_id": "s001",
+      "worker_id": "w1",
+      "task_type": "bbox",
+      "start": "2024-01-15T09:00:00Z",
+      "end": "2024-01-15T09:45:00Z",
+      "items_labeled": 23,
+      "metadata": {"region": "us-east", "difficulty": "easy"}
+    },
+    {
+      "session_id": "s002",
+      "worker_id": "w1",
+      "task_type": "bbox",
+      "start": "2024-01-15T09:30:00Z",
+      "end": "2024-01-15T10:15:00Z",
+      "items_labeled": 18,
+      "metadata": {"region": "us-east", "difficulty": "medium"}
+    },
+    {
+      "session_id": "s003",
+      "worker_id": "w2",
+      "task_type": "segmentation",
+      "start": "2024-01-15T08:00:00Z",
+      "end": "2024-01-15T08:30:00Z",
+      "items_labeled": 5,
+      "metadata": {"region": "eu-west", "difficulty": "hard"}
+    },
+    {
+      "session_id": "s004",
+      "worker_id": "w2",
+      "task_type": "segmentation",
+      "start": "2024-01-15T10:00:00Z",
+      "end": "2024-01-15T11:30:00Z",
+      "items_labeled": 12,
+      "metadata": {"region": "eu-west", "difficulty": "hard"}
+    },
+    {
+      "session_id": "s005",
+      "worker_id": "w1",
+      "task_type": "classification",
+      "start": "2024-01-15T10:15:00Z",
+      "end": "2024-01-15T10:15:00Z",
+      "items_labeled": 0,
+      "metadata": {"region": "us-east", "difficulty": "easy"}
+    },
+    {
+      "session_id": "s006",
+      "worker_id": "w3",
+      "task_type": "bbox",
+      "start": "2024-01-15T14:00:00Z",
+      "end": "2024-01-15T15:30:00Z",
+      "items_labeled": 42,
+      "metadata": {"region": "us-west"}
+    },
+    {
+      "session_id": "s007",
+      "worker_id": "w1",
+      "task_type": "bbox",
+      "start": "2024-01-15T13:00:00Z",
+      "end": "2024-01-15T14:00:00Z",
+      "items_labeled": 30,
+      "metadata": {"region": "us-east", "difficulty": "easy"}
+    },
+    {
+      "session_id": "s008",
+      "worker_id": "w2",
+      "task_type": "classification",
+      "start": "2024-01-15T11:00:00Z",
+      "end": "2024-01-15T11:45:00Z",
+      "items_labeled": 35,
+      "metadata": {"region": "eu-west", "difficulty": "easy"}
+    },
+    {
+      "session_id": "s009",
+      "worker_id": "w3",
+      "task_type": "bbox",
+      "start": "2024-01-15T15:00:00Z",
+      "end": "2024-01-15T16:00:00Z",
+      "items_labeled": 28,
+      "metadata": null
+    },
+    {
+      "session_id": "s010",
+      "worker_id": "w1",
+      "task_type": "bbox",
+      "start": "2024-01-15T23:30:00Z",
+      "end": "2024-01-16T00:30:00Z",
+      "items_labeled": 15,
+      "metadata": {"region": "us-east", "difficulty": "medium"}
+    },
+    {
+      "session_id": "s011",
+      "worker_id": "w4",
+      "task_type": "bbox",
+      "start": "2024-01-15T09:00:00Z",
+      "end": null,
+      "items_labeled": 10,
+      "metadata": {"region": "apac"}
+    },
+    {
+      "session_id": "s012",
+      "worker_id": "w2",
+      "task_type": "segmentation",
+      "start": "2024-01-15T08:15:00Z",
+      "end": "2024-01-15T08:45:00Z",
+      "items_labeled": 7,
+      "metadata": {"region": "eu-west", "difficulty": "hard"}
+    }
+  ]
+}

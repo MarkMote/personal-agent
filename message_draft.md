@@ -1,14 +1,34 @@
-## Anthropic — Reply to Jessica Andrelevich (scheduling)
-**Date:** 2026-02-19
+## SpaceX — Reply to Eric Harvey (confirm HM interview)
+**Date:** 2026-02-20
 **Status:** DRAFT
-**Channel:** Email reply to Jessica
+**Channel:** Email reply to Eric Harvey (eric.harvey@spacex.com)
 
 ---
 
-Hi Jessica, thanks for sending this over! I have commitments scheduled through the end of February and would love a few days to prep beforehand. Would Thursday 3/5 or Friday 3/6 work on your end?
+Thanks Eric, I enjoyed our conversation today. March 5th at 4pm works great. Looking forward to speaking with Cole.
 
 Best,
 Mark
+
+---
+
+## Anthropic — Scheduling next round
+**Date:** 2026-02-19
+**Status:** DRAFT
+**Channel:** Portal / email reply to coordinator
+
+---
+
+Hi Jessica,
+
+I'm excited for the next step!
+
+I see the last day on the link is Wednesday March 4th. Would it be possible to extend that range until Friday? I have a tight schedule for the next week and a half, but I'm available any time Thursday 3/5 or Friday 3/6.
+
+Best,
+Mark
+
+---
 
 ---
 

@@ -9,15 +9,17 @@
 ## Target Role
 ### GNC Engineer (Starlink)
 - Position Eric Harvey reached out about 2/18
-- 30-min recruiter call to be scheduled
+- Recruiter screen passed 2/20
+- HM interview scheduled: Thu 3/5 4:00-4:45pm ET with Cole Morgan
 
 ## Key People
 | Name | Role | Notes |
 |------|------|-------|
-| Eric Harvey | Technical Recruiter | Reached out 2/18 to schedule call. eric.harvey@spacex.com, C: (425) 508-5735 |
+| Eric Harvey | Technical Recruiter | eric.harvey@spacex.com, C: (425) 508-5735 |
+| Cole Morgan | Sr. GNC Engineer | HM interviewer 3/5. At SpaceX since Jul 2020 (~5.5 yrs). UW MS Aerospace (Autonomous Controls Lab, 2018-2020). UW BS Aerospace (2014-2018). Background: control schemes for small vehicles, propulsion/combustion research. Seattle area. **Mutual connection: Prince Kuevor (Mark knows from Lincoln Lab).** |
 | Christopher Lowe | Manager, Dragon GNC | Connection request sent 2/15. Original outreach target. |
 | Mehregan Dor | Starlink GNC | 1st degree connection, GT PhD. Potential internal referral. |
-| Prince Kuevor | Unknown | Potential internal referral. |
+| Prince Kuevor | Unknown role at SpaceX | Potential internal referral. Mark knows from Lincoln Lab. Mutual connection with Cole Morgan. |
 | Lars Blackmore | Unknown (senior) | Warm connection. Saving capital for later. |
 
 ## Your Angle
@@ -32,8 +34,9 @@
 
 ## Process
 - **2026-02-15:** Connection request sent to Christopher Lowe (Dragon GNC Manager)
-- **2026-02-18:** Eric Harvey (Technical Recruiter) emailed — moving forward with GNC Engineer (Starlink). Availability submitted, call confirmed.
-- **2026-02-20 2:00-2:30pm ET:** Recruiter screen with Eric Harvey. Phone call to +17703662040. (Originally scheduled 3/2, moved up.)
+- **2026-02-18:** Eric Harvey emailed, moving forward with GNC Engineer (Starlink).
+- **2026-02-20:** Recruiter screen with Eric Harvey. Passed same day.
+- **2026-03-05 4:00-4:45pm ET:** HM phone interview with Cole Morgan. Phone to +17703662040. 45 min. Accomplishment deep-dive + technical. No AI allowed.
 
 ## Interview Process (from research)
 1. **Recruiter Screen (15-30 min)** — Background, motivation, "why SpaceX?", qualifications check. Non-technical.
