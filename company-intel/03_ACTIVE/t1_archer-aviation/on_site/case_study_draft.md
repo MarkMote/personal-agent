@@ -165,8 +165,14 @@ work in:
 
 
 ## Slide 2: resume overview
-Today ill be talkign about 
-
+Dialogue: 
+OK so sorry hitting you with a wall of text
+I just want to quickly go through my background to help contextualize some of the content today. 
+- Nearly everything I've done until my current job has related to safety in aerosace
+    - was my thesis 
+    - was most of my internships 
+    - it was the entire point of my first startup 
+- Today I'll mostly be touching on a few projects from grad school since i think they are most relevant. 
 
 
 Things I've done, how they relate to safety, and where this fits in
@@ -176,33 +182,131 @@ Things I've done, how they relate to safety, and where this fits in
 - reference: https://www.markmote.com/resume for a tight timeline
 
 
-
-- Expanding the Definition
-
-
-
-
-
-## Slide: Safety Critical Control 
-
-What do I Mean by Safety? 
-
-Pose the actual problem we are trying to solve 
-xdot=f(x,u)
-
-What it is, what its not 
-What my focus is on: 
-- applying this methodology to different systems 
-
-
-## Invariant sets 
+## Slide: Sections 
+- Runtime assurance
+    - introduce the 
+    - about the tutorial paper I coauthored, which is really a nice intro
+- Application to Spacecraft Proximity Operations 
+    - work at AFRL on applying the theory to docking
+- Application to Spacecraft Attitude Control 
+    - another interesting application
+- Planning for Failure 
+    - ... 
 
 
 
+## Slide: Safety Critical Control: Constraint Set 
+Dialogue: 
+Ok the next few slides are a bit dense, I'm assuming some familiarity with this, but just stop me if I skip over anything important
+So first what do we mean by safety
+Generally: it means freedom from harm, danger, damage, or failure of a mission 
+The perspective we will take will be for control systems. 
+... 
+So for example CA tells you "no collisions" 
+- it tells you what to do and not do
+- but not how to do it or whether its even possible
+- and there is no notion of time here
+For that we need the notion of invariance 
 
-## Slide: RTA Approach 
-Idea: decouple safety and control 
 
+## Safety Critical Control: Invariance and Safety 
+
+Safety means satisfying contstraints for all time
+More formally: We use the notion of forward invariance: meaning if you start in a set you will stay in that set 
+
+A controller is safe if it renders the closed loop system forward invariant 
+- footnote: link to formal definition in backup slide
+
+
+## Control Invariance 
+One more useful concept here: 
+Control invariance: the set of states that **can** be rendered forward invariant 
+- ie you can find a controller to make it safe
+Viability Kernel: the largest control invariant subset
+- ie its the best safe set we can hope to find 
+Why do we care about large? because a large safe set means  that you are allowed to visit more states. 
+
+
+## Visual Take: 
+Sets we really care about
+- State Space X 
+- Allowable set of states CA 
+- Safe Set 
+l
+Give examples
+
+
+## RTA: Framework for solving safety 
+Issue: only works for closed loop control policy
+- controllers are complex 
+- proving invariance gets harder with complexity
+- and if you want to change the controler, you have to prove it again 
+- and if you want a human to control you have no proofs 
+RTA: lets you solve the safety problem seperately, and override unsafe inputs 
+- solves all of these problems 
+
+
+## Robotarium Example
+- Barrier fuctions 
+- Safety for gritsbot
+- Dynamics
+- Something actually unsatisfying to an aerosapce engineer about this. 
+- Fails to capture somthing important 
+    - most systems you cant just stop 
+
+I have some backup slides on barrier functions, but the idea is just that ... 
+
+
+## Implicit Methods
+- How do you actually find the Safe Set
+- This is really what my research focused on 
+
+Finding safe invariant sets is easy
+But useful ones are large
+and Large invariant sets are hard
+but if you know of ANY invariant set, and can control there safely
+You are in a control insariant set
+
+So you dont actually need to know the safe set at all! 
+
+
+## Implicit ASIF
+- Coauthored this paper, mostly focusing on the applications 
+
+## Implicit Simplex
+- interesting thing about this, you can take a trivial safe set
+- 
+
+## Visual Take 2a
+
+show both the approaches 
+
+## Visual take 2b
+Show the tradeoff 
+
+
+## RTA: Summary 
+I created this taxonomy
+two dimentions for solving the problem 
+- Online vs ofline 
+- Switching vs non-switching
+
+What makes it good: 
+- minimize false positives 
+- maximize 
+
+## Next section: 
+- Now we will get into the case studies. 
+- Its about combingin this framework with engineering
+- Applying it to real systems and the work that comes out of that 
+
+## Arpod problem 
+Take away from this section will be:
+- MIPS approximate the viability kernel 
+
+
+
+--- 
 
 ## Existing approaches and gaps 
 

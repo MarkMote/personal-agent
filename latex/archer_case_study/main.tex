@@ -25,6 +25,7 @@
 \setbeamercolor{itemize item}{fg=blue600}
 \setbeamercolor{itemize subitem}{fg=slate400}
 \setbeamercolor{block title}{fg=white, bg=slate900}
+\setbeamerfont{block title}{size=\small}
 \setbeamercolor{block body}{bg=slate100}
 
 % ── Bullets ─────────────────────────────────────────────────
@@ -53,6 +54,7 @@
 \usepackage{booktabs}
 \usepackage{pgfpages}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 % ── Source footnotes ────────────────────────────────────────
 % Horizontal rule + left-aligned citation below, like thesis style.
@@ -168,6 +170,105 @@
   \entry{pytheia.png}{CEO \& Co-Founder}{Pytheia}{Camera perception for robots}{2021--2024}
   \entry{roostr.png}{CTO \& Co-Founder}{Roostr}{AI-native freight forwarder}{2024--now}
   }
+\end{frame}
+
+% ── Outline ──────────────────────────────────────────────
+\begin{frame}{Outline}
+  \vfill
+  \begin{enumerate}[label={\color{slate900}\Roman*.}, itemsep=12pt]
+    \item Intro to Runtime Assurance
+    \item Application to Spacecraft Proximity Operations
+    \item Application to Spacecraft Attitude Control
+    \item Planning for Failure
+  \end{enumerate}
+  \vfill
+\end{frame}
+
+% ── Safety-Critical Control ──────────────────────────────
+\begin{frame}{Safety-Critical Control}
+  \small
+  \textbf{Given:} Input-constrained dynamical system, with \textbf{state} $x \in X \subseteq \mathbb{R}^n$
+  and \textbf{input} $u \in U \subset \mathbb{R}^m$
+
+  \vskip-4pt
+  \[ \dot{x} = F(x,\, u) \]
+  \vskip2pt
+  \textbf{Safety} is defined  \textit{from}  constraints on the state:
+  \vskip-4pt
+  \[ \varphi_i(x) \geq 0, \quad i = 1, \ldots, M \]
+  \vskip2pt
+  States satisfying all constraints form the \textbf{constraint set} (\textit{allowable set}):
+  \vskip-4pt
+  \[ \mathcal{C}_A := \{x \in X \mid \varphi_i(x) \geq 0, \;\; i = 1, \ldots, M\} \]
+  \vskip4pt
+  Example: $\mathcal{C}_A$ specifies "no collisions"
+  \vskip4pt  
+  \textbf{Not all states in the constraint set are safe!}
+\end{frame}
+
+% ── Invariance and Safety ────────────────────────────────
+\begin{frame}{Invariance and Safety}
+  \small
+  Safety means satisfying constraints \textbf{for all time}.
+
+  \vskip6pt
+  \begin{block}{Forward Invariance}
+    A closed set $S \subset X$ is \textbf{forward invariant} w.r.t.\ a closed-loop system if:
+    \vskip-2pt
+    \[ x(t_0) \in S \;\;\Rightarrow\;\; \forall\, t \geq t_0,\;\; x(t) \in S \]
+    \vspace{-10pt}
+  \end{block}
+
+  \vskip2pt
+  States are \textbf{safe} if they are in a forward invariant subset of $\mathcal{C}_A$.
+
+  \vskip6pt
+  A \textbf{safe set} of states is denoted by $\mathcal{C}_S \subseteq \mathcal{C}_A$.
+
+  \vskip4pt
+  \begin{block}{Safe Control Law}
+    A controller $u: X \to U$ is a \textbf{safe control law} if it renders the closed-loop system forward invariant inside a safe set $\mathcal{C}_S \subseteq \mathcal{C}_A$.%
+    \textsuperscript{\hyperlink{backup:safety-formal}{\color{blue600}\tiny\,*}}
+    \vspace{-4pt}
+  \end{block}
+\end{frame}
+
+
+% ═══════════════════════════════════════════════════════════
+% ── BACKUP SLIDES ────────────────────────────────────────
+% ═══════════════════════════════════════════════════════════
+
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Backup Slides}}\\[8pt]
+    {\color{slate700}Additional detail and formal definitions}
+  \end{center}
+  \vfill
+\end{frame}
+
+% ── Backup: Formal Safety Definitions ─────────────────────
+\begin{frame}{Formal Safety Definitions}
+  \hypertarget{backup:safety-formal}{}
+  \small
+  \begin{block}{Definition 1 (Forward Invariance)}
+    A closed set $S \subset X$ is \textbf{forward invariant} with respect to a closed-loop dynamical system if:
+    \vskip-2pt
+    \[ x(t_0) \in S \;\;\Rightarrow\;\; \forall\, t \geq t_0,\;\; x(t) \in S \]
+    \vspace{-10pt}
+  \end{block}
+
+  \vskip4pt
+  \begin{block}{Definition 2 (Safety)}
+    A state $x \in X$ is \textbf{safe} w.r.t.\ a dynamical system, control law $u: X \to U$, and constraint set $\mathcal{C}_A$ if $x$ is in a forward invariant subset of $\mathcal{C}_A$. The control law $u$ is then a \textbf{safe control law}.
+    \vspace{-2pt}
+  \end{block}
+
+  \vskip6pt
+  A ``safe set'' of states is denoted by $\mathcal{C}_S \subseteq \mathcal{C}_A$.
+
+  \vskip4pt
+  \sourceurl{Mote, 2021 --- PhD Dissertation, Georgia Tech}{/papers/MOTE-DISSERTATION-2021.pdf}
 \end{frame}
 
 
