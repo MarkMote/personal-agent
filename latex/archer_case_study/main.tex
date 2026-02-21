@@ -1,0 +1,197 @@
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+% ── Theme & Layout ──────────────────────────────────────────
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamersize{text margin left=12mm, text margin right=12mm}
+
+% ── Colors (Tailwind) ───────────────────────────────────────
+\definecolor{slate900}{RGB}{15, 23, 42}      % near-black headings
+\definecolor{slate700}{RGB}{51, 65, 85}      % body text
+\definecolor{slate400}{RGB}{148, 163, 184}   % subtle/muted
+\definecolor{slate100}{RGB}{241, 245, 249}   % light background
+\definecolor{blue600}{RGB}{37, 99, 235}      % accent
+\definecolor{blue100}{RGB}{219, 234, 254}    % light accent bg
+
+\setbeamercolor{frametitle}{fg=slate900}
+\setbeamercolor{title}{fg=slate900}
+\setbeamercolor{subtitle}{fg=slate700}
+\setbeamercolor{author}{fg=slate700}
+\setbeamercolor{date}{fg=slate400}
+\setbeamercolor{normal text}{fg=slate700}
+\setbeamercolor{itemize item}{fg=blue600}
+\setbeamercolor{itemize subitem}{fg=slate400}
+\setbeamercolor{block title}{fg=white, bg=slate900}
+\setbeamercolor{block body}{bg=slate100}
+
+% ── Bullets ─────────────────────────────────────────────────
+\setbeamertemplate{itemize item}{\small\raise1pt\hbox{\color{slate900}$\bullet$}}
+\setbeamertemplate{itemize subitem}{\small\raise1pt\hbox{\color{slate400}$\circ$}}
+\setbeamertemplate{itemize subsubitem}{\small\raise1pt\hbox{\color{slate400}\textendash}}
+\setlength{\leftmargini}{1.2em}
+\setlength{\leftmarginii}{1.2em}
+
+% ── Fonts ───────────────────────────────────────────────────
+\usepackage{tgheros}                    % TeX Gyre Heros (clean sans-serif)
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usefonttheme{professionalfonts}
+\setbeamerfont{title}{size=\LARGE, series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize, series=\mdseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{date}{size=\small}
+
+% ── Packages ────────────────────────────────────────────────
+\usepackage{amsmath, amssymb}
+\usepackage[cm]{sfmath}                 % sans-serif math to match body
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{pgfpages}
+
+% ── Speaker Notes ───────────────────────────────────────────
+% Uncomment the next line to show notes in presenter mode (pdfpc reads them automatically)
+% \setbeameroption{show notes on second screen=right}
+\setbeamertemplate{note page}{\pagecolor{yellow!10}\insertnote}
+\setbeamerfont{note page}{size=\normalsize}
+
+% ── Custom frame title with subtle rule ─────────────────────
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth, leftskip=12mm, rightskip=12mm, ht=8mm, dp=1mm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle\strut%
+  \end{beamercolorbox}%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0.4pt, leftskip=12mm, rightskip=12mm]{rule}%
+    {\color{slate400}\rule{\dimexpr\paperwidth-24mm}{0.4pt}}%
+  \end{beamercolorbox}%
+  \nointerlineskip%
+  \vskip4pt%
+}
+
+% ── Slide number (bottom right, small) ──────────────────────
+\setbeamertemplate{footline}{%
+  \usebeamercolor[fg]{page number in head/foot}%
+  \usebeamerfont{page number in head/foot}%
+  \hfill{\color{slate400}\footnotesize\insertframenumber}%
+  \hspace*{12mm}\vskip4mm%
+}
+
+% ── Meta ────────────────────────────────────────────────────
+\title{Safe Autonomy for Flight}
+\subtitle{Runtime Assurance, Barrier Functions,\\and Applications to Autonomous Aircraft}
+\author{Mark Mote}
+\date{February 26, 2026}
+
+% ═══════════════════════════════════════════════════════════
+\begin{document}
+
+% ── Title Slide ─────────────────────────────────────────────
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\\[8pt]
+    \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\\[20pt]
+    \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\\[4pt]
+    \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate
+  \end{center}
+  \vfill
+\end{frame}
+}
+\note{Welcome, introduce yourself. ~30 seconds. Don't rush the opening.}
+
+% ── Template: Section Divider ───────────────────────────────
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Section Title}}\\[8pt]
+    {\color{slate700}Brief subtitle or context}
+  \end{center}
+  \vfill
+\end{frame}
+
+% ── Template: Content Slide ─────────────────────────────────
+\begin{frame}{Content Slide Example}
+  Key point or framing sentence at the top.
+
+  \begin{itemize}
+    \item First point with enough detail to stand alone
+    \item Second point
+      \begin{itemize}
+        \item Supporting detail
+        \item Supporting detail
+      \end{itemize}
+    \item Third point
+  \end{itemize}
+\end{frame}
+\note{Example note: mention the 16,000+ Robotarium experiments here. Pause before transitioning.}
+
+% ── Template: Equation Slide (with note example) ────────────
+\begin{frame}{Equation Slide Example}
+  The safety filter solves a quadratic program at each timestep:
+
+  \vskip10pt
+  \begin{block}{Active Safety Filter}
+    \vskip4pt
+    \begin{equation*}
+      \min_{u} \quad \| u - u_{\text{des}} \|^2
+    \end{equation*}
+    \vskip-4pt
+    \begin{equation*}
+      \text{s.t.} \quad L_f h(x) + L_g h(x)\, u \geq -\alpha\big(h(x)\big)
+    \end{equation*}
+    \vskip2pt
+  \end{block}
+
+  \vskip8pt
+  \begin{itemize}
+    \item $h(x) \geq 0$ defines the safe set
+    \item Minimally invasive: follows $u_{\text{des}}$ when safe
+    \item Small QP, solves in real time
+  \end{itemize}
+\end{frame}
+\note{Walk through each term slowly. Dennis will know this cold. Peter will appreciate the connection to his trusted autonomy work. If asked about scalability, be honest about high-dimensional challenges.}
+
+% ── Template: Two-Column Slide ──────────────────────────────
+\begin{frame}{Two-Column Slide Example}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Left: Text or Math}
+
+      \vskip8pt
+      \begin{itemize}
+        \item Explain the concept
+        \item Key equations or points
+        \item Connection to Archer
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Right: Figure}
+
+      \vskip8pt
+      % \includegraphics[width=\textwidth]{figures/placeholder.png}
+      \begin{center}
+        {\color{slate400}\framebox(180,100){Figure goes here}}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── Template: Image Slide ───────────────────────────────────
+\begin{frame}{Full Image Slide Example}
+  \begin{center}
+    % \includegraphics[width=0.85\textwidth]{figures/placeholder.png}
+    {\color{slate400}\framebox(400,180){Full-width figure or screenshot}}
+  \end{center}
+
+  \vskip4pt
+  Brief caption or takeaway below the image.
+\end{frame}
+
+\end{document}

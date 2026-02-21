@@ -22,6 +22,7 @@ Story point:
         - joke: is_invariant(set): return True
     - but thats not what we care about. We want systems like [list of examples we will go through]
         - double integator car
+        - inverted pendulum 
         - spacecraft rendezvous
         - spacecraft attitude control
 
@@ -39,6 +40,99 @@ Story point:
 
 Need: 
 - Find original presentation for thesis
+
+
+---
+
+
+## Overview 
+
+Introduction and Problem (5 minutes)
+- What is meant by safety?
+    - dynamics of a control system
+    - safety constraints
+    - safe means safety constraints are never violated
+- The constraint set contains unsafe states, need concept of control invariance 
+    - inevitable violations 
+- safe control problem: always choose safe `u`
+    - too restrictive 
+    - have too balance safety with performance 
+- Runtime assurance: decoupling the safety problem 
+    - Framework for solving the safety problem by building a "safety filter" 
+    - MUST: guarantee forward invariance if starting in a safe region 
+    - What makes it good: practical considerations
+        - follow udes as much as you can 
+        - allow as many useful states as you can
+- Problem: 
+    - Given
+        - dynamical system 
+        - safety constraints: CA (e.g. collision avoidance)
+    - Find
+        - RTA: (x, udes) -> usafe 
+- Whats next
+    - I'm going to walk you 
+
+Taxonomy of RTA (tutorial paper + implicit ASIF) (10 minutes)
+- 
+- Start with Barrier functions: SOTA
+- Issue finding large invariant sets is difficult 
+- Personal Story: Robotarium and control barrier functions
+    - Applied CBF based QPs to keep gritsbots safe 
+    - Show: contraint set, and the control invariant set 
+- Solved Problem? 
+    - Far from it! 
+    - CBFs approach gives you sufficient condition for safety and a nice way to filter
+    - But it requires finding a control invariant set
+    - Works for not breaking things but not on things that move fast 
+    - There do exist approaches for finding control invariant sets, but its not
+- Observation: if you can find a safe path to a safe set, you are safe
+- Implicit ASIF: 
+    - Coauthored this paper: my coauthor had the idea, i did the application 
+    - segway
+    - spacecraft angular velocity dynamics
+- But theres an even simpler way
+    - AutoGCAS
+    - Let's formalize the approach
+NOTE: implicit approaches were the focus
+
+Whats next: Implicit RTA Applications 
+- The engineering:  
+    - what makes a good backup controller 
+    - how do you find a good backup set
+    - what if you have other considerations than how hard you interrupt 
+- 
+
+Case Study 1: (10 minutes)
+- AFRL work: apply to real problem: natural motion trajectories
+- MIPs approximate the viability kernel! 
+    - complete, etc 
+    - while slow, there are theoretical guarantees 
+- Implicit ASIF also works 
+
+Case Study 2: (5 minutes)
+- Attitude control problem 
+- Line of sight constraints 
+- Whats the controller: ok 
+    - Actually pretty simple, agressive point away controller 
+- Whats the safe set 
+    - point away
+- But we can make it more robust: 
+    - Complementary research: Can simulate reachable sets fast 
+    - So we could extend safety to the reach set! 
+- 
+
+Case Study 3: (< 5 minutes)
+- What do you do when collision is inevitable? '
+- Can we plan for the worst case senario 
+- Anything useful to be said here? 
+- Idea: 
+    - model collisions
+    - minimize damage
+    - always stay feasible 
+
+
+
+--- 
 
 
 
@@ -74,7 +168,16 @@ Things I've done, how they relate to safety, and where this fits in
 
 
 
+- Expanding the Definition
+
+
+
+
+
 ## Slide: Safety Critical Control 
+
+What do I Mean by Safety? 
+
 Pose the actual problem we are trying to solve 
 xdot=f(x,u)
 
