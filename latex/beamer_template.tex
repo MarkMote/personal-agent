@@ -52,23 +52,6 @@
 \usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{pgfpages}
-\usepackage{hyperref}
-
-% ── Source footnotes ────────────────────────────────────────
-% Horizontal rule + left-aligned citation below, like thesis style.
-% Usage: \source{text} or \sourceurl{display text}{url}
-\newcommand{\source}[1]{%
-  \begin{tikzpicture}[remember picture, overlay]%
-    \draw[slate400, line width=0.4pt] ([xshift=12mm, yshift=9mm]current page.south west) -- ([xshift=-12mm, yshift=9mm]current page.south east);%
-    \node[anchor=south west, font=\tiny\color{slate400}, inner sep=0pt] at ([xshift=12mm, yshift=4.5mm]current page.south west) {#1};%
-  \end{tikzpicture}%
-}
-\newcommand{\sourceurl}[2]{%
-  \begin{tikzpicture}[remember picture, overlay]%
-    \draw[slate400, line width=0.4pt] ([xshift=12mm, yshift=9mm]current page.south west) -- ([xshift=-12mm, yshift=9mm]current page.south east);%
-    \node[anchor=south west, font=\tiny\color{slate400}, inner sep=0pt] at ([xshift=12mm, yshift=4.5mm]current page.south west) {\href{#2}{#1}};%
-  \end{tikzpicture}%
-}
 
 % ── Speaker Notes ───────────────────────────────────────────
 % Uncomment the next line to show notes in presenter mode (pdfpc reads them automatically)
@@ -99,8 +82,8 @@
 }
 
 % ── Meta ────────────────────────────────────────────────────
-\title{Archer Case Study}
-\subtitle{Safe Autonomy with Runtime Assurance}
+\title{Safe Autonomy for Flight}
+\subtitle{Runtime Assurance, Barrier Functions,\\and Applications to Autonomous Aircraft}
 \author{Mark Mote}
 \date{February 26, 2026}
 
@@ -121,39 +104,7 @@
   \vfill
 \end{frame}
 }
-
-% ═══════════════════════════════════════════════════════════
-% ── PRESENTATION SLIDES GO HERE ───────────────────────────
-% ═══════════════════════════════════════════════════════════
-
-% ── Covington, GA ─────────────────────────────────────────
-\begin{frame}{My Start: Covington, GA}
-  \vfill
-  \begin{columns}[c]
-    \begin{column}{0.495\textwidth}
-      \includegraphics[width=\textwidth]{figures/covington_map_crop.png}
-    \end{column}
-    \begin{column}{0.495\textwidth}
-      \includegraphics[width=\textwidth]{figures/archer_plant_crop.jpg}
-    \end{column}
-  \end{columns}
-  \vfill
-  \sourceurl{Archer Investor Relations, Dec 2024}{https://investors.archer.com/news/news-details/2024/Archer-Completes-Construction-of-High-Volume-Manufacturing-Facility/default.aspx}
-\end{frame}
-
-
-% ═══════════════════════════════════════════════════════════
-% ── TEMPLATE SLIDES ───────────────────────────────────────
-% ═══════════════════════════════════════════════════════════
-
-\begin{frame}[plain]
-  \vfill
-  \begin{center}
-    {\LARGE\color{slate900}\textbf{Template Slides}}\\[8pt]
-    {\color{slate700}Reference examples for building new slides}
-  \end{center}
-  \vfill
-\end{frame}
+\note{Welcome, introduce yourself. ~30 seconds. Don't rush the opening.}
 
 % ── Template: Section Divider ───────────────────────────────
 \begin{frame}[plain]
@@ -181,7 +132,7 @@
 \end{frame}
 \note{Example note: mention the 16,000+ Robotarium experiments here. Pause before transitioning.}
 
-% ── Template: Equation Slide ────────────────────────────────
+% ── Template: Equation Slide (with note example) ────────────
 \begin{frame}{Equation Slide Example}
   The safety filter solves a quadratic program at each timestep:
 

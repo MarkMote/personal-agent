@@ -47,6 +47,9 @@ Need:
 
 ## Overview 
 
+
+
+
 Introduction and Problem (5 minutes)
 - What is meant by safety?
     - dynamics of a control system
@@ -137,14 +140,16 @@ Case Study 3: (< 5 minutes)
 
 
 ## Slide 1: Covington GA (could be beginning or end)
-Introduction:
+Dialogue:
 So before getting into it, I'd like to say a few words on how my journey got started because I think it sets the tone for today. 
-When I was looking into archer for the first time, I was interested to find that you don't make the planes here in CA, your manufacturing plant in a small town about an hour southeast of atlanta. 
+I was interested to find that archer does its manufacturing in a small town about an hour southeast of atlanta. 
 Coincidentally, this is the town where I grew up, 
-Its where in the summer before high school graduation, I worked as an electrician, and then I used that money to flip a car, so that I could afford the lessions over the next year. 
 
-<!-- flying for the first time is  -->
-<!-- But also i was actually terrified of heights, but could not resist the thrill of aviation. ' -->
+And if you could go back a few years there, you would seen the teenage me, who wanted to become a pilot,  working various jobs after school so that I could afford to take flight lessons in Covington Airport
+
+The time I spent flying planes in Covington really instilled in me my love for aerospace. 
+But I also remember being completely terrified at the same time, which ...
+
 Flight was both the most exciting, and most terrifying thing I've ever done. 
 I'd like to make that theme central here today, because its been both the core of my work, and because I'd wager its the most important problem to archer as well.  
 That is:
@@ -160,11 +165,15 @@ work in:
 
 
 ## Slide 2: resume overview
+Today ill be talkign about 
+
+
+
 Things I've done, how they relate to safety, and where this fits in
 - one sentence on internships
 - show point on timeline this relates to
 - mention roostr and why I want to transition
-
+- reference: https://www.markmote.com/resume for a tight timeline
 
 
 
