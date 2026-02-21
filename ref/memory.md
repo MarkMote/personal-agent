@@ -4,7 +4,16 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-20 (Fri, W08) — Latest Session
+## 2026-02-21 (Sat, W08) — Latest Session
+
+- **Archer case study build in progress.** Beamer presentation at `latex/archer_case_study/main.tex`. Template finalized: Tailwind slate+blue colors, TeX Gyre Heros font, custom frametitle with rule, source footnotes with bottom rule.
+- Covington GA slide done (map + Archer plant photo). Spec doc: `on_site/case_study_final.md`. Draft notes: `on_site/case_study_draft.md`.
+- **Beamer tooling set up:** LaTeX Workshop extension (VS Code preview on save), pdfpc for presenter mode, latexmk installed.
+- Saved reusable `latex/beamer_template.tex` and `latex/beamer_design_guide.md`.
+- **Radical AI moved to T1** (was T2). Folder renamed.
+- **Git:** Set local credentials to personal (marklmote@gmail.com). Pushed to `git@github.com:MarkMote/personal-agent.git`. Added `.gitignore` for large files and LaTeX build artifacts.
+
+## 2026-02-20 (Fri, W08)
 
 - **Viam: Rejected.** Matt Leva email 2/20. "Unique needs of the team at this stage." Moved to 04_closed_lost.
 - **SpaceX: Passed recruiter screen → HM interview Thu 3/5 4:00-4:45pm ET w/ Cole Morgan (Sr. GNC Engineer).** 45 min phone. Accomplishment deep-dive + technical. No AI. Cole has been at SpaceX 5.5 yrs, UW MS Aerospace (controls). Mutual connection: Prince Kuevor (Mark knows from Lincoln Lab).

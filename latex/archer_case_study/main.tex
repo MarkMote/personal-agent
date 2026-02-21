@@ -98,6 +98,14 @@
   \hspace*{12mm}\vskip4mm%
 }
 
+% ── Resume entry helper ────────────────────────────────────
+% Usage: \entry{logo.png}{Role}{Org}{one-liner}{dates}
+\newcommand{\entry}[5]{%
+  \raisebox{-2pt}{\includegraphics[height=12pt]{figures/logos/#1}}%
+  \hspace{4pt}{\color{slate900}\textbf{#2} @ \textbf{#3}}\hspace{6pt}{\color{slate400}---}\hspace{4pt}{\color{slate700}#4}%
+  \hfill{\color{slate700}\small #5}\\[3pt]%
+}
+
 % ── Meta ────────────────────────────────────────────────────
 \title{Archer Case Study}
 \subtitle{Safe Autonomy with Runtime Assurance}
@@ -138,7 +146,28 @@
     \end{column}
   \end{columns}
   \vfill
+  \vspace{5mm}% compensate for source footnote overlay
   \sourceurl{Archer Investor Relations, Dec 2024}{https://investors.archer.com/news/news-details/2024/Archer-Completes-Construction-of-High-Volume-Manufacturing-Facility/default.aspx}
+\end{frame}
+
+% ── Resume Overview ──────────────────────────────────────
+\begin{frame}{Background}
+  \vspace{-2pt}
+  {\small
+  \entry{gatech.png}{B.S. / M.S. / Ph.D.}{Georgia Tech}{Aerospace \& Robotics}{2011--2021}
+  \hspace{16pt}{\color{slate700}\scriptsize Thesis: \textit{Optimization-Based Approaches to Safety-Critical Control with Applications to Space Systems}}\\[3pt]
+  {\color{slate400}\rule{\textwidth}{0.4pt}}\\[2pt]
+
+  \entry{isae-ensma.png}{Intern}{ISAE-ENSMA}{Quadcopter control}{2015}
+  \entry{gatech.png}{GRA}{Georgia Tech}{Safety verification on the Robotarium}{2016--2021}
+  \entry{mitll.png}{Intern}{MIT Lincoln Lab}{Neural network verification}{2017--2018}
+  \entry{stanford.png}{Visiting Researcher}{Stanford}{Collision-inclusive planning}{2018}
+  \entry{jpl.png}{Intern}{NASA JPL}{Spacecraft swarm control}{2019}
+  \entry{kaust.png}{Visiting Student}{KAUST}{Safe autonomy, control theory}{2020}
+  \entry{afrl.png}{Intern}{AFRL}{Safe spacecraft docking}{2020}
+  \entry{pytheia.png}{CEO \& Co-Founder}{Pytheia}{Camera perception for robots}{2021--2024}
+  \entry{roostr.png}{CTO \& Co-Founder}{Roostr}{AI-native freight forwarder}{2024--now}
+  }
 \end{frame}
 
 
@@ -241,6 +270,27 @@
 
   \vskip4pt
   Brief caption or takeaway below the image.
+\end{frame}
+
+% ── Template: Side-by-Side Images ─────────────────────────
+% Pre-crop images to same aspect ratio (e.g., 4:3) with Python/PIL.
+% Equal columns + equal ratios = matched heights automatically.
+% Use \vspace{5mm} before source to visually center between title rule and footnote.
+\begin{frame}{Side-by-Side Image Example}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.495\textwidth}
+      % \includegraphics[width=\textwidth]{figures/left_crop.png}
+      {\color{slate400}\framebox(210,158){Left image (4:3)}}
+    \end{column}
+    \begin{column}{0.495\textwidth}
+      % \includegraphics[width=\textwidth]{figures/right_crop.png}
+      {\color{slate400}\framebox(210,158){Right image (4:3)}}
+    \end{column}
+  \end{columns}
+  \vfill
+  \vspace{5mm}% compensate for source footnote overlay
+  \source{Source citation here}
 \end{frame}
 
 \end{document}
