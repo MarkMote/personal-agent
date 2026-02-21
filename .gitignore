@@ -1,3 +1,16 @@
 ref/pytheia/data/argus/
 ref/roostr/data/decks-20260118T175813Z-1-001.zip
 story-bank/33 Tough Job Interview Questions (With A+ Answers) by Reno Perry - 1765288815350.pdf
+
+# LaTeX build artifacts
+latex/**/*.aux
+latex/**/*.log
+latex/**/*.fls
+latex/**/*.fdb_latexmk
+latex/**/*.nav
+latex/**/*.out
+latex/**/*.snm
+latex/**/*.toc
+latex/**/*.synctex.gz
+latex/**/*.bbl
+latex/**/*.blg
