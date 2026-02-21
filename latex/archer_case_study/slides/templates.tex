@@ -1,0 +1,121 @@
+% ═══════════════════════════════════════════════════════════
+% ── TEMPLATE SLIDES ───────────────────────────────────────
+% ═══════════════════════════════════════════════════════════
+
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Template Slides}}\\[8pt]
+    {\color{slate700}Reference examples for building new slides}
+  \end{center}
+  \vfill
+\end{frame}
+
+% ── Template: Section Divider ───────────────────────────────
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Section Title}}\\[8pt]
+    {\color{slate700}Brief subtitle or context}
+  \end{center}
+  \vfill
+\end{frame}
+
+% ── Template: Content Slide ─────────────────────────────────
+\begin{frame}{Content Slide Example}
+  Key point or framing sentence at the top.
+
+  \begin{itemize}
+    \item First point with enough detail to stand alone
+    \item Second point
+      \begin{itemize}
+        \item Supporting detail
+        \item Supporting detail
+      \end{itemize}
+    \item Third point
+  \end{itemize}
+\end{frame}
+\note{Example note: mention the 16,000+ Robotarium experiments here. Pause before transitioning.}
+
+% ── Template: Equation Slide ────────────────────────────────
+\begin{frame}{Equation Slide Example}
+  The safety filter solves a quadratic program at each timestep:
+
+  \vskip10pt
+  \begin{block}{Active Safety Filter}
+    \vskip4pt
+    \begin{equation*}
+      \min_{u} \quad \| u - u_{\text{des}} \|^2
+    \end{equation*}
+    \vskip-4pt
+    \begin{equation*}
+      \text{s.t.} \quad L_f h(x) + L_g h(x)\, u \geq -\alpha\big(h(x)\big)
+    \end{equation*}
+    \vskip2pt
+  \end{block}
+
+  \vskip8pt
+  \begin{itemize}
+    \item $h(x) \geq 0$ defines the safe set
+    \item Minimally invasive: follows $u_{\text{des}}$ when safe
+    \item Small QP, solves in real time
+  \end{itemize}
+\end{frame}
+\note{Walk through each term slowly. Dennis will know this cold. Peter will appreciate the connection to his trusted autonomy work. If asked about scalability, be honest about high-dimensional challenges.}
+
+% ── Template: Two-Column Slide ──────────────────────────────
+\begin{frame}{Two-Column Slide Example}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Left: Text or Math}
+
+      \vskip8pt
+      \begin{itemize}
+        \item Explain the concept
+        \item Key equations or points
+        \item Connection to Archer
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Right: Figure}
+
+      \vskip8pt
+      % \includegraphics[width=\textwidth]{figures/placeholder.png}
+      \begin{center}
+        {\color{slate400}\framebox(180,100){Figure goes here}}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── Template: Image Slide ───────────────────────────────────
+\begin{frame}{Full Image Slide Example}
+  \begin{center}
+    % \includegraphics[width=0.85\textwidth]{figures/placeholder.png}
+    {\color{slate400}\framebox(400,180){Full-width figure or screenshot}}
+  \end{center}
+
+  \vskip4pt
+  Brief caption or takeaway below the image.
+\end{frame}
+
+% ── Template: Side-by-Side Images ─────────────────────────
+% Pre-crop images to same aspect ratio (e.g., 4:3) with Python/PIL.
+% Equal columns + equal ratios = matched heights automatically.
+% Use \vspace{5mm} before source to visually center between title rule and footnote.
+\begin{frame}{Side-by-Side Image Example}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.495\textwidth}
+      % \includegraphics[width=\textwidth]{figures/left_crop.png}
+      {\color{slate400}\framebox(210,158){Left image (4:3)}}
+    \end{column}
+    \begin{column}{0.495\textwidth}
+      % \includegraphics[width=\textwidth]{figures/right_crop.png}
+      {\color{slate400}\framebox(210,158){Right image (4:3)}}
+    \end{column}
+  \end{columns}
+  \vfill
+  \vspace{5mm}% compensate for source footnote overlay
+  \source{Source citation here}
+\end{frame}

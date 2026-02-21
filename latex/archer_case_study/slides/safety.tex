@@ -1,0 +1,69 @@
+% ── Safety-Critical Control ──────────────────────────────
+\begin{frame}{Safety-Critical Control}
+  \small
+  \textbf{Given:} Input-constrained dynamical system, with \textbf{state} $x \in X \subseteq \mathbb{R}^n$
+  and \textbf{input} $u \in U \subset \mathbb{R}^m$
+
+  \vskip-4pt
+  \[ \dot{x} = F(x,\, u) \]
+  \vskip2pt
+  \textbf{Safety} is defined  \textit{from}  constraints on the state:
+  \vskip-4pt
+  \[ \varphi_i(x) \geq 0, \quad i = 1, \ldots, M \]
+  \vskip2pt
+  States satisfying all constraints form the \textbf{constraint set} (\textit{allowable set}):
+  \vskip-4pt
+  \[ \mathcal{C}_A := \{x \in X \mid \varphi_i(x) \geq 0, \;\; i = 1, \ldots, M\} \]
+  \vskip4pt
+  Example: $\mathcal{C}_A$ specifies "no collisions"
+  \vskip4pt
+  % \textbf{Not all states in the constraint set are safe!}
+\end{frame}
+
+% ── Invariance and Safety ────────────────────────────────
+\begin{frame}{Safety of a Closed Loop System}
+  \small
+  Safety means satisfying constraints \textbf{for all time}.
+
+  \vskip6pt
+  \begin{block}{Forward Invariance}
+    \vskip2pt
+    A closed set $S \subset X$ is \textbf{forward invariant} w.r.t.\ a closed-loop system if:
+    \vskip-6pt
+    \[ x(t_0) \in S \;\;\Rightarrow\;\; \forall\, t \geq t_0,\;\; x(t) \in S \]
+    \vspace{-10pt}
+  \end{block}
+
+  \vskip4pt
+  \textbf{Safety:}\quad If $u: X \to U$ renders the closed-loop system forward invariant in $\mathcal{C}_S \subseteq \mathcal{C}_A$:
+  \vskip4pt
+  \begin{itemize}
+    \item $u$ is a \textbf{safe control law}
+    \item $\mathcal{C}_S$ is the \textbf{safe set}
+    \item $x \in \mathcal{C}_S$ is a \textbf{safe state}
+  \end{itemize}
+  \source{\hyperlink{backup:safety-formal}{Full formal definitions in backup slides}}
+\end{frame}
+
+% ── Control Invariance ─────────────────────────────────────
+\begin{frame}{Control Invariance}
+  \small
+  So far: given a control law, we can tell if its safe
+  \vskip6pt
+  Control invariance tells you whether its \textbf{possible} to find such a safe control law:
+
+  \vskip6pt
+  \begin{block}{Control Invariance}
+    \vspace{4pt}
+    A closed set $S \subset X$ is \textbf{control invariant} with respect to a dynamical system and input set $U$ if there exists a control law $u: X \to U$ that renders $S$ forward invariant.
+    \vspace{4pt}
+  \end{block}
+
+  \vskip6pt
+  \textbf{Viability Kernel} is the largest control invariant subset.
+
+  \vskip6pt
+  \begin{itemize}
+    \item A larger safe set means more states are reachable while remaining safe
+  \end{itemize}
+\end{frame}

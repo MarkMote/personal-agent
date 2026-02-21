@@ -217,9 +217,20 @@ More formally: We use the notion of forward invariance: meaning if you start in 
 A controller is safe if it renders the closed loop system forward invariant 
 - footnote: link to formal definition in backup slide
 
+Safety
+If u:X->U renders the closed loop system forward invariant in CS subset CA
+- u is a safe control law 
+- CS is the safe set
+- x\inCS is a safe state
+
+
 
 ## Control Invariance 
 One more useful concept here: 
+so far, weve focused on whether a control law is safe
+But for design, iots useful to know: what sets can be made safe
+- does such a control law even exist 
+
 Control invariance: the set of states that **can** be rendered forward invariant 
 - ie you can find a controller to make it safe
 Viability Kernel: the largest control invariant subset
