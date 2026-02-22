@@ -49,11 +49,8 @@
     \end{column}
     \begin{column}{0.35\textwidth}
       \begin{center}
-        % Placeholder for Hill's Frame diagram (Earth + spacecraft + axes)
-        {\color{slate400}\framebox(160,160){Hill's Frame diagram}}
-
-        \vskip2pt
-        {\scriptsize\color{slate400} Hill's Frame; target spacecraft\\is in a circular orbit}
+        % Save as: figures/arpod_hills_frame.png
+        {\color{slate400}\framebox(160,160){arpod\_hills\_frame.png}}
       \end{center}
     \end{column}
   \end{columns}
@@ -91,12 +88,183 @@
     \end{column}
     \begin{column}{0.47\textwidth}
       \begin{center}
-        % Placeholder for constraint phase portrait (||v|| vs ||r|| with colored lines)
-        {\color{slate400}\framebox(210,160){Constraint phase portrait}}
-
-        \vskip2pt
-        {\scriptsize\color{slate400} $\|v\|$ vs $\|r\|$ --- feasible region shaded}
+        % Save as: figures/arpod_constraints.png
+        {\color{slate400}\framebox(210,160){arpod\_constraints.png}}
       \end{center}
     \end{column}
   \end{columns}
+\end{frame}
+
+% ── Natural Motion Trajectories ──────────────────────────
+\begin{frame}{Natural Motion Trajectories}
+  \small
+  \textbf{Natural motion trajectories (NMTs):} Solutions to CWH equations with $u \equiv 0$ \hfill {\color{blue600}(Zero Thrust)}
+
+  \vskip6pt
+  \textbf{Closed NMTs (CNMTs):} Periodic solutions occur when $v_y = -2n\,s_x$
+
+  \vskip6pt
+  \begin{columns}[c]
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_nmt_stationary.png
+        {\color{slate400}\framebox(180,120){arpod\_nmt\_stationary.png}}
+
+        \vskip2pt
+        {\scriptsize {\color{blue600}Stationary Points} along $y$-axis}
+      \end{center}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_nmt_ellipses.png
+        {\color{slate400}\framebox(180,120){arpod\_nmt\_ellipses.png}}
+
+        \vskip2pt
+        {\scriptsize {\color{blue600}Ellipses} centered at points along $y$-axis}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Frey et al., ``Constrained spacecraft relative motion planning exploiting periodic NMTs,'' \textit{JGCD}, 2017}
+\end{frame}
+
+% ── Using CNMTs to Define Safe Invariant Set ─────────────
+\begin{frame}{Using CNMTs to Define Safe Invariant Set}
+  \small
+  Set of all elliptical CNMTs centered at origin (target):
+  \vskip-4pt
+  \[ \boldsymbol{M} = \{x \in \mathbb{R}^4 \mid v_x = 0.5n\, s_y,\;\; v_y = -2n\, s_x\} \quad \text{(Linear subspace)} \]
+  \vskip0pt
+  Each individual trajectory has period $\tau = 2\pi/n$, \; eccentricity $e = \sqrt{3/4}$
+
+  \vskip4pt
+  \begin{columns}[c]
+    \begin{column}{0.32\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_cnmt_xy.png
+        {\color{slate400}\framebox(120,90){arpod\_cnmt\_xy.png}}
+      \end{center}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_cnmt_3d.png
+        {\color{slate400}\framebox(120,90){arpod\_cnmt\_3d.png}}
+      \end{center}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_cnmt_vr.png
+        {\color{slate400}\framebox(120,90){arpod\_cnmt\_vr.png}}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote, Hays, Collins, Feron, Hobbs --- ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
+\end{frame}
+
+% ── Stabilization to NMT Set ─────────────────────────────
+\begin{frame}{Stabilization to NMT Set}
+  \footnotesize
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \textbf{NMT Set:}\quad $M = \{x \in \mathbb{R}^4 \mid v_x = 0.5n\, s_y,\;\; v_y = -2n\, s_x\}$
+
+      \vskip2pt
+      \textbf{Error:}\quad $e_1 = v_x - 0.5n\, s_y$, \quad $e_2 = v_y + 2n\, s_x$
+
+      \vskip2pt
+      \textbf{Error Dynamics:}
+      \vskip-6pt
+      \scriptsize
+      \[ \begin{bmatrix} \dot{e}_1 \\ \dot{e}_2 \end{bmatrix} = \begin{bmatrix} 0 & 1.5n \\ 0 & 0 \end{bmatrix} \begin{bmatrix} e_1 \\ e_2 \end{bmatrix} + \begin{bmatrix} u_x \\ u_y \end{bmatrix} \]
+      \vskip0pt
+      \footnotesize
+      \textbf{Choose:}\quad $u_x = -1.5n\, e_2 - K e_1$, \quad $u_y = -K e_2$
+
+      \vskip2pt
+      \textbf{Closed Loop:}
+      \vskip-6pt
+      \scriptsize
+      \[ \begin{bmatrix} \dot{e}_1 \\ \dot{e}_2 \end{bmatrix} = \begin{bmatrix} -K & 0 \\ 0 & -K \end{bmatrix} \begin{bmatrix} e_1 \\ e_2 \end{bmatrix} \]
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_error_phase.png
+        {\color{slate400}\framebox(180,150){arpod\_error\_phase.png}}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote et al., ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
+\end{frame}
+
+% ── IASIF Results for ARPOD ──────────────────────────────
+\begin{frame}{IASIF Results --- ARPOD}
+  \small
+  \begin{columns}[c]
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        \textbf{UNFILTERED:}
+        \vskip4pt
+        % Save as: figures/arpod_iasif_unfiltered.png
+        {\color{slate400}\framebox(180,130){arpod\_iasif\_unfiltered.png}}
+
+        \vskip2pt
+        {\scriptsize enters avoid cone}
+      \end{center}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        \textbf{FILTERED:}
+        \vskip4pt
+        % Save as: figures/arpod_iasif_filtered.png
+        {\color{slate400}\framebox(180,130){arpod\_iasif\_filtered.png}}
+
+        \vskip2pt
+        {\scriptsize avoids avoid cone}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \vskip4pt
+  \footnotesize
+  \textit{ASIF parameters}: 75 trajectory points, 1s apart;\; $\alpha(x) = 10x^3$;\; $\epsilon = 0.05$;\; $\kappa_1 = 0.2$ m/s
+\end{frame}
+
+% ── Optimal Trajectory Planner to Safe NMTs ──────────────
+\begin{frame}{Optimal Trajectory Planner to Safe NMTs}
+  \footnotesize
+  \textbf{Idea:} ``Take me home button'' --- optimal (minimum fuel) transfer to parking orbit
+
+  \vskip2pt
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \scriptsize
+      \textbf{Terminal Set:}\quad apply for $t = T$
+      \vskip-6pt
+      \[
+        \bar{M} = \left\{x \in \mathbb{R}^4 \;\middle|\;
+        \begin{aligned}
+          v_x &= 0.5n\, s_y \\
+          v_y &= 2n\, s_x \\
+          s_x^2 + 0.25 s_y^2 &\leq K_1 \\
+          s_x^2 + 0.25 s_y^2 &\geq K_2
+        \end{aligned}
+        \right\}
+      \]
+      \vskip-2pt
+      \footnotesize
+      \textbf{Solution:} Mixed integer convex program
+      \vskip2pt
+      \scriptsize
+      \begin{itemize}
+        \item Global optimality
+        \item Completeness
+        \item Captures fuel costs with convex objective
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        % Save as: figures/arpod_optimal_traj.png
+        {\color{slate400}\framebox(180,140){arpod\_optimal\_traj.png}}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote et al., ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
 \end{frame}

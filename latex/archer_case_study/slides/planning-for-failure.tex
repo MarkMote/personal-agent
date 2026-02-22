@@ -1,2 +1,170 @@
-% ── Planning for Failure ───────────────────────────────────
-% Slides for Section IV go here
+% ── Collision-Inclusive Trajectory Optimization ─────────────
+
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Collision-Inclusive Trajectory Optimization}}\\[8pt]
+    {\color{slate700}Planning for Failure}
+  \end{center}
+  \vfill
+\end{frame}
+
+% ── Motivation: Free-Flying Spacecraft ───────────────────
+\begin{frame}{Application: Free-Flying Robotic Spacecraft}
+  \small
+  \begin{columns}[c]
+    \begin{column}{0.45\textwidth}
+      Small robotic spacecraft are used for automated {\color{blue600}monitoring and assistance}.
+
+      \vskip6pt
+      \textbf{Problem:} Traditional planners avoid all collisions.
+      \vskip2pt
+      But sometimes collisions are \textbf{unavoidable}.
+
+      \vskip6pt
+      \textbf{Goal:} Find the best strategy when collisions cannot be avoided.
+
+      \vskip2pt
+      \textbf{Secondary goal:} Achieve better performance by \textit{using} collisions.
+
+      \vskip6pt
+      \textbf{Approach:} Optimal trajectory planning with collision modes encoded as constraints.
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \begin{center}
+        % Placeholder: AERCam Sprint, Astrobee, Spheres photos
+        {\color{slate400}\framebox(220,100){AERCam Sprint / Astrobee / Spheres}}
+
+        \vskip6pt
+        % Placeholder: Stanford free-flier lab
+        {\color{slate400}\framebox(220,80){Stanford Free-flier Lab}}
+
+        \vskip2pt
+        {\scriptsize\color{slate400} Stanford's Free-flier Lab (credit: Marco Pavone, Andrew Bylard)}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote, Egerstedt, Feron, Bylard, Pavone --- ``Collision-Inclusive Trajectory Optimization,'' \textit{JGCD}, 2020}
+\end{frame}
+
+% ── Collision Model and Solution ─────────────────────────
+\begin{frame}{Collision Model and Solution Framework}
+  \small
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \textbf{Nominal Dynamics:}\quad $\ddot{s}_x = u_x$,\quad $\ddot{s}_y = u_y$,\quad $\ddot{\theta} = u_\theta$
+
+      \vskip4pt
+      \textbf{Collision Model} (empirical, algebraic):
+      \vskip-6pt
+      \footnotesize
+      \[
+        \begin{bmatrix} v_N^{i+1} \\ v_T^{i+1} \\ \omega^{i+1} \end{bmatrix}
+        = \begin{bmatrix} a_{11} & 0 \\ 0 & a_{22} \\ 0 & a_{32} \end{bmatrix}
+        \begin{bmatrix} v_N^i \\ v_{\text{rel}}^i \end{bmatrix}
+      \]
+      \vskip0pt
+      \small
+      Developed empirically: perform collisions, regression on data.
+
+      \vskip6pt
+      \textbf{Solution:} Mixed Integer Quadratic Program (MIQP)
+      \vskip2pt
+      \footnotesize
+      \begin{itemize}
+        \item Integer variables encode collision modes
+        \item Global optimality, completeness
+        \item LQR regulation to ideal trajectory
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{center}
+        % Placeholder: collision model regression plots
+        {\color{slate400}\framebox(190,90){Collision model regression plots}}
+
+        \vskip4pt
+        % Placeholder: free-flyer schematic with thrusters
+        {\color{slate400}\framebox(190,90){Free-flyer schematic}}
+
+        \vskip2pt
+        {\scriptsize\color{slate400} 8 thrusters, reaction wheel, CO$_2$ tanks}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote, Afman, Feron --- ``Robotic trajectory planning through collisional interaction,'' CDC 2017}
+\end{frame}
+
+% ── Safety through Collision-Inclusive Planning ──────────
+\begin{frame}{Safety through Collision-Inclusive Planning}
+  \small
+  \textbf{1D example:}\quad $\ddot{x} = u$, \quad $u \in [-0.5,\, 0.5]$, \quad wall at $x = 0$
+
+  \vskip6pt
+  \begin{columns}[c]
+    \begin{column}{0.30\textwidth}
+      \begin{center}
+        % Placeholder: reachable without collision
+        {\color{slate400}\framebox(115,120){Reachable\\w/o collision}}
+
+        \vskip2pt
+        {\scriptsize\color{blue600} Reachable without collision}
+      \end{center}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{center}
+        % Placeholder: feasible under MPC
+        {\color{slate400}\framebox(115,120){Feasible\\under MPC}}
+
+        \vskip2pt
+        {\scriptsize\color{blue600} Feasible under MPC}
+      \end{center}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{center}
+        % Placeholder: feasible under CT-MPC
+        {\color{slate400}\framebox(115,120){Feasible\\under CT-MPC}}
+
+        \vskip2pt
+        {\scriptsize\color{blue600} Feasible under CT-MPC}
+      \end{center}
+    \end{column}
+  \end{columns}
+
+  \vskip6pt
+  \textbf{Key insight:} Collision-tolerant planning \textbf{expands the feasible set}. States that are infeasible under collision-free planning become feasible when collisions are allowed.
+\end{frame}
+
+% ── Conclusion: Collisions → Feasibility → Safety ───────
+\begin{frame}{Planning for Failure --- Summary}
+  \small
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      \textbf{Collision-tolerant planners can:}
+      \vskip4pt
+      \begin{itemize}
+        \item Optimally mitigate damage with respect to a predefined \textit{damage function}
+        \item Expand the feasible set for trajectory planning
+        \item Serve as better backup strategies for RTA systems
+      \end{itemize}
+
+      \vskip8pt
+      \begin{center}
+        {\color{blue600}\textbf{Collisions}}\\
+        $\Downarrow$\\
+        {\color{blue600}\textbf{Feasibility}}\\
+        $\Downarrow$\\
+        {\color{blue600}\textbf{Safety}}
+      \end{center}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{center}
+        % Placeholder: optimal damage mitigation simulation
+        {\color{slate400}\framebox(180,160){Optimal damage mitigation\\simulation frame}}
+
+        \vskip2pt
+        {\scriptsize\color{slate400} Optimal path through obstacles\\with damage minimization}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote, Bylard, Egerstedt, Pavone, Feron --- ``Collision-Inclusive Trajectory Optimization,'' \textit{JGCD}, 2020}
+\end{frame}
