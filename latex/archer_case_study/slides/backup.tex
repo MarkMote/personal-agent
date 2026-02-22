@@ -57,3 +57,116 @@
   \sourceurl{Ames et al., ``Control Barrier Functions: Theory and Applications,'' ECC 2019}{https://hybrid-robotics.berkeley.edu/publications/ECC2019_Tutorial_CBFs.pdf}
 \end{frame}
 
+% ── Backup: CWH In-Plane Solution ────────────────────────
+\begin{frame}{CWH In-Plane Analytical Solution}
+  \hypertarget{backup:cwh-solution}{}
+  \footnotesize
+  The in-plane ($x$-$y$) CWH equations with $u = 0$ have closed-form solutions:
+  \vskip-4pt
+  \scriptsize
+  \begin{align*}
+    s_x(t) &= \left(4 - 3\cos(nt)\right) s_{x_0} + \frac{\sin(nt)}{n} v_{x_0} + \frac{2}{n}\left(1 - \cos(nt)\right) v_{y_0} \\
+    s_y(t) &= 6\left(\sin(nt) - nt\right) s_{x_0} + s_{y_0} - \frac{2}{n}\left(1 - \cos(nt)\right) v_{x_0} + \frac{4\sin(nt) - 3nt}{n} v_{y_0}
+  \end{align*}
+  \vskip0pt
+  \footnotesize
+  \textbf{Closed (periodic) condition:} The $s_y$ secular drift term $-6nt\, s_{x_0} - 3nt\, v_{y_0}/n$ vanishes iff:
+  \vskip-6pt
+  \[ v_{y_0} = -2n\, s_{x_0} \]
+  \vskip0pt
+  \textbf{CNMT conditions:} Adding the elliptical orbit condition $v_{x_0} = 0.5n\, s_{y_0}$:
+  \vskip-6pt
+  \[ M = \{x \in \mathbb{R}^4 \mid v_x = 0.5n\, s_y,\;\; v_y = -2n\, s_x\} \]
+  \vskip0pt
+  Each trajectory in $M$ traces a 2:1 ellipse with semi-major axis along $y$ and period $\tau = 2\pi/n$.
+  \source{Clohessy \& Wiltshire, 1960;\quad Mote et al., IEEE Aerospace 2021}
+\end{frame}
+
+% ── Backup: Mixed Monotonicity for RSO ───────────────────
+\begin{frame}{Mixed Monotonicity --- Reachable Set Overapproximation}
+  \hypertarget{backup:mixed-monotonicity}{}
+  \footnotesize
+  \textbf{Goal:} Bound all possible trajectories under $w \in W$ without exhaustive simulation.
+
+  \vskip4pt
+  \textbf{Decomposition function} $d(x, \hat{x})$ satisfies for all $x, \hat{x} \in X$:
+  \vskip-6pt
+  \scriptsize
+  \[ d(x, x) = f(x) \qquad \text{and} \qquad \frac{\partial d_i}{\partial x_j} \geq 0, \quad \frac{\partial d_i}{\partial \hat{x}_j} \leq 0 \]
+  \vskip0pt
+  \footnotesize
+  \textbf{Embedding system} ($2n$ dimensions):
+  \vskip-6pt
+  \scriptsize
+  \[ \dot{\underline{x}} = d(\underline{x},\, \overline{x}), \qquad \dot{\overline{x}} = d(\overline{x},\, \underline{x}) \]
+  \vskip0pt
+  \footnotesize
+  \textbf{Result:} If $\underline{x}(0) \leq x(0) \leq \overline{x}(0)$, then for all $t \geq 0$:
+  \vskip-6pt
+  \[ \underline{x}(t) \leq x(t) \leq \overline{x}(t) \]
+  \vskip0pt
+  \textbf{Tight hyperrectangular overapproximation} of the reachable set at each timestep, from a single $2n$-dim ODE.
+  \source{Coogan, ``Mixed monotonicity for reachability and safety,'' CDC 2020}
+\end{frame}
+
+% ── Backup: Collision Model Details ──────────────────────
+\begin{frame}{Collision Model --- Experimental Derivation}
+  \hypertarget{backup:collision-model}{}
+  \footnotesize
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \textbf{Setup:} Free-flying spacecraft on air bearing table (3-DOF: $s_x$, $s_y$, $\theta$).
+
+      \vskip4pt
+      \textbf{Procedure:}
+      \vskip2pt
+      \scriptsize
+      \begin{enumerate}
+        \item Drive spacecraft into wall at controlled angles and speeds
+        \item Record pre/post-collision velocities via motion capture
+        \item Fit algebraic model via least-squares regression
+      \end{enumerate}
+
+      \vskip2pt
+      \footnotesize
+      \textbf{Model structure:} Post-collision state is affine in pre-collision normal and tangential velocities.
+
+      \vskip2pt
+      \textbf{Key property:} Algebraic --- integrates directly into mixed-integer optimization as linear constraints.
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        % Save as: figures/cito_regression.png
+        {\color{slate400}\framebox(180,120){cito\_regression.png}}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Mote, Afman, Feron --- ``Robotic trajectory planning through collisional interaction,'' CDC 2017}
+\end{frame}
+
+% ── Backup: ARPOD IASIF Constraint Details ───────────────
+\begin{frame}{IASIF Constraints for ARPOD}
+  \hypertarget{backup:arpod-iasif}{}
+  \footnotesize
+  \textbf{Backup controller:} $u_b(x) = $ NMT stabilization law (drives $e \to 0$ at rate $K$)
+
+  \vskip2pt
+  \textbf{Backup set:} $\mathcal{C}_b = \{x \mid \|e\| \leq \epsilon\} \cap \mathcal{C}_A$ \quad (near-NMT states within constraints)
+
+  \vskip4pt
+  \textbf{IASIF barrier constraints} at trajectory point $t_i$:
+  \vskip-6pt
+  \scriptsize
+  \begin{align*}
+    BC^b(x, u) &: \quad \nabla h_b(\phi_N)^T D\phi_N \cdot [F(x, u_{\text{des}}) - F(x, u_b)] \geq -\alpha(h_b(\phi_N)) \\
+    BC^S_{t_i}(x, u) &: \quad \nabla \varphi_j(\phi_i)^T D\phi_i \cdot [F(x, u_{\text{des}}) - F(x, u_b)] \geq -\alpha(\varphi_j(\phi_i))
+  \end{align*}
+  \vskip2pt
+  \footnotesize
+  where $\phi_i = \phi^{u_b}(t_i;\, x)$ and $D\phi_i = D_x \phi^{u_b}(t_i;\, x)$ is the state-transition sensitivity.
+
+  \vskip2pt
+  \scriptsize
+  \textbf{Parameters:} $N = 75$, $\Delta t = 1$s, $K = 0.01$ 1/s, $\alpha(x) = 10x^3$, $\epsilon = 0.05$. \quad QP with $N \!\times\! M + 1$ constraints, solved at $\sim$10 Hz.
+  \source{Gurriet, Mote, Singletary, Nilsson, Feron, Ames --- IEEE Access, 2020}
+\end{frame}
