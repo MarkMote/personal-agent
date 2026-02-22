@@ -1,2 +1,102 @@
 % ── ARPOD: Application to Spacecraft Proximity Operations ──
-% Slides for Section II go here
+
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Application to Spacecraft Proximity Operations}}\\[8pt]
+    {\color{slate700}ARPOD Problem}
+  \end{center}
+  \vfill
+\end{frame}
+
+% ── ARPOD Problem: CWH Equations ────────────────────────
+\begin{frame}{ARPOD Problem --- Hill's Frame and CWH Equations}
+  \begin{columns}[c]
+    \begin{column}{0.62\textwidth}
+      \small
+      \textbf{Dynamics:} CWH Equations
+      \vskip-2pt
+      \footnotesize
+      \[
+        \begin{bmatrix} \dot{s}_x \\ \dot{s}_y \\ \dot{s}_z \\ \dot{v}_x \\ \dot{v}_y \\ \dot{v}_z \end{bmatrix}
+        =
+        \begin{bmatrix}
+          0 & 0 & 0 & 1 & 0 & 0 \\
+          0 & 0 & 0 & 0 & 1 & 0 \\
+          0 & 0 & 0 & 0 & 0 & 1 \\
+          3n^2 & 0 & 0 & 0 & 2n & 0 \\
+          0 & 0 & 0 & -2n & 0 & 0 \\
+          0 & 0 & -n^2 & 0 & 0 & 0
+        \end{bmatrix}
+        \begin{bmatrix} s_x \\ s_y \\ s_z \\ v_x \\ v_y \\ v_z \end{bmatrix}
+        +
+        \begin{bmatrix}
+          0 & 0 & 0 \\
+          0 & 0 & 0 \\
+          0 & 0 & 0 \\
+          1 & 0 & 0 \\
+          0 & 1 & 0 \\
+          0 & 0 & 1
+        \end{bmatrix}
+        \begin{bmatrix} u_x \\ u_y \\ u_z \end{bmatrix}
+      \]
+      \vskip-6pt
+      \footnotesize
+      $s$: relative position,\quad $v$: relative velocity,\quad $u$: thrust acceleration,\quad $n$: mean motion
+
+      \vskip2pt
+      \textbf{Out of plane:} Uncoupled from in-plane; undamped oscillator
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{center}
+        % Placeholder for Hill's Frame diagram (Earth + spacecraft + axes)
+        {\color{slate400}\framebox(160,160){Hill's Frame diagram}}
+
+        \vskip2pt
+        {\scriptsize\color{slate400} Hill's Frame; target spacecraft\\is in a circular orbit}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \source{Clohessy \& Wiltshire, ``Terminal guidance system for satellite rendezvous,'' \textit{J.\ Aerospace Sciences}, 1960}
+\end{frame}
+
+% ── ARPOD Problem: Safety Constraints ────────────────────
+\begin{frame}{ARPOD Problem --- Safety Constraints}
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \small
+      \textbf{Constraint Set:}
+
+      \vskip4pt
+      \footnotesize
+      \[
+        \mathcal{C}_A = \left\{ x \in \mathbb{R}^4 \;\middle|\;
+        \begin{aligned}
+          \|v\| &\leq \kappa_1 \|r\| + \kappa_2 \\
+          \|v\| &\leq v_{\max} \\
+          \|r\| &\leq r_{\max} \\
+          \|r\| &\geq r_{\min}
+        \end{aligned}
+        \right\}
+      \]
+
+      \vskip2pt
+      \small
+      \begin{itemize}
+        \item {\color{blue600}Dynamic speed limit}
+        \item {\color{blue600}Absolute speed limit}
+        \item {\color{blue600}Proximity}
+        \item {\color{blue600}Collision avoidance}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{center}
+        % Placeholder for constraint phase portrait (||v|| vs ||r|| with colored lines)
+        {\color{slate400}\framebox(210,160){Constraint phase portrait}}
+
+        \vskip2pt
+        {\scriptsize\color{slate400} $\|v\|$ vs $\|r\|$ --- feasible region shaded}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
