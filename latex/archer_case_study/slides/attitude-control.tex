@@ -100,7 +100,7 @@
         \textbf{Deterministic}
         \vskip4pt
         % Save as: figures/att_deterministic.png
-        {\color{slate400}\framebox(180,110){att\_deterministic.png}}
+        {\color{slate400}\framebox(180,100){att\_deterministic.png}}
       \end{center}
       \vskip2pt
       \scriptsize
@@ -111,7 +111,7 @@
         \textbf{Nondeterministic}
         \vskip4pt
         % Save as: figures/att_nondeterministic.png
-        {\color{slate400}\framebox(180,110){att\_nondeterministic.png}}
+        {\color{slate400}\framebox(180,100){att\_nondeterministic.png}}
       \end{center}
       \vskip2pt
       \scriptsize
@@ -119,12 +119,12 @@
     \end{column}
   \end{columns}
 
-  \vskip6pt
-  \small
-  \textbf{Key extension:} Replace trajectory simulation with \textbf{reachable set overapproximation} (RSO) to account for $w \in W$
-
   \vskip4pt
   \footnotesize
+  \textbf{Key extension:} Replace trajectory simulation with \textbf{reachable set overapproximation} (RSO) to account for $w \in W$
+
+  \vskip2pt
+  \scriptsize
   RSO computed online via {\color{blue600}mixed monotonicity}: integrate a $2n$-dimensional embedding system to bound the $n$-dimensional reachable set
 \end{frame}
 
@@ -150,11 +150,7 @@
         u_{\text{act}} = \begin{cases} u_{\text{des}} & \text{if } \vartheta(\mathcal{X}_p) \\ u_b(x) & \text{otherwise} \end{cases}
       \]
       \vskip0pt
-      \textbf{Result:} $u_{\text{act}}$ is \textbf{robustly forward invariant} in $\mathcal{C}_S \subset \mathcal{C}_A$
-
-      \vskip4pt
-      \scriptsize
-      Constraint never violated despite adversarial user input and unknown disturbances.
+      \textbf{Result:} $u_{\text{act}}$ is \textbf{robustly forward invariant} in $\mathcal{C}_S \subset \mathcal{C}_A$, despite adversarial input and unknown disturbances
     \end{column}
     \begin{column}{0.49\textwidth}
       \begin{center}
@@ -162,7 +158,7 @@
         {\color{slate400}\framebox(200,140){att\_experiment.png}}
 
         \vskip2pt
-        {\scriptsize\color{slate400} Joystick-controlled spacecraft, $\beta_{\max} = 25^\circ$}
+        {\scriptsize\color{slate400} $\beta_{\max} = 25^\circ$, joystick-controlled}
       \end{center}
     \end{column}
   \end{columns}

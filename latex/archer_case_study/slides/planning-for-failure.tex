@@ -3,44 +3,38 @@
 \begin{frame}[plain]
   \vfill
   \begin{center}
-    {\LARGE\color{slate900}\textbf{Collision-Inclusive Trajectory Optimization}}\\[8pt]
-    {\color{slate700}Planning for Failure}
+    {\LARGE\color{slate900}\textbf{Planning for Failure}}\\[8pt]
+    {\color{slate700}Collision-Inclusive Trajectory Optimization}
   \end{center}
   \vfill
 \end{frame}
 
 % ── Motivation: Free-Flying Spacecraft ───────────────────
-\begin{frame}{Application: Free-Flying Robotic Spacecraft}
-  \small
+\begin{frame}{Motivation: When Collisions Are Unavoidable}
+  \footnotesize
   \begin{columns}[c]
-    \begin{column}{0.45\textwidth}
-      Small robotic spacecraft are used for automated {\color{blue600}monitoring and assistance}.
+    \begin{column}{0.48\textwidth}
+      \small
+      Small robotic spacecraft perform automated {\color{blue600}monitoring and assistance} inside space stations.
 
-      \vskip6pt
-      \textbf{Problem:} Traditional planners avoid all collisions.
-      \vskip2pt
-      But sometimes collisions are \textbf{unavoidable}.
+      \vskip4pt
+      \textbf{Problem:} Traditional planners treat all collisions as failures --- but sometimes collisions are \textbf{unavoidable}.
 
-      \vskip6pt
-      \textbf{Goal:} Find the best strategy when collisions cannot be avoided.
+      \vskip4pt
+      \textbf{Key question:} What is the best strategy when collision-free trajectories don't exist?
 
-      \vskip2pt
-      \textbf{Secondary goal:} Achieve better performance by \textit{using} collisions.
-
-      \vskip6pt
-      \textbf{Approach:} Optimal trajectory planning with collision modes encoded as constraints.
+      \vskip4pt
+      \footnotesize
+      \textbf{Approach:} Model collisions as algebraic constraints and solve via mixed-integer optimization.
     \end{column}
-    \begin{column}{0.52\textwidth}
+    \begin{column}{0.49\textwidth}
       \begin{center}
-        % Placeholder: AERCam Sprint, Astrobee, Spheres photos
-        {\color{slate400}\framebox(220,100){AERCam Sprint / Astrobee / Spheres}}
+        % Save as: figures/cito_spacecraft.png
+        {\color{slate400}\framebox(195,85){cito\_spacecraft.png}}
 
-        \vskip6pt
-        % Placeholder: Stanford free-flier lab
-        {\color{slate400}\framebox(220,80){Stanford Free-flier Lab}}
-
-        \vskip2pt
-        {\scriptsize\color{slate400} Stanford's Free-flier Lab (credit: Marco Pavone, Andrew Bylard)}
+        \vskip4pt
+        % Save as: figures/cito_freeflier_lab.png
+        {\color{slate400}\framebox(195,75){cito\_freeflier\_lab.png}}
       \end{center}
     \end{column}
   \end{columns}
@@ -48,8 +42,8 @@
 \end{frame}
 
 % ── Collision Model and Solution ─────────────────────────
-\begin{frame}{Collision Model and Solution Framework}
-  \small
+\begin{frame}{Collision Model and Solution}
+  \footnotesize
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \textbf{Nominal Dynamics:}\quad $\ddot{s}_x = u_x$,\quad $\ddot{s}_y = u_y$,\quad $\ddot{\theta} = u_\theta$
@@ -57,37 +51,27 @@
       \vskip4pt
       \textbf{Collision Model} (empirical, algebraic):
       \vskip-6pt
-      \footnotesize
+      \scriptsize
       \[
         \begin{bmatrix} v_N^{i+1} \\ v_T^{i+1} \\ \omega^{i+1} \end{bmatrix}
         = \begin{bmatrix} a_{11} & 0 \\ 0 & a_{22} \\ 0 & a_{32} \end{bmatrix}
         \begin{bmatrix} v_N^i \\ v_{\text{rel}}^i \end{bmatrix}
       \]
       \vskip0pt
-      \small
-      Developed empirically: perform collisions, regression on data.
-
-      \vskip6pt
-      \textbf{Solution:} Mixed Integer Quadratic Program (MIQP)
-      \vskip2pt
       \footnotesize
-      \begin{itemize}
-        \item Integer variables encode collision modes
-        \item Global optimality, completeness
-        \item LQR regulation to ideal trajectory
-      \end{itemize}
+      Coefficients fit from experimental data.
+
+      \vskip2pt
+      \textbf{Solution:} MIQP --- global optimality, completeness
     \end{column}
     \begin{column}{0.47\textwidth}
       \begin{center}
-        % Placeholder: collision model regression plots
-        {\color{slate400}\framebox(190,90){Collision model regression plots}}
+        % Save as: figures/cito_collision_model.png
+        {\color{slate400}\framebox(185,75){cito\_collision\_model.png}}
 
         \vskip4pt
-        % Placeholder: free-flyer schematic with thrusters
-        {\color{slate400}\framebox(190,90){Free-flyer schematic}}
-
-        \vskip2pt
-        {\scriptsize\color{slate400} 8 thrusters, reaction wheel, CO$_2$ tanks}
+        % Save as: figures/cito_freeflyer_schematic.png
+        {\color{slate400}\framebox(185,75){cito\_freeflyer\_schematic.png}}
       \end{center}
     \end{column}
   \end{columns}
@@ -95,7 +79,7 @@
 \end{frame}
 
 % ── Safety through Collision-Inclusive Planning ──────────
-\begin{frame}{Safety through Collision-Inclusive Planning}
+\begin{frame}{Collisions Expand the Feasible Set}
   \small
   \textbf{1D example:}\quad $\ddot{x} = u$, \quad $u \in [-0.5,\, 0.5]$, \quad wall at $x = 0$
 
@@ -103,17 +87,17 @@
   \begin{columns}[c]
     \begin{column}{0.30\textwidth}
       \begin{center}
-        % Placeholder: reachable without collision
-        {\color{slate400}\framebox(115,120){Reachable\\w/o collision}}
+        % Save as: figures/cito_reachable.png
+        {\color{slate400}\framebox(110,110){cito\_reachable.png}}
 
         \vskip2pt
-        {\scriptsize\color{blue600} Reachable without collision}
+        {\scriptsize\color{blue600} Reachable set (no collision)}
       \end{center}
     \end{column}
     \begin{column}{0.30\textwidth}
       \begin{center}
-        % Placeholder: feasible under MPC
-        {\color{slate400}\framebox(115,120){Feasible\\under MPC}}
+        % Save as: figures/cito_feasible_mpc.png
+        {\color{slate400}\framebox(110,110){cito\_feasible\_mpc.png}}
 
         \vskip2pt
         {\scriptsize\color{blue600} Feasible under MPC}
@@ -121,8 +105,8 @@
     \end{column}
     \begin{column}{0.30\textwidth}
       \begin{center}
-        % Placeholder: feasible under CT-MPC
-        {\color{slate400}\framebox(115,120){Feasible\\under CT-MPC}}
+        % Save as: figures/cito_feasible_ctmpc.png
+        {\color{slate400}\framebox(110,110){cito\_feasible\_ctmpc.png}}
 
         \vskip2pt
         {\scriptsize\color{blue600} Feasible under CT-MPC}
@@ -131,38 +115,32 @@
   \end{columns}
 
   \vskip6pt
-  \textbf{Key insight:} Collision-tolerant planning \textbf{expands the feasible set}. States that are infeasible under collision-free planning become feasible when collisions are allowed.
+  \textbf{Key insight:} Collision-tolerant planning \textbf{expands the feasible set}. States infeasible under collision-free planning become feasible when collisions are modeled.
 \end{frame}
 
 % ── Conclusion: Collisions → Feasibility → Safety ───────
-\begin{frame}{Planning for Failure --- Summary}
+\begin{frame}{Planning for Failure --- Connection to Safety}
   \small
   \begin{columns}[c]
     \begin{column}{0.55\textwidth}
       \textbf{Collision-tolerant planners can:}
       \vskip4pt
       \begin{itemize}
-        \item Optimally mitigate damage with respect to a predefined \textit{damage function}
-        \item Expand the feasible set for trajectory planning
-        \item Serve as better backup strategies for RTA systems
+        \item Optimally mitigate damage via a predefined \textit{damage function}
+        \item \textbf{Expand the feasible set} for trajectory planning
+        \item Serve as better \textbf{backup strategies} for RTA systems
       \end{itemize}
 
-      \vskip8pt
+      \vskip6pt
+      \footnotesize
       \begin{center}
-        {\color{blue600}\textbf{Collisions}}\\
-        $\Downarrow$\\
-        {\color{blue600}\textbf{Feasibility}}\\
-        $\Downarrow$\\
-        {\color{blue600}\textbf{Safety}}
+        {\color{blue600}\textbf{Collisions}} $\;\Rightarrow\;$ {\color{blue600}\textbf{Feasibility}} $\;\Rightarrow\;$ {\color{blue600}\textbf{Safety}}
       \end{center}
     \end{column}
     \begin{column}{0.42\textwidth}
       \begin{center}
-        % Placeholder: optimal damage mitigation simulation
-        {\color{slate400}\framebox(180,160){Optimal damage mitigation\\simulation frame}}
-
-        \vskip2pt
-        {\scriptsize\color{slate400} Optimal path through obstacles\\with damage minimization}
+        % Save as: figures/cito_damage_mitigation.png
+        {\color{slate400}\framebox(175,140){cito\_damage\_mitigation.png}}
       \end{center}
     \end{column}
   \end{columns}
