@@ -1,10 +1,10 @@
 % ── Safety-Critical Control ──────────────────────────────
-\begin{frame}{Safety-Critical Control}
+\begin{frame}{Safety}
   \small
   \textbf{Given:} Input-constrained dynamical system, with \textbf{state} $x \in X \subseteq \mathbb{R}^n$
   and \textbf{input} $u \in U \subset \mathbb{R}^m$
 
-  \vskip-4pt
+  \vskip-8pt
   \[ \dot{x} = F(x,\, u) \]
   \vskip2pt
   \textbf{Safety} is defined  \textit{from}  constraints on the state:
@@ -48,9 +48,9 @@
 % ── Control Invariance ─────────────────────────────────────
 \begin{frame}{Control Invariance}
   \small
-  So far: given a control law, we can tell if its safe
-  \vskip6pt
-  Control invariance tells you whether its \textbf{possible} to find such a safe control law:
+  % So far: given a control law, we can tell if its safe
+  % \vskip6pt
+  Control invariance tells you if/where its \textbf{possible} to find a safe control law:
 
   \vskip6pt
   \begin{block}{Control Invariance}
@@ -59,11 +59,129 @@
     \vspace{4pt}
   \end{block}
 
-  \vskip6pt
+  \vskip8pt
   \textbf{Viability Kernel} is the largest control invariant subset.
 
-  \vskip6pt
+  \vskip0pt
   \begin{itemize}
-    \item A larger safe set means more states are reachable while remaining safe
+    \item This is the "best" safe set we can find
   \end{itemize}
+\end{frame}
+
+% ── Sets Visualized ────────────────────────────────────────
+\begin{frame}{Safe Set $\mathcal{C}_{S}$ and Constraint Set $\mathcal{C}_{A}$}
+  \begin{center}
+    \includegraphics[height=0.75\textheight]{figures/explicit_safe_sets.png}
+  \end{center}
+\end{frame}
+
+% ── Runtime Assurance ──────────────────────────────────────
+\begin{frame}{Runtime Assurance}
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{figures/rta.png}
+  \end{center}
+  \vskip4pt
+  \small
+  \textbf{Problem:} Safety proofs are tied to a specific controller
+
+  \vskip4pt
+  \textbf{RTA:} Decouple safety problem. Allow any controller but override near $\partial\mathcal{C}_S$.
+\end{frame}
+
+% ── Barrier Functions ──────────────────────────────────────
+\begin{frame}{SOTA: Control Barrier Functions}
+  \small
+  Define the safe set via a \textbf{barrier function} $h$:
+  \vskip-4pt
+  \[ \mathcal{C}_S = \{x \in \mathbb{R}^n \mid h(x) \geq 0\} \subseteq \mathcal{C}_A \]
+  \vskip2pt
+  The set of \textbf{safe inputs} at state $x$:
+  \vskip-6pt
+  \[ U_s(x) = \{u \in U \mid L_f h(x) + L_g h(x)\, u + \alpha\big(h(x)\big) \geq 0\} \]
+  \vskip2pt
+  This ensures the system is ``pulled back'' ($\dot{h}\geq0$) near the boundary of $\mathcal{C}_S$.
+
+  \vskip6pt
+  \begin{block}{Active Safety Filter (QP)}
+    \vskip-6pt
+    \[ u_{\text{act}} = \arg\min_{u \in U} \| u_{\text{des}} - u \|^2 \quad \text{s.t.} \quad u \in U_s(x) \]
+    \vspace{-8pt}
+  \end{block}
+  \vskip4pt
+  \textbf{If $\mathcal{C}_S$ is control invariant, the QP is always feasible.}
+  \source{\hyperlink{backup:cbf-detail}{This is a simplifiation. More details in backup slides}}
+\end{frame}
+
+% ── Application: Robotarium ───────────────────────────────
+\begin{frame}{Application: The Robotarium}
+  \begin{center}
+    \includegraphics[height=0.52\textheight]{figures/robotarium-1.png}
+  \end{center}
+  \vskip-2pt
+  \small
+  \begin{itemize}
+    \item CBFs allow remote users to safely control robots 
+    % \item Single integrator dynamics: $\dot{x} = u$
+    \item Near-zero stopping distance: $\mathcal{C}_{A}$ already control invariant
+  \end{itemize}
+  \source{The Robotarium, Georgia Tech}
+\end{frame}
+
+% ── The Challenge: Finding Large Safe Sets ─────────────────
+\begin{frame}{The Challenge: Finding Large Safe Sets}
+  \begin{center}
+    \includegraphics[width=0.80\textwidth]{figures/invariant_sets_examples.png}
+  \end{center}
+  \vskip-4pt
+  \small
+  \begin{itemize}
+    \item Finding \textit{some} safe invariant set is easy --- just stop, hover, or park
+    \item Useful safe sets are \textbf{large} --- they let the system actually operate
+    \item Large invariant sets are \textbf{hard to find} --- must explicitly characterize all states the system can remain in
+  \end{itemize}
+\end{frame}
+
+% ── Implicit Methods ──────────────────────────────────────
+\begin{frame}{Implicit Safe Sets}
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \small
+      \textbf{Key insight:} If you can reach \textit{any} known invariant set, you are in a control invariant set.
+
+      \vskip6pt
+      Replace ``find $\mathcal{C}_S$ offline'' with:
+      \vskip2pt
+      \begin{itemize}
+        \item Simulate forward online
+        \item Check: can a \textbf{backup controller} drive the system into a \textbf{backup set} $\mathcal{C}_b$?
+        \item If yes $\Rightarrow$ current state is safe
+      \end{itemize}
+
+      \vskip6pt
+      All you need:
+      \vskip2pt
+      \begin{itemize}
+        \item A backup set $\mathcal{C}_b$ (small, easy to find)
+        \item A backup controller
+      \end{itemize}
+
+      \vskip6pt
+      Worst case: follow the last safe trajectory.
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{figures/implicit-safe-sets.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ── Tradeoffs ─────────────────────────────────────────────
+\begin{frame}{Tradeoffs}
+  \small
+  A larger backup set $\mathcal{C}_b$ requires less online computation, but more offline analysis.
+  \vskip4pt
+  \begin{center}
+    \includegraphics[width=0.90\textwidth]{figures/implicit-explicit-spectrum.png}
+  \end{center}
 \end{frame}

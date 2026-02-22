@@ -243,7 +243,7 @@ Sets we really care about
 - State Space X 
 - Allowable set of states CA 
 - Safe Set 
-l
+
 Give examples
 
 
@@ -253,12 +253,26 @@ Issue: only works for closed loop control policy
 - proving invariance gets harder with complexity
 - and if you want to change the controler, you have to prove it again 
 - and if you want a human to control you have no proofs 
-RTA: lets you solve the safety problem seperately, and override unsafe inputs 
+RTA Idea: lets you solve the safety problem seperately, and override unsafe inputs 
 - solves all of these problems 
 
 
+
+How it works:
+- Activate near the boundary of CS 
+
+## Barrier functions: high level
+Idea
+- Find safe set CS = {x st h(x)>0} as a control invariant subset of CA
+- solve QP: list equation 
+- where Us: defined such that hdot(x,u) + alpha(h(x)) >= 0 
+    - ie you are pulled back in the set near the boundardy 
+- If CS is control invariant, the QP will always be feasible 
+
+
 ## Robotarium Example
-- Barrier fuctions 
+- My first introduction to this was in the robotarium. 
+- We used barrier functions to enable an open access lab. 
 - Safety for gritsbot
 - Dynamics
 - Something actually unsatisfying to an aerosapce engineer about this. 
@@ -266,6 +280,30 @@ RTA: lets you solve the safety problem seperately, and override unsafe inputs
     - most systems you cant just stop 
 
 I have some backup slides on barrier functions, but the idea is just that ... 
+
+And this is really the point where my research begins 
+
+    - 
+
+Include full details in backup slide'
+
+
+## Online (Implicit) Methods
+Key idea: 
+but if you know of ANY invariant set, and can control there safely
+You are in a control insariant set
+
+So you you can replace:
+- find CS 
+With 
+- Simulate online 
+
+All you need is: 
+- safety kernel, or backup set: Cb
+- backup controller 
+
+Worst case: follow the last safe trajectory
+
 
 
 ## Implicit Methods
@@ -280,13 +318,14 @@ You are in a control insariant set
 
 So you dont actually need to know the safe set at all! 
 
-
 ## Implicit ASIF
 - Coauthored this paper, mostly focusing on the applications 
+- If you want the smooth filtering behavior you can get it anytime you can find sensitivity analysis on the outputs of a backup controller 
 
 ## Implicit Simplex
 - interesting thing about this, you can take a trivial safe set
-- 
+- very few assumptions on the system
+    - no assumptions on the dynamics, relative degree, and so on
 
 ## Visual Take 2a
 
