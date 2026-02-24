@@ -58,14 +58,24 @@
 
 % ── ARPOD Problem: Safety Constraints ────────────────────
 \begin{frame}{ARPOD Problem --- Safety Constraints}
-  \noindent\includegraphics[width=0.5\textwidth]{figures/arpod-constraint-set.png}%
-  \includegraphics[width=0.5\textwidth]{figures/arpod_constraints.png}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/arpod-constraint-set.png}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/arpod_constraints.png}
+    \end{column}
+  \end{columns}
+  \vfill
 \end{frame}
 
 % ── Natural Motion Trajectories ──────────────────────────
 \begin{frame}{Natural Motion Trajectories}
   \small
-  \textbf{Natural motion trajectories (NMTs):} Solutions to CWH equations with $u \equiv 0$ \hfill {\color{blue600}(Zero Thrust)}
+  \textbf{Natural motion trajectories (NMTs):} Solutions to CWH equations with $u \equiv 0$ \hfill 
 
   \vskip6pt
   \textbf{Closed NMTs (CNMTs):} Periodic solutions occur when $v_y = -2n\,s_x$
@@ -76,16 +86,17 @@
       \begin{center}
         {\scriptsize {\color{blue600}Stationary Points} along $y$-axis}
         \vskip2pt
-        % Save as: figures/arpod_nmt_stationary.png
-        {\color{slate400}\framebox(180,110){arpod\_nmt\_stationary.png}}
+        \includegraphics[width=\textwidth, height=0.45\textheight, keepaspectratio]{figures/arpod_nmt_stationary.png}
       \end{center}
+      \vskip2pt
+      \scriptsize
+      \textbf{Need:} backup set, backup controller
     \end{column}
     \begin{column}{0.45\textwidth}
       \begin{center}
         {\scriptsize {\color{blue600}Ellipses} centered at points along $y$-axis}
         \vskip2pt
-        % Save as: figures/arpod_nmt_ellipses.png
-        {\color{slate400}\framebox(180,110){arpod\_nmt\_ellipses.png}}
+        \includegraphics[width=\textwidth, height=0.45\textheight, keepaspectratio]{figures/arpod_nmt_ellipses.png}
       \end{center}
     \end{column}
   \end{columns}
@@ -102,133 +113,56 @@
   Each individual trajectory has period $\tau = 2\pi/n$, \; eccentricity $e = \sqrt{3/4}$
 
   \vskip4pt
-  \begin{columns}[c]
-    \begin{column}{0.32\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_cnmt_xy.png
-        {\color{slate400}\framebox(120,90){arpod\_cnmt\_xy.png}}
-      \end{center}
-    \end{column}
-    \begin{column}{0.32\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_cnmt_3d.png
-        {\color{slate400}\framebox(120,90){arpod\_cnmt\_3d.png}}
-      \end{center}
-    \end{column}
-    \begin{column}{0.32\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_cnmt_vr.png
-        {\color{slate400}\framebox(120,90){arpod\_cnmt\_vr.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/cnmts_visualized.png}
+  \end{center}
   \source{Mote, Hays, Collins, Feron, Hobbs --- ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
 \end{frame}
 
-% ── Stabilization to NMT Set ─────────────────────────────
-\begin{frame}{Stabilization to NMT Set}
-  \footnotesize
-  \begin{columns}[c]
-    \begin{column}{0.52\textwidth}
-      \textbf{NMT Set:}\quad $M = \{x \in \mathbb{R}^4 \mid v_x = 0.5n\, s_y,\;\; v_y = -2n\, s_x\}$
+% ── Backup Set from CNMTs ─────────────────────────────────
+\begin{frame}{Using CNMTs to Define Safe Invariant Set}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/backup_set_from_cnmts.png}
+  \end{center}
+  \vskip2pt
+  \small
+  Backup set is set of CNMTs falling in terminal set
+\end{frame}
 
-      \vskip2pt
-      \textbf{Error:}\quad $e_1 = v_x - 0.5n\, s_y$, \quad $e_2 = v_y + 2n\, s_x$
+% ── Backup Controller: MIP to Safe Parking Orbits ────────
+\begin{frame}{Backup Controller: MIP to Safe Parking Orbits}
+  \small
+  Constraints that are both convex and PWA are straightforward to represent
 
-      \vskip2pt
-      \textbf{Error Dynamics:}
-      \vskip-6pt
-      \scriptsize
-      \[ \begin{bmatrix} \dot{e}_1 \\ \dot{e}_2 \end{bmatrix} = \begin{bmatrix} 0 & 1.5n \\ 0 & 0 \end{bmatrix} \begin{bmatrix} e_1 \\ e_2 \end{bmatrix} + \begin{bmatrix} u_x \\ u_y \end{bmatrix} \]
-      \vskip0pt
-      \footnotesize
-      \textbf{Choose:}\quad $u_x = -1.5n\, e_2 - K e_1$, \quad $u_y = -K e_2$
+  \vskip6pt
+  Integer variables can be used to encode non-convexity
 
-      \vskip2pt
-      \textbf{Closed Loop:}
-      \vskip-6pt
-      \scriptsize
-      \[ \begin{bmatrix} \dot{e}_1 \\ \dot{e}_2 \end{bmatrix} = \begin{bmatrix} -K & 0 \\ 0 & -K \end{bmatrix} \begin{bmatrix} e_1 \\ e_2 \end{bmatrix} \]
-    \end{column}
-    \begin{column}{0.45\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_error_phase.png
-        {\color{slate400}\framebox(180,150){arpod\_error\_phase.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+  \vskip6pt
+  In fact, we can represent the infinity norm exactly
+
+  \vskip8pt
+  \textbf{Solution:} Mixed integer convex program
+  \vskip2pt
+  \begin{itemize}
+    \item Global optimality
+    \item Completeness
+    \item Can capture fuel costs with convex objective function
+  \end{itemize}
   \source{Mote et al., ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
 \end{frame}
 
-% ── IASIF Results for ARPOD ──────────────────────────────
-\begin{frame}{IASIF Results --- ARPOD}
-  \small
-  \begin{columns}[c]
-    \begin{column}{0.45\textwidth}
-      \begin{center}
-        \textbf{UNFILTERED:}
-        \vskip4pt
-        % Save as: figures/arpod_iasif_unfiltered.png
-        {\color{slate400}\framebox(180,130){arpod\_iasif\_unfiltered.png}}
-
-        \vskip2pt
-        {\scriptsize enters avoid cone}
-      \end{center}
-    \end{column}
-    \begin{column}{0.45\textwidth}
-      \begin{center}
-        \textbf{FILTERED:}
-        \vskip4pt
-        % Save as: figures/arpod_iasif_filtered.png
-        {\color{slate400}\framebox(180,130){arpod\_iasif\_filtered.png}}
-
-        \vskip2pt
-        {\scriptsize avoids avoid cone}
-      \end{center}
-    \end{column}
-  \end{columns}
-  \vskip4pt
-  \footnotesize
-  \textit{ASIF parameters}: 75 trajectory points, 1s apart;\; $\alpha(x) = 10x^3$;\; $\epsilon = 0.05$;\; $\kappa_1 = 0.2$ m/s
+% ── ARPOD Results 1 ──────────────────────────────────────
+\begin{frame}{ARPOD Results}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/arpod-results-1.png}
+  \end{center}
+  \source{Mote et al., ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
 \end{frame}
 
-% ── Optimal Trajectory Planner to Safe NMTs ──────────────
-\begin{frame}{Optimal Trajectory Planner to Safe NMTs}
-  \footnotesize
-  \textbf{Idea:} ``Take me home button'' --- optimal (minimum fuel) transfer to parking orbit
-
-  \vskip2pt
-  \begin{columns}[c]
-    \begin{column}{0.52\textwidth}
-      \scriptsize
-      \textbf{Terminal Set:}\quad apply for $t = T$
-      \vskip-6pt
-      \[
-        \bar{M} = \left\{x \in \mathbb{R}^4 \;\middle|\;
-        \begin{aligned}
-          v_x &= 0.5n\, s_y \\
-          v_y &= -2n\, s_x \\
-          s_x^2 + 0.25 s_y^2 &\leq K_1 \\
-          s_x^2 + 0.25 s_y^2 &\geq K_2
-        \end{aligned}
-        \right\}
-      \]
-      \vskip-2pt
-      \footnotesize
-      \textbf{Solution:} Mixed integer convex program
-      \vskip2pt
-      \scriptsize
-      \begin{itemize}
-        \item Global optimality, completeness
-        \item Convex fuel-cost objective
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.45\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_optimal_traj.png
-        {\color{slate400}\framebox(180,130){arpod\_optimal\_traj.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+% ── ARPOD Results 2 ──────────────────────────────────────
+\begin{frame}{ARPOD Results}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/arpod-results-2.png}
+  \end{center}
   \source{Mote et al., ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
 \end{frame}

@@ -372,6 +372,26 @@ Biggest problem I saw
 - Invariant set was easy here - I mean it can just stop. 
 - xdot = u. come on. 
 
+----
+
+# ARPOD
+
+## ARPOD Safety Constraints
+- 
+
+## Natural motion trajectories 
+For spacecraft we have an important criteria on the backup set: 
+- not only does it need to be invariant, but it needs to be invariant without wasting all out fuel 
+
+
+
+# 
+
+
+
+
+
+--- 
 
 ## Final: contributions and non contributions 
 Me: 
