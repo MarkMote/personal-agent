@@ -13,10 +13,10 @@
 \begin{frame}{ARPOD Problem --- Hill's Frame and CWH Equations}
   \begin{columns}[c]
     \begin{column}{0.62\textwidth}
-      \small
+      \smaller
       \textbf{Dynamics:} CWH Equations
-      \vskip-2pt
-      \footnotesize
+      \vskip-4pt
+      \scriptsize
       \[
         \begin{bmatrix} \dot{s}_x \\ \dot{s}_y \\ \dot{s}_z \\ \dot{v}_x \\ \dot{v}_y \\ \dot{v}_z \end{bmatrix}
         =
@@ -40,18 +40,17 @@
         \end{bmatrix}
         \begin{bmatrix} u_x \\ u_y \\ u_z \end{bmatrix}
       \]
-      \vskip-6pt
-      \footnotesize
-      $s$: relative position,\quad $v$: relative velocity,\quad $u$: thrust acceleration,\quad $n$: mean motion
+      \vskip-8pt
+      \scriptsize
+      $s$: position,\; $v$: velocity,\; $u$: thrust,\; $n$: mean motion
 
       \vskip2pt
-      \textbf{Out of plane:} Uncoupled from in-plane; undamped oscillator
+      \smaller
+      \textbf{Out of plane:} Uncoupled; undamped oscillator
     \end{column}
     \begin{column}{0.35\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_hills_frame.png
-        {\color{slate400}\framebox(160,160){arpod\_hills\_frame.png}}
-      \end{center}
+      \centering
+      \includegraphics[width=\textwidth]{figures/arpod_hills_frame.png}
     \end{column}
   \end{columns}
   \source{Clohessy \& Wiltshire, ``Terminal guidance system for satellite rendezvous,'' \textit{J.\ Aerospace Sciences}, 1960}
@@ -59,40 +58,8 @@
 
 % ── ARPOD Problem: Safety Constraints ────────────────────
 \begin{frame}{ARPOD Problem --- Safety Constraints}
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \small
-      \textbf{Constraint Set:}
-
-      \vskip4pt
-      \footnotesize
-      \[
-        \mathcal{C}_A = \left\{ x \in \mathbb{R}^4 \;\middle|\;
-        \begin{aligned}
-          \|v\| &\leq \kappa_1 \|r\| + \kappa_2 \\
-          \|v\| &\leq v_{\max} \\
-          \|r\| &\leq r_{\max} \\
-          \|r\| &\geq r_{\min}
-        \end{aligned}
-        \right\}
-      \]
-
-      \vskip2pt
-      \small
-      \begin{itemize}
-        \item {\color{blue600}Dynamic speed limit}
-        \item {\color{blue600}Absolute speed limit}
-        \item {\color{blue600}Proximity}
-        \item {\color{blue600}Collision avoidance}
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      \begin{center}
-        % Save as: figures/arpod_constraints.png
-        {\color{slate400}\framebox(210,160){arpod\_constraints.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+  \noindent\includegraphics[width=0.5\textwidth]{figures/arpod-constraint-set.png}%
+  \includegraphics[width=0.5\textwidth]{figures/arpod_constraints.png}
 \end{frame}
 
 % ── Natural Motion Trajectories ──────────────────────────

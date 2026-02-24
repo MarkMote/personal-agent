@@ -13,7 +13,7 @@
 \definecolor{slate700}{RGB}{51, 65, 85}      % body text
 \definecolor{slate400}{RGB}{148, 163, 184}   % subtle/muted
 \definecolor{slate100}{RGB}{241, 245, 249}   % light background
-\definecolor{blue600}{RGB}{15, 118, 110}      % accent (deep teal)
+\definecolor{blue600}{RGB}{0, 154, 208}       % accent (light blue)
 \definecolor{blue100}{RGB}{204, 251, 241}    % light accent bg (teal tint)
 
 \setbeamercolor{frametitle}{fg=slate900}
@@ -55,19 +55,23 @@
 \usepackage{pgfpages}
 \usepackage{hyperref}
 
+% ── Custom font sizes ─────────────────────────────────────
+% Between \small (10pt) and \footnotesize (8pt) at 11pt base
+\newcommand{\smaller}{\fontsize{9}{11}\selectfont}
+
 % ── Source footnotes ────────────────────────────────────────
 % Horizontal rule + left-aligned citation below, like thesis style.
 % Usage: \source{text} or \sourceurl{display text}{url}
 \newcommand{\source}[1]{%
   \begin{tikzpicture}[remember picture, overlay]%
     \draw[slate400, line width=0.4pt] ([xshift=12mm, yshift=9mm]current page.south west) -- ([xshift=-12mm, yshift=9mm]current page.south east);%
-    \node[anchor=south west, font=\tiny\color{slate400}, inner sep=0pt] at ([xshift=12mm, yshift=4.5mm]current page.south west) {#1};%
+    \node[anchor=north west, font=\tiny\color{slate400}, inner sep=0pt, text width=\paperwidth-36mm] at ([xshift=12mm, yshift=8mm]current page.south west) {#1};%
   \end{tikzpicture}%
 }
 \newcommand{\sourceurl}[2]{%
   \begin{tikzpicture}[remember picture, overlay]%
     \draw[slate400, line width=0.4pt] ([xshift=12mm, yshift=9mm]current page.south west) -- ([xshift=-12mm, yshift=9mm]current page.south east);%
-    \node[anchor=south west, font=\tiny\color{slate400}, inner sep=0pt] at ([xshift=12mm, yshift=4.5mm]current page.south west) {\href{#2}{#1}};%
+    \node[anchor=north west, font=\tiny\color{slate400}, inner sep=0pt, text width=\paperwidth-36mm] at ([xshift=12mm, yshift=8mm]current page.south west) {\href{#2}{#1}};%
   \end{tikzpicture}%
 }
 

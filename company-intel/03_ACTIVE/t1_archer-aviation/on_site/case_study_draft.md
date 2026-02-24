@@ -41,7 +41,6 @@ Story point:
 Need: 
 - Find original presentation for thesis
 
-
 ---
 
 
@@ -373,4 +372,23 @@ Biggest problem I saw
 - Invariant set was easy here - I mean it can just stop. 
 - xdot = u. come on. 
 
+
+## Final: contributions and non contributions 
+Me: 
+- Taxonomy of RTA
+    - implicit vs explicit 
+    - ASIF vs Simplex 
+- ARPOD application 
+- Segway application 
+- Attitude control application 
+- Formulation for Optimal collision-inclusive trajectories via mixed integer programming and subsequent safety application 
+
+
+Coauthors: 
+- Implicit asif via integrating jacobian 
+- Fast integrate forward reachable sets 
+
+Not me: 
+- Control barrier functions 
+- Simplex a la auto GCAS
 
