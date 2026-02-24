@@ -4,7 +4,13 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-21 (Sat, W08) — Latest Session
+## 2026-02-24 (Mon, W09) — Latest Session
+
+- **Laurion: Rejected.** Marcus relayed 2/24. Expected after live coding. Moved to 04_closed_lost, tracker updated.
+- **Scale AI: Strong pass on tech screen.** Solved both problems, good communication. Prep paid off. Awaiting next steps.
+- **Strategic note:** Mark is comfortable extending the search if needed. Each interview improves performance, so longer timeline = better calibration = better outcomes. No urgency to force a suboptimal close.
+
+## 2026-02-21 (Sat, W08)
 
 - **Archer case study build in progress.** Beamer presentation at `latex/archer_case_study/main.tex`. Template finalized: Tailwind slate+blue colors, TeX Gyre Heros font, custom frametitle with rule, source footnotes with bottom rule.
 - Covington GA slide done (map + Archer plant photo). Spec doc: `on_site/case_study_final.md`. Draft notes: `on_site/case_study_draft.md`.
