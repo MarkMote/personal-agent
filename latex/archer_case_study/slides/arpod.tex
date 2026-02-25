@@ -40,11 +40,11 @@
         \end{bmatrix}
         \begin{bmatrix} u_x \\ u_y \\ u_z \end{bmatrix}
       \]
-      \vskip-8pt
+      \vskip0pt
       \scriptsize
       $s$: position,\; $v$: velocity,\; $u$: thrust,\; $n$: mean motion
 
-      \vskip2pt
+      \vskip6pt
       \smaller
       \textbf{Out of plane:} Uncoupled; undamped oscillator
     \end{column}
@@ -73,7 +73,7 @@
 \end{frame}
 
 % ── Natural Motion Trajectories ──────────────────────────
-\begin{frame}{Natural Motion Trajectories}
+\begin{frame}{Natural Motion Trajectories (Parking Orbits)}
   \small
   \textbf{Natural motion trajectories (NMTs):} Solutions to CWH equations with $u \equiv 0$ \hfill 
 
@@ -88,9 +88,8 @@
         \vskip2pt
         \includegraphics[width=\textwidth, height=0.45\textheight, keepaspectratio]{figures/arpod_nmt_stationary.png}
       \end{center}
-      \vskip2pt
-      \scriptsize
-      \textbf{Need:} backup set, backup controller
+      % \vskip2pt
+      % \scriptsize
     \end{column}
     \begin{column}{0.45\textwidth}
       \begin{center}
@@ -100,6 +99,8 @@
       \end{center}
     \end{column}
   \end{columns}
+  % \textbf{Need:} backup set, backup controller
+
   \source{Frey et al., ``Constrained spacecraft relative motion planning exploiting periodic NMTs,'' \textit{JGCD}, 2017}
 \end{frame}
 
@@ -132,23 +133,30 @@
 % ── Backup Controller: MIP to Safe Parking Orbits ────────
 \begin{frame}{Backup Controller: MIP to Safe Parking Orbits}
   \small
-  Constraints that are both convex and PWA are straightforward to represent
+  % Terminal set is a linear subspace and safety constraints are PWA
 
-  \vskip6pt
-  Integer variables can be used to encode non-convexity
+  % \vskip6pt
+  % Integer variables can be used to encode non-convexity
 
-  \vskip6pt
-  In fact, we can represent the infinity norm exactly
+  % \vskip6pt
+  % In fact, we can represent the infinity norm exactly
 
   \vskip8pt
   \textbf{Solution:} Mixed integer convex program
   \vskip2pt
   \begin{itemize}
-    \item Global optimality
-    \item Completeness
-    \item Can capture fuel costs with convex objective function
+    \item Fuel cost is quadratic 
+    \item Most constraints convex and PWA
+    \item Integer variables can encode non-convexity (collision avoidance)
   \end{itemize}
-  \source{Mote et al., ``NMT-based Trajectories for Spacecraft Collision Avoidance,'' IEEE Aerospace 2021}
+  \vspace{10pt}
+    \textbf{Why it's nice:}
+  \vskip2pt
+  \begin{itemize}
+    \item Global Optimality: Fuel minimal transfers
+    \item Complete: if there is a safe trajectory, it finds it
+  \end{itemize}
+  \source{Note: Stabilizing LQR can regulate to parking orbit once on it.}
 \end{frame}
 
 % ── ARPOD Results 1 ──────────────────────────────────────
@@ -171,8 +179,11 @@
 \begin{frame}{Summary: ARPOD}
   \small
   \begin{itemize}
-    \item Natural motion trajectories provide a physically meaningful backup set for spacecraft proximity operations
-    \item IASIF safety filter enforces collision avoidance and approach corridor constraints in real time
-    \item MIP planner computes fuel-optimal transfers to safe parking orbits with global optimality guarantees
+    % \item Natural motion trajectories provide a physically meaningful backup set for spacecraft proximity operations
+    \item Backup set: NMTs contained in $\mathcal{C}_S$, safe and passively invariant
+    \item Backup controller: MIQP: fuel optimal transfers to backup set
+    \item Implicit safe set is the \textbf{viability kernel}*, "take me home" button to safe parking orbits
+    % \item MIP planner computes fuel-optimal transfers to safe parking orbits with global optimality guarantees
   \end{itemize}
+  \source{* Caveat: With long enough time horizon and with minor approximations}
 \end{frame}

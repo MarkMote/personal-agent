@@ -357,14 +357,14 @@
 
 % ── Tradeoffs ─────────────────────────────────────────────
 \begin{frame}{RTA Design}
-  \footnotesize
+  \smaller
   \begin{center}
     \includegraphics[width=0.80\textwidth]{figures/implicit-explicit-spectrum.png}
   \end{center}
   \vskip4pt
-  \textbf{Online vs Offline:} A larger backup set $\mathcal{C}_b$ requires less online computation, but more offline analysis.
+  \textbf{Online vs Offline:} More of $\mathcal{C}_b$ that you compute, less you need to simulate online.
   \vskip4pt
-  \textbf{Override:} simulate and switch vs find a barrier function and solve a QP
+  \textbf{Override:} find a barrier function and solve a QP (smooth transition) vs switch to backup controller (fewer requirements)
 \end{frame}
 
 % ── Summary ──────────────────────────────────────────────
