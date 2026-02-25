@@ -1,3 +1,10 @@
+# 2026-02-24 | DRAFT | Archer Case Study - Bio
+
+Mark Mote received his Ph.D. in Robotics from Georgia Tech in 2021, where he researched safety-critical control for spacecraft. He held research internships at NASA JPL, MIT Lincoln Lab, AFRL, and KAUST. His published work covers runtime assurance, trajectory optimization, and safe autonomy under uncertainty. After graduating, he co-founded two companies: Pytheia, where he built multi-camera 3D perception systems, and Roostr, where he built the software stack for an AI-native freight forwarder.
+
+
+---
+
 # 2026-02-24 | DRAFT | Archer Case Study - Title & Abstract
 
 **Title:** Safe Autonomy with Runtime Assurance

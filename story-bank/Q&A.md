@@ -23,6 +23,7 @@ Push #2:
 I'd say 250-350 is the best ballpark, but again that's very subject to change
 
 --- 
+
 ## Tell me about yourself (multiple versions)
 
 > I'm a 2 time founder. I have a robotics PhD but my background was originally in aerospace engineering. I'm currently winding down as CTO of a Roostr. There I built the complete production stack of centered around LLM pipelines to automate freight operations. Before before Roostr, I was founder and CEO of Pytheia, a company that did camera based robotic perception

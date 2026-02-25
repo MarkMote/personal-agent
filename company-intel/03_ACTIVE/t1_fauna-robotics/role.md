@@ -2,7 +2,7 @@
 
 **Location:** NYC (Brooklyn)
 **Type:** Full-time
-**Funding:** $16.6M from Kleiner Perkins
+**Funding:** $30M seed (Kleiner Perkins, Lux Capital, Quiet Capital, Village Global)
 
 ## Roles Applied
 

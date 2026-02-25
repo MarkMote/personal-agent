@@ -9,6 +9,8 @@ Read this first every session. Short entries only. Detail lives in company intel
 - **Laurion: Rejected.** Marcus relayed 2/24. Expected after live coding. Moved to 04_closed_lost, tracker updated.
 - **Scale AI: Strong pass on tech screen.** Solved both problems, good communication. Prep paid off. Awaiting next steps.
 - **Strategic note:** Mark is comfortable extending the search if needed. Each interview improves performance, so longer timeline = better calibration = better outcomes. No urgency to force a suboptimal close.
+- **Fauna Robotics: Intro call with Josh Merel (CTO) completed 5pm ET.** Mid vibe, 50-50. Josh focused on Mark's interests, not skills/experience. Said he'd pass notes to team and see if there's a fit. Process slow, ~1 week+. Follow up ~Mar 3 if no response. Full research + technical review docs created in company intel folder.
+- **Fauna technical review document built.** Deep dive on ArXiv paper, Merel's 6 key papers, learned locomotion, MuJoCo vs Isaac Sim, compliance/safety, sim-to-real. Saved at `company-intel/03_ACTIVE/t1_fauna-robotics/technical_review.md`. Key finding: Fauna trains in IsaacSim (not MuJoCo despite Merel's DeepMind background). Uses state machine over control modes, not end-to-end. Compliance is software-based (torque limits + trained behavior), not hardware (no SEA/QDD).
 
 ## 2026-02-21 (Sat, W08)
 

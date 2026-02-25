@@ -11,138 +11,78 @@
 
 % ── Motivation: Free-Flying Spacecraft ───────────────────
 \begin{frame}{Motivation: When Collisions Are Unavoidable}
-  \footnotesize
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \small
-      Small robotic spacecraft perform automated {\color{blue600}monitoring and assistance} inside space stations.
+  \smaller
+  \vskip16pt
 
-      \vskip4pt
-      \textbf{Problem:} Traditional planners treat all collisions as failures --- but sometimes collisions are \textbf{unavoidable}.
+  \textbf{Problem:} Collisions can't always be avoided, and may cause planners to fail.
+  \vskip12pt
 
-      \vskip4pt
-      \textbf{Key question:} What is the best strategy when collision-free trajectories don't exist?
+  \textbf{Key question:} What is the best strategy when collision-free trajectories don't exist?
 
-      \vskip4pt
-      \footnotesize
-      \textbf{Approach:} Model collisions as algebraic constraints and solve via mixed-integer optimization.
-    \end{column}
-    \begin{column}{0.49\textwidth}
-      \begin{center}
-        % Save as: figures/cito_spacecraft.png
-        {\color{slate400}\framebox(195,85){cito\_spacecraft.png}}
+  % \vskip12pt
+  % \textbf{Approach:} Mixed-integer optimization, where integer variables encode collision dynamics
 
-        \vskip4pt
-        % Save as: figures/cito_freeflier_lab.png
-        {\color{slate400}\framebox(195,75){cito\_freeflier\_lab.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+  % \vskip12pt
+  % \textbf{Benefits:} Feasibility, Damage Minimization, Performance
   \source{Mote, Egerstedt, Feron, Bylard, Pavone --- ``Collision-Inclusive Trajectory Optimization,'' \textit{JGCD}, 2020}
 \end{frame}
 
-% ── Collision Model and Solution ─────────────────────────
+\begin{frame}{Approach and Application}
+  \smaller
+
+  \vskip12pt
+  \textbf{Approach:} Mixed-integer optimization, where integer variables encode collision dynamics
+
+  \vskip12pt
+  \textbf{Benefits:} Feasibility, Damage Minimization, Performance
+
+  \vskip12pt
+  \textbf{Application:} Stanford's Free-Flier Lab: model collision dynamics and apply to spacecraft
+  \source{Mote, Egerstedt, Feron, Bylard, Pavone --- ``Collision-Inclusive Trajectory Optimization,'' \textit{JGCD}, 2020}
+\end{frame}
+
+
+% ── Demo: Collision-Tolerant Trajectory Planning ─────────
 \begin{frame}{Collision Model and Solution}
-  \footnotesize
-  \begin{columns}[c]
-    \begin{column}{0.50\textwidth}
-      \textbf{Nominal Dynamics:}\quad $\ddot{s}_x = u_x$,\quad $\ddot{s}_y = u_y$,\quad $\ddot{\theta} = u_\theta$
-
-      \vskip4pt
-      \textbf{Collision Model} (empirical, algebraic):
-      \vskip-6pt
-      \scriptsize
-      \[
-        \begin{bmatrix} v_N^{i+1} \\ v_T^{i+1} \\ \omega^{i+1} \end{bmatrix}
-        = \begin{bmatrix} a_{11} & 0 \\ 0 & a_{22} \\ 0 & a_{32} \end{bmatrix}
-        \begin{bmatrix} v_N^i \\ v_{\text{rel}}^i \end{bmatrix}
-      \]
-      \vskip0pt
-      \footnotesize
-      Coefficients fit from experimental data.
-
-      \vskip2pt
-      \textbf{Solution:} MIQP --- global optimality, completeness
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      \begin{center}
-        % Save as: figures/cito_collision_model.png
-        {\color{slate400}\framebox(185,75){cito\_collision\_model.png}}
-
-        \vskip4pt
-        % Save as: figures/cito_freeflyer_schematic.png
-        {\color{slate400}\framebox(185,75){cito\_freeflyer\_schematic.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+  \vskip-4pt
+  \centering
+  \href{https://www.youtube.com/watch?v=4kOOn6TPuDI}{%
+    \includegraphics[width=\textwidth, height=0.82\textheight, keepaspectratio]{figures/cttp_thumbnail.png}}
   \source{Mote, Afman, Feron --- ``Robotic trajectory planning through collisional interaction,'' CDC 2017}
 \end{frame}
 
-% ── Safety through Collision-Inclusive Planning ──────────
+% ── Demo: Simulation ─────────────────────────────────────
 \begin{frame}{Collisions Expand the Feasible Set}
-  \small
-  \textbf{1D example:}\quad $\ddot{x} = u$, \quad $u \in [-0.5,\, 0.5]$, \quad wall at $x = 0$
-
-  \vskip6pt
-  \begin{columns}[c]
-    \begin{column}{0.30\textwidth}
-      \begin{center}
-        % Save as: figures/cito_reachable.png
-        {\color{slate400}\framebox(110,110){cito\_reachable.png}}
-
-        \vskip2pt
-        {\scriptsize\color{blue600} Reachable set (no collision)}
-      \end{center}
-    \end{column}
-    \begin{column}{0.30\textwidth}
-      \begin{center}
-        % Save as: figures/cito_feasible_mpc.png
-        {\color{slate400}\framebox(110,110){cito\_feasible\_mpc.png}}
-
-        \vskip2pt
-        {\scriptsize\color{blue600} Feasible under MPC}
-      \end{center}
-    \end{column}
-    \begin{column}{0.30\textwidth}
-      \begin{center}
-        % Save as: figures/cito_feasible_ctmpc.png
-        {\color{slate400}\framebox(110,110){cito\_feasible\_ctmpc.png}}
-
-        \vskip2pt
-        {\scriptsize\color{blue600} Feasible under CT-MPC}
-      \end{center}
-    \end{column}
-  \end{columns}
-
-  \vskip6pt
-  \textbf{Key insight:} Collision-tolerant planning \textbf{expands the feasible set}. States infeasible under collision-free planning become feasible when collisions are modeled.
+  \vskip-4pt
+  \centering
+  \href{https://www.youtube.com/watch?v=B8VU9IS12WU}{%
+    \includegraphics[width=\textwidth, height=0.82\textheight, keepaspectratio]{figures/cttp_2_thumbnail.png}}
+  \source{Mote, Egerstedt, Feron, Bylard, Pavone --- ``Collision-Inclusive Trajectory Optimization,'' \textit{JGCD}, 2020}
 \end{frame}
 
 % ── Conclusion: Collisions → Feasibility → Safety ───────
-\begin{frame}{Planning for Failure --- Connection to Safety}
+\begin{frame}{Summary}
   \small
-  \begin{columns}[c]
-    \begin{column}{0.55\textwidth}
-      \textbf{Collision-tolerant planners can:}
-      \vskip4pt
-      \begin{itemize}
-        \item Optimally mitigate damage via a predefined \textit{damage function}
-        \item \textbf{Expand the feasible set} for trajectory planning
-        \item Serve as better \textbf{backup strategies} for RTA systems
-      \end{itemize}
+  \textbf{Collision-tolerant planners can:}
+  \vskip4pt
+  \begin{itemize}
+    \item Optimally mitigate damage via a predefined \textit{damage function}
+    \item \textbf{Expand the feasible set} for trajectory planning
+    \item Serve as better \textbf{backup strategies} for RTA systems
+    \item Drawback: this particular approach is very slow
+  \end{itemize}
 
-      \vskip6pt
-      \footnotesize
-      \begin{center}
-        {\color{blue600}\textbf{Collisions}} $\;\Rightarrow\;$ {\color{blue600}\textbf{Feasibility}} $\;\Rightarrow\;$ {\color{blue600}\textbf{Safety}}
-      \end{center}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \begin{center}
-        % Save as: figures/cito_damage_mitigation.png
-        {\color{slate400}\framebox(175,140){cito\_damage\_mitigation.png}}
-      \end{center}
-    \end{column}
-  \end{columns}
+  \vskip6pt
+  \footnotesize
+
   \source{Mote, Bylard, Egerstedt, Pavone, Feron --- ``Collision-Inclusive Trajectory Optimization,'' \textit{JGCD}, 2020}
+\end{frame}
+
+% ── Questions ────────────────────────────────────────────
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\LARGE\color{slate900}\textbf{Questions?}}
+  \end{center}
+  \vfill
 \end{frame}

@@ -366,3 +366,13 @@
   \vskip4pt
   \textbf{Override:} simulate and switch vs find a barrier function and solve a QP
 \end{frame}
+
+% ── Summary ──────────────────────────────────────────────
+\begin{frame}{Summary: Runtime Assurance}
+  \small
+  \begin{itemize}
+    \item Safety = forward invariance in a constraint-satisfying set
+    \item RTA decouples safety from the primary controller: any controller is safe if the filter can always recover
+    \item Implicit methods avoid the hard problem of finding large safe sets by simulating recovery online
+  \end{itemize}
+\end{frame}
