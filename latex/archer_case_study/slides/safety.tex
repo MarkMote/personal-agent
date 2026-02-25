@@ -301,7 +301,7 @@
 \end{frame}
 
 % ── Example: Segway ──────────────────────────────────────
-\begin{frame}{Application: Segway}
+\begin{frame}{Approximating Optimal Policies}
   \hypertarget{backup:segway}{}
   \small
   \textbf{What backup controller maximizes permissiveness?}
@@ -322,9 +322,10 @@
 
   \vskip2pt
   \footnotesize
-  \textbf{Segway:} Complex dynamics; OCP not tractable online.
-  \textbf{Idea:} Train a backup controller from offline OCP evaluations.
-  \source{Gurriet, Mote, Singletary, Feron, Ames --- ``Scalable controlled set invariance,'' CDC 2019}
+  \textbf{Issue:} Not always tractable online
+  \vskip5pt
+  \textbf{Idea:} Train a neural net from offline OCP evaluations.
+  % \source{Gurriet, Mote, Singletary, Feron, Ames --- ``Scalable controlled set invariance,'' CDC 2019}
 \end{frame}
 
 % ── Example: Segway - Safe Set Comparison ────────────────
@@ -334,8 +335,8 @@
   \end{center}
   \smaller
   \begin{itemize}
-    \item NN learns permissive backup policy
-    \item \textit{Provably safe} control without \textit{any} safe controller
+    \item NN learns permissive backup policy: ~50k trajectory points (GPOPS-II) to a feed-forward NN
+    \item Provably safe control without \textit{any} safe controller
   \end{itemize}
 \end{frame}
 
