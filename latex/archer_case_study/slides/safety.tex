@@ -367,12 +367,27 @@
   \textbf{Override:} find a barrier function and solve a QP (smooth transition) vs switch to backup controller (fewer requirements)
 \end{frame}
 
+% ── Tradeoffs ─────────────────────────────────────────────
+\begin{frame}{Example:  }
+  \smaller
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.90\textwidth]{figures/extend_safe_sets.png}
+  \end{center}
+  \vskip4pt
+  In practice: find the largest safe set you can, extend with online simulations
+  % \vskip4pt
+  % \textbf{Override:} find a barrier function and solve a QP (smooth transition) vs switch to backup controller (fewer requirements)
+\end{frame}
+
+
+
 % ── Summary ──────────────────────────────────────────────
 \begin{frame}{Summary: Runtime Assurance}
   \small
   \begin{itemize}
     \item Safety = forward invariance in a constraint-satisfying set
     \item RTA decouples safety from the primary controller: any controller is safe if the filter can always recover
-    \item Implicit methods avoid the hard problem of finding large safe sets by simulating recovery online
+    \item Use a backup controller to ensure safe path to safe set. 
   \end{itemize}
 \end{frame}
