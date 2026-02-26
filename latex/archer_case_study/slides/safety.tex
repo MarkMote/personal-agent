@@ -210,7 +210,7 @@
   \[ \mathcal{C}_S = \big\{x \in X \;\big|\; \underbrace{h_b\big(\phi^{u_b}(T;\,x)\big) \geq 0}_{\text{Reach } \mathcal{C}_b \text{ by time } T},\;\; \underbrace{\forall t \in [0,T],\; \varphi\big(\phi^{u_b}(t;\,x)\big) \geq 0}_{\text{Stay in } \mathcal{C}_A \text{ over } [0,T]} \big\} \]
   \vskip6pt
   \small
-  The SBI $\mathcal{C}_S$ is an implicitly defined \textbf{control invariant} subset of $\mathcal{C}_A$. Next: develop barrier constraints to keep the system in $\mathcal{C}_S$.
+  The SBI $\mathcal{C}_S$ is an implicitly defined \textbf{control invariant} subset of $\mathcal{C}_A$. 
   \source{Gurriet, Mote, Ames, Feron --- ``Online approach to active set invariance,'' CDC 2018}
 \end{frame}
 
@@ -257,7 +257,6 @@
   \noindent\includegraphics[width=0.5\textwidth]{figures/auto-gcas-1.png}%
   \includegraphics[width=0.5\textwidth]{figures/auto-gcas-2.png}
   \vfill
-  \vspace{5mm}
   \source{Ho, Nhut, et al.\ ``A longitudinal field study of Auto-GCAS acceptance and trust: First-year results and implications.'' \textit{J.\ Cognitive Engineering and Decision Making} 11, no.\ 3 (2017): 239--251.}
 \end{frame}
 
@@ -314,8 +313,8 @@
     \begin{align*}
       u^*(x) &= \arg\min_{u \in U} \;\; t_f + \int_0^{t_f} x^T Q x + R u^2 \, dt \\
       \text{s.t.}\quad & \dot{x} = f(x) + g(x)\,u \\
-      & x(0) = x_0,\;\; x(t_f) = 0 \\
-      & x \in S
+      & x(0) = x_0,\;\; x(t_f) \in C_b \\
+      & x \in C_A
     \end{align*}
     \vspace{-12pt}
   \end{block}
@@ -341,20 +340,19 @@
 \end{frame}
 
 % ── Example: Spacecraft Attitude Control ─────────────────
-\begin{frame}{Example: Spacecraft Attitude Control}
-  \hypertarget{backup:spacecraft-attitude}{}
-  \small
-  Angular speed limit for a torque-controlled spacecraft.
-  \vskip4pt
-  \begin{center}
-    \includegraphics[width=\textwidth, height=0.65\textheight, keepaspectratio]{figures/sc-1.png}
-  \end{center}
-  \vskip0pt
-  \footnotesize
-  Purple: constraint set. Blue: backup set. Safety filter overrides desired inputs near boundary.
-  \vspace{6mm}
-  \source{Mote, 2021 --- PhD Dissertation, Georgia Tech}
-\end{frame}
+% \begin{frame}{Example: Spacecraft Attitude Control}
+%   \hypertarget{backup:spacecraft-attitude}{}
+%   \small
+%   Angular speed limit for a torque-controlled spacecraft.
+%   \vskip4pt
+%   \begin{center}
+%     \includegraphics[width=\textwidth, height=0.65\textheight, keepaspectratio]{figures/sc-1.png}
+%   \end{center}
+%   \vskip0pt
+%   \footnotesize
+%   Purple: constraint set. Blue: backup set. Safety filter overrides desired inputs near boundary.
+%   \source{Mote, 2021 --- PhD Dissertation, Georgia Tech}
+% \end{frame}
 
 % ── Tradeoffs ─────────────────────────────────────────────
 \begin{frame}{RTA Design}

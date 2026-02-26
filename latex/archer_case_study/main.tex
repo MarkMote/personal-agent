@@ -54,14 +54,14 @@
 \usepackage{booktabs}
 \usepackage{pgfpages}
 \usepackage{hyperref}
+\usepackage[absolute,overlay]{textpos}
 
 % ── Custom font sizes ─────────────────────────────────────
 % Between \small (10pt) and \footnotesize (8pt) at 11pt base
 \newcommand{\smaller}{\fontsize{9}{11}\selectfont}
 
 % ── Source footnotes ────────────────────────────────────────
-% Horizontal rule + left-aligned citation below, like thesis style.
-% Usage: \source{text} or \sourceurl{display text}{url}
+% Tikz overlay: line + source text near bottom. Independent of footline.
 \newcommand{\source}[1]{%
   \begin{tikzpicture}[remember picture, overlay]%
     \draw[slate400, line width=0.4pt] ([xshift=12mm, yshift=9mm]current page.south west) -- ([xshift=-12mm, yshift=9mm]current page.south east);%
@@ -95,11 +95,11 @@
   \vskip4pt%
 }
 
-% ── Slide number (bottom right, small) ──────────────────────
+% ── Slide number (bottom right) ─────────────────────────────
 \setbeamertemplate{footline}{%
   \usebeamercolor[fg]{page number in head/foot}%
   \usebeamerfont{page number in head/foot}%
-  \hfill{\color{slate400}\footnotesize\insertframenumber}%
+  \hfill{\color{slate400}\small\insertframenumber}%
   \hspace*{12mm}\vskip4mm%
 }
 
