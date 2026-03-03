@@ -153,7 +153,7 @@ Flight was both the most exciting, and most terrifying thing I've ever done.
 I'd like to make that theme central here today, because its been both the core of my work, and because I'd wager its the most important problem to archer as well.  
 That is:
 - how do you balance something as inherently complex and fast moving as flight, while 
-- how do you build extremely complex fast moving in a way thats also extremely safe
+- building in a way thats extremely safe
 - Or "Move Fast and **Not** Break Things" 
 
 [image: map]
