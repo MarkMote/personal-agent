@@ -193,3 +193,250 @@ The Starlink GNC team develops autopilot algorithms for **thousands of satellite
 - Connect to Starlink: "I've spent my career on spacecraft autonomy and controls — Starlink is doing this at unprecedented scale, which is exactly the kind of problem I want to work on"
 - Startup experience shows shipping ability (not just research)
 - Be ready for: "Why are you leaving your current role?" (have the standard answer ready from Q&A)
+
+---
+
+## Deep Research (2026-03-04) — HM Interview Prep
+
+### Cole Morgan — Hiring Manager Profile
+
+**Current:** Sr. GNC Engineer, SpaceX (since July 2020, ~5.5 years)
+**Education:** University of Washington, MS Aerospace Engineering (2018-2020), BS Aerospace Engineering (2014-2018)
+**Lab:** UW Autonomous Controls Laboratory (ACL), PI: Prof. Behcet Acikmeseq (known for powered descent guidance / convex optimization — same community as Mark's work)
+**Previous experience:**
+- UW RAM Accelerator and Rotating Detonation Engine Labs (research assistant, 2016-2018)
+- SDI Engineering Inc.
+- Co-led GNC subsystem of UW's AA CubeSat team
+**Research interests:** Spacecraft GNC, optimal trajectory generation, swarm control, aircraft stability and control
+**Publications:** Co-authored paper with SpaceX Starlink GNC team accepted in Space Weather journal. Involved with IEEE Control Systems Magazine tutorial on convex algorithms for fast trajectory generation.
+**Location:** Seattle/Redmond, WA area
+**Mutual connection:** Prince Kuevor (Mark knows from Lincoln Lab, also at SpaceX)
+
+**Key observations for the interview:**
+- Cole's advisor (Acikmeseq) is famous for powered descent guidance and lossless convexification. This is the same optimal control / convex optimization community Mark publishes in. Strong technical overlap.
+- Cole's research interests (swarm control, optimal trajectory generation) directly overlap with Mark's JPL work on multi-spacecraft swarm communication/control.
+- He joined SpaceX right out of his MS in 2020, so he has grown up professionally on the Starlink GNC problem.
+- Since he co-led the CubeSat GNC subsystem, he likely values hands-on spacecraft experience.
+
+### Expanded Job Posting Details (Multiple Active Postings)
+
+SpaceX currently has multiple open GNC roles on the Starlink team in Redmond, indicating significant team growth:
+
+#### 1. GNC Engineer (Starlink) — General
+**Responsibilities:**
+- Develop highly reliable and performant GNC algorithms, simulations, tools, services, and dashboards using C++ or Python
+- Participate in architecture, design, and code reviews
+- Perform bulk data analysis on constellation performance metrics
+- Write technical documentation for programs and algorithms
+- Support on-call operations rotating satellite commanding duties
+- Spans sub-teams: constellation design, fleet management, collision avoidance, attitude control, orbit control, state estimation
+
+**Basic Qualifications:**
+- Bachelor's in CS, aerospace, physics, or engineering
+- Software development experience in C++ or Python
+
+**Preferred:**
+- Master's or PhD in engineering/physics
+- Spacecraft control experience, orbital mechanics expertise, state estimation knowledge
+- "Capability of identifying and solving complex problems with little to no supervision or direction"
+
+#### 2. GNC Engineer, Starlink Controls
+**Responsibilities:**
+- Design, analysis, implementation of satellite attitude control and momentum management systems
+- Develop electromechanical control systems for solar arrays, antenna gimbals, and optical systems
+- Create high-fidelity simulations using C++, Python, and MATLAB
+- Write and validate production software for spacecraft control algorithms
+- Support hardware development and fleet performance monitoring
+
+**Basic Qualifications:**
+- Bachelor's in aerospace, physics or engineering
+- C++ software development experience
+- Expertise in closed-loop control system design and analysis
+
+**Preferred:**
+- Rigid body dynamics and orbital mechanics
+- Spacecraft flight software development and testing
+- State-space and frequency-domain control analysis
+- Flexible body dynamics and finite element analysis
+- "Fast paced, autonomously driven, and demanding start-up atmosphere"
+
+#### 3. GNC Engineer, Starlink Collision Avoidance
+**Responsibilities:**
+- Full-stack ownership of automated collision avoidance pipeline
+- Satellite-side algorithms + ground-side supporting services + monitoring infrastructure
+- Design and implement autonomous on-satellite collision avoidance algorithms using C++
+- Design and implement orbit determination systems, including state/uncertainty propagation
+- Run Monte Carlo analysis to characterize performance of new features
+- Bulk data analysis of telemetry from thousands of satellites
+- Write integrated test cases for satellite and ground software
+- Monitor on-orbit system performance, troubleshoot
+- Coordinate with third-party data providers and constellation operators
+- On-call rotation for manual satellite commanding
+
+**Preferred:**
+- Strong analytical backgrounds
+- Ability to analyze and interpret production data or simulations
+
+#### 4. GNC Engineer, Navigation and Orbit Determination (Starlink)
+**Focus:** Atmospheric density uncertainties in predicting satellite states in LEO. Starlink flight data provides opportunities to advance atmospheric modeling.
+
+**Responsibilities:**
+- Develop advanced models for real-time atmosphere state estimation
+- Improve orbit predictions
+- Work closely with collision-avoidance team on space safety
+
+**Basic Qualifications:**
+- Master's degree in aerospace, mechanical, or electrical engineering, or physics
+- Software development in C++ or Python
+- 2+ years professional experience with navigation or orbit determination (internship/research counts)
+
+**Preferred:**
+- PhD in aerospace with applications in orbit determination, navigation, or orbit propagation
+- Strong understanding of orbital mechanics, perturbations, numerical propagation techniques
+- Implemented, tested, tuned, and operated Kalman filters in real-world applications
+- Experience with empirical and physics-based atmospheric density models
+
+### Starlink Constellation Technical Details (Updated March 2026)
+
+#### Current Scale
+- **~9,400+ active satellites** in orbit (as of early 2026)
+- **10M+ subscribers** (adding 20K/day)
+- **155+ countries** served
+- 65% of all active satellites in orbit are Starlink
+
+#### Orbital Architecture
+**Gen1 Constellation (largely complete):**
+- Shell 1: 1,584 sats at 550 km, 53.0 deg inclination (72 planes x 22 sats) — being lowered to 480 km in 2026
+- Shell 2: 1,584 sats at 540 km, 53.2 deg
+- Shell 3: 720 sats at 570 km, 70 deg
+- Shell 4: 348 sats at 560 km, 97.6 deg (SSO)
+- Shell 5: 172 sats at 560 km, 97.6 deg
+
+**Gen2 Constellation (approved):**
+- Up to 29,988 additional satellites approved
+- ~10,000 in 525-535 km altitude shells
+- ~20,000 in 340-360 km shells
+- ~500 in 604-614 km shells
+
+#### Satellite Generations
+**V1.0:** 260 kg, Hall-effect thrusters (krypton), star tracker navigation. Legacy fleet, being deorbited.
+**V1.5:** Improved V1, also being phased out.
+**V2 Mini (current workhorse):** ~800 kg, ~60 Gbps each, 4x V1 capacity. Up to 28 per Falcon 9 launch.
+- Argon-fueled Hall thrusters (replacing krypton): 170 mN thrust, 2500 s Isp, 50% efficiency, 4.2 kW power, 2.1 kg mass
+- 2.4x thrust and 1.5x Isp over V1 thrusters
+- Argon is ~100x cheaper than krypton, ~1000x cheaper than xenon
+**V3 (coming 2026):** ~2,000 kg, 1,000 Gbps downlink (10x+ over V2 Mini), ~4 Tbps combined RF+laser backhaul.
+- Requires Starship for launch (~350 km operational altitude)
+- Sub-20ms latency target
+- Each Starship launch adds 60 Tbps network capacity (20x current Falcon 9 launches)
+- First launches expected H1 2026
+
+#### Collision Avoidance System (Updated Stats)
+- **300,000 collision avoidance maneuvers in 2025** (~40 per satellite per year)
+- 144,404 maneuvers Dec 2024 - May 2025 alone (200% increase over prior 6 months)
+- Growth is exponential: 25,299 in H1 2023 → 50,000 in H2 2024 → 144,404 in H1 2025
+- **Collision probability threshold: 3 in 10 million** (tightened from 1-in-100,000, which was already 100x stricter than industry standard 1-in-10,000)
+- Maneuvering ~300x more often than industry norm
+- Starlink states updated every ~30 minutes
+- Fully autonomous: satellites fire thrusters when risk exceeds threshold, no human-in-the-loop
+- Screening results available in minutes (vs. hours for industry standard)
+
+#### Stargaze SSA System (Launched Jan 30, 2026)
+- Space Situational Awareness system leveraging ~30,000 star trackers across Starlink fleet
+- Detects ~30 million object transits daily (orders of magnitude better than ground-based systems)
+- Can assess conjunctions in minutes vs. hours
+- Real-world demo: detected third-party satellite unexpected maneuver with only 5 hours notice; Starlink reacted within 1 hour
+- Free to all satellite operators who submit their own ephemeris data
+- Collaboration with NASA Ames on experimental maneuver coordination APIs
+- Currently in closed beta with 12+ satellite operators
+- Contact: space-safety-onboarding@spacex.com
+
+#### Orbit Lowering Campaign (Jan 2026)
+- Lowering all ~4,400 satellites from ~550 km to ~480 km throughout 2026
+- Announced Jan 1 by Michael Nicolls (VP Starlink Engineering)
+- Rationale: solar minimum approaching → lower atmospheric density at 550 km → slower natural decay
+- At 480 km: >80% reduction in ballistic decay time (4+ years reduced to months)
+- Fewer debris objects and planned constellations below 500 km
+- Coordinated with US Space Command and other operators
+- Partly motivated by Dec 2025 anomaly (Starlink-35956 propulsion failure at 418 km, caused debris)
+
+### Compensation Deep Dive
+
+#### Posted Ranges (Base Salary)
+- GNC Engineer Level I: $120,000 - $145,000/year
+- GNC Engineer Level II: $140,000 - $170,000/year
+
+#### Glassdoor Data (GNC Engineer at SpaceX)
+- Estimated total pay: $139K - $227K/year
+- Average base: $132K/year
+- Average additional pay: $45K/year (stock, bonus, etc.)
+- Compensation & benefits rating: 4.8/5 (40% higher than industry average for GNC Engineers)
+
+#### Levels.fyi Data (Aerospace Engineer at SpaceX)
+- Median total compensation: $167K/year
+- L2 median total: $204,500/year
+- Highest reported: $275,875/year
+- Data last updated: Feb 6, 2026
+
+#### Equity Structure
+- RSUs or ISOs (depending on hire date and role)
+- Vesting schedules: 3-year (1yr cliff + 2yr annual) or 5-year (1yr cliff + 4yr semi-annual)
+- Employee Stock Purchase Plan (ESPP) at a discount
+- Potential discretionary bonuses
+- **IPO context:** SpaceX actively preparing for potential 2026 IPO. Valuation ~$800B (late 2025 tender), potential $1.5T at IPO. Equity could become very valuable.
+
+#### Benefits
+- 401(k), comprehensive medical/vision/dental
+- 3 weeks PTO, 10+ paid holidays
+- Short & long-term disability, life insurance
+- Paid parental leave
+
+#### Comparison to Other Offers
+- Archer offer: $293K TC ($230K base). SpaceX base is $120-170K.
+- Gap is significant on cash. SpaceX upside is entirely in equity/IPO.
+
+### Culture / Work Environment (Redmond)
+
+**From reviews:**
+- Indeed Redmond rating: 67% would recommend (vs. 61% company-wide)
+- Work-life balance: 2.4/5
+- Culture & values: 3.4/5
+- D&I: 3.6/5
+- "Coolest engineering challenges on Earth with some of the smartest people you'll ever meet" — GNC engineer in Redmond
+- "Long hours, 50-60 hours a week standard, stressful environment"
+- "Well-compensated between base salary and stock options"
+- "Lots of opportunities to take on real-world problems and own solutions"
+- 5 days/week in office (confirmed by Eric Harvey on recruiter screen)
+- Common to get dinner in the office (per Eric)
+- 38% of company-wide employees have been there <1 year (high turnover)
+- GNC team specifically has 10+ year veterans who are deeply methodical
+
+### HM Interview Format (What to Expect March 5)
+
+**Format:** 45-min phone call with Cole Morgan (Sr. GNC Engineer)
+**Structure:** Hybrid accomplishment deep-dive + technical
+
+**What to expect based on research:**
+1. **Accomplishment deep-dive (~20-25 min):**
+   - Cole has seen your resume and selected something he wants to explore
+   - Expect deep drilling: "Tell me about your hardest problem and how you solved it" (Elon-style: anyone can describe the problem, only someone who solved it can explain the solution convincingly)
+   - Resume project deep-dive: be ready to go deep on JPL swarm work, AFRL docking, Robotarium, or PhD optimization work
+   - He'll want specifics and impact, not hand-waving
+
+2. **Technical questions (~15-20 min):**
+   - Reported GNC topics from Glassdoor: PD control, orbit determination, frequency domain analysis
+   - First-principles derivations, not memorization
+   - Possible system design question related to Starlink GNC work
+   - Given Cole's background (Acikmeseq lab, trajectory optimization), expect comfort with optimization and convex methods
+
+3. **Your questions (~5 min):**
+   - Keep to 2-3 sharp questions
+
+**Key insight from Eric's call:** The role is "fairly general" — they do a lot of things: simulations, momentum management, actuators and actuator interfaces. Eric specifically asked why Mark wants something as "general" as GNC. Be ready for this again from Cole.
+
+**What Cole likely cares about (based on his background):**
+- Can you actually do GNC? (Not just talk about it)
+- Do you understand dynamics and controls at a deep level?
+- Can you write production code? (C++ and Python)
+- Are you motivated enough for the culture?
+- Do you get the scale problem? (Thousands of sats, not one mission)

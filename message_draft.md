@@ -1,3 +1,9 @@
+## 2026-03-03 | Oliver Ortlieb - Ultra | DRAFT | Email
+
+Hey Oliver, wanted to make sure I had the right time. Happy to reschedule if today doesn't work.
+
+---
+
 ## 2026-02-27 | Nicolas Misthos - Deft Robotics (via recruiter) | DRAFT | LinkedIn DM
 
 Thanks for sharing. Deft looks interesting. I'm prioritizing NYC-based roles right now, but not ruling out SF for the right fit. Mind if I circle back in a few weeks?

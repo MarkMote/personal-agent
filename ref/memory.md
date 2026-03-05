@@ -4,7 +4,20 @@ Read this first every session. Short entries only. Detail lives in company intel
 
 ---
 
-## 2026-02-24 (Mon, W09) — Latest Session
+## 2026-03-04 (Wed) — Latest Session
+
+- **SpaceX deep research completed for HM interview tomorrow (3/5).** Updated full_context.md with: Cole Morgan profile (UW ACL, Acikmeseq lab, trajectory optimization), all active Starlink GNC job postings (general, controls, collision avoidance, nav/OD), expanded Starlink technical details (V2 Mini argon thrusters, V3 specs, orbit lowering campaign, Stargaze SSA system, updated collision avoidance stats), comp deep dive (Glassdoor total $139-227K, Levels.fyi median $167K, equity/IPO context), Redmond culture reviews, and HM interview format expectations.
+
+- **Archer: OFFER RECEIVED.** P4 Staff Autonomy Engineer, $293K TC ($230K base, 10% bonus, $40K/yr equity), $20K relocation, no sign-on. Reports to Dennis. San Jose in-person.
+- Mark told Dennis he needs ~2 weeks to see other processes through. Dennis may call Friday Mar 7.
+- **Negotiation plan:** (1) Location first -- push for NYC-based with regular travel to SJ. Eddy Yu said location was "not a dealbreaker" in recruiter screen. (2) Sign-on if relocation required. (3) Base bump only with competing leverage.
+- **Friday call strategy:** Warm/positive, don't negotiate yet, plant the location seed casually.
+- **Ultra: Moved to 03_ACTIVE.** Intro chat scheduled Mar 3, Oliver no-showed. Follow-up email sent. Assessed as T2 (not T1) based on financial risk, lateral skill compounding, lack of passion alignment.
+- **Fauna follow-up due today (Mar 3 reminder).** Surfaced to Mark.
+- Key context: SpaceX HM interview Mar 5, Anthropic colab Mar 5-6. Archer offer gives leverage.
+- Full negotiation tracker at `company-intel/03_ACTIVE/t1_archer-aviation/offer_negotiation.md`.
+
+## 2026-02-24 (Mon, W09)
 
 - **Laurion: Rejected.** Marcus relayed 2/24. Expected after live coding. Moved to 04_closed_lost, tracker updated.
 - **Scale AI: Strong pass on tech screen.** Solved both problems, good communication. Prep paid off. Awaiting next steps.
